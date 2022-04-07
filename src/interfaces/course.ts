@@ -2,8 +2,8 @@ export type BreadthType = "A" | "B" | "C" | "D" | "N";
 
 /** A representation of a course within the College Planner **/
 export interface Course {
-    name: string; //Name of course
     id: number; //Unique id of course
+    name: string; //Name of course
     numCredits: number; //Number of credits the course is worth
     description: string; //Description of course
     prerequisites: Course[]; //Courses required to take this course

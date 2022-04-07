@@ -1,0 +1,67 @@
+[
+    {
+        "name": "plan1",
+        "semesters": {
+            "name": "FIRST",
+            "year": 2019,
+            "session": "Fall",
+            "courses": [
+                {
+                    "id": 1,
+                    "name": "CISC108: Introduction to Computer Science I",
+                    "credit": 3,
+                    "description": "Python",
+                    "prerequisites": [],
+                    "isTaken": false,
+                    "isEditing": false,
+                    "breadthType": "D"
+                },
+                {
+                    "id": 2,
+                    "name": "CISC181: Introduction to Computer Science II",
+                    "credit": 3,
+                    "description": "Java",
+                    "prerequisites": [],
+                    "isTaken": false,
+                    "isEditing": false,
+                    "breadthType": "D"
+                },
+                {
+                    "id": 3,
+                    "name": "Introduction to Computer Science I",
+                    "credit": 3,
+                    "description": "Python",
+                    "prerequisites": [],
+                    "isTaken": false,
+                    "isEditing": false,
+                    "breadthType": "D"
+                },
+                {
+                    "id": 4,
+                    "name": "Introduction to Computer Science I",
+                    "credit": 3,
+                    "description": "Python",
+                    "prerequisites": [],
+                    "isTaken": false,
+                    "isEditing": false,
+                    "breadthType": "D"
+                },
+                {
+                    "id": 5,
+                    "name": "Introduction to Computer Science I",
+                    "credit": 3,
+                    "description": "Python",
+                    "prerequisites": [],
+                    "isTaken": false,
+                    "isEditing": false,
+                    "breadthType": "D"
+                }
+            ],
+            "totalCredits": 15,
+            "isSkiped": false
+        },
+        "requirements": [],
+        "taken_courses": [],
+        "floating_courses": []
+    }
+]
