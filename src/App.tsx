@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
+import { ListPlans } from "./components/listPlans";
+import { Plan } from "./interfaces/Plan";
+import plans from "./data/plans.json";
+
+const PLANS = plans.map((plan): Plan => ({ ...plan }));
 
 function App(): JSX.Element {
+    const [plans] = useState<Plan[]>(PLANS);
+
     return (
         <div className="App">
             <header className="App-header">
@@ -10,10 +17,10 @@ function App(): JSX.Element {
             <div>Jingqing Liu add name here!</div>
             <div>I&apos;m Weldin Dunn, and I approve this message.</div>
             <div>Zhiwen Zhu add name to final</div>
-            <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload.
-            </p>
+
+            <div style={{ textAlign: "center" }}>
+                <ListPlans degreePlans={plans}></ListPlans>
+            </div>
         </div>
     );
 }
