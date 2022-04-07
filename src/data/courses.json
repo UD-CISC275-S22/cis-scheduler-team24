@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "CISC108: Introduction to Computer Science I",
+        "credits": 3,
+        "description": "Python",
+        "prerequisites": [],
+        "isTaken": false,
+        "isEditing": false,
+        "breadthType": "D"
+    },
+    {
+        "id": 2,
+        "name": "CISC181: Introduction to Computer Science II",
+        "credits": 3,
+        "description": "Java",
+        "prerequisites": [],
+        "isTaken": false,
+        "isEditing": false,
+        "breadthType": "D"
+    }
+]

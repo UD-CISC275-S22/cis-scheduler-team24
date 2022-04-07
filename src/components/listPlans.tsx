@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Stack } from "react-bootstrap";
-//import Table from "react-bootstrap/Table";
 import { Plan } from "../interfaces/Plan";
 import { ViewPlan } from "./viewPlan";
 
@@ -9,7 +8,7 @@ export function ListPlans({
 }: {
     degreePlans: Plan[];
 }): JSX.Element {
-    const [plans /*, setPlans*/] = useState<Plan[]>(degreePlans);
+    const [plans] = useState<Plan[]>(degreePlans);
 
     return (
         <div>
