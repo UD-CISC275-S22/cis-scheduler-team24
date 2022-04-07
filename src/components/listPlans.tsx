@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Stack } from "react-bootstrap";
-import { Plan } from "../interfaces/Plan";
+import { Plan } from "../interfaces/plan";
 import { ViewPlan } from "./viewPlan";
 
 export function ListPlans({

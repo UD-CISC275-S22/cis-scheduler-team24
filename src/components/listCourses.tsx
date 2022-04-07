@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Stack } from "react-bootstrap";
-import { Course } from "../interfaces/Course";
+import { Course } from "../interfaces/course";
 import { ViewCourse } from "./viewCourse";
 
 export function ListCourses({
