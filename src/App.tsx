@@ -4,7 +4,15 @@ import { ListPlans } from "./components/listPlans";
 import { Plan } from "./interfaces/Plan";
 import plans from "./data/plans.json";
 
-const PLANS = plans.map((plan): Plan => ({ ...plan }));
+const PLANS = plans.map(
+    (plan): Plan => ({
+        ...plan,
+        semesters: [],
+        requirements: [],
+        taken_courses: [],
+        floating_courses: []
+    })
+);
 
 function App(): JSX.Element {
     const [plans] = useState<Plan[]>(PLANS);
