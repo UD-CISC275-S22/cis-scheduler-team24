@@ -6,7 +6,7 @@ export function ViewCourse({ course }: { course: Course }): JSX.Element {
     return (
         <div>
             <Container>
-                <h3>{course.name}</h3>
+                <span>{course.name}</span>
             </Container>
         </div>
     );

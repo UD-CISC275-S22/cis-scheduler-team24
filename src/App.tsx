@@ -6,11 +6,7 @@ import plans from "./data/plans.json";
 
 const PLANS = plans.map(
     (plan): Plan => ({
-        ...plan,
-        semesters: [],
-        requirements: [],
-        taken_courses: [],
-        floating_courses: []
+        ...plan
     })
 );
 
