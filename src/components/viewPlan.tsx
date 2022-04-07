@@ -7,8 +7,7 @@ import semesters from "../data/semesters.json";
 
 const SEMESTERS = semesters.map(
     (semester): Semester => ({
-        ...semester,
-        courses: []
+        ...semester
     })
 );
 
