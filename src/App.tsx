@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import { Tables } from "./components/showtable";
-//import firstplan from "./data/plans.json";
 
 function App(): JSX.Element {
     return (
