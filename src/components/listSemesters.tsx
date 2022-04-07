@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Stack } from "react-bootstrap";
-import { Semester } from "../interfaces/Semester";
+import { Semester } from "../interfaces/semester";
 import { ViewSemester } from "./viewSemester";
 
 export function ListSemesters({

@@ -1,4 +1,4 @@
-import { Course } from "./Course";
+import { Course } from "./course";
 //export type SessionType = "Fall" | "Winter" | "Spring" | "Summer";
 
 export interface Semester {

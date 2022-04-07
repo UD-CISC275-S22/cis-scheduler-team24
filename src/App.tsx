@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import { ListPlans } from "./components/listPlans";
-import { Plan } from "./interfaces/Plan";
+import { Plan } from "./interfaces/plan";
 import plans from "./data/plans.json";
 
 const PLANS = plans.map(

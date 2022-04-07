@@ -1,5 +1,5 @@
-import { Course } from "./Course";
-import { Semester } from "./Semester";
+import { Course } from "./course";
+import { Semester } from "./semester";
 
 export interface Plan {
     name: string;

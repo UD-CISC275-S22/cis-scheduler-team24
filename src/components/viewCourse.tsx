@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { Course } from "../interfaces/Course";
+import { Course } from "../interfaces/course";
 
 export function ViewCourse({ course }: { course: Course }): JSX.Element {
     return (

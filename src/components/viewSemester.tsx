@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
-import { Semester } from "../interfaces/Semester";
-import { Course } from "../interfaces/Course";
+import { Semester } from "../interfaces/semester";
+import { Course } from "../interfaces/course";
 import { ListCourses } from "./listCourses";
 import courses from "../data/courses.json";
 
