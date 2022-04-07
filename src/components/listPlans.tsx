@@ -9,7 +9,7 @@ export function ListPlans({
 }: {
     degreePlans: Plan[];
 }): JSX.Element {
-    const [plans, setPlans] = useState<Plan[]>(degreePlans);
+    const [plans /*, setPlans*/] = useState<Plan[]>(degreePlans);
 
     return (
         <div>

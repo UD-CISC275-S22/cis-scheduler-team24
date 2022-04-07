@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Container, Col } from "react-bootstrap";
+import React /*, { useState }*/ from "react";
+import { Container } from "react-bootstrap";
 import { Plan } from "../interfaces/Plan";
 
 export function ViewPlan({ plan }: { plan: Plan }): JSX.Element {
