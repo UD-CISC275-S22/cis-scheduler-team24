@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "name": "Plan 1",
         "semesters": [],
         "requirements": [],
@@ -7,6 +8,7 @@
         "floating_courses": []
     },
     {
+        "id": 2,
         "name": "Plan 2",
         "semesters": [],
         "requirements": [],
