@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Tabs, Tab } from "react-bootstrap";
 import "./App.css";
-import { ListPlans } from "./components/listPlans";
+import { ViewPlan } from "./components/viewPlan";
 import { Plan } from "./interfaces/plan";
 import plans from "./data/plans.json";
 
@@ -16,14 +17,20 @@ function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
-                UD CISC275 with React Hooks and TypeScript
+                <div>
+                    Team 24 College Planner by Weldin, Zhiwen, and Jingqing
+                </div>
             </header>
-            <div>Jingqing Liu add name here!</div>
-            <div>I&apos;m Weldin Dunn, and I approve this message.</div>
-            <div>Zhiwen Zhu add name to final</div>
 
-            <div style={{ textAlign: "center" }}>
-                <ListPlans degreePlans={plans}></ListPlans>
+            <div>
+                <Tabs defaultActiveKey={plans[0].id}>
+                    {plans.map((plan: Plan) => (
+                        <Tab key={plan.id} eventKey={plan.id} title={plan.name}>
+                            <ViewPlan plan={plan}></ViewPlan>
+                        </Tab>
+                    ))}
+                    <Tab title={"Add Plan"}></Tab>
+                </Tabs>
             </div>
         </div>
     );
