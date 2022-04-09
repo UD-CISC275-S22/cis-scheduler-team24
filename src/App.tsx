@@ -3,11 +3,21 @@ import { Tabs, Tab } from "react-bootstrap";
 import "./App.css";
 import { ViewPlan } from "./components/viewPlan";
 import { Plan } from "./interfaces/plan";
+import { Semester } from "./interfaces/semester";
+import { Course } from "./interfaces/course";
 import plans from "./data/plans.json";
 
 const PLANS = plans.map(
     (plan): Plan => ({
-        ...plan
+        ...plan,
+        semesters: plan.semesters.map(
+            (semester: Semester): Semester => ({
+                ...semester,
+                courses: semester.courses.map(
+                    (course: Course): Course => ({ ...course })
+                )
+            })
+        )
     })
 );
 

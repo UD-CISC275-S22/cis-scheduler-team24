@@ -3,16 +3,9 @@ import { Container } from "react-bootstrap";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
 import { ListSemesters } from "./listSemesters";
-import semesters from "../data/semesters.json";
-
-const SEMESTERS = semesters.map(
-    (semester): Semester => ({
-        ...semester
-    })
-);
 
 export function ViewPlan({ plan }: { plan: Plan }): JSX.Element {
-    const [semesters] = useState<Semester[]>(SEMESTERS);
+    const [semesters] = useState<Semester[]>(plan.semesters);
 
     return (
         <div>
