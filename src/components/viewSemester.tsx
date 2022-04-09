@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Container, Table } from "react-bootstrap";
+import { Button, Container, Table } from "react-bootstrap";
 import { Semester } from "../interfaces/semester";
 import { Course } from "../interfaces/course";
 import { ListCourses } from "./listCourses";
@@ -14,10 +14,7 @@ export function ViewSemester({
     const [semesterName /*, setSemesterName*/] = useState<string>(
         semester.session + ", " + semester.year
     );
-
-    // function Removeds(name: string) {
-    //     setcourses(courses.filter((f: Course): boolean => f.name !== name));
-    // }
+    const [showMore, setShowMore] = useState<boolean>(true);
 
     return (
         <div>
@@ -26,13 +23,25 @@ export function ViewSemester({
                     <thead>
                         <tr>
                             <th>{semesterName}</th>
+                            <th>
+                                <Button
+                                    className="btn"
+                                    onClick={() => setShowMore(!showMore)}
+                                >
+                                    {showMore ? "Hide" : "show more"}
+                                </Button>
+                            </th>
                         </tr>
                         <tr>
-                            <th>
-                                <ListCourses
-                                    semesterCourses={courses}
-                                ></ListCourses>
-                            </th>
+                            {showMore ? (
+                                <th>
+                                    <ListCourses
+                                        semesterCourses={courses}
+                                    ></ListCourses>
+                                </th>
+                            ) : (
+                                <th> </th>
+                            )}
                         </tr>
                     </thead>
                 </Table>
