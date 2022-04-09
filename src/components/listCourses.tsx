@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Stack } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-import { ViewCourse } from "./viewCourse";
+//import { ViewCourse } from "./viewCourse";
 
 export function ListCourses({
     semesterCourses
@@ -12,13 +12,26 @@ export function ListCourses({
 
     return (
         <div>
-            <Stack gap={3}>
-                {courses.map((course: Course) => (
-                    <div key={course.id}>
-                        <ViewCourse course={course}></ViewCourse>
-                    </div>
-                ))}
-            </Stack>
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>CourseID</th>
+                        <th>Course Name</th>
+                        <th>Course Description</th>
+                        <th>Course Credit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {courses.map((course: Course) => (
+                        <tr key={course.id}>
+                            <td>{course.id}</td>
+                            <td>{course.name}</td>
+                            <td>{course.description}</td>
+                            <td>{course.credits}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </Table>
         </div>
     );
 }
