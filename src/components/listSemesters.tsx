@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Stack } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import { Semester } from "../interfaces/semester";
 import { ViewSemester } from "./viewSemester";
 
@@ -12,13 +12,19 @@ export function ListSemesters({
 
     return (
         <div>
-            <Stack gap={3}>
-                {semesters.map((semester: Semester) => (
-                    <div key={semester.id}>
-                        <ViewSemester semester={semester}></ViewSemester>
-                    </div>
-                ))}
-            </Stack>
+            <Table striped bordered hover>
+                <tr>
+                    <th>
+                        {semesters.map((semester: Semester) => (
+                            <div key={semester.id}>
+                                <ViewSemester
+                                    semester={semester}
+                                ></ViewSemester>
+                            </div>
+                        ))}
+                    </th>
+                </tr>
+            </Table>
         </div>
     );
 }
