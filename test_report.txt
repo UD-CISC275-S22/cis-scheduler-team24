@@ -3,7 +3,7 @@
 > react-scripts test "--coverage"
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (110 ms)
+  ✕ renders the course name somewhere (116 ms)
 
   ● renders the course name somewhere
 
@@ -32,11 +32,11 @@ FAIL src/App.test.tsx
                 [33mrole[39m=[32m"presentation"[39m
               [36m>[39m
                 [36m<button[39m
-                  [33maria-controls[39m=[32m"react-aria5999946657-1-tabpane-1"[39m
+                  [33maria-controls[39m=[32m"react-aria5925176521-1-tabpane-1"[39m
                   [33maria-selected[39m=[32m"true"[39m
                   [33mclass[39m=[32m"nav-link active"[39m
                   [33mdata-rr-ui-event-key[39m=[32m"1"[39m
-                  [33mid[39m=[32m"react-aria5999946657-1-tab-1"[39m
+                  [33mid[39m=[32m"react-aria5925176521-1-tab-1"[39m
                   [33mrole[39m=[32m"tab"[39m
                   [33mtype[39m=[32m"button"[39m
                 [36m>[39m
@@ -48,10 +48,10 @@ FAIL src/App.test.tsx
                 [33mrole[39m=[32m"presentation"[39m
               [36m>[39m
                 [36m<button[39m
-                  [33maria-controls[39m=[32m"react-aria5999946657-1-tabpane-2"[39m
+                  [33maria-controls[39m=[32m"react-aria5925176521-1-tabpane-2"[39m
                   [33mclass[39m=[32m"nav-link"[39m
                   [33mdata-rr-ui-event-key[39m=[32m"2"[39m
-                  [33mid[39m=[32m"react-aria5999946657-1-tab-2"[39m
+                  [33mid[39m=[32m"react-aria5925176521-1-tab-2"[39m
                   [33mrole[39m=[32m"tab"[39m
                   [33mtabindex[39m=[32m"-1"[39m
                   [33mtype[39m=[32m"button"[39m
@@ -59,29 +59,14 @@ FAIL src/App.test.tsx
                   [0mPlan 2[0m
                 [36m</button>[39m
               [36m</li>[39m
-              [36m<li[39m
-                [33mclass[39m=[32m"nav-item"[39m
-                [33mrole[39m=[32m"presentation"[39m
-              [36m>[39m
-                [36m<button[39m
-                  [33maria-controls[39m=[32m"react-aria5999946657-1-tabpane-null"[39m
-                  [33mclass[39m=[32m"nav-link"[39m
-                  [33mid[39m=[32m"react-aria5999946657-1-tab-null"[39m
-                  [33mrole[39m=[32m"tab"[39m
-                  [33mtabindex[39m=[32m"-1"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mAdd Plan[0m
-                [36m</button>[39m
-              [36m</li>[39m
             [36m</ul>[39m
             [36m<div[39m
               [33mclass[39m=[32m"tab-content"[39m
             [36m>[39m
               [36m<div[39m
-                [33maria-labelledby[39m=[32m"react-aria5999946657-1-tab-1"[39m
+                [33maria-labelledby[39m=[32m"react-aria5925176521-1-tab-1"[39m
                 [33mclass[39m=[32m"tab-pane active"[39m
-                [33mid[39m=[32m"react-aria5999946657-1-tabpane-1"[39m
+                [33mid[39m=[32m"react-aria5925176521-1-tabpane-1"[39m
               [36m>[39m
                 [36m<div>[39m
                   [36m<div[39m
@@ -174,13 +159,19 @@ FAIL src/App.test.tsx
                         [36m</div>[39m
                       [36m</div>[39m
                     [36m</div>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [0mDelete Plan[0m
+                    [36m</button>[39m
                   [36m</div>[39m
                 [36m</div>[39m
               [36m</div>[39m
               [36m<div[39m
-                [33maria-labelledby[39m=[32m"react-aria5999946657-1-tab-2"[39m
+                [33maria-labelledby[39m=[32m"react-aria5925176521-1-tab-2"[39m
                 [33mclass[39m=[32m"tab-pane"[39m
-                [33mid[39m=[32m"react-aria5999946657-1-tabpane-2"[39m
+                [33mid[39m=[32m"react-aria5925176521-1-tabpane-2"[39m
               [36m>[39m
                 [36m<div>[39m
                   [36m<div[39m
@@ -273,15 +264,24 @@ FAIL src/App.test.tsx
                         [36m</div>[39m
                       [36m</div>[39m
                     [36m</div>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [0mDelete Plan[0m
+                    [36m</button>[39m
                   [36m</div>[39m
                 [36m</div>[39m
               [36m</div>[39m
-              [36m<div[39m
-                [33maria-labelledby[39m=[32m"react-aria5999946657-1-tab-undefined"[39m
-                [33mclass[39m=[32m"tab-pane"[39m
-                [33mid[39m=[32m"react-aria5999946657-1-tabpane-undefined"[39m
-              [36m/>[39m
             [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdd Plan[0m
+            [36m</button>[39m
           [36m</div>[39m
         [36m</div>[39m
       [36m</div>[39m
@@ -308,14 +308,14 @@ FAIL src/App.test.tsx
 --------------------|---------|----------|---------|---------|-------------------
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------|---------|----------|---------|---------|-------------------
-All files           |     100 |      100 |     100 |     100 |                   
- src                |     100 |      100 |     100 |     100 |                   
-  App.tsx           |     100 |      100 |     100 |     100 |                   
- src/components     |     100 |      100 |     100 |     100 |                   
+All files           |    82.6 |      100 |      75 |   86.36 |                   
+ src                |      70 |      100 |    62.5 |   77.77 |                   
+  App.tsx           |      70 |      100 |    62.5 |   77.77 | 28-42             
+ src/components     |    92.3 |      100 |    87.5 |    92.3 |                   
   listCourses.tsx   |     100 |      100 |     100 |     100 |                   
   listSemesters.tsx |     100 |      100 |     100 |     100 |                   
   viewCourse.tsx    |     100 |      100 |     100 |     100 |                   
-  viewPlan.tsx      |     100 |      100 |     100 |     100 |                   
+  viewPlan.tsx      |   66.66 |      100 |      50 |   66.66 | 17                
   viewSemester.tsx  |     100 |      100 |     100 |     100 |                   
  src/interfaces     |       0 |        0 |       0 |       0 |                   
   course.ts         |       0 |        0 |       0 |       0 |                   
@@ -325,5 +325,5 @@ All files           |     100 |      100 |     100 |     100 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.596 s
+Time:        2.837 s
 Ran all test suites.
