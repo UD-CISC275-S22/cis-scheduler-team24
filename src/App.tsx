@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Tabs, Tab } from "react-bootstrap";
+import { Tabs, Tab, Button } from "react-bootstrap";
 import "./App.css";
 import { ViewPlan } from "./components/viewPlan";
 import { Plan } from "./interfaces/plan";
@@ -22,7 +22,25 @@ const PLANS = plans.map(
 );
 
 function App(): JSX.Element {
-    const [plans] = useState<Plan[]>(PLANS);
+    const [plans, setPlans] = useState<Plan[]>(PLANS);
+
+    function addPlan(): void {
+        setPlans([
+            ...plans,
+            {
+                id: plans.length + 1,
+                name: "Blank Plan",
+                semesters: [],
+                requirements: [],
+                taken_courses: [],
+                floating_courses: []
+            }
+        ]);
+    }
+
+    function deletePlan(id: number): void {
+        setPlans(plans.filter((plan: Plan): boolean => plan.id !== id));
+    }
 
     return (
         <div className="App">
@@ -36,11 +54,16 @@ function App(): JSX.Element {
                 <Tabs defaultActiveKey={plans[0].id}>
                     {plans.map((plan: Plan) => (
                         <Tab key={plan.id} eventKey={plan.id} title={plan.name}>
-                            <ViewPlan plan={plan}></ViewPlan>
+                            <ViewPlan
+                                plan={plan}
+                                deletePlan={deletePlan}
+                            ></ViewPlan>
                         </Tab>
                     ))}
-                    <Tab title={"Add Plan"}></Tab>
                 </Tabs>
+            </div>
+            <div>
+                <Button onClick={addPlan}>Add Plan</Button>
             </div>
         </div>
     );
