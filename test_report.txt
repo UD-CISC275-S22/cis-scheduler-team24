@@ -3,7 +3,7 @@
 > react-scripts test "--coverage"
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (117 ms)
+  ✕ renders the course name somewhere (110 ms)
 
   ● renders the course name somewhere
 
@@ -32,11 +32,11 @@ FAIL src/App.test.tsx
                 [33mrole[39m=[32m"presentation"[39m
               [36m>[39m
                 [36m<button[39m
-                  [33maria-controls[39m=[32m"react-aria6619616104-1-tabpane-1"[39m
+                  [33maria-controls[39m=[32m"react-aria5999946657-1-tabpane-1"[39m
                   [33maria-selected[39m=[32m"true"[39m
                   [33mclass[39m=[32m"nav-link active"[39m
                   [33mdata-rr-ui-event-key[39m=[32m"1"[39m
-                  [33mid[39m=[32m"react-aria6619616104-1-tab-1"[39m
+                  [33mid[39m=[32m"react-aria5999946657-1-tab-1"[39m
                   [33mrole[39m=[32m"tab"[39m
                   [33mtype[39m=[32m"button"[39m
                 [36m>[39m
@@ -48,10 +48,10 @@ FAIL src/App.test.tsx
                 [33mrole[39m=[32m"presentation"[39m
               [36m>[39m
                 [36m<button[39m
-                  [33maria-controls[39m=[32m"react-aria6619616104-1-tabpane-2"[39m
+                  [33maria-controls[39m=[32m"react-aria5999946657-1-tabpane-2"[39m
                   [33mclass[39m=[32m"nav-link"[39m
                   [33mdata-rr-ui-event-key[39m=[32m"2"[39m
-                  [33mid[39m=[32m"react-aria6619616104-1-tab-2"[39m
+                  [33mid[39m=[32m"react-aria5999946657-1-tab-2"[39m
                   [33mrole[39m=[32m"tab"[39m
                   [33mtabindex[39m=[32m"-1"[39m
                   [33mtype[39m=[32m"button"[39m
@@ -64,9 +64,9 @@ FAIL src/App.test.tsx
                 [33mrole[39m=[32m"presentation"[39m
               [36m>[39m
                 [36m<button[39m
-                  [33maria-controls[39m=[32m"react-aria6619616104-1-tabpane-null"[39m
+                  [33maria-controls[39m=[32m"react-aria5999946657-1-tabpane-null"[39m
                   [33mclass[39m=[32m"nav-link"[39m
-                  [33mid[39m=[32m"react-aria6619616104-1-tab-null"[39m
+                  [33mid[39m=[32m"react-aria5999946657-1-tab-null"[39m
                   [33mrole[39m=[32m"tab"[39m
                   [33mtabindex[39m=[32m"-1"[39m
                   [33mtype[39m=[32m"button"[39m
@@ -79,9 +79,9 @@ FAIL src/App.test.tsx
               [33mclass[39m=[32m"tab-content"[39m
             [36m>[39m
               [36m<div[39m
-                [33maria-labelledby[39m=[32m"react-aria6619616104-1-tab-1"[39m
+                [33maria-labelledby[39m=[32m"react-aria5999946657-1-tab-1"[39m
                 [33mclass[39m=[32m"tab-pane active"[39m
-                [33mid[39m=[32m"react-aria6619616104-1-tabpane-1"[39m
+                [33mid[39m=[32m"react-aria5999946657-1-tabpane-1"[39m
               [36m>[39m
                 [36m<div>[39m
                   [36m<div[39m
@@ -123,7 +123,7 @@ FAIL src/App.test.tsx
                                         [33mclass[39m=[32m"container"[39m
                                       [36m>[39m
                                         [36m<span>[39m
-                                          [0mCISC181: Introduction to Computer Science II[0m
+                                          [0mEGGG101: Introduction to Engineering[0m
                                         [36m</span>[39m
                                       [36m</div>[39m
                                     [36m</div>[39m
@@ -151,7 +151,7 @@ FAIL src/App.test.tsx
                                         [33mclass[39m=[32m"container"[39m
                                       [36m>[39m
                                         [36m<span>[39m
-                                          [0mCISC108: Introduction to Computer Science I[0m
+                                          [0mCISC210: Introduction to Systems Programming[0m
                                         [36m</span>[39m
                                       [36m</div>[39m
                                     [36m</div>[39m
@@ -178,9 +178,9 @@ FAIL src/App.test.tsx
                 [36m</div>[39m
               [36m</div>[39m
               [36m<div[39m
-                [33maria-labelledby[39m=[32m"react-aria6619616104-1-tab-2"[39m
+                [33maria-labelledby[39m=[32m"react-aria5999946657-1-tab-2"[39m
                 [33mclass[39m=[32m"tab-pane"[39m
-                [33mid[39m=[32m"react-aria6619616104-1-tabpane-2"[39m
+                [33mid[39m=[32m"react-aria5999946657-1-tabpane-2"[39m
               [36m>[39m
                 [36m<div>[39m
                   [36m<div[39m
@@ -222,7 +222,7 @@ FAIL src/App.test.tsx
                                         [33mclass[39m=[32m"container"[39m
                                       [36m>[39m
                                         [36m<span>[39m
-                                          [0mCISC181: Introduction to Computer Science II[0m
+                                          [0mEGGG101: Introduction to Engineering[0m
                                         [36m</span>[39m
                                       [36m</div>[39m
                                     [36m</div>[39m
@@ -250,7 +250,7 @@ FAIL src/App.test.tsx
                                         [33mclass[39m=[32m"container"[39m
                                       [36m>[39m
                                         [36m<span>[39m
-                                          [0mCISC108: Introduction to Computer Science I[0m
+                                          [0mCISC210: Introduction to Systems Programming[0m
                                         [36m</span>[39m
                                       [36m</div>[39m
                                     [36m</div>[39m
@@ -277,9 +277,9 @@ FAIL src/App.test.tsx
                 [36m</div>[39m
               [36m</div>[39m
               [36m<div[39m
-                [33maria-labelledby[39m=[32m"react-aria6619616104-1-tab-undefined"[39m
+                [33maria-labelledby[39m=[32m"react-aria5999946657-1-tab-undefined"[39m
                 [33mclass[39m=[32m"tab-pane"[39m
-                [33mid[39m=[32m"react-aria6619616104-1-tabpane-undefined"[39m
+                [33mid[39m=[32m"react-aria5999946657-1-tabpane-undefined"[39m
               [36m/>[39m
             [36m</div>[39m
           [36m</div>[39m
@@ -325,5 +325,5 @@ All files           |     100 |      100 |     100 |     100 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.882 s
+Time:        2.596 s
 Ran all test suites.
