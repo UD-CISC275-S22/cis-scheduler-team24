@@ -3,7 +3,7 @@
 > react-scripts test "--coverage"
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (116 ms)
+  ✕ renders the course name somewhere (94 ms)
 
   ● renders the course name somewhere
 
@@ -32,11 +32,11 @@ FAIL src/App.test.tsx
                 [33mrole[39m=[32m"presentation"[39m
               [36m>[39m
                 [36m<button[39m
-                  [33maria-controls[39m=[32m"react-aria5925176521-1-tabpane-1"[39m
+                  [33maria-controls[39m=[32m"react-aria3248612206-1-tabpane-1"[39m
                   [33maria-selected[39m=[32m"true"[39m
                   [33mclass[39m=[32m"nav-link active"[39m
                   [33mdata-rr-ui-event-key[39m=[32m"1"[39m
-                  [33mid[39m=[32m"react-aria5925176521-1-tab-1"[39m
+                  [33mid[39m=[32m"react-aria3248612206-1-tab-1"[39m
                   [33mrole[39m=[32m"tab"[39m
                   [33mtype[39m=[32m"button"[39m
                 [36m>[39m
@@ -48,10 +48,10 @@ FAIL src/App.test.tsx
                 [33mrole[39m=[32m"presentation"[39m
               [36m>[39m
                 [36m<button[39m
-                  [33maria-controls[39m=[32m"react-aria5925176521-1-tabpane-2"[39m
+                  [33maria-controls[39m=[32m"react-aria3248612206-1-tabpane-2"[39m
                   [33mclass[39m=[32m"nav-link"[39m
                   [33mdata-rr-ui-event-key[39m=[32m"2"[39m
-                  [33mid[39m=[32m"react-aria5925176521-1-tab-2"[39m
+                  [33mid[39m=[32m"react-aria3248612206-1-tab-2"[39m
                   [33mrole[39m=[32m"tab"[39m
                   [33mtabindex[39m=[32m"-1"[39m
                   [33mtype[39m=[32m"button"[39m
@@ -64,9 +64,9 @@ FAIL src/App.test.tsx
               [33mclass[39m=[32m"tab-content"[39m
             [36m>[39m
               [36m<div[39m
-                [33maria-labelledby[39m=[32m"react-aria5925176521-1-tab-1"[39m
+                [33maria-labelledby[39m=[32m"react-aria3248612206-1-tab-1"[39m
                 [33mclass[39m=[32m"tab-pane active"[39m
-                [33mid[39m=[32m"react-aria5925176521-1-tabpane-1"[39m
+                [33mid[39m=[32m"react-aria3248612206-1-tabpane-1"[39m
               [36m>[39m
                 [36m<div>[39m
                   [36m<div[39m
@@ -88,32 +88,56 @@ FAIL src/App.test.tsx
                                 [0mFall, 2019[0m
                               [36m</h3>[39m
                               [36m<div>[39m
-                                [36m<div[39m
-                                  [33mclass[39m=[32m"vstack gap-3"[39m
+                                [36m<table[39m
+                                  [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
                                 [36m>[39m
-                                  [36m<div>[39m
-                                    [36m<div>[39m
-                                      [36m<div[39m
-                                        [33mclass[39m=[32m"container"[39m
-                                      [36m>[39m
-                                        [36m<span>[39m
-                                          [0mCISC108: Introduction to Computer Science I[0m
-                                        [36m</span>[39m
-                                      [36m</div>[39m
-                                    [36m</div>[39m
-                                  [36m</div>[39m
-                                  [36m<div>[39m
-                                    [36m<div>[39m
-                                      [36m<div[39m
-                                        [33mclass[39m=[32m"container"[39m
-                                      [36m>[39m
-                                        [36m<span>[39m
-                                          [0mEGGG101: Introduction to Engineering[0m
-                                        [36m</span>[39m
-                                      [36m</div>[39m
-                                    [36m</div>[39m
-                                  [36m</div>[39m
-                                [36m</div>[39m
+                                  [36m<thead>[39m
+                                    [36m<tr>[39m
+                                      [36m<th>[39m
+                                        [0mCourseID[0m
+                                      [36m</th>[39m
+                                      [36m<th>[39m
+                                        [0mCourse Name[0m
+                                      [36m</th>[39m
+                                      [36m<th>[39m
+                                        [0mCourse Description[0m
+                                      [36m</th>[39m
+                                      [36m<th>[39m
+                                        [0mCourse Credit[0m
+                                      [36m</th>[39m
+                                    [36m</tr>[39m
+                                  [36m</thead>[39m
+                                  [36m<tbody>[39m
+                                    [36m<tr>[39m
+                                      [36m<td>[39m
+                                        [0m1[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0mCISC108: Introduction to Computer Science I[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0mPython[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0m3[0m
+                                      [36m</td>[39m
+                                    [36m</tr>[39m
+                                    [36m<tr>[39m
+                                      [36m<td>[39m
+                                        [0m2[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0mEGGG101: Introduction to Engineering[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0mDumb class[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0m2[0m
+                                      [36m</td>[39m
+                                    [36m</tr>[39m
+                                  [36m</tbody>[39m
+                                [36m</table>[39m
                               [36m</div>[39m
                             [36m</div>[39m
                           [36m</div>[39m
@@ -127,32 +151,56 @@ FAIL src/App.test.tsx
                                 [0mSpring, 2020[0m
                               [36m</h3>[39m
                               [36m<div>[39m
-                                [36m<div[39m
-                                  [33mclass[39m=[32m"vstack gap-3"[39m
+                                [36m<table[39m
+                                  [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
                                 [36m>[39m
-                                  [36m<div>[39m
-                                    [36m<div>[39m
-                                      [36m<div[39m
-                                        [33mclass[39m=[32m"container"[39m
-                                      [36m>[39m
-                                        [36m<span>[39m
-                                          [0mCISC210: Introduction to Systems Programming[0m
-                                        [36m</span>[39m
-                                      [36m</div>[39m
-                                    [36m</div>[39m
-                                  [36m</div>[39m
-                                  [36m<div>[39m
-                                    [36m<div>[39m
-                                      [36m<div[39m
-                                        [33mclass[39m=[32m"container"[39m
-                                      [36m>[39m
-                                        [36m<span>[39m
-                                          [0mCISC181: Introduction to Computer Science II[0m
-                                        [36m</span>[39m
-                                      [36m</div>[39m
-                                    [36m</div>[39m
-                                  [36m</div>[39m
-                                [36m</div>[39m
+                                  [36m<thead>[39m
+                                    [36m<tr>[39m
+                                      [36m<th>[39m
+                                        [0mCourseID[0m
+                                      [36m</th>[39m
+                                      [36m<th>[39m
+                                        [0mCourse Name[0m
+                                      [36m</th>[39m
+                                      [36m<th>[39m
+                                        [0mCourse Description[0m
+                                      [36m</th>[39m
+                                      [36m<th>[39m
+                                        [0mCourse Credit[0m
+                                      [36m</th>[39m
+                                    [36m</tr>[39m
+                                  [36m</thead>[39m
+                                  [36m<tbody>[39m
+                                    [36m<tr>[39m
+                                      [36m<td>[39m
+                                        [0m3[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0mCISC210: Introduction to Systems Programming[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0mBash and C[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0m3[0m
+                                      [36m</td>[39m
+                                    [36m</tr>[39m
+                                    [36m<tr>[39m
+                                      [36m<td>[39m
+                                        [0m4[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0mCISC181: Introduction to Computer Science II[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0mJava[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0m3[0m
+                                      [36m</td>[39m
+                                    [36m</tr>[39m
+                                  [36m</tbody>[39m
+                                [36m</table>[39m
                               [36m</div>[39m
                             [36m</div>[39m
                           [36m</div>[39m
@@ -169,9 +217,9 @@ FAIL src/App.test.tsx
                 [36m</div>[39m
               [36m</div>[39m
               [36m<div[39m
-                [33maria-labelledby[39m=[32m"react-aria5925176521-1-tab-2"[39m
+                [33maria-labelledby[39m=[32m"react-aria3248612206-1-tab-2"[39m
                 [33mclass[39m=[32m"tab-pane"[39m
-                [33mid[39m=[32m"react-aria5925176521-1-tabpane-2"[39m
+                [33mid[39m=[32m"react-aria3248612206-1-tabpane-2"[39m
               [36m>[39m
                 [36m<div>[39m
                   [36m<div[39m
@@ -193,32 +241,56 @@ FAIL src/App.test.tsx
                                 [0mFall, 2019[0m
                               [36m</h3>[39m
                               [36m<div>[39m
-                                [36m<div[39m
-                                  [33mclass[39m=[32m"vstack gap-3"[39m
+                                [36m<table[39m
+                                  [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
                                 [36m>[39m
-                                  [36m<div>[39m
-                                    [36m<div>[39m
-                                      [36m<div[39m
-                                        [33mclass[39m=[32m"container"[39m
-                                      [36m>[39m
-                                        [36m<span>[39m
-                                          [0mCISC108: Introduction to Computer Science I[0m
-                                        [36m</span>[39m
-                                      [36m</div>[39m
-                                    [36m</div>[39m
-                                  [36m</div>[39m
-                                  [36m<div>[39m
-                                    [36m<div>[39m
-                                      [36m<div[39m
-                                        [33mclass[39m=[32m"container"[39m
-                                      [36m>[39m
-                                        [36m<span>[39m
-                                          [0mEGGG101: Introduction to Engineering[0m
-                                        [36m</span>[39m
-                                      [36m</div>[39m
-                                    [36m</div>[39m
-                                  [36m</div>[39m
-                                [36m</div>[39m
+                                  [36m<thead>[39m
+                                    [36m<tr>[39m
+                                      [36m<th>[39m
+                                        [0mCourseID[0m
+                                      [36m</th>[39m
+                                      [36m<th>[39m
+                                        [0mCourse Name[0m
+                                      [36m</th>[39m
+                                      [36m<th>[39m
+                                        [0mCourse Description[0m
+                                      [36m</th>[39m
+                                      [36m<th>[39m
+                                        [0mCourse Credit[0m
+                                      [36m</th>[39m
+                                    [36m</tr>[39m
+                                  [36m</thead>[39m
+                                  [36m<tbody>[39m
+                                    [36m<tr>[39m
+                                      [36m<td>[39m
+                                        [0m1[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0mCISC108: Introduction to Computer Science I[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0mPython[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0m3[0m
+                                      [36m</td>[39m
+                                    [36m</tr>[39m
+                                    [36m<tr>[39m
+                                      [36m<td>[39m
+                                        [0m2[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0mEGGG101: Introduction to Engineering[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0mDumb class[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0m2[0m
+                                      [36m</td>[39m
+                                    [36m</tr>[39m
+                                  [36m</tbody>[39m
+                                [36m</table>[39m
                               [36m</div>[39m
                             [36m</div>[39m
                           [36m</div>[39m
@@ -232,32 +304,56 @@ FAIL src/App.test.tsx
                                 [0mSpring, 2020[0m
                               [36m</h3>[39m
                               [36m<div>[39m
-                                [36m<div[39m
-                                  [33mclass[39m=[32m"vstack gap-3"[39m
+                                [36m<table[39m
+                                  [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
                                 [36m>[39m
-                                  [36m<div>[39m
-                                    [36m<div>[39m
-                                      [36m<div[39m
-                                        [33mclass[39m=[32m"container"[39m
-                                      [36m>[39m
-                                        [36m<span>[39m
-                                          [0mCISC210: Introduction to Systems Programming[0m
-                                        [36m</span>[39m
-                                      [36m</div>[39m
-                                    [36m</div>[39m
-                                  [36m</div>[39m
-                                  [36m<div>[39m
-                                    [36m<div>[39m
-                                      [36m<div[39m
-                                        [33mclass[39m=[32m"container"[39m
-                                      [36m>[39m
-                                        [36m<span>[39m
-                                          [0mCISC181: Introduction to Computer Science II[0m
-                                        [36m</span>[39m
-                                      [36m</div>[39m
-                                    [36m</div>[39m
-                                  [36m</div>[39m
-                                [36m</div>[39m
+                                  [36m<thead>[39m
+                                    [36m<tr>[39m
+                                      [36m<th>[39m
+                                        [0mCourseID[0m
+                                      [36m</th>[39m
+                                      [36m<th>[39m
+                                        [0mCourse Name[0m
+                                      [36m</th>[39m
+                                      [36m<th>[39m
+                                        [0mCourse Description[0m
+                                      [36m</th>[39m
+                                      [36m<th>[39m
+                                        [0mCourse Credit[0m
+                                      [36m</th>[39m
+                                    [36m</tr>[39m
+                                  [36m</thead>[39m
+                                  [36m<tbody>[39m
+                                    [36m<tr>[39m
+                                      [36m<td>[39m
+                                        [0m3[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0mCISC210: Introduction to Systems Programming[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0mBash and C[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0m3[0m
+                                      [36m</td>[39m
+                                    [36m</tr>[39m
+                                    [36m<tr>[39m
+                                      [36m<td>[39m
+                                        [0m4[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0mCISC181: Introduction to Computer Science II[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0mJava[0m
+                                      [36m</td>[39m
+                                      [36m<td>[39m
+                                        [0m3[0m
+                                      [36m</td>[39m
+                                    [36m</tr>[39m
+                                  [36m</tbody>[39m
+                                [36m</table>[39m
                               [36m</div>[39m
                             [36m</div>[39m
                           [36m</div>[39m
@@ -308,13 +404,13 @@ FAIL src/App.test.tsx
 --------------------|---------|----------|---------|---------|-------------------
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------|---------|----------|---------|---------|-------------------
-All files           |    82.6 |      100 |      75 |   86.36 |                   
+All files           |   78.26 |      100 |   68.75 |   81.81 |                   
  src                |      70 |      100 |    62.5 |   77.77 |                   
   App.tsx           |      70 |      100 |    62.5 |   77.77 | 28-42             
- src/components     |    92.3 |      100 |    87.5 |    92.3 |                   
+ src/components     |   84.61 |      100 |      75 |   84.61 |                   
   listCourses.tsx   |     100 |      100 |     100 |     100 |                   
   listSemesters.tsx |     100 |      100 |     100 |     100 |                   
-  viewCourse.tsx    |     100 |      100 |     100 |     100 |                   
+  viewCourse.tsx    |       0 |      100 |       0 |       0 | 6                 
   viewPlan.tsx      |   66.66 |      100 |      50 |   66.66 | 17                
   viewSemester.tsx  |     100 |      100 |     100 |     100 |                   
  src/interfaces     |       0 |        0 |       0 |       0 |                   
@@ -325,5 +421,5 @@ All files           |    82.6 |      100 |      75 |   86.36 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.837 s
+Time:        2.042 s
 Ran all test suites.
