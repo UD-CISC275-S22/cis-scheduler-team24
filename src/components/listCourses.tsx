@@ -3,11 +3,11 @@ import { Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 //import { ViewCourse } from "./viewCourse";
 
-export function ListCourses({
-    semesterCourses
-}: {
+interface Courses {
     semesterCourses: Course[];
-}): JSX.Element {
+}
+
+export function ListCourses({ semesterCourses }: Courses): JSX.Element {
     const [courses] = useState<Course[]>(semesterCourses);
 
     return (
@@ -19,6 +19,7 @@ export function ListCourses({
                         <th>Course Name</th>
                         <th>Course Description</th>
                         <th>Course Credit</th>
+                        <th>Edit</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,6 +29,7 @@ export function ListCourses({
                             <td>{course.name}</td>
                             <td>{course.description}</td>
                             <td>{course.credits}</td>
+                            <td>should be a button here</td>
                         </tr>
                     ))}
                 </tbody>

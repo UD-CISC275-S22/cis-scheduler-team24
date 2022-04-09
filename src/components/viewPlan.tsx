@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Button } from "react-bootstrap";
+import { Container, Button, Table } from "react-bootstrap";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
 import { ListSemesters } from "./listSemesters";
@@ -20,8 +20,24 @@ export function ViewPlan({
     return (
         <div>
             <Container>
-                <h3>{plan.name}</h3>
-                <ListSemesters planSemesters={semesters}></ListSemesters>
+                <Table striped borderless>
+                    <thead>
+                        <tr>
+                            <th>
+                                <h3>{plan.name}</h3>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <ListSemesters
+                                    planSemesters={semesters}
+                                ></ListSemesters>
+                            </td>
+                        </tr>
+                    </tbody>
+                </Table>
                 <Button onClick={removePlan}>Delete Plan</Button>
             </Container>
         </div>
