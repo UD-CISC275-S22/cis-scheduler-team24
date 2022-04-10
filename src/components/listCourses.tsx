@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
+import { Button } from "react-bootstrap";
+import { EditCourseModal } from "./EditCourseModal";
 //import { ViewCourse } from "./viewCourse";
 
 interface Courses {
@@ -8,8 +10,31 @@ interface Courses {
 }
 
 export function ListCourses({ semesterCourses }: Courses): JSX.Element {
-    const [courses] = useState<Course[]>(semesterCourses);
+    const [courses, setCourses] = useState<Course[]>(semesterCourses);
+    const [editing, setEditing] = useState<boolean>(false);
+    const [showAddModal, setShowAddModal] = useState(false);
 
+    const handleCloseAddModal = () => setShowAddModal(false);
+    const handleShowAddModal = () => setShowAddModal(true);
+
+    function editCourse(id: number, newCourse: Course) {
+        setCourses(
+            courses.map(
+                (course: Course): Course =>
+                    course.id === id ? newCourse : course
+            )
+        );
+    }
+
+    function deleteCourse(id: number) {
+        setCourses(
+            courses.filter((course: Course): boolean => course.id !== id)
+        );
+    }
+
+    function changeEditing() {
+        setEditing(!editing);
+    }
     return (
         <div>
             <Table striped bordered hover>
@@ -29,7 +54,27 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
                             <td>{course.name}</td>
                             <td>{course.description}</td>
                             <td>{course.credits}</td>
-                            <td>should be a button here</td>
+                            <td>
+                                {" "}
+                                <div>
+                                    <Button
+                                        variant="success"
+                                        className="button-style-1"
+                                        onClick={handleShowAddModal}
+                                        id="over"
+                                    >
+                                        Edit
+                                    </Button>
+                                    <EditCourseModal
+                                        show={showAddModal}
+                                        handleClose={handleCloseAddModal}
+                                        changeEditing={changeEditing}
+                                        course={course}
+                                        editCourse={editCourse}
+                                        deletCourse={deleteCourse}
+                                    ></EditCourseModal>
+                                </div>
+                            </td>
                         </tr>
                     ))}
                 </tbody>

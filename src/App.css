@@ -37,3 +37,9 @@
         transform: rotate(360deg);
     }
 }
+
+.button-style-1 {
+    height: 40px;
+    width: 60px;
+    background-color: grey;
+}
