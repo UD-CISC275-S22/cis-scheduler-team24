@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Table } from "react-bootstrap";
+import { Container, Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Button } from "react-bootstrap";
 import { EditCourseModal } from "./EditCourseModal";
@@ -13,6 +13,10 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
     const [courses, setCourses] = useState<Course[]>(semesterCourses);
     const [editing, setEditing] = useState<boolean>(false);
     const [showAddModal, setShowAddModal] = useState(false);
+    const Credits = courses.reduce(
+        (currentTotal: number, course: Course) => currentTotal + course.credits,
+        0
+    );
 
     const handleCloseAddModal = () => setShowAddModal(false);
     const handleShowAddModal = () => setShowAddModal(true);
@@ -37,6 +41,7 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
         setEditing(!editing);
         setShowAddModal(false);
     }
+
     return (
         <div>
             <Table striped bordered hover>
@@ -81,6 +86,9 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
                     ))}
                 </tbody>
             </Table>
+            <Container>
+                <div>Total Credits: {Credits}</div>
+            </Container>
         </div>
     );
 }
