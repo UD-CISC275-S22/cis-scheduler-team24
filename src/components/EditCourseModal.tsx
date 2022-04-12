@@ -36,7 +36,7 @@ export function EditCourseModal({
     }
 
     return (
-        <Modal show={show} onHide={handleClose} animation={false}>
+        <Modal show={show} onHide={handleClose} animation={true}>
             <Modal.Header closeButton>
                 <Modal.Title>Edit Course</Modal.Title>
             </Modal.Header>

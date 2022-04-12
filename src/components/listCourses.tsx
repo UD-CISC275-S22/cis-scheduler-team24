@@ -34,6 +34,7 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
 
     function changeEditing() {
         setEditing(!editing);
+        setShowAddModal(false);
     }
     return (
         <div>
