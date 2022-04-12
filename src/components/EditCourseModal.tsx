@@ -34,6 +34,7 @@ export function EditCourseModal({
     function cancel() {
         changeEditing();
     }
+
     return (
         <Modal show={show} onHide={handleClose} animation={true}>
             <Modal.Header closeButton>
