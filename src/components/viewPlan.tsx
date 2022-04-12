@@ -11,10 +11,26 @@ export function ViewPlan({
     plan: Plan;
     deletePlan: (id: number) => void;
 }): JSX.Element {
-    const [semesters] = useState<Semester[]>(plan.semesters);
+    const [semesters, setSemesters] = useState<Semester[]>(plan.semesters);
 
     function removePlan(): void {
         deletePlan(plan.id);
+    }
+
+    function addSemester(): void {
+        setSemesters([
+            ...semesters,
+            {
+                id: semesters.length + 1,
+                name: "",
+                year: 0,
+                session: "Smarch",
+                courses: [],
+                totalCredits: 0,
+                isSkipped: false
+            }
+        ]);
+        //console.log(semesters);
     }
 
     return (
@@ -34,6 +50,13 @@ export function ViewPlan({
                                 <ListSemesters
                                     planSemesters={semesters}
                                 ></ListSemesters>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Button onClick={addSemester}>
+                                    Add Semester
+                                </Button>
                             </td>
                         </tr>
                     </tbody>
