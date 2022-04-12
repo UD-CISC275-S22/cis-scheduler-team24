@@ -34,10 +34,12 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
         setCourses(
             courses.filter((course: Course): boolean => course.id !== id)
         );
+        setShowAddModal(false);
     }
 
     function changeEditing() {
         setEditing(!editing);
+        setShowAddModal(false);
     }
 
     return (
