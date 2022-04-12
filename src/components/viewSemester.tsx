@@ -6,15 +6,21 @@ import { Course } from "../interfaces/course";
 import { ListCourses } from "./listCourses";
 
 export function ViewSemester({
-    semester
+    semester,
+    removeSemester
 }: {
     semester: Semester;
+    removeSemester: (id: number) => void;
 }): JSX.Element {
     const [courses /*, setcourses*/] = useState<Course[]>(semester.courses);
     const [semesterName /*, setSemesterName*/] = useState<string>(
         semester.session + ", " + semester.year
     );
     const [showMore, setShowMore] = useState<boolean>(true);
+
+    function deleteSemester(): void {
+        removeSemester(semester.id);
+    }
 
     return (
         <div>
@@ -29,6 +35,9 @@ export function ViewSemester({
                                     onClick={() => setShowMore(!showMore)}
                                 >
                                     {showMore ? "Hide" : "show more"}
+                                </Button>
+                                <Button onClick={deleteSemester}>
+                                    Remove Semester
                                 </Button>
                             </th>
                         </tr>

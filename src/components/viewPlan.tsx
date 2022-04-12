@@ -30,7 +30,14 @@ export function ViewPlan({
                 isSkipped: false
             }
         ]);
-        //console.log(semesters);
+    }
+
+    function removeSemester(id: number): void {
+        setSemesters(
+            semesters.filter(
+                (semester: Semester): boolean => semester.id !== id
+            )
+        );
     }
 
     return (
@@ -49,6 +56,7 @@ export function ViewPlan({
                             <td>
                                 <ListSemesters
                                     planSemesters={semesters}
+                                    removeSemester={removeSemester}
                                 ></ListSemesters>
                             </td>
                         </tr>

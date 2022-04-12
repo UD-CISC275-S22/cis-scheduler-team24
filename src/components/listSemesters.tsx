@@ -4,9 +4,11 @@ import { Semester } from "../interfaces/semester";
 import { ViewSemester } from "./viewSemester";
 
 export function ListSemesters({
-    planSemesters
+    planSemesters,
+    removeSemester
 }: {
     planSemesters: Semester[];
+    removeSemester: (id: number) => void;
 }): JSX.Element {
     return (
         <div>
@@ -17,6 +19,7 @@ export function ListSemesters({
                             <div key={semester.id}>
                                 <ViewSemester
                                     semester={semester}
+                                    removeSemester={removeSemester}
                                 ></ViewSemester>
                             </div>
                         ))}
