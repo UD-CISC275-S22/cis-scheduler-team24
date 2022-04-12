@@ -38,7 +38,7 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (223 ms)
+  ✕ renders the course name somewhere (270 ms)
 
   ● renders the course name somewhere
 
@@ -67,11 +67,11 @@ FAIL src/App.test.tsx
                 [33mrole[39m=[32m"presentation"[39m
               [36m>[39m
                 [36m<button[39m
-                  [33maria-controls[39m=[32m"react-aria6783274560-1-tabpane-1"[39m
+                  [33maria-controls[39m=[32m"react-aria1627449342-1-tabpane-1"[39m
                   [33maria-selected[39m=[32m"true"[39m
                   [33mclass[39m=[32m"nav-link active"[39m
                   [33mdata-rr-ui-event-key[39m=[32m"1"[39m
-                  [33mid[39m=[32m"react-aria6783274560-1-tab-1"[39m
+                  [33mid[39m=[32m"react-aria1627449342-1-tab-1"[39m
                   [33mrole[39m=[32m"tab"[39m
                   [33mtype[39m=[32m"button"[39m
                 [36m>[39m
@@ -83,10 +83,10 @@ FAIL src/App.test.tsx
                 [33mrole[39m=[32m"presentation"[39m
               [36m>[39m
                 [36m<button[39m
-                  [33maria-controls[39m=[32m"react-aria6783274560-1-tabpane-2"[39m
+                  [33maria-controls[39m=[32m"react-aria1627449342-1-tabpane-2"[39m
                   [33mclass[39m=[32m"nav-link"[39m
                   [33mdata-rr-ui-event-key[39m=[32m"2"[39m
-                  [33mid[39m=[32m"react-aria6783274560-1-tab-2"[39m
+                  [33mid[39m=[32m"react-aria1627449342-1-tab-2"[39m
                   [33mrole[39m=[32m"tab"[39m
                   [33mtabindex[39m=[32m"-1"[39m
                   [33mtype[39m=[32m"button"[39m
@@ -99,9 +99,9 @@ FAIL src/App.test.tsx
               [33mclass[39m=[32m"tab-content"[39m
             [36m>[39m
               [36m<div[39m
-                [33maria-labelledby[39m=[32m"react-aria6783274560-1-tab-1"[39m
+                [33maria-labelledby[39m=[32m"react-aria1627449342-1-tab-1"[39m
                 [33mclass[39m=[32m"tab-pane active"[39m
-                [33mid[39m=[32m"react-aria6783274560-1-tabpane-1"[39m
+                [33mid[39m=[32m"react-aria1627449342-1-tabpane-1"[39m
               [36m>[39m
                 [36m<div>[39m
                   [36m<div[39m
@@ -376,9 +376,9 @@ FAIL src/App.test.tsx
                 [36m</div>[39m
               [36m</div>[39m
               [36m<div[39m
-                [33maria-labelledby[39m=[32m"react-aria6783274560-1-tab-2"[39m
+                [33maria-labelledby[39m=[32m"react-aria1627449342-1-tab-2"[39m
                 [33mclass[39m=[32m"tab-pane"[39m
-                [33mid[39m=[32m"react-aria6783274560-1-tabpane-2"[39m
+                [33mid[39m=[32m"react-aria1627449342-1-tabpane-2"[39m
               [36m>[39m
                 [36m<div>[39m
                   [36m<div[39m
@@ -687,12 +687,12 @@ FAIL src/App.test.tsx
 ----------------------|---------|----------|---------|---------|-------------------
 File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------------|---------|----------|---------|---------|-------------------
-All files             |   54.16 |    33.33 |    37.5 |   57.77 |                   
+All files             |   53.06 |    33.33 |    37.5 |   56.52 |                   
  src                  |      70 |      100 |    62.5 |   77.77 |                   
   App.tsx             |      70 |      100 |    62.5 |   77.77 | 28-42             
- src/components       |      50 |    33.33 |   29.16 |   52.77 |                   
+ src/components       |   48.71 |    33.33 |   29.16 |   51.35 |                   
   EditCourseModal.tsx |   36.36 |      100 |   14.28 |   36.36 | 25-35,54-96       
-  listCourses.tsx     |   46.66 |        0 |   22.22 |   53.84 | 21-37             
+  listCourses.tsx     |   43.75 |        0 |   22.22 |      50 | 21-38             
   listSemesters.tsx   |     100 |      100 |     100 |     100 |                   
   viewCourse.tsx      |       0 |      100 |       0 |       0 | 6                 
   viewPlan.tsx        |      50 |      100 |   33.33 |      50 | 17-21             
@@ -705,5 +705,5 @@ All files             |   54.16 |    33.33 |    37.5 |   57.77 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.469 s
+Time:        3.183 s
 Ran all test suites.
