@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Button, Table } from "react-bootstrap";
+import { Container, Button, Table, Col, Form } from "react-bootstrap";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
 import { ListSemesters } from "./listSemesters";
@@ -12,6 +12,16 @@ export function ViewPlan({
     deletePlan: (id: number) => void;
 }): JSX.Element {
     const [semesters, setSemesters] = useState<Semester[]>(plan.semesters);
+    const [isedit, setisEdit] = useState<boolean>(false);
+    const [planname, setPlanName] = useState<string>(plan.name);
+
+    function openEdit(): void {
+        setisEdit(!isedit);
+    }
+
+    function ChangePlanName(event: React.ChangeEvent<HTMLInputElement>) {
+        setPlanName(event?.target.value);
+    }
 
     function removePlan(): void {
         deletePlan(plan.id);
@@ -47,7 +57,23 @@ export function ViewPlan({
                     <thead>
                         <tr>
                             <th>
-                                <h3>{plan.name}</h3>
+                                <h3>{planname}</h3>
+                                <span>
+                                    <Button onClick={openEdit}>
+                                        {isedit ? "Save Name" : "Edit Name"}
+                                    </Button>
+                                    {isedit && (
+                                        <Form.Group controlId="formplanname">
+                                            <Form.Label>New Name:</Form.Label>
+                                            <Col>
+                                                <Form.Control
+                                                    value={planname}
+                                                    onChange={ChangePlanName}
+                                                />
+                                            </Col>
+                                        </Form.Group>
+                                    )}
+                                </span>
                             </th>
                         </tr>
                     </thead>
