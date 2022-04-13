@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Tabs, Tab, Button } from "react-bootstrap";
+import { Tabs, Tab } from "react-bootstrap";
 import "./App.css";
 import { ViewPlan } from "./components/viewPlan";
 import { Plan } from "./interfaces/plan";
@@ -57,13 +57,11 @@ function App(): JSX.Element {
                             <ViewPlan
                                 plan={plan}
                                 deletePlan={deletePlan}
+                                addPlan={addPlan}
                             ></ViewPlan>
                         </Tab>
                     ))}
                 </Tabs>
-            </div>
-            <div>
-                <Button onClick={addPlan}>Add Plan</Button>
             </div>
         </div>
     );

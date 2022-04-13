@@ -6,14 +6,16 @@ import { ListSemesters } from "./listSemesters";
 
 export function ViewPlan({
     plan,
-    deletePlan
+    deletePlan,
+    addPlan
 }: {
     plan: Plan;
     deletePlan: (id: number) => void;
+    addPlan: () => void;
 }): JSX.Element {
     const [semesters, setSemesters] = useState<Semester[]>(plan.semesters);
     const [isedit, setisEdit] = useState<boolean>(false);
-    const [planname, setPlanName] = useState<string>(plan.name);
+    const [planName, setPlanName] = useState<string>(plan.name);
 
     function openEdit(): void {
         setisEdit(!isedit);
@@ -50,6 +52,10 @@ export function ViewPlan({
         );
     }
 
+    function clearSemesters(): void {
+        setSemesters([]);
+    }
+
     return (
         <div>
             <Container>
@@ -57,7 +63,7 @@ export function ViewPlan({
                     <thead>
                         <tr>
                             <th>
-                                <h3>{planname}</h3>
+                                <h3>{planName}</h3>
                                 <span>
                                     <Button onClick={openEdit}>
                                         {isedit ? "Save Name" : "Edit Name"}
@@ -68,7 +74,7 @@ export function ViewPlan({
                                         <Form.Label>New Name:</Form.Label>
                                         <Col>
                                             <Form.Control
-                                                value={planname}
+                                                value={planName}
                                                 onChange={ChangePlanName}
                                             />
                                         </Col>
@@ -95,7 +101,15 @@ export function ViewPlan({
                         </tr>
                     </tbody>
                 </Table>
-                <Button onClick={removePlan}>Delete Plan</Button>
+                <div>
+                    <Button onClick={clearSemesters}>Clear Semesters</Button>
+                </div>
+                <div>
+                    <Button onClick={addPlan}>Add Plan</Button>
+                </div>
+                <div>
+                    <Button onClick={removePlan}>Delete Plan</Button>
+                </div>
             </Container>
         </div>
     );
