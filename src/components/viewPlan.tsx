@@ -62,18 +62,18 @@ export function ViewPlan({
                                     <Button onClick={openEdit}>
                                         {isedit ? "Save Name" : "Edit Name"}
                                     </Button>
-                                    {isedit && (
-                                        <Form.Group controlId="formplanname">
-                                            <Form.Label>New Name:</Form.Label>
-                                            <Col>
-                                                <Form.Control
-                                                    value={planname}
-                                                    onChange={ChangePlanName}
-                                                />
-                                            </Col>
-                                        </Form.Group>
-                                    )}
                                 </span>
+                                {isedit && (
+                                    <Form.Group controlId="formplanname">
+                                        <Form.Label>New Name:</Form.Label>
+                                        <Col>
+                                            <Form.Control
+                                                value={planname}
+                                                onChange={ChangePlanName}
+                                            />
+                                        </Col>
+                                    </Form.Group>
+                                )}
                             </th>
                         </tr>
                     </thead>
