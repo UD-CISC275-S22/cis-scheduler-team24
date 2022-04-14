@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Container, Button, Table, Col, Form } from "react-bootstrap";
+import { Container, Button, Table } from "react-bootstrap";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
 import { ListSemesters } from "./listSemesters";
+import { EditPlan } from "./editPlan";
 
 export function ViewPlan({
     plan,
@@ -17,14 +18,9 @@ export function ViewPlan({
 }): JSX.Element {
     const [semesters, setSemesters] = useState<Semester[]>(plan.semesters);
     const [isEditing, setEditing] = useState<boolean>(false);
-    const [planName /*, setPlanName*/] = useState<string>(plan.name);
 
     function openEdit(): void {
         setEditing(!isEditing);
-    }
-
-    function changePlanName(event: React.ChangeEvent<HTMLInputElement>) {
-        setPlanName(plan.id, event.target.value);
     }
 
     function removePlan(): void {
@@ -65,23 +61,20 @@ export function ViewPlan({
                     <thead>
                         <tr>
                             <th>
-                                <h3>{planName}</h3>
-                                <span>
-                                    <Button onClick={openEdit}>
-                                        {isEditing ? "Save Name" : "Edit Name"}
-                                    </Button>
-                                </span>
-                                {isEditing && (
-                                    <Form.Group controlId="formplanname">
-                                        <Form.Label>New Name:</Form.Label>
-                                        <Col>
-                                            <Form.Control
-                                                value={planName}
-                                                onChange={changePlanName}
-                                            />
-                                        </Col>
-                                    </Form.Group>
-                                )}
+                                <h3>{plan.name}</h3>
+                                <div>
+                                    {isEditing ? (
+                                        <EditPlan
+                                            plan={plan}
+                                            setPlanName={setPlanName}
+                                            openEdit={openEdit}
+                                        ></EditPlan>
+                                    ) : (
+                                        <Button onClick={openEdit}>
+                                            Edit Name
+                                        </Button>
+                                    )}
+                                </div>
                             </th>
                         </tr>
                     </thead>
