@@ -1,5 +1,6 @@
 .App {
     text-align: center;
+    width: 70%;
 }
 
 .App-logo {
@@ -42,4 +43,12 @@
     height: 40px;
     width: 60px;
     background-color: grey;
+}
+
+.Courses-Pool {
+    height: 90px;
+    width: 90px;
+    background-color: bisque;
+    float: right;
+    width: 10%;
 }

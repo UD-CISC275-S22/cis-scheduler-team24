@@ -53,6 +53,14 @@ export function ViewPlan({
     return (
         <div>
             <Container>
+                <span>
+                    <div className="Courses-Pool">
+                        <ListSemesters
+                            planSemesters={semesters}
+                            removeSemester={removeSemester}
+                        ></ListSemesters>
+                    </div>
+                </span>
                 <Table striped borderless>
                     <thead>
                         <tr>
