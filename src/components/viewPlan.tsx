@@ -7,22 +7,24 @@ import { ListSemesters } from "./listSemesters";
 export function ViewPlan({
     plan,
     deletePlan,
-    addPlan
+    addPlan,
+    setPlanName
 }: {
     plan: Plan;
     deletePlan: (id: number) => void;
     addPlan: () => void;
+    setPlanName: (id: number, name: string) => void;
 }): JSX.Element {
     const [semesters, setSemesters] = useState<Semester[]>(plan.semesters);
-    const [isedit, setisEdit] = useState<boolean>(false);
-    const [planName, setPlanName] = useState<string>(plan.name);
+    const [isEditing, setEditing] = useState<boolean>(false);
+    const [planName /*, setPlanName*/] = useState<string>(plan.name);
 
     function openEdit(): void {
-        setisEdit(!isedit);
+        setEditing(!isEditing);
     }
 
-    function ChangePlanName(event: React.ChangeEvent<HTMLInputElement>) {
-        setPlanName(event?.target.value);
+    function changePlanName(event: React.ChangeEvent<HTMLInputElement>) {
+        setPlanName(plan.id, event.target.value);
     }
 
     function removePlan(): void {
@@ -66,16 +68,16 @@ export function ViewPlan({
                                 <h3>{planName}</h3>
                                 <span>
                                     <Button onClick={openEdit}>
-                                        {isedit ? "Save Name" : "Edit Name"}
+                                        {isEditing ? "Save Name" : "Edit Name"}
                                     </Button>
                                 </span>
-                                {isedit && (
+                                {isEditing && (
                                     <Form.Group controlId="formplanname">
                                         <Form.Label>New Name:</Form.Label>
                                         <Col>
                                             <Form.Control
                                                 value={planName}
-                                                onChange={ChangePlanName}
+                                                onChange={changePlanName}
                                             />
                                         </Col>
                                     </Form.Group>

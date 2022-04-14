@@ -42,6 +42,15 @@ function App(): JSX.Element {
         setPlans(plans.filter((plan: Plan): boolean => plan.id !== id));
     }
 
+    function setPlanName(id: number, name: string): void {
+        setPlans(
+            plans.map(
+                (plan: Plan): Plan =>
+                    plan.id === id ? { ...plan, name: name } : plan
+            )
+        );
+    }
+
     return (
         <div className="App">
             <header className="App-header">
@@ -58,6 +67,7 @@ function App(): JSX.Element {
                                 plan={plan}
                                 deletePlan={deletePlan}
                                 addPlan={addPlan}
+                                setPlanName={setPlanName}
                             ></ViewPlan>
                         </Tab>
                     ))}
