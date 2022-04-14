@@ -13,6 +13,7 @@ const PLANS = plans.map(
         semesters: plan.semesters.map(
             (semester: Semester): Semester => ({
                 ...semester,
+                name: semester.session + ", " + semester.year,
                 courses: semester.courses.map(
                     (course: Course): Course => ({ ...course })
                 )
