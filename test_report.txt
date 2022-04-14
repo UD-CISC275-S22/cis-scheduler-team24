@@ -27,7 +27,7 @@
         at Tabs (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Tabs.js:88:43)
         at div
         at div
-        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:25:31)
+        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:26:31)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -38,7 +38,7 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (219 ms)
+  ✕ renders the course name somewhere (225 ms)
 
   ● renders the course name somewhere
 
@@ -67,11 +67,11 @@ FAIL src/App.test.tsx
                 [33mrole[39m=[32m"presentation"[39m
               [36m>[39m
                 [36m<button[39m
-                  [33maria-controls[39m=[32m"react-aria7638324848-1-tabpane-1"[39m
+                  [33maria-controls[39m=[32m"react-aria4297549247-1-tabpane-1"[39m
                   [33maria-selected[39m=[32m"true"[39m
                   [33mclass[39m=[32m"nav-link active"[39m
                   [33mdata-rr-ui-event-key[39m=[32m"1"[39m
-                  [33mid[39m=[32m"react-aria7638324848-1-tab-1"[39m
+                  [33mid[39m=[32m"react-aria4297549247-1-tab-1"[39m
                   [33mrole[39m=[32m"tab"[39m
                   [33mtype[39m=[32m"button"[39m
                 [36m>[39m
@@ -83,10 +83,10 @@ FAIL src/App.test.tsx
                 [33mrole[39m=[32m"presentation"[39m
               [36m>[39m
                 [36m<button[39m
-                  [33maria-controls[39m=[32m"react-aria7638324848-1-tabpane-2"[39m
+                  [33maria-controls[39m=[32m"react-aria4297549247-1-tabpane-2"[39m
                   [33mclass[39m=[32m"nav-link"[39m
                   [33mdata-rr-ui-event-key[39m=[32m"2"[39m
-                  [33mid[39m=[32m"react-aria7638324848-1-tab-2"[39m
+                  [33mid[39m=[32m"react-aria4297549247-1-tab-2"[39m
                   [33mrole[39m=[32m"tab"[39m
                   [33mtabindex[39m=[32m"-1"[39m
                   [33mtype[39m=[32m"button"[39m
@@ -99,9 +99,9 @@ FAIL src/App.test.tsx
               [33mclass[39m=[32m"tab-content"[39m
             [36m>[39m
               [36m<div[39m
-                [33maria-labelledby[39m=[32m"react-aria7638324848-1-tab-1"[39m
+                [33maria-labelledby[39m=[32m"react-aria4297549247-1-tab-1"[39m
                 [33mclass[39m=[32m"tab-pane active"[39m
-                [33mid[39m=[32m"react-aria7638324848-1-tabpane-1"[39m
+                [33mid[39m=[32m"react-aria4297549247-1-tabpane-1"[39m
               [36m>[39m
                 [36m<div>[39m
                   [36m<div[39m
@@ -148,6 +148,14 @@ FAIL src/App.test.tsx
                                               [36m<tr>[39m
                                                 [36m<th>[39m
                                                   [0mFall, 2019[0m
+                                                  [36m<div>[39m
+                                                    [36m<button[39m
+                                                      [33mclass[39m=[32m"btn btn-primary"[39m
+                                                      [33mtype[39m=[32m"button"[39m
+                                                    [36m>[39m
+                                                      [0mEdit Name[0m
+                                                    [36m</button>[39m
+                                                  [36m</div>[39m
                                                 [36m</th>[39m
                                                 [36m<th>[39m
                                                   [36m<button[39m
@@ -272,6 +280,14 @@ FAIL src/App.test.tsx
                                               [36m<tr>[39m
                                                 [36m<th>[39m
                                                   [0mSpring, 2020[0m
+                                                  [36m<div>[39m
+                                                    [36m<button[39m
+                                                      [33mclass[39m=[32m"btn btn-primary"[39m
+                                                      [33mtype[39m=[32m"button"[39m
+                                                    [36m>[39m
+                                                      [0mEdit Name[0m
+                                                    [36m</button>[39m
+                                                  [36m</div>[39m
                                                 [36m</th>[39m
                                                 [36m<th>[39m
                                                   [36m<button[39m
@@ -430,9 +446,9 @@ FAIL src/App.test.tsx
                 [36m</div>[39m
               [36m</div>[39m
               [36m<div[39m
-                [33maria-labelledby[39m=[32m"react-aria7638324848-1-tab-2"[39m
+                [33maria-labelledby[39m=[32m"react-aria4297549247-1-tab-2"[39m
                 [33mclass[39m=[32m"tab-pane"[39m
-                [33mid[39m=[32m"react-aria7638324848-1-tabpane-2"[39m
+                [33mid[39m=[32m"react-aria4297549247-1-tabpane-2"[39m
               [36m>[39m
                 [36m<div>[39m
                   [36m<div[39m
@@ -479,6 +495,14 @@ FAIL src/App.test.tsx
                                               [36m<tr>[39m
                                                 [36m<th>[39m
                                                   [0mFall, 2019[0m
+                                                  [36m<div>[39m
+                                                    [36m<button[39m
+                                                      [33mclass[39m=[32m"btn btn-primary"[39m
+                                                      [33mtype[39m=[32m"button"[39m
+                                                    [36m>[39m
+                                                      [0mEdit Name[0m
+                                                    [36m</button>[39m
+                                                  [36m</div>[39m
                                                 [36m</th>[39m
                                                 [36m<th>[39m
                                                   [36m<button[39m
@@ -603,6 +627,14 @@ FAIL src/App.test.tsx
                                               [36m<tr>[39m
                                                 [36m<th>[39m
                                                   [0mSpring, 2020[0m
+                                                  [36m<div>[39m
+                                                    [36m<button[39m
+                                                      [33mclass[39m=[32m"btn btn-primary"[39m
+                                                      [33mtype[39m=[32m"button"[39m
+                                                    [36m>[39m
+                                                      [0mEdit Name[0m
+                                                    [36m</button>[39m
+                                                  [36m</div>[39m
                                                 [36m</th>[39m
                                                 [36m<th>[39m
                                                   [36m<button[39m
@@ -787,17 +819,18 @@ FAIL src/App.test.tsx
 ----------------------|---------|----------|---------|---------|-------------------
 File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------------|---------|----------|---------|---------|-------------------
-All files             |   45.31 |       30 |   30.23 |   47.54 |                   
+All files             |   40.27 |    28.57 |   26.53 |   42.02 |                   
  src                  |   58.33 |        0 |      50 |   63.63 |                   
-  App.tsx             |   58.33 |        0 |      50 |   63.63 | 28-49             
- src/components       |    42.3 |     37.5 |   24.24 |      44 |                   
+  App.tsx             |   58.33 |        0 |      50 |   63.63 | 29-50             
+ src/components       |   36.66 |    33.33 |   20.51 |   37.93 |                   
   EditCourseModal.tsx |   36.36 |      100 |   14.28 |   36.36 | 25-35,54-96       
   editPlan.tsx        |       0 |      100 |       0 |       0 | 14-30             
+  editSemester.tsx    |       0 |      100 |       0 |       0 | 14-30             
   listCourses.tsx     |      50 |        0 |      30 |   56.25 | 25-42             
   listSemesters.tsx   |     100 |      100 |     100 |     100 |                   
   viewCourse.tsx      |       0 |      100 |       0 |       0 | 6                 
-  viewPlan.tsx        |   33.33 |       50 |   14.28 |   33.33 | 23-54             
-  viewSemester.tsx    |   66.66 |       50 |   33.33 |   66.66 | 22,35             
+  viewPlan.tsx        |   27.27 |       25 |   11.11 |   27.27 | 23-61             
+  viewSemester.tsx    |   57.14 |       50 |      25 |   57.14 | 23-27,55          
  src/interfaces       |       0 |        0 |       0 |       0 |                   
   course.ts           |       0 |        0 |       0 |       0 |                   
   plan.ts             |       0 |        0 |       0 |       0 |                   
@@ -806,5 +839,5 @@ All files             |   45.31 |       30 |   30.23 |   47.54 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.438 s
+Time:        2.471 s
 Ran all test suites.
