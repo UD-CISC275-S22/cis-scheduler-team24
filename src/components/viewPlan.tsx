@@ -32,7 +32,7 @@ export function ViewPlan({
             ...semesters,
             {
                 id: semesters.length + 1,
-                name: "",
+                name: "New Semester",
                 year: 0,
                 session: "Smarch",
                 courses: [],
@@ -52,6 +52,15 @@ export function ViewPlan({
 
     function clearSemesters(): void {
         setSemesters([]);
+    }
+
+    function setSemesterName(id: number, name: string): void {
+        setSemesters(
+            semesters.map(
+                (semester: Semester): Semester =>
+                    semester.id === id ? { ...semester, name: name } : semester
+            )
+        );
     }
 
     return (
@@ -84,6 +93,7 @@ export function ViewPlan({
                                 <ListSemesters
                                     planSemesters={semesters}
                                     removeSemester={removeSemester}
+                                    setSemesterName={setSemesterName}
                                 ></ListSemesters>
                             </td>
                         </tr>
