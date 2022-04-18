@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Container, Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-import { Button } from "react-bootstrap";
 import { EditCourseModal } from "./EditCourseModal";
 //import { ViewCourse } from "./viewCourse";
 
@@ -11,15 +10,13 @@ interface Courses {
 
 export function ListCourses({ semesterCourses }: Courses): JSX.Element {
     const [courses, setCourses] = useState<Course[]>(semesterCourses);
-    const [editing, setEditing] = useState<boolean>(false);
     const [showAddModal, setShowAddModal] = useState(false);
+    showAddModal;
+
     const Credits = courses.reduce(
         (currentTotal: number, course: Course) => currentTotal + course.credits,
         0
     );
-
-    const handleCloseAddModal = () => setShowAddModal(false);
-    const handleShowAddModal = () => setShowAddModal(true);
 
     function editCourse(id: number, newCourse: Course) {
         setCourses(
@@ -30,15 +27,12 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
         );
     }
 
+    const handleCloseAddModal = () => setShowAddModal(false);
+
     function deleteCourse(id: number) {
         setCourses(
             courses.filter((course: Course): boolean => course.id !== id)
         );
-        setShowAddModal(false);
-    }
-
-    function changeEditing() {
-        setEditing(!editing);
         setShowAddModal(false);
     }
 
@@ -62,25 +56,12 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
                             <td>{course.description}</td>
                             <td>{course.credits}</td>
                             <td>
-                                {" "}
-                                <div>
-                                    <Button
-                                        variant="success"
-                                        className="button-style-1"
-                                        onClick={handleShowAddModal}
-                                        id="over"
-                                    >
-                                        Edit
-                                    </Button>
-                                    <EditCourseModal
-                                        show={showAddModal}
-                                        handleClose={handleCloseAddModal}
-                                        changeEditing={changeEditing}
-                                        course={course}
-                                        editCourse={editCourse}
-                                        deletCourse={deleteCourse}
-                                    ></EditCourseModal>
-                                </div>
+                                <EditCourseModal
+                                    handleClose={handleCloseAddModal}
+                                    course={course}
+                                    editCourse={editCourse}
+                                    deletCourse={deleteCourse}
+                                ></EditCourseModal>
                             </td>
                         </tr>
                     ))}
