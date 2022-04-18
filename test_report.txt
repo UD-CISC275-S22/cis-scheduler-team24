@@ -38,7 +38,7 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (225 ms)
+  ✕ renders the course name somewhere (280 ms)
 
   ● renders the course name somewhere
 
@@ -67,11 +67,11 @@ FAIL src/App.test.tsx
                 [33mrole[39m=[32m"presentation"[39m
               [36m>[39m
                 [36m<button[39m
-                  [33maria-controls[39m=[32m"react-aria4297549247-1-tabpane-1"[39m
+                  [33maria-controls[39m=[32m"react-aria1996400902-1-tabpane-1"[39m
                   [33maria-selected[39m=[32m"true"[39m
                   [33mclass[39m=[32m"nav-link active"[39m
                   [33mdata-rr-ui-event-key[39m=[32m"1"[39m
-                  [33mid[39m=[32m"react-aria4297549247-1-tab-1"[39m
+                  [33mid[39m=[32m"react-aria1996400902-1-tab-1"[39m
                   [33mrole[39m=[32m"tab"[39m
                   [33mtype[39m=[32m"button"[39m
                 [36m>[39m
@@ -83,10 +83,10 @@ FAIL src/App.test.tsx
                 [33mrole[39m=[32m"presentation"[39m
               [36m>[39m
                 [36m<button[39m
-                  [33maria-controls[39m=[32m"react-aria4297549247-1-tabpane-2"[39m
+                  [33maria-controls[39m=[32m"react-aria1996400902-1-tabpane-2"[39m
                   [33mclass[39m=[32m"nav-link"[39m
                   [33mdata-rr-ui-event-key[39m=[32m"2"[39m
-                  [33mid[39m=[32m"react-aria4297549247-1-tab-2"[39m
+                  [33mid[39m=[32m"react-aria1996400902-1-tab-2"[39m
                   [33mrole[39m=[32m"tab"[39m
                   [33mtabindex[39m=[32m"-1"[39m
                   [33mtype[39m=[32m"button"[39m
@@ -99,9 +99,9 @@ FAIL src/App.test.tsx
               [33mclass[39m=[32m"tab-content"[39m
             [36m>[39m
               [36m<div[39m
-                [33maria-labelledby[39m=[32m"react-aria4297549247-1-tab-1"[39m
+                [33maria-labelledby[39m=[32m"react-aria1996400902-1-tab-1"[39m
                 [33mclass[39m=[32m"tab-pane active"[39m
-                [33mid[39m=[32m"react-aria4297549247-1-tabpane-1"[39m
+                [33mid[39m=[32m"react-aria1996400902-1-tabpane-1"[39m
               [36m>[39m
                 [36m<div>[39m
                   [36m<div[39m
@@ -212,15 +212,15 @@ FAIL src/App.test.tsx
                                                             [0m3[0m
                                                           [36m</td>[39m
                                                           [36m<td>[39m
-                                                            [0m [0m
                                                             [36m<div>[39m
                                                               [36m<button[39m
                                                                 [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
-                                                                [33mid[39m=[32m"over"[39m
+                                                                [33mid[39m=[32m"edit"[39m
                                                                 [33mtype[39m=[32m"button"[39m
                                                               [36m>[39m
                                                                 [0mEdit[0m
                                                               [36m</button>[39m
+                                                              [36m<div />[39m
                                                             [36m</div>[39m
                                                           [36m</td>[39m
                                                         [36m</tr>[39m
@@ -238,15 +238,15 @@ FAIL src/App.test.tsx
                                                             [0m2[0m
                                                           [36m</td>[39m
                                                           [36m<td>[39m
-                                                            [0m [0m
                                                             [36m<div>[39m
                                                               [36m<button[39m
                                                                 [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
-                                                                [33mid[39m=[32m"over"[39m
+                                                                [33mid[39m=[32m"edit"[39m
                                                                 [33mtype[39m=[32m"button"[39m
                                                               [36m>[39m
                                                                 [0mEdit[0m
                                                               [36m</button>[39m
+                                                              [36m<div />[39m
                                                             [36m</div>[39m
                                                           [36m</td>[39m
                                                         [36m</tr>[39m
@@ -344,15 +344,15 @@ FAIL src/App.test.tsx
                                                             [0m3[0m
                                                           [36m</td>[39m
                                                           [36m<td>[39m
-                                                            [0m [0m
                                                             [36m<div>[39m
                                                               [36m<button[39m
                                                                 [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
-                                                                [33mid[39m=[32m"over"[39m
+                                                                [33mid[39m=[32m"edit"[39m
                                                                 [33mtype[39m=[32m"button"[39m
                                                               [36m>[39m
                                                                 [0mEdit[0m
                                                               [36m</button>[39m
+                                                              [36m<div />[39m
                                                             [36m</div>[39m
                                                           [36m</td>[39m
                                                         [36m</tr>[39m
@@ -370,15 +370,15 @@ FAIL src/App.test.tsx
                                                             [0m3[0m
                                                           [36m</td>[39m
                                                           [36m<td>[39m
-                                                            [0m [0m
                                                             [36m<div>[39m
                                                               [36m<button[39m
                                                                 [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
-                                                                [33mid[39m=[32m"over"[39m
+                                                                [33mid[39m=[32m"edit"[39m
                                                                 [33mtype[39m=[32m"button"[39m
                                                               [36m>[39m
                                                                 [0mEdit[0m
                                                               [36m</button>[39m
+                                                              [36m<div />[39m
                                                             [36m</div>[39m
                                                           [36m</td>[39m
                                                         [36m</tr>[39m
@@ -446,9 +446,9 @@ FAIL src/App.test.tsx
                 [36m</div>[39m
               [36m</div>[39m
               [36m<div[39m
-                [33maria-labelledby[39m=[32m"react-aria4297549247-1-tab-2"[39m
+                [33maria-labelledby[39m=[32m"react-aria1996400902-1-tab-2"[39m
                 [33mclass[39m=[32m"tab-pane"[39m
-                [33mid[39m=[32m"react-aria4297549247-1-tabpane-2"[39m
+                [33mid[39m=[32m"react-aria1996400902-1-tabpane-2"[39m
               [36m>[39m
                 [36m<div>[39m
                   [36m<div[39m
@@ -559,15 +559,15 @@ FAIL src/App.test.tsx
                                                             [0m3[0m
                                                           [36m</td>[39m
                                                           [36m<td>[39m
-                                                            [0m [0m
                                                             [36m<div>[39m
                                                               [36m<button[39m
                                                                 [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
-                                                                [33mid[39m=[32m"over"[39m
+                                                                [33mid[39m=[32m"edit"[39m
                                                                 [33mtype[39m=[32m"button"[39m
                                                               [36m>[39m
                                                                 [0mEdit[0m
                                                               [36m</button>[39m
+                                                              [36m<div />[39m
                                                             [36m</div>[39m
                                                           [36m</td>[39m
                                                         [36m</tr>[39m
@@ -585,15 +585,15 @@ FAIL src/App.test.tsx
                                                             [0m2[0m
                                                           [36m</td>[39m
                                                           [36m<td>[39m
-                                                            [0m [0m
                                                             [36m<div>[39m
                                                               [36m<button[39m
                                                                 [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
-                                                                [33mid[39m=[32m"over"[39m
+                                                                [33mid[39m=[32m"edit"[39m
                                                                 [33mtype[39m=[32m"button"[39m
                                                               [36m>[39m
                                                                 [0mEdit[0m
                                                               [36m</button>[39m
+                                                              [36m<div />[39m
                                                             [36m</div>[39m
                                                           [36m</td>[39m
                                                         [36m</tr>[39m
@@ -691,15 +691,15 @@ FAIL src/App.test.tsx
                                                             [0m3[0m
                                                           [36m</td>[39m
                                                           [36m<td>[39m
-                                                            [0m [0m
                                                             [36m<div>[39m
                                                               [36m<button[39m
                                                                 [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
-                                                                [33mid[39m=[32m"over"[39m
+                                                                [33mid[39m=[32m"edit"[39m
                                                                 [33mtype[39m=[32m"button"[39m
                                                               [36m>[39m
                                                                 [0mEdit[0m
                                                               [36m</button>[39m
+                                                              [36m<div />[39m
                                                             [36m</div>[39m
                                                           [36m</td>[39m
                                                         [36m</tr>[39m
@@ -717,15 +717,15 @@ FAIL src/App.test.tsx
                                                             [0m3[0m
                                                           [36m</td>[39m
                                                           [36m<td>[39m
-                                                            [0m [0m
                                                             [36m<div>[39m
                                                               [36m<button[39m
                                                                 [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
-                                                                [33mid[39m=[32m"over"[39m
+                                                                [33mid[39m=[32m"edit"[39m
                                                                 [33mtype[39m=[32m"button"[39m
                                                               [36m>[39m
                                                                 [0mEdit[0m
                                                               [36m</button>[39m
+                                                              [36m<div />[39m
                                                             [36m</div>[39m
                                                           [36m</td>[39m
                                                         [36m</tr>[39m
@@ -819,14 +819,14 @@ FAIL src/App.test.tsx
 ----------------------|---------|----------|---------|---------|-------------------
 File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------------|---------|----------|---------|---------|-------------------
-All files             |   40.27 |    28.57 |   26.53 |   42.02 |                   
+All files             |   41.89 |    28.57 |   26.53 |   43.66 |                   
  src                  |   58.33 |        0 |      50 |   63.63 |                   
   App.tsx             |   58.33 |        0 |      50 |   63.63 | 29-50             
- src/components       |   36.66 |    33.33 |   20.51 |   37.93 |                   
-  EditCourseModal.tsx |   36.36 |      100 |   14.28 |   36.36 | 25-35,54-96       
+ src/components       |    38.7 |    33.33 |   20.51 |      40 |                   
+  EditCourseModal.tsx |   41.17 |      100 |   11.11 |   43.75 | 25-40,73-123      
   editPlan.tsx        |       0 |      100 |       0 |       0 | 14-30             
   editSemester.tsx    |       0 |      100 |       0 |       0 | 14-30             
-  listCourses.tsx     |      50 |        0 |      30 |   56.25 | 25-42             
+  listCourses.tsx     |   57.14 |        0 |    37.5 |   61.53 | 22-25,33-36       
   listSemesters.tsx   |     100 |      100 |     100 |     100 |                   
   viewCourse.tsx      |       0 |      100 |       0 |       0 | 6                 
   viewPlan.tsx        |   27.27 |       25 |   11.11 |   27.27 | 23-61             
@@ -839,5 +839,5 @@ All files             |   40.27 |    28.57 |   26.53 |   42.02 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.471 s
+Time:        3.262 s
 Ran all test suites.
