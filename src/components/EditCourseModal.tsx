@@ -42,21 +42,30 @@ export function EditCourseModal({
 
     return (
         <div>
-            <Button
-                variant="success"
-                className="button-style-1"
-                onClick={handleShowAddModal}
-                id="edit"
-            >
-                Edit
-            </Button>
+            <div>
+                <Button
+                    variant="success"
+                    className="button-style-1"
+                    onClick={handleShowAddModal}
+                    id="edit"
+                >
+                    Edit
+                </Button>
+                <Button
+                    onClick={() => deletCourse(course.id)}
+                    variant="empty"
+                    className="me-8"
+                >
+                    ✖️
+                </Button>
+            </div>
             <div>
                 <Modal
                     show={showAddModal}
                     onHide={handleClose}
                     animation={true}
                 >
-                    <Modal.Header closeButton>
+                    <Modal.Header>
                         <Modal.Title>Edit Course</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
