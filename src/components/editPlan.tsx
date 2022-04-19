@@ -31,7 +31,9 @@ export function EditPlan({
                     />
                 </Col>
             </Form.Group>
-            <Button onClick={save}>Save Name</Button>
+            <Button variant="secondary" onClick={save}>
+                Save Name
+            </Button>
         </div>
     );
 }

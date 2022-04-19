@@ -79,7 +79,10 @@ export function ViewPlan({
                                             openEdit={openEdit}
                                         ></EditPlan>
                                     ) : (
-                                        <Button onClick={openEdit}>
+                                        <Button
+                                            variant="secondary"
+                                            onClick={openEdit}
+                                        >
                                             Edit Name
                                         </Button>
                                     )}
@@ -99,7 +102,7 @@ export function ViewPlan({
                         </tr>
                         <tr>
                             <td>
-                                <Button onClick={addSemester}>
+                                <Button variant="success" onClick={addSemester}>
                                     Add Semester
                                 </Button>
                             </td>
@@ -107,13 +110,19 @@ export function ViewPlan({
                     </tbody>
                 </Table>
                 <div>
-                    <Button onClick={clearSemesters}>Clear Semesters</Button>
+                    <Button variant="success" onClick={clearSemesters}>
+                        Clear Semesters
+                    </Button>
                 </div>
                 <div>
-                    <Button onClick={addPlan}>Add Plan</Button>
+                    <Button variant="success" onClick={addPlan}>
+                        Add Plan
+                    </Button>
                 </div>
                 <div>
-                    <Button onClick={removePlan}>Delete Plan</Button>
+                    <Button variant="success" onClick={removePlan}>
+                        Delete Plan
+                    </Button>
                 </div>
             </Container>
         </div>
