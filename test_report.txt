@@ -42,277 +42,184 @@
       at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
-  console.error
-    Warning: Encountered two children with the same key, `1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
-        at ViewCoursesPool (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/ViewCoursesPool.tsx:7:5)
-        at div
-        at div
-        at ListCoursesPool (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listCoursesPool.tsx:6:35)
-        at div
-        at td
-        at tr
-        at tbody
-        at table
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at div
-        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:41:31)
+FAIL src/App.test.tsx
+  ✕ renders the course name somewhere (374 ms)
 
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
-      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
-      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
-      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
-      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+  ● renders the course name somewhere
 
-  console.error
-    Warning: Encountered two children with the same key, `2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
-        at ViewCoursesPool (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/ViewCoursesPool.tsx:7:5)
-        at div
-        at div
-        at ListCoursesPool (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listCoursesPool.tsx:6:35)
-        at div
-        at td
-        at tr
-        at tbody
-        at table
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at div
-        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:41:31)
+    TestingLibraryElementError: Unable to find an element with the text: /CISC275/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
 
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
-      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
-      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
-      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
-      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [0mTeam 24 College Planner by Weldin, Zhiwen, and Jingqing[0m
+            [36m</div>[39m
+          [36m</header>[39m
+          [36m<div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"row"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"col-sm-10"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<ul[39m
+                    [33mclass[39m=[32m"nav nav-tabs"[39m
+                    [33mrole[39m=[32m"tablist"[39m
+                  [36m>[39m
+                    [36m<li[39m
+                      [33mclass[39m=[32m"nav-item"[39m
+                      [33mrole[39m=[32m"presentation"[39m
+                    [36m>[39m
+                      [36m<button[39m
+                        [33maria-controls[39m=[32m"react-aria1968496187-1-tabpane-1"[39m
+                        [33maria-selected[39m=[32m"true"[39m
+                        [33mclass[39m=[32m"nav-link active"[39m
+                        [33mdata-rr-ui-event-key[39m=[32m"1"[39m
+                        [33mid[39m=[32m"react-aria1968496187-1-tab-1"[39m
+                        [33mrole[39m=[32m"tab"[39m
+                        [33mtype[39m=[32m"button"[39m
+                      [36m>[39m
+                        [0mPlan 1[0m
+                      [36m</button>[39m
+                    [36m</li>[39m
+                    [36m<li[39m
+                      [33mclass[39m=[32m"nav-item"[39m
+                      [33mrole[39m=[32m"presentation"[39m
+                    [36m>[39m
+                      [36m<button[39m
+                        [33maria-controls[39m=[32m"react-aria1968496187-1-tabpane-2"[39m
+                        [33mclass[39m=[32m"nav-link"[39m
+                        [33mdata-rr-ui-event-key[39m=[32m"2"[39m
+                        [33mid[39m=[32m"react-aria1968496187-1-tab-2"[39m
+                        [33mrole[39m=[32m"tab"[39m
+                        [33mtabindex[39m=[32m"-1"[39m
+                        [33mtype[39m=[32m"button"[39m
+                      [36m>[39m
+                        [0mPlan 2[0m
+                      [36m</button>[39m
+                    [36m</li>[39m
+                  [36m</ul>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"tab-content"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33maria-labelledby[39m=[32m"react-aria1968496187-1-tab-1"[39m
+                      [33mclass[39m=[32m"tab-pane active"[39m
+                      [33mid[39m=[32m"react-aria1968496187-1-tabpane-1"[39m
+                    [36m>[39m
+                      [36m<div>[39m
+                        [36m<div[39m
+                          [33mclass[39m=[32m"container"[39m
+                        [36m>[39m
+                          [36m<table[39m
+                            [33mclass[39m=[32m"table table-striped table-borderless"[39m
+                          [36m>[39m
+                            [36m<thead>[39m
+                              [36m<tr>[39m
+                                [36m<th>[39m
+                                  [36m<h3>[39m
+                                    [0mPlan 1[0m
+                                  [36m</h3>[39m
+                                  [36m<div>[39m
+                                    [36m<button[39m
+                                      [33mclass[39m=[32m"btn btn-secondary"[39m
+                                      [33mtype[39m=[32m"button"[39m
+                                    [36m>[39m
+                                      [0mEdit Name[0m
+                                    [36m</button>[39m
+                                  [36m</div>[39m
+                                [36m</th>[39m
+                              [36m</tr>[39m
+                            [36m</thead>[39m
+                            [36m<tbody>[39m
+                              [36m<tr>[39m
+                                [36m<td>[39m
+                                  [36m<div>[39m
+                                    [36m<table[39m
+                                      [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                                    [36m>[39m
+                                      [36m<tr>[39m
+                                        [36m<th>[39m
+                                          [36m<div>[39m
+                                            [36m<div>[39m
+                                              [36m<div[39m
+                                                [33mclass[39m=[32m"container"[39m
+                                              [36m>[39m
+                                                [36m<table[39m
+                                                  [33mclass[39m=[32m"table table-striped table-borderless table-hover"[39m
+                                                [36m>[39m
+                                                  [36m<thead>[39m
+                                                    [36m<tr>[39m
+                                                      [36m<th>[39m
+                                                        [0mFall, 2019[0m
+                                                        [36m<div>[39m
+                                                          [36m<button[39m
+                                                            [33mclass[39m=[32m"btn btn-primary"[39m
+                                                            [33mtype[39m=[32m"button"[39m
+                                                          [36m>[39m
+                                                            [0mEdit Name[0m
+                                                          [36m</button>[39m
+                                                        [36m</div>[39m
+                                                      [36m</th>[39m
+                                                      [36m<th>[39m
+                                                        [36m<button[39m
+                                                          [33mclass[39m=[32m"btn btn btn-primary"[39m
+                                                          [33mtype[39m=[32m"button"[39m
+                                                        [36m>[39m
+                                                          [0mHide[0m
+                                                        [36m</button>[39m
+                                                        [36m<button[39m
+                                                          [33mclass[39m=[32m"btn btn-primary"[39m
+                                                          [33mtype[39m=[32m"button"[39m
+                                                        [36m>[39m
+                                                          [0mRemove Semester[0m
+                                                        [36m</button>[39m
+                                                      [36m</th>[39m
+                                                    [36m</tr>[39m
+             ...
 
-  console.error
-    Warning: Encountered two children with the same key, `1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
-        at ViewCoursesPool (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/ViewCoursesPool.tsx:7:5)
-        at div
-        at div
-        at ListCoursesPool (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listCoursesPool.tsx:6:35)
-        at div
-        at td
-        at tr
-        at tbody
-        at table
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at div
-        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:41:31)
+       5 | test("renders the course name somewhere", () => {
+       6 |     render(<App />);
+    >  7 |     const linkElement = screen.getByText(/CISC275/i);
+         |                                ^
+       8 |     expect(linkElement).toBeInTheDocument();
+       9 | });
+      10 |
 
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
-      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
-      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
-      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
-      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
-
-  console.error
-    Warning: Encountered two children with the same key, `2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
-        at ViewCoursesPool (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/ViewCoursesPool.tsx:7:5)
-        at div
-        at div
-        at ListCoursesPool (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listCoursesPool.tsx:6:35)
-        at div
-        at td
-        at tr
-        at tbody
-        at table
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at div
-        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:41:31)
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
-      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
-      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
-      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
-      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
-
-  console.error
-    Warning: Encountered two children with the same key, `1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
-        at div
-        at Viewdegreeplan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/Viewdegreeplan.tsx:7:5)
-        at div
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
-        at div
-        at Listdegreeplan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listdegreeplan.tsx:7:34)
-        at div
-        at td
-        at tr
-        at tbody
-        at table
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at div
-        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:41:31)
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
-      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
-      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
-      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
-      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
-
-  console.error
-    Warning: Encountered two children with the same key, `2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
-        at div
-        at Viewdegreeplan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/Viewdegreeplan.tsx:7:5)
-        at div
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
-        at div
-        at Listdegreeplan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listdegreeplan.tsx:7:34)
-        at div
-        at td
-        at tr
-        at tbody
-        at table
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at div
-        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:41:31)
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
-      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
-      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
-      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
-      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
-
-  console.error
-    Warning: Encountered two children with the same key, `1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
-        at div
-        at Viewdegreeplan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/Viewdegreeplan.tsx:7:5)
-        at div
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
-        at div
-        at Listdegreeplan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listdegreeplan.tsx:7:34)
-        at div
-        at td
-        at tr
-        at tbody
-        at table
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at div
-        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:41:31)
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
-      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
-      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
-      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
-      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
-
-  console.error
-    Warning: Encountered two children with the same key, `2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
-        at div
-        at Viewdegreeplan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/Viewdegreeplan.tsx:7:5)
-        at div
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
-        at div
-        at Listdegreeplan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listdegreeplan.tsx:7:34)
-        at div
-        at td
-        at tr
-        at tbody
-        at table
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at div
-        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:41:31)
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
-      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
-      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
-      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
-      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
-
-PASS src/App.test.tsx
-  ✓ renders the course name somewhere (410 ms)
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/App.test.tsx:7:32)
+      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
+      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
+      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
+      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 ----------------------|---------|----------|---------|---------|---------------------------
 File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s         
 ----------------------|---------|----------|---------|---------|---------------------------
-All files             |   50.46 |       25 |   37.14 |   51.45 |                           
- src                  |   73.68 |        0 |   66.66 |   76.47 |                           
-  App.tsx             |   73.68 |        0 |   66.66 |   76.47 | 45-66                     
- src/components       |   45.45 |    28.57 |   29.09 |   46.51 |                           
+All files             |   40.17 |       25 |      25 |    41.5 |                           
+ src                  |   70.83 |        0 |   58.82 |      80 |                           
+  App.tsx             |   70.83 |        0 |   58.82 |      80 | 49-70                     
+ src/components       |   31.81 |    28.57 |   14.54 |   32.55 |                           
   EditCourseModal.tsx |   38.88 |      100 |      10 |   41.17 | 25-40,55-132              
-  ViewCoursesPool.tsx |     100 |      100 |     100 |     100 |                           
-  Viewdegreeplan.tsx  |     100 |      100 |     100 |     100 |                           
+  ViewCoursesPool.tsx |       0 |      100 |       0 |       0 | 11-15                     
+  Viewdegreeplan.tsx  |       0 |      100 |       0 |       0 | 11-15                     
   editPlan.tsx        |       0 |      100 |       0 |       0 | 14-30                     
   editSemester.tsx    |       0 |      100 |       0 |       0 | 14-30                     
   listCourses.tsx     |   44.44 |        0 |      20 |   46.15 | 22-25,33-36,45-54,101-125 
-  listCoursesPool.tsx |     100 |      100 |     100 |     100 |                           
+  listCoursesPool.tsx |       0 |      100 |       0 |       0 | 7-11                      
   listSemesters.tsx   |     100 |      100 |     100 |     100 |                           
-  listdegreeplan.tsx  |     100 |      100 |     100 |     100 |                           
+  listdegreeplan.tsx  |       0 |      100 |       0 |       0 | 8-13                      
   viewCourse.tsx      |       0 |      100 |       0 |       0 | 6                         
   viewPlan.tsx        |   27.27 |       25 |   11.11 |   27.27 | 23-61                     
   viewSemester.tsx    |   57.14 |       50 |      25 |   57.14 | 23-27,55                  
@@ -321,8 +228,8 @@ All files             |   50.46 |       25 |   37.14 |   51.45 |
   plan.ts             |       0 |        0 |       0 |       0 |                           
   semester.ts         |       0 |        0 |       0 |       0 |                           
 ----------------------|---------|----------|---------|---------|---------------------------
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.86 s
+Time:        3.462 s
 Ran all test suites.
