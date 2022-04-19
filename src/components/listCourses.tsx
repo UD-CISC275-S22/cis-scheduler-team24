@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Container, Table } from "react-bootstrap";
+import { Button, Container, Table, Form } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-import { Button } from "react-bootstrap";
 import { EditCourseModal } from "./EditCourseModal";
 //import { ViewCourse } from "./viewCourse";
 
@@ -11,15 +10,13 @@ interface Courses {
 
 export function ListCourses({ semesterCourses }: Courses): JSX.Element {
     const [courses, setCourses] = useState<Course[]>(semesterCourses);
-    const [editing, setEditing] = useState<boolean>(false);
     const [showAddModal, setShowAddModal] = useState(false);
+    showAddModal;
+
     const Credits = courses.reduce(
         (currentTotal: number, course: Course) => currentTotal + course.credits,
         0
     );
-
-    const handleCloseAddModal = () => setShowAddModal(false);
-    const handleShowAddModal = () => setShowAddModal(true);
 
     function editCourse(id: number, newCourse: Course) {
         setCourses(
@@ -30,6 +27,8 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
         );
     }
 
+    const handleCloseAddModal = () => setShowAddModal(false);
+
     function deleteCourse(id: number) {
         setCourses(
             courses.filter((course: Course): boolean => course.id !== id)
@@ -37,9 +36,31 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
         setShowAddModal(false);
     }
 
-    function changeEditing() {
-        setEditing(!editing);
-        setShowAddModal(false);
+    const [id, setId] = useState<string>("");
+    const [name, setName] = useState<string>("");
+    const [description, setDescription] = useState<string>("");
+    const [credits, setCredits] = useState<string>("");
+
+    function addMovie(newCourse: Course) {
+        const existing = courses.find(
+            (course: Course): boolean => course.id === newCourse.id
+        );
+        if (existing === undefined) {
+            setCourses([...courses, newCourse]);
+        }
+    }
+
+    function saveAddChange() {
+        addMovie({
+            id: parseInt(id),
+            name: name,
+            credits: parseInt(credits),
+            description: description,
+            prerequisites: [],
+            isTaken: false,
+            isEditing: false,
+            breadthType: ""
+        });
     }
 
     return (
@@ -62,28 +83,58 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
                             <td>{course.description}</td>
                             <td>{course.credits}</td>
                             <td>
-                                {" "}
-                                <div>
-                                    <Button
-                                        variant="success"
-                                        className="button-style-1"
-                                        onClick={handleShowAddModal}
-                                        id="over"
-                                    >
-                                        Edit
-                                    </Button>
-                                    <EditCourseModal
-                                        show={showAddModal}
-                                        handleClose={handleCloseAddModal}
-                                        changeEditing={changeEditing}
-                                        course={course}
-                                        editCourse={editCourse}
-                                        deletCourse={deleteCourse}
-                                    ></EditCourseModal>
-                                </div>
+                                <EditCourseModal
+                                    handleClose={handleCloseAddModal}
+                                    course={course}
+                                    editCourse={editCourse}
+                                    deletCourse={deleteCourse}
+                                ></EditCourseModal>
                             </td>
                         </tr>
                     ))}
+                    <tr key="CourseInput">
+                        <td>
+                            <Form.Control
+                                value={id}
+                                onChange={(
+                                    event: React.ChangeEvent<HTMLInputElement>
+                                ) => setId(event.target.value)}
+                            />
+                        </td>
+                        <td>
+                            <Form.Control
+                                value={name}
+                                onChange={(
+                                    event: React.ChangeEvent<HTMLInputElement>
+                                ) => setName(event.target.value)}
+                            />
+                        </td>
+                        <td>
+                            <Form.Control
+                                value={description}
+                                onChange={(
+                                    event: React.ChangeEvent<HTMLInputElement>
+                                ) => setDescription(event.target.value)}
+                            />
+                        </td>
+                        <td>
+                            <Form.Control
+                                value={credits}
+                                onChange={(
+                                    event: React.ChangeEvent<HTMLInputElement>
+                                ) => setCredits(event.target.value)}
+                            />
+                        </td>
+                        <td>
+                            <Button
+                                variant="primary"
+                                onClick={saveAddChange}
+                                className="button-style-2"
+                            >
+                                Add Course
+                            </Button>
+                        </td>
+                    </tr>
                 </tbody>
             </Table>
             <Container>

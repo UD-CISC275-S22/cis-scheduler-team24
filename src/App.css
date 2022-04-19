@@ -44,3 +44,9 @@
     width: 60px;
     background-color: grey;
 }
+
+.button-style-2 {
+    height: 40px;
+    width: 120px;
+    background-color: rgb(145, 145, 145);
+}

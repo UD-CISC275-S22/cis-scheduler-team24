@@ -1,28 +1,26 @@
 import React, { useState } from "react";
-import { Container, Button, Table, Col, Form } from "react-bootstrap";
+import { Container, Button, Table } from "react-bootstrap";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
 import { ListSemesters } from "./listSemesters";
+import { EditPlan } from "./editPlan";
 
 export function ViewPlan({
     plan,
     deletePlan,
-    addPlan
+    addPlan,
+    setPlanName
 }: {
     plan: Plan;
     deletePlan: (id: number) => void;
     addPlan: () => void;
+    setPlanName: (id: number, name: string) => void;
 }): JSX.Element {
     const [semesters, setSemesters] = useState<Semester[]>(plan.semesters);
-    const [isedit, setisEdit] = useState<boolean>(false);
-    const [planName, setPlanName] = useState<string>(plan.name);
+    const [isEditing, setEditing] = useState<boolean>(false);
 
     function openEdit(): void {
-        setisEdit(!isedit);
-    }
-
-    function ChangePlanName(event: React.ChangeEvent<HTMLInputElement>) {
-        setPlanName(event?.target.value);
+        setEditing(!isEditing);
     }
 
     function removePlan(): void {
@@ -34,7 +32,7 @@ export function ViewPlan({
             ...semesters,
             {
                 id: semesters.length + 1,
-                name: "",
+                name: "New Semester",
                 year: 0,
                 session: "Smarch",
                 courses: [],
@@ -56,6 +54,15 @@ export function ViewPlan({
         setSemesters([]);
     }
 
+    function setSemesterName(id: number, name: string): void {
+        setSemesters(
+            semesters.map(
+                (semester: Semester): Semester =>
+                    semester.id === id ? { ...semester, name: name } : semester
+            )
+        );
+    }
+
     return (
         <div>
             <Container>
@@ -63,23 +70,20 @@ export function ViewPlan({
                     <thead>
                         <tr>
                             <th>
-                                <h3>{planName}</h3>
-                                <span>
-                                    <Button onClick={openEdit}>
-                                        {isedit ? "Save Name" : "Edit Name"}
-                                    </Button>
-                                </span>
-                                {isedit && (
-                                    <Form.Group controlId="formplanname">
-                                        <Form.Label>New Name:</Form.Label>
-                                        <Col>
-                                            <Form.Control
-                                                value={planName}
-                                                onChange={ChangePlanName}
-                                            />
-                                        </Col>
-                                    </Form.Group>
-                                )}
+                                <h3>{plan.name}</h3>
+                                <div>
+                                    {isEditing ? (
+                                        <EditPlan
+                                            plan={plan}
+                                            setPlanName={setPlanName}
+                                            openEdit={openEdit}
+                                        ></EditPlan>
+                                    ) : (
+                                        <Button onClick={openEdit}>
+                                            Edit Name
+                                        </Button>
+                                    )}
+                                </div>
                             </th>
                         </tr>
                     </thead>
@@ -89,6 +93,7 @@ export function ViewPlan({
                                 <ListSemesters
                                     planSemesters={semesters}
                                     removeSemester={removeSemester}
+                                    setSemesterName={setSemesterName}
                                 ></ListSemesters>
                             </td>
                         </tr>

@@ -5,10 +5,12 @@ import { ViewSemester } from "./viewSemester";
 
 export function ListSemesters({
     planSemesters,
-    removeSemester
+    removeSemester,
+    setSemesterName
 }: {
     planSemesters: Semester[];
     removeSemester: (id: number) => void;
+    setSemesterName: (id: number, name: string) => void;
 }): JSX.Element {
     return (
         <div>
@@ -20,6 +22,7 @@ export function ListSemesters({
                                 <ViewSemester
                                     semester={semester}
                                     removeSemester={removeSemester}
+                                    setSemesterName={setSemesterName}
                                 ></ViewSemester>
                             </div>
                         ))}
