@@ -1,0 +1,140 @@
+[
+    {
+        "id": 1,
+        "name": "Plan 1",
+        "semesters": [
+            {
+                "id": 1,
+                "name": "",
+                "year": 2019,
+                "session": "Fall",
+                "courses": [
+                    {
+                        "id": 1,
+                        "name": "CISC108: Introduction to Computer Science I",
+                        "credits": 3,
+                        "description": "Python",
+                        "prerequisites": [],
+                        "isTaken": false,
+                        "isEditing": false,
+                        "breadthType": "D"
+                    },
+                    {
+                        "id": 2,
+                        "name": "CISC181: Introduction to Computer Science II",
+                        "credits": 3,
+                        "description": "JAVA",
+                        "prerequisites": [],
+                        "isTaken": false,
+                        "isEditing": false,
+                        "breadthType": "D"
+                    }
+                ],
+                "totalCredits": 0,
+                "isSkipped": false
+            },
+            {
+                "id": 2,
+                "name": "",
+                "year": 2020,
+                "session": "Spring",
+                "courses": [
+                    {
+                        "id": 3,
+                        "name": "CISC210: Introduction to Systems Programming",
+                        "credits": 3,
+                        "description": "Bash and C",
+                        "prerequisites": [],
+                        "isTaken": false,
+                        "isEditing": false,
+                        "breadthType": "D"
+                    },
+                    {
+                        "id": 4,
+                        "name": "CISC220: Data Structures",
+                        "credits": 3,
+                        "description": "C++",
+                        "prerequisites": [],
+                        "isTaken": false,
+                        "isEditing": false,
+                        "breadthType": "D"
+                    }
+                ],
+                "totalCredits": 0,
+                "isSkipped": false
+            }
+        ],
+        "requirements": [],
+        "taken_courses": [],
+        "floating_courses": []
+    },
+    {
+        "id": 2,
+        "name": "Plan 2",
+        "semesters": [
+            {
+                "id": 1,
+                "name": "",
+                "year": 2019,
+                "session": "Fall",
+                "courses": [
+                    {
+                        "id": 5,
+                        "name": "CISC260: Machine Organization and Assembly Language",
+                        "credits": 3,
+                        "description": "machine language",
+                        "prerequisites": [],
+                        "isTaken": false,
+                        "isEditing": false,
+                        "breadthType": "D"
+                    },
+                    {
+                        "id": 6,
+                        "name": "CISC275: Introduction to Software Engineering",
+                        "credits": 2,
+                        "description": "HTML,TypeScript,JavaScript",
+                        "prerequisites": [],
+                        "isTaken": false,
+                        "isEditing": false,
+                        "breadthType": "D"
+                    }
+                ],
+                "totalCredits": 0,
+                "isSkipped": false
+            },
+            {
+                "id": 2,
+                "name": "",
+                "year": 2020,
+                "session": "Spring",
+                "courses": [
+                    {
+                        "id": 7,
+                        "name": "CISC303: Automata Theory",
+                        "credits": 3,
+                        "description": "Turing machines",
+                        "prerequisites": [],
+                        "isTaken": false,
+                        "isEditing": false,
+                        "breadthType": "D"
+                    },
+                    {
+                        "id": 8,
+                        "name": "MATH210: Discrete Mathematics I",
+                        "credits": 3,
+                        "description": "Elements of sets and logic",
+                        "prerequisites": [],
+                        "isTaken": false,
+                        "isEditing": false,
+                        "breadthType": "D"
+                    }
+                ],
+                "totalCredits": 0,
+                "isSkipped": false
+            }
+        ],
+        "requirements": [],
+        "taken_courses": [],
+        "floating_courses": []
+    }
+]
