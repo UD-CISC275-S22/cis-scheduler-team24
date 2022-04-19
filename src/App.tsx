@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Tabs, Tab, Col, Row, Table } from "react-bootstrap";
+import { Tabs, Tab, Col, Row, Table, Button, Offcanvas } from "react-bootstrap";
 import "./App.css";
 import { ViewPlan } from "./components/viewPlan";
 import { Plan } from "./interfaces/plan";
@@ -40,6 +40,10 @@ const DegreePlan = degreeplan.map((plan: Plan) => ({
 function App(): JSX.Element {
     const [plans, setPlans] = useState<Plan[]>(PLANS);
     const [degreeplan /*setdegreeplan*/] = useState<Plan[]>(DegreePlan);
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     function addPlan(): void {
         setPlans([
@@ -77,7 +81,7 @@ function App(): JSX.Element {
             </header>
             <div>
                 <Row>
-                    <Col sm={8}>
+                    <Col sm={10}>
                         <div>
                             <Tabs defaultActiveKey={plans[0].id}>
                                 {plans.map((plan: Plan) => (
@@ -98,47 +102,82 @@ function App(): JSX.Element {
                         </div>
                     </Col>
                     <Col>
-                        <Table striped bordered hover>
-                            <thead>
-                                <tr>
-                                    <th>Course Pool</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        {plans.map((plan: Plan) => (
-                                            <div key={plan.id}>
-                                                <ListCoursesPool
-                                                    plan={plan}
-                                                ></ListCoursesPool>
-                                            </div>
-                                        ))}
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </Table>
                         <Row>
-                            <Table striped bordered hover>
-                                <thead>
-                                    <tr>
-                                        <th>Degree Plan</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            {degreeplan.map((plan: Plan) => (
-                                                <div key={plan.id}>
-                                                    <Listdegreeplan
-                                                        plan={plan}
-                                                    ></Listdegreeplan>
-                                                </div>
-                                            ))}
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </Table>
+                            <div>
+                                <Button variant="primary" onClick={handleShow}>
+                                    Show Courses Pool and Degree plan
+                                </Button>
+
+                                <Offcanvas
+                                    show={show}
+                                    onHide={handleClose}
+                                    placement={"end"}
+                                >
+                                    <Offcanvas.Header closeButton>
+                                        <Offcanvas.Title>
+                                            Degree Plan
+                                        </Offcanvas.Title>
+                                    </Offcanvas.Header>
+                                    <Offcanvas.Body>
+                                        <Table striped bordered hover>
+                                            <thead>
+                                                <tr>
+                                                    <th>Course Pool</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        {plans.map(
+                                                            (plan: Plan) => (
+                                                                <div
+                                                                    key={
+                                                                        plan.id
+                                                                    }
+                                                                >
+                                                                    <ListCoursesPool
+                                                                        plan={
+                                                                            plan
+                                                                        }
+                                                                    ></ListCoursesPool>
+                                                                </div>
+                                                            )
+                                                        )}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </Table>
+                                        <Table striped bordered hover>
+                                            <thead>
+                                                <tr>
+                                                    <th>Degree Plan</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        {degreeplan.map(
+                                                            (plan: Plan) => (
+                                                                <div
+                                                                    key={
+                                                                        plan.id
+                                                                    }
+                                                                >
+                                                                    <Listdegreeplan
+                                                                        plan={
+                                                                            plan
+                                                                        }
+                                                                    ></Listdegreeplan>
+                                                                </div>
+                                                            )
+                                                        )}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </Table>
+                                    </Offcanvas.Body>
+                                </Offcanvas>
+                            </div>
                         </Row>
                     </Col>
                 </Row>
