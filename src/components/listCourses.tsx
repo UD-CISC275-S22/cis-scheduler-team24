@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Container, Table, Form } from "react-bootstrap";
 import { Course } from "../interfaces/course";
+import { DeleteCourseModal } from "./DeleteCourseModal";
 import { EditCourseModal } from "./EditCourseModal";
 //import { ViewCourse } from "./viewCourse";
 
@@ -61,6 +62,11 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
             isEditing: false,
             breadthType: ""
         });
+    }
+
+    function deleteAllCourse() {
+        setCourses([]);
+        setShowAddModal(false);
     }
 
     return (
@@ -137,6 +143,12 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
                     </tr>
                 </tbody>
             </Table>
+            <Container>
+                <DeleteCourseModal
+                    handleClose={handleCloseAddModal}
+                    deletCourse={deleteAllCourse}
+                ></DeleteCourseModal>
+            </Container>
             <Container>
                 <div>Total Credits: {Credits}</div>
             </Container>
