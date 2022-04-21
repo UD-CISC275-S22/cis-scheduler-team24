@@ -14,6 +14,8 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
     const [showAddModal, setShowAddModal] = useState(false);
     showAddModal;
 
+    const handleCloseAddModal = () => setShowAddModal(false);
+
     const Credits = courses.reduce(
         (currentTotal: number, course: Course) => currentTotal + course.credits,
         0
@@ -27,8 +29,6 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
             )
         );
     }
-
-    const handleCloseAddModal = () => setShowAddModal(false);
 
     function deleteCourse(id: number) {
         setCourses(
@@ -62,11 +62,14 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
             isEditing: false,
             breadthType: ""
         });
+        setId("");
+        setName("");
+        setDescription("");
+        setCredits("");
     }
 
     function deleteAllCourse() {
         setCourses([]);
-        setShowAddModal(false);
     }
 
     return (
@@ -105,6 +108,7 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
                                 onChange={(
                                     event: React.ChangeEvent<HTMLInputElement>
                                 ) => setId(event.target.value)}
+                                placeholder="Enter Course ID*"
                             />
                         </td>
                         <td>
@@ -113,6 +117,7 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
                                 onChange={(
                                     event: React.ChangeEvent<HTMLInputElement>
                                 ) => setName(event.target.value)}
+                                placeholder="Enter Name"
                             />
                         </td>
                         <td>
@@ -121,6 +126,7 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
                                 onChange={(
                                     event: React.ChangeEvent<HTMLInputElement>
                                 ) => setDescription(event.target.value)}
+                                placeholder="Enter Description"
                             />
                         </td>
                         <td>
@@ -129,6 +135,7 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
                                 onChange={(
                                     event: React.ChangeEvent<HTMLInputElement>
                                 ) => setCredits(event.target.value)}
+                                placeholder="Enter Credits*"
                             />
                         </td>
                         <td>
@@ -136,6 +143,7 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
                                 variant="primary"
                                 onClick={saveAddChange}
                                 className="button-style-2"
+                                disabled={!id || !credits}
                             >
                                 Add Course
                             </Button>
@@ -145,8 +153,9 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
             </Table>
             <Container>
                 <DeleteCourseModal
-                    handleClose={handleCloseAddModal}
-                    deletCourse={deleteAllCourse}
+                    deletCourse={() => {
+                        deleteAllCourse();
+                    }}
                 ></DeleteCourseModal>
             </Container>
             <Container>
