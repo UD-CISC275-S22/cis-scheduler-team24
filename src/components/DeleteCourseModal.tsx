@@ -2,23 +2,22 @@ import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 
 export function DeleteCourseModal({
-    handleClose,
     deletCourse
 }: {
-    handleClose: () => void;
     deletCourse: () => void;
 }) {
-    const [showAddModal, setShowAddModal] = useState(false);
+    const [showAddModal, setShowDeleteModal] = useState(false);
 
-    const handleShowAddModal = () => setShowAddModal(true);
+    const handleShowDeleteModal = () => setShowDeleteModal(true);
 
     function cancel() {
-        setShowAddModal(false);
+        setShowDeleteModal(false);
     }
+
     return (
         <div>
             <div>
-                <Button onClick={handleShowAddModal} variant="danger">
+                <Button onClick={handleShowDeleteModal} variant="danger">
                     Delete All Course
                 </Button>
             </div>
@@ -28,7 +27,6 @@ export function DeleteCourseModal({
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
                     show={showAddModal}
-                    onHide={handleClose}
                     animation={true}
                     backdrop={true}
                 >
@@ -44,7 +42,13 @@ export function DeleteCourseModal({
                         </p>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={deletCourse} variant="danger">
+                        <Button
+                            onClick={() => {
+                                deletCourse();
+                                cancel();
+                            }}
+                            variant="danger"
+                        >
                             Delete All Course
                         </Button>
                         <Button onClick={cancel} variant="warning">

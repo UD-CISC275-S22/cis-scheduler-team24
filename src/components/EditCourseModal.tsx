@@ -13,6 +13,7 @@ export function EditCourseModal({
     editCourse: (id: number, newCourse: Course) => void;
     deletCourse: (id: number) => void;
 }) {
+    const [id, setId] = useState<string>(course.id.toString());
     const [name, setName] = useState<string>(course.name);
     const [description, setDescription] = useState<string>(course.description);
     const [credits, setCredits] = useState<string>(course.credits.toString());
@@ -24,6 +25,7 @@ export function EditCourseModal({
     function save() {
         editCourse(course.id, {
             ...course,
+            id: parseInt(id),
             name: name,
             description: description,
             credits: parseInt(credits)
@@ -69,6 +71,20 @@ export function EditCourseModal({
                         <Modal.Title>Edit Course</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
+                        {/* ID */}
+                        <Form.Group controlId="formCourseID" as={Row}>
+                            <Form.Label column sm={2}>
+                                Course ID:
+                            </Form.Label>
+                            <Col>
+                                <Form.Control
+                                    value={id}
+                                    onChange={(
+                                        event: React.ChangeEvent<HTMLInputElement>
+                                    ) => setId(event.target.value)}
+                                />
+                            </Col>
+                        </Form.Group>
                         {/* Name */}
                         <Form.Group controlId="formCourseName" as={Row}>
                             <Form.Label column sm={2}>
