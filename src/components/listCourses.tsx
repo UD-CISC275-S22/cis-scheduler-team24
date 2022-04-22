@@ -60,6 +60,7 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
             prerequisites: prereqs.split(", ").map(Number),
             isTaken: false,
             isEditing: false,
+            isRequired: false,
             breadthType: ""
         });
         setId("");
@@ -99,7 +100,7 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
                                     handleClose={handleCloseAddModal}
                                     course={course}
                                     editCourse={editCourse}
-                                    deletCourse={deleteCourse}
+                                    deleteCourse={deleteCourse}
                                 ></EditCourseModal>
                             </td>
                         </tr>

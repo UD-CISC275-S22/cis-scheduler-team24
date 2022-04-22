@@ -1,4 +1,3 @@
-import { Course } from "./course";
 import { Semester } from "./semester";
 
 export interface Plan {
@@ -7,5 +6,5 @@ export interface Plan {
     semesters: Semester[];
     requirements: number[];
     taken_courses: number[];
-    floating_courses: Course[];
+    floating_courses: number[];
 }

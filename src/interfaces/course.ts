@@ -8,5 +8,6 @@ export interface Course {
     prerequisites: number[];
     isTaken: boolean;
     isEditing: boolean;
+    isRequired: boolean;
     breadthType: string;
 }
