@@ -32,7 +32,7 @@
         at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
         at div
         at div
-        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:41:31)
+        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:48:31)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -43,7 +43,7 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (373 ms)
+  ✕ renders the course name somewhere (337 ms)
 
   ● renders the course name somewhere
 
@@ -79,11 +79,11 @@ FAIL src/App.test.tsx
                       [33mrole[39m=[32m"presentation"[39m
                     [36m>[39m
                       [36m<button[39m
-                        [33maria-controls[39m=[32m"react-aria71825869-1-tabpane-1"[39m
+                        [33maria-controls[39m=[32m"react-aria5799653200-1-tabpane-1"[39m
                         [33maria-selected[39m=[32m"true"[39m
                         [33mclass[39m=[32m"nav-link active"[39m
                         [33mdata-rr-ui-event-key[39m=[32m"1"[39m
-                        [33mid[39m=[32m"react-aria71825869-1-tab-1"[39m
+                        [33mid[39m=[32m"react-aria5799653200-1-tab-1"[39m
                         [33mrole[39m=[32m"tab"[39m
                         [33mtype[39m=[32m"button"[39m
                       [36m>[39m
@@ -95,10 +95,10 @@ FAIL src/App.test.tsx
                       [33mrole[39m=[32m"presentation"[39m
                     [36m>[39m
                       [36m<button[39m
-                        [33maria-controls[39m=[32m"react-aria71825869-1-tabpane-2"[39m
+                        [33maria-controls[39m=[32m"react-aria5799653200-1-tabpane-2"[39m
                         [33mclass[39m=[32m"nav-link"[39m
                         [33mdata-rr-ui-event-key[39m=[32m"2"[39m
-                        [33mid[39m=[32m"react-aria71825869-1-tab-2"[39m
+                        [33mid[39m=[32m"react-aria5799653200-1-tab-2"[39m
                         [33mrole[39m=[32m"tab"[39m
                         [33mtabindex[39m=[32m"-1"[39m
                         [33mtype[39m=[32m"button"[39m
@@ -111,9 +111,9 @@ FAIL src/App.test.tsx
                     [33mclass[39m=[32m"tab-content"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33maria-labelledby[39m=[32m"react-aria71825869-1-tab-1"[39m
+                      [33maria-labelledby[39m=[32m"react-aria5799653200-1-tab-1"[39m
                       [33mclass[39m=[32m"tab-pane active"[39m
-                      [33mid[39m=[32m"react-aria71825869-1-tabpane-1"[39m
+                      [33mid[39m=[32m"react-aria5799653200-1-tabpane-1"[39m
                     [36m>[39m
                       [36m<div>[39m
                         [36m<div[39m
@@ -184,7 +184,7 @@ FAIL src/App.test.tsx
                                                         [36m</button>[39m
                                                       [36m</th>[39m
                                                     [36m</tr>[39m
-                         ...
+             ...
 
        5 | test("renders the course name somewhere", () => {
        6 |     render(<App />);
@@ -207,17 +207,17 @@ FAIL src/App.test.tsx
 ------------------------|---------|----------|---------|---------|-------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------------------|---------|----------|---------|---------|-------------------
-All files               |   38.63 |    27.77 |   23.45 |      40 |                   
+All files               |   36.87 |    27.77 |   23.17 |   38.05 |                   
  src                    |   70.83 |        0 |   58.82 |      80 |                   
-  App.tsx               |   70.83 |        0 |   58.82 |      80 | 49-70             
- src/components         |   31.48 |    31.25 |   14.06 |   32.38 |                   
+  App.tsx               |   70.83 |        0 |   58.82 |      80 | 56-77             
+ src/components         |   29.91 |    31.25 |   13.84 |    30.7 |                   
   DeleteCourseModal.tsx |   42.85 |      100 |      25 |      50 | 14,47-48          
-  EditCourseModal.tsx   |    40.9 |      100 |    8.33 |   42.85 | 29-46,61-168      
+  EditCourseModal.tsx   |   32.25 |      100 |    7.69 |   33.33 | 30-59,74-189      
   ViewCoursesPool.tsx   |       0 |      100 |       0 |       0 | 11-15             
   Viewdegreeplan.tsx    |       0 |      100 |       0 |       0 | 11-15             
   editPlan.tsx          |       0 |      100 |       0 |       0 | 14-30             
   editSemester.tsx      |       0 |      100 |       0 |       0 | 14-30             
-  listCourses.tsx       |   36.11 |    16.66 |   16.66 |   37.14 | 30-73,113-169     
+  listCourses.tsx       |   36.11 |    16.66 |   16.66 |   37.14 | 30-74,114-170     
   listCoursesPool.tsx   |       0 |      100 |       0 |       0 | 7-11              
   listSemesters.tsx     |     100 |      100 |     100 |     100 |                   
   listdegreeplan.tsx    |       0 |      100 |       0 |       0 | 8-13              
@@ -232,5 +232,5 @@ All files               |   38.63 |    27.77 |   23.45 |      40 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.085 s
+Time:        2.958 s
 Ran all test suites.
