@@ -86,6 +86,7 @@ export function EditCourseModal({
                                     onChange={(
                                         event: React.ChangeEvent<HTMLInputElement>
                                     ) => setId(event.target.value)}
+                                    placeholder="Must have a course ID"
                                 />
                             </Col>
                         </Form.Group>
@@ -152,6 +153,7 @@ export function EditCourseModal({
                             onClick={save}
                             variant="success"
                             className="me-4"
+                            disabled={!id}
                         >
                             Save
                         </Button>
