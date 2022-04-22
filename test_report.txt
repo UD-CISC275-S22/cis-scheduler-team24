@@ -43,7 +43,7 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (303 ms)
+  ✕ renders the course name somewhere (328 ms)
 
   ● renders the course name somewhere
 
@@ -79,11 +79,11 @@ FAIL src/App.test.tsx
                       [33mrole[39m=[32m"presentation"[39m
                     [36m>[39m
                       [36m<button[39m
-                        [33maria-controls[39m=[32m"react-aria5659038467-1-tabpane-1"[39m
+                        [33maria-controls[39m=[32m"react-aria7808103921-1-tabpane-1"[39m
                         [33maria-selected[39m=[32m"true"[39m
                         [33mclass[39m=[32m"nav-link active"[39m
                         [33mdata-rr-ui-event-key[39m=[32m"1"[39m
-                        [33mid[39m=[32m"react-aria5659038467-1-tab-1"[39m
+                        [33mid[39m=[32m"react-aria7808103921-1-tab-1"[39m
                         [33mrole[39m=[32m"tab"[39m
                         [33mtype[39m=[32m"button"[39m
                       [36m>[39m
@@ -95,10 +95,10 @@ FAIL src/App.test.tsx
                       [33mrole[39m=[32m"presentation"[39m
                     [36m>[39m
                       [36m<button[39m
-                        [33maria-controls[39m=[32m"react-aria5659038467-1-tabpane-2"[39m
+                        [33maria-controls[39m=[32m"react-aria7808103921-1-tabpane-2"[39m
                         [33mclass[39m=[32m"nav-link"[39m
                         [33mdata-rr-ui-event-key[39m=[32m"2"[39m
-                        [33mid[39m=[32m"react-aria5659038467-1-tab-2"[39m
+                        [33mid[39m=[32m"react-aria7808103921-1-tab-2"[39m
                         [33mrole[39m=[32m"tab"[39m
                         [33mtabindex[39m=[32m"-1"[39m
                         [33mtype[39m=[32m"button"[39m
@@ -111,9 +111,9 @@ FAIL src/App.test.tsx
                     [33mclass[39m=[32m"tab-content"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33maria-labelledby[39m=[32m"react-aria5659038467-1-tab-1"[39m
+                      [33maria-labelledby[39m=[32m"react-aria7808103921-1-tab-1"[39m
                       [33mclass[39m=[32m"tab-pane active"[39m
-                      [33mid[39m=[32m"react-aria5659038467-1-tabpane-1"[39m
+                      [33mid[39m=[32m"react-aria7808103921-1-tabpane-1"[39m
                     [36m>[39m
                       [36m<div>[39m
                         [36m<div[39m
@@ -204,33 +204,33 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
-------------------------|---------|----------|---------|---------|---------------------
-File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s   
-------------------------|---------|----------|---------|---------|---------------------
-All files               |   38.58 |    27.77 |   24.05 |      40 |                     
- src                    |   70.83 |        0 |   58.82 |      80 |                     
-  App.tsx               |   70.83 |        0 |   58.82 |      80 | 49-70               
- src/components         |   31.06 |    31.25 |   14.51 |      32 |                     
-  DeleteCourseModal.tsx |   42.85 |      100 |      25 |      50 | 14,47-48            
-  EditCourseModal.tsx   |      40 |      100 |    9.09 |    42.1 | 26-42,57-148        
-  ViewCoursesPool.tsx   |       0 |      100 |       0 |       0 | 11-15               
-  Viewdegreeplan.tsx    |       0 |      100 |       0 |       0 | 11-15               
-  editPlan.tsx          |       0 |      100 |       0 |       0 | 14-30               
-  editSemester.tsx      |       0 |      100 |       0 |       0 | 14-30               
-  listCourses.tsx       |   36.36 |    16.66 |   17.64 |    37.5 | 25-37,46-72,110-157 
-  listCoursesPool.tsx   |       0 |      100 |       0 |       0 | 7-11                
-  listSemesters.tsx     |     100 |      100 |     100 |     100 |                     
-  listdegreeplan.tsx    |       0 |      100 |       0 |       0 | 8-13                
-  viewCourse.tsx        |       0 |      100 |       0 |       0 | 6                   
-  viewPlan.tsx          |   27.27 |       25 |   11.11 |   27.27 | 23-61               
-  viewSemester.tsx      |   57.14 |       50 |      25 |   57.14 | 23-27,55            
- src/interfaces         |       0 |        0 |       0 |       0 |                     
-  course.ts             |       0 |        0 |       0 |       0 |                     
-  plan.ts               |       0 |        0 |       0 |       0 |                     
-  semester.ts           |       0 |        0 |       0 |       0 |                     
-------------------------|---------|----------|---------|---------|---------------------
+------------------------|---------|----------|---------|---------|-------------------
+File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------------------|---------|----------|---------|---------|-------------------
+All files               |   38.63 |    27.77 |   23.45 |      40 |                   
+ src                    |   70.83 |        0 |   58.82 |      80 |                   
+  App.tsx               |   70.83 |        0 |   58.82 |      80 | 49-70             
+ src/components         |   31.48 |    31.25 |   14.06 |   32.38 |                   
+  DeleteCourseModal.tsx |   42.85 |      100 |      25 |      50 | 14,47-48          
+  EditCourseModal.tsx   |    40.9 |      100 |    8.33 |   42.85 | 29-46,61-166      
+  ViewCoursesPool.tsx   |       0 |      100 |       0 |       0 | 11-15             
+  Viewdegreeplan.tsx    |       0 |      100 |       0 |       0 | 11-15             
+  editPlan.tsx          |       0 |      100 |       0 |       0 | 14-30             
+  editSemester.tsx      |       0 |      100 |       0 |       0 | 14-30             
+  listCourses.tsx       |   36.11 |    16.66 |   16.66 |   37.14 | 30-73,113-169     
+  listCoursesPool.tsx   |       0 |      100 |       0 |       0 | 7-11              
+  listSemesters.tsx     |     100 |      100 |     100 |     100 |                   
+  listdegreeplan.tsx    |       0 |      100 |       0 |       0 | 8-13              
+  viewCourse.tsx        |       0 |      100 |       0 |       0 | 6                 
+  viewPlan.tsx          |   27.27 |       25 |   11.11 |   27.27 | 23-61             
+  viewSemester.tsx      |   57.14 |       50 |      25 |   57.14 | 23-27,55          
+ src/interfaces         |       0 |        0 |       0 |       0 |                   
+  course.ts             |       0 |        0 |       0 |       0 |                   
+  plan.ts               |       0 |        0 |       0 |       0 |                   
+  semester.ts           |       0 |        0 |       0 |       0 |                   
+------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.454 s
+Time:        2.939 s
 Ran all test suites.
