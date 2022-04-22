@@ -13,6 +13,11 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
     const [courses, setCourses] = useState<Course[]>(semesterCourses);
     const [showAddModal, setShowAddModal] = useState(false);
     showAddModal;
+    const [id, setId] = useState<string>("");
+    const [name, setName] = useState<string>("");
+    const [description, setDescription] = useState<string>("");
+    const [credits, setCredits] = useState<string>("");
+    const [prereqs, setPrereqs] = useState<string>("");
 
     const handleCloseAddModal = () => setShowAddModal(false);
 
@@ -37,11 +42,6 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
         setShowAddModal(false);
     }
 
-    const [id, setId] = useState<string>("");
-    const [name, setName] = useState<string>("");
-    const [description, setDescription] = useState<string>("");
-    const [credits, setCredits] = useState<string>("");
-
     function addMovie(newCourse: Course) {
         const existing = courses.find(
             (course: Course): boolean => course.id === newCourse.id
@@ -57,7 +57,7 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
             name: name,
             credits: parseInt(credits),
             description: description,
-            prerequisites: [],
+            prerequisites: prereqs.split(", ").map(Number),
             isTaken: false,
             isEditing: false,
             breadthType: ""
@@ -66,6 +66,7 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
         setName("");
         setDescription("");
         setCredits("");
+        setPrereqs("");
     }
 
     function deleteAllCourse() {
@@ -77,10 +78,11 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
             <Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th>CourseID</th>
+                        <th>Course ID</th>
                         <th>Course Name</th>
                         <th>Course Description</th>
                         <th>Course Credit</th>
+                        <th>Course Prerequisites (ID)</th>
                         <th>Edit</th>
                     </tr>
                 </thead>
@@ -91,6 +93,7 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
                             <td>{course.name}</td>
                             <td>{course.description}</td>
                             <td>{course.credits}</td>
+                            <td>{course.prerequisites.map(String)}</td>
                             <td>
                                 <EditCourseModal
                                     handleClose={handleCloseAddModal}
@@ -135,7 +138,16 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
                                 onChange={(
                                     event: React.ChangeEvent<HTMLInputElement>
                                 ) => setCredits(event.target.value)}
-                                placeholder="Enter Credits*"
+                                placeholder="Enter Credits"
+                            />
+                        </td>
+                        <td>
+                            <Form.Control
+                                value={prereqs}
+                                onChange={(
+                                    event: React.ChangeEvent<HTMLInputElement>
+                                ) => setPrereqs(event.target.value)}
+                                placeholder="Enter Prerequisites"
                             />
                         </td>
                         <td>

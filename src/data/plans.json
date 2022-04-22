@@ -44,7 +44,7 @@
                         "name": "CISC210: Introduction to Systems Programming",
                         "credits": 3,
                         "description": "Bash and C",
-                        "prerequisites": [],
+                        "prerequisites": [1],
                         "isTaken": false,
                         "isEditing": false,
                         "breadthType": "D"
@@ -54,7 +54,7 @@
                         "name": "CISC181: Introduction to Computer Science II",
                         "credits": 3,
                         "description": "Java",
-                        "prerequisites": [],
+                        "prerequisites": [1],
                         "isTaken": false,
                         "isEditing": false,
                         "breadthType": "D"
@@ -113,7 +113,7 @@
                         "name": "CISC210: Introduction to Systems Programming",
                         "credits": 3,
                         "description": "Bash and C",
-                        "prerequisites": [],
+                        "prerequisites": [1],
                         "isTaken": false,
                         "isEditing": false,
                         "breadthType": "D"
@@ -123,7 +123,7 @@
                         "name": "CISC181: Introduction to Computer Science II",
                         "credits": 3,
                         "description": "Java",
-                        "prerequisites": [],
+                        "prerequisites": [1],
                         "isTaken": false,
                         "isEditing": false,
                         "breadthType": "D"
