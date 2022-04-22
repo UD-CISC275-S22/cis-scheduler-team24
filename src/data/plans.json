@@ -64,8 +64,8 @@
                 "isSkipped": false
             }
         ],
-        "requirements": [],
-        "taken_courses": [],
+        "requirements": [1, 2, 3, 4],
+        "taken_courses": [1, 2, 3, 4],
         "floating_courses": []
     },
     {
@@ -133,8 +133,8 @@
                 "isSkipped": false
             }
         ],
-        "requirements": [],
-        "taken_courses": [],
+        "requirements": [1, 2, 3, 4],
+        "taken_courses": [1, 2, 3, 4],
         "floating_courses": []
     }
 ]
