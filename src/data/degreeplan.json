@@ -17,6 +17,7 @@
                         "prerequisites": [],
                         "isTaken": false,
                         "isEditing": false,
+                        "isRequired": true,
                         "breadthType": "D"
                     },
                     {
@@ -27,6 +28,7 @@
                         "prerequisites": [],
                         "isTaken": false,
                         "isEditing": false,
+                        "isRequired": true,
                         "breadthType": "D"
                     }
                 ],
@@ -47,6 +49,7 @@
                         "prerequisites": [],
                         "isTaken": false,
                         "isEditing": false,
+                        "isRequired": true,
                         "breadthType": "D"
                     },
                     {
@@ -57,6 +60,7 @@
                         "prerequisites": [],
                         "isTaken": false,
                         "isEditing": false,
+                        "isRequired": true,
                         "breadthType": "D"
                     }
                 ],
@@ -86,6 +90,7 @@
                         "prerequisites": [],
                         "isTaken": false,
                         "isEditing": false,
+                        "isRequired": true,
                         "breadthType": "D"
                     },
                     {
@@ -96,6 +101,7 @@
                         "prerequisites": [],
                         "isTaken": false,
                         "isEditing": false,
+                        "isRequired": true,
                         "breadthType": "D"
                     }
                 ],
@@ -116,6 +122,7 @@
                         "prerequisites": [],
                         "isTaken": false,
                         "isEditing": false,
+                        "isRequired": false,
                         "breadthType": "D"
                     },
                     {
@@ -126,6 +133,7 @@
                         "prerequisites": [],
                         "isTaken": false,
                         "isEditing": false,
+                        "isRequired": true,
                         "breadthType": "D"
                     }
                 ],

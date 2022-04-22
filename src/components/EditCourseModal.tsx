@@ -6,12 +6,12 @@ export function EditCourseModal({
     handleClose,
     course,
     editCourse,
-    deletCourse
+    deleteCourse
 }: {
     handleClose: () => void;
     course: Course;
     editCourse: (id: number, newCourse: Course) => void;
-    deletCourse: (id: number) => void;
+    deleteCourse: (id: number) => void;
 }) {
     const [id, setId] = useState<string>(course.id.toString());
     const [name, setName] = useState<string>(course.name);
@@ -22,6 +22,7 @@ export function EditCourseModal({
     const [prereqs, setPrereqs] = useState<string>(
         course.prerequisites.map(String).join(", ")
     );
+    const [isRequired, setRequired] = useState<boolean>(course.isRequired);
 
     const handleShowAddModal = () => setShowAddModal(true);
 
@@ -32,18 +33,30 @@ export function EditCourseModal({
             name: name,
             description: description,
             credits: parseInt(credits),
-            prerequisites: prereqs.split(", ").map(Number)
+            prerequisites: prereqs.split(", ").map(Number),
+            isRequired: isRequired
         });
         changeEditing();
     }
 
     function cancel() {
+        setId(course.id.toString());
+        setName(course.name);
+        setDescription(course.description);
+        setCredits(course.credits.toString());
+        setPrereqs(course.prerequisites.map(String).join(", "));
+        setRequired(course.isRequired);
         changeEditing();
     }
 
     function changeEditing() {
         setEditing(!editing);
         setShowAddModal(false);
+    }
+
+    function changeRequirement() {
+        setRequired(!isRequired);
+        console.log(isRequired);
     }
 
     return (
@@ -58,7 +71,7 @@ export function EditCourseModal({
                     Edit
                 </Button>
                 <Button
-                    onClick={() => deletCourse(course.id)}
+                    onClick={() => deleteCourse(course.id)}
                     variant="empty"
                     className="me-8"
                 >
@@ -148,6 +161,14 @@ export function EditCourseModal({
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
+                        {/* Required */}
+                        <Form.Check
+                            type="checkbox"
+                            id="required-check"
+                            label="Required?"
+                            onChange={changeRequirement}
+                            checked={isRequired}
+                        />
                         {/* Save/Cancel */}
                         <Button
                             onClick={save}
@@ -165,7 +186,7 @@ export function EditCourseModal({
                             Cancel
                         </Button>
                         <Button
-                            onClick={() => deletCourse(course.id)}
+                            onClick={() => deleteCourse(course.id)}
                             variant="danger"
                             className="me-8"
                         >

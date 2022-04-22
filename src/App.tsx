@@ -18,10 +18,15 @@ const PLANS = plans.map(
                 ...semester,
                 name: semester.session + ", " + semester.year,
                 courses: semester.courses.map(
-                    (course: Course): Course => ({ ...course })
+                    (course: Course): Course => ({
+                        ...course,
+                        prerequisites: course.prerequisites.map(Number)
+                    })
                 )
             })
-        )
+        ),
+        requirements: plan.requirements.map(Number),
+        taken_courses: plan.taken_courses.map(Number)
     })
 );
 
@@ -34,7 +39,9 @@ const DegreePlan = degreeplan.map((plan: Plan) => ({
                 (course: Course): Course => ({ ...course })
             )
         })
-    )
+    ),
+    requirements: plan.requirements.map(Number),
+    taken_courses: plan.taken_courses.map(Number)
 }));
 
 function App(): JSX.Element {
