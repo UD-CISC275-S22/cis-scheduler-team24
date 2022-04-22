@@ -19,6 +19,9 @@ export function EditCourseModal({
     const [credits, setCredits] = useState<string>(course.credits.toString());
     const [showAddModal, setShowAddModal] = useState(false);
     const [editing, setEditing] = useState<boolean>(false);
+    const [prereqs, setPrereqs] = useState<string>(
+        course.prerequisites.map(String).join(", ")
+    );
 
     const handleShowAddModal = () => setShowAddModal(true);
 
@@ -28,7 +31,8 @@ export function EditCourseModal({
             id: parseInt(id),
             name: name,
             description: description,
-            credits: parseInt(credits)
+            credits: parseInt(credits),
+            prerequisites: prereqs.split(", ").map(Number)
         });
         changeEditing();
     }
@@ -124,6 +128,20 @@ export function EditCourseModal({
                                     onChange={(
                                         event: React.ChangeEvent<HTMLInputElement>
                                     ) => setCredits(event.target.value)}
+                                />
+                            </Col>
+                        </Form.Group>
+                        {/* Prerequisities */}
+                        <Form.Group controlId="formPrerequisites" as={Row}>
+                            <Form.Label column sm={2}>
+                                Course Prerequisites (ID):
+                            </Form.Label>
+                            <Col>
+                                <Form.Control
+                                    value={prereqs}
+                                    onChange={(
+                                        event: React.ChangeEvent<HTMLInputElement>
+                                    ) => setPrereqs(event.target.value)}
                                 />
                             </Col>
                         </Form.Group>
