@@ -24,8 +24,9 @@
         at div
         at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/createWithBsPrefix.js:31:5
         at Tabs (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/Tabs.js:28:9)
-        at Tabs (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Tabs.js:88:43)
+        at TabContainer (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabContainer.js:21:3)
         at div
+        at ListPlans (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listPlans.tsx:8:5)
         at div
         at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
         at div
@@ -43,7 +44,7 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (337 ms)
+  ✕ renders the course name somewhere (341 ms)
 
   ● renders the course name somewhere
 
@@ -70,50 +71,76 @@ FAIL src/App.test.tsx
                 [33mclass[39m=[32m"col-sm-10"[39m
               [36m>[39m
                 [36m<div>[39m
-                  [36m<ul[39m
+                  [36m<div[39m
                     [33mclass[39m=[32m"nav nav-tabs"[39m
                     [33mrole[39m=[32m"tablist"[39m
                   [36m>[39m
-                    [36m<li[39m
+                    [36m<div[39m
                       [33mclass[39m=[32m"nav-item"[39m
-                      [33mrole[39m=[32m"presentation"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mstyle[39m=[32m"display: flex;"[39m
+                      [36m>[39m
+                        [36m<a[39m
+                          [33maria-controls[39m=[32m"react-aria2692150427-1-tabpane-1"[39m
+                          [33maria-selected[39m=[32m"true"[39m
+                          [33mclass[39m=[32m"nav-link active"[39m
+                          [33mdata-rr-ui-event-key[39m=[32m"1"[39m
+                          [33mid[39m=[32m"react-aria2692150427-1-tab-1"[39m
+                          [33mrole[39m=[32m"tab"[39m
+                        [36m>[39m
+                          [0mPlan 1[0m
+                        [36m</a>[39m
+                        [36m<button[39m
+                          [33mclass[39m=[32m"btn btn-empty"[39m
+                          [33mtype[39m=[32m"button"[39m
+                        [36m>[39m
+                          [0m✖️[0m
+                        [36m</button>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"nav-item"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mstyle[39m=[32m"display: flex;"[39m
+                      [36m>[39m
+                        [36m<a[39m
+                          [33maria-controls[39m=[32m"react-aria2692150427-1-tabpane-2"[39m
+                          [33mclass[39m=[32m"nav-link"[39m
+                          [33mdata-rr-ui-event-key[39m=[32m"2"[39m
+                          [33mid[39m=[32m"react-aria2692150427-1-tab-2"[39m
+                          [33mrole[39m=[32m"tab"[39m
+                          [33mtabindex[39m=[32m"-1"[39m
+                        [36m>[39m
+                          [0mPlan 2[0m
+                        [36m</a>[39m
+                        [36m<button[39m
+                          [33mclass[39m=[32m"btn btn-empty"[39m
+                          [33mtype[39m=[32m"button"[39m
+                        [36m>[39m
+                          [0m✖️[0m
+                        [36m</button>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"nav-item"[39m
                     [36m>[39m
                       [36m<button[39m
-                        [33maria-controls[39m=[32m"react-aria5799653200-1-tabpane-1"[39m
-                        [33maria-selected[39m=[32m"true"[39m
-                        [33mclass[39m=[32m"nav-link active"[39m
-                        [33mdata-rr-ui-event-key[39m=[32m"1"[39m
-                        [33mid[39m=[32m"react-aria5799653200-1-tab-1"[39m
-                        [33mrole[39m=[32m"tab"[39m
+                        [33mclass[39m=[32m"btn btn-outline-primary"[39m
                         [33mtype[39m=[32m"button"[39m
                       [36m>[39m
-                        [0mPlan 1[0m
+                        [0mAdd Plan[0m
                       [36m</button>[39m
-                    [36m</li>[39m
-                    [36m<li[39m
-                      [33mclass[39m=[32m"nav-item"[39m
-                      [33mrole[39m=[32m"presentation"[39m
-                    [36m>[39m
-                      [36m<button[39m
-                        [33maria-controls[39m=[32m"react-aria5799653200-1-tabpane-2"[39m
-                        [33mclass[39m=[32m"nav-link"[39m
-                        [33mdata-rr-ui-event-key[39m=[32m"2"[39m
-                        [33mid[39m=[32m"react-aria5799653200-1-tab-2"[39m
-                        [33mrole[39m=[32m"tab"[39m
-                        [33mtabindex[39m=[32m"-1"[39m
-                        [33mtype[39m=[32m"button"[39m
-                      [36m>[39m
-                        [0mPlan 2[0m
-                      [36m</button>[39m
-                    [36m</li>[39m
-                  [36m</ul>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
                   [36m<div[39m
                     [33mclass[39m=[32m"tab-content"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33maria-labelledby[39m=[32m"react-aria5799653200-1-tab-1"[39m
+                      [33maria-labelledby[39m=[32m"react-aria2692150427-1-tab-1"[39m
                       [33mclass[39m=[32m"tab-pane active"[39m
-                      [33mid[39m=[32m"react-aria5799653200-1-tabpane-1"[39m
+                      [33mid[39m=[32m"react-aria2692150427-1-tabpane-1"[39m
                     [36m>[39m
                       [36m<div>[39m
                         [36m<div[39m
@@ -170,21 +197,7 @@ FAIL src/App.test.tsx
                                                         [36m</div>[39m
                                                       [36m</th>[39m
                                                       [36m<th>[39m
-                                                        [36m<button[39m
-                                                          [33mclass[39m=[32m"btn btn btn-primary"[39m
-                                                          [33mtype[39m=[32m"button"[39m
-                                                        [36m>[39m
-                                                          [0mHide[0m
-                                                        [36m</button>[39m
-                                                        [36m<button[39m
-                                                          [33mclass[39m=[32m"btn btn-primary"[39m
-                                                          [33mtype[39m=[32m"button"[39m
-                                                        [36m>[39m
-                                                          [0mRemove Semester[0m
-                                                        [36m</button>[39m
-                                                      [36m</th>[39m
-                                                    [36m</tr>[39m
-             ...
+            ...
 
        5 | test("renders the course name somewhere", () => {
        6 |     render(<App />);
@@ -207,22 +220,24 @@ FAIL src/App.test.tsx
 ------------------------|---------|----------|---------|---------|-------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------------------|---------|----------|---------|---------|-------------------
-All files               |   36.87 |    27.77 |   23.17 |   38.05 |                   
- src                    |   70.83 |        0 |   58.82 |      80 |                   
-  App.tsx               |   70.83 |        0 |   58.82 |      80 | 56-77             
- src/components         |   29.91 |    31.25 |   13.84 |    30.7 |                   
+All files               |   38.19 |    27.77 |   25.88 |   39.41 |                   
+ src                    |   69.56 |        0 |   56.25 |   78.94 |                   
+  App.tsx               |   69.56 |        0 |   56.25 |   78.94 | 56-77             
+ src/components         |   32.23 |    31.25 |   18.84 |   33.05 |                   
   DeleteCourseModal.tsx |   42.85 |      100 |      25 |      50 | 14,47-48          
   EditCourseModal.tsx   |   32.25 |      100 |    7.69 |   33.33 | 30-59,74-189      
   ViewCoursesPool.tsx   |       0 |      100 |       0 |       0 | 11-15             
   Viewdegreeplan.tsx    |       0 |      100 |       0 |       0 | 11-15             
+  deletePlan.tsx        |      50 |      100 |      50 |      50 | 13                
   editPlan.tsx          |       0 |      100 |       0 |       0 | 14-30             
   editSemester.tsx      |       0 |      100 |       0 |       0 | 14-30             
   listCourses.tsx       |   36.11 |    16.66 |   16.66 |   37.14 | 30-74,114-170     
   listCoursesPool.tsx   |       0 |      100 |       0 |       0 | 7-11              
+  listPlans.tsx         |     100 |      100 |     100 |     100 |                   
   listSemesters.tsx     |     100 |      100 |     100 |     100 |                   
   listdegreeplan.tsx    |       0 |      100 |       0 |       0 | 8-13              
   viewCourse.tsx        |       0 |      100 |       0 |       0 | 6                 
-  viewPlan.tsx          |   27.27 |       25 |   11.11 |   27.27 | 23-61             
+  viewPlan.tsx          |      30 |       25 |    12.5 |      30 | 19-53             
   viewSemester.tsx      |   57.14 |       50 |      25 |   57.14 | 23-27,55          
  src/interfaces         |       0 |        0 |       0 |       0 |                   
   course.ts             |       0 |        0 |       0 |       0 |                   
@@ -232,5 +247,5 @@ All files               |   36.87 |    27.77 |   23.17 |   38.05 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.958 s
+Time:        3.043 s
 Ran all test suites.
