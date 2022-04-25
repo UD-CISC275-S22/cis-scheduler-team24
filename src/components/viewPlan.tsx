@@ -7,13 +7,9 @@ import { EditPlan } from "./editPlan";
 
 export function ViewPlan({
     plan,
-    deletePlan,
-    addPlan,
     setPlanName
 }: {
     plan: Plan;
-    deletePlan: (id: number) => void;
-    addPlan: () => void;
     setPlanName: (id: number, name: string) => void;
 }): JSX.Element {
     const [semesters, setSemesters] = useState<Semester[]>(plan.semesters);
@@ -21,10 +17,6 @@ export function ViewPlan({
 
     function openEdit(): void {
         setEditing(!isEditing);
-    }
-
-    function removePlan(): void {
-        deletePlan(plan.id);
     }
 
     function addSemester(): void {
@@ -112,16 +104,6 @@ export function ViewPlan({
                 <div>
                     <Button variant="success" onClick={clearSemesters}>
                         Clear Semesters
-                    </Button>
-                </div>
-                <div>
-                    <Button variant="success" onClick={addPlan}>
-                        Add Plan
-                    </Button>
-                </div>
-                <div>
-                    <Button variant="success" onClick={removePlan}>
-                        Delete Plan
                     </Button>
                 </div>
             </Container>
