@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Container, Button, Table } from "react-bootstrap";
+import { Container, Button, Table, Stack } from "react-bootstrap";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
 import { ListSemesters } from "./listSemesters";
 import { EditPlan } from "./editPlan";
+import { HelpButton } from "./HelpButton";
 
 export function ViewPlan({
     plan,
@@ -70,23 +71,36 @@ export function ViewPlan({
                     <thead>
                         <tr>
                             <th>
-                                <h3>{plan.name}</h3>
-                                <div>
-                                    {isEditing ? (
-                                        <EditPlan
-                                            plan={plan}
-                                            setPlanName={setPlanName}
-                                            openEdit={openEdit}
-                                        ></EditPlan>
-                                    ) : (
-                                        <Button
-                                            variant="secondary"
-                                            onClick={openEdit}
-                                        >
-                                            Edit Name
-                                        </Button>
-                                    )}
-                                </div>
+                                <span>
+                                    <Stack direction="horizontal" gap={3}>
+                                        <Container>
+                                            <div>
+                                                <h3>{plan.name}</h3>
+                                            </div>
+                                            <div>
+                                                {isEditing ? (
+                                                    <EditPlan
+                                                        plan={plan}
+                                                        setPlanName={
+                                                            setPlanName
+                                                        }
+                                                        openEdit={openEdit}
+                                                    ></EditPlan>
+                                                ) : (
+                                                    <Button
+                                                        variant="secondary"
+                                                        onClick={openEdit}
+                                                    >
+                                                        Edit Name
+                                                    </Button>
+                                                )}
+                                            </div>
+                                        </Container>
+                                        <div className="bg-light border ms-auto">
+                                            <HelpButton></HelpButton>
+                                        </div>
+                                    </Stack>
+                                </span>
                             </th>
                         </tr>
                     </thead>
