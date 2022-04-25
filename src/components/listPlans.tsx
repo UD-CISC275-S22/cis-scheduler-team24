@@ -18,10 +18,10 @@ export function ListPlans({
     return (
         <div>
             <Tab.Container defaultActiveKey={plans[0].id}>
-                <Nav>
+                <Nav variant="tabs">
                     {plans.map((plan: Plan) => (
                         <Nav.Item key={plan.id}>
-                            <div>
+                            <div style={{ display: "flex" }}>
                                 <Nav.Link eventKey={plan.id}>
                                     {plan.name}
                                 </Nav.Link>
@@ -33,7 +33,9 @@ export function ListPlans({
                         </Nav.Item>
                     ))}
                     <Nav.Item>
-                        <Button onClick={addPlan}>Add Plan</Button>
+                        <Button variant="outline-primary" onClick={addPlan}>
+                            Add Plan
+                        </Button>
                     </Nav.Item>
                 </Nav>
                 <Tab.Content>

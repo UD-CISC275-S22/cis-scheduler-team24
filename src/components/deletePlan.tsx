@@ -13,5 +13,9 @@ export function DeletePlan({
         deletePlan(plan.id);
     }
 
-    return <Button onClick={removePlan}>✖️</Button>;
+    return (
+        <Button variant="empty" onClick={removePlan}>
+            ✖️
+        </Button>
+    );
 }
