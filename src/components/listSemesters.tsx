@@ -1,5 +1,5 @@
 import React from "react";
-import { Table } from "react-bootstrap";
+import { Accordion, Table } from "react-bootstrap";
 import { Semester } from "../interfaces/semester";
 import { ViewSemester } from "./viewSemester";
 
@@ -18,13 +18,28 @@ export function ListSemesters({
                 <tr>
                     <th>
                         {planSemesters.map((semester: Semester) => (
-                            <div key={semester.id}>
-                                <ViewSemester
-                                    semester={semester}
-                                    removeSemester={removeSemester}
-                                    setSemesterName={setSemesterName}
-                                ></ViewSemester>
-                            </div>
+                            <Accordion
+                                key={semester.id}
+                                defaultActiveKey="0"
+                                flush
+                            >
+                                <Accordion.Item eventKey="0">
+                                    <Accordion.Header>
+                                        {semester.name}
+                                    </Accordion.Header>
+                                    <Accordion.Body>
+                                        <div key={semester.id}>
+                                            <ViewSemester
+                                                semester={semester}
+                                                removeSemester={removeSemester}
+                                                setSemesterName={
+                                                    setSemesterName
+                                                }
+                                            ></ViewSemester>
+                                        </div>
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
                         ))}
                     </th>
                 </tr>
