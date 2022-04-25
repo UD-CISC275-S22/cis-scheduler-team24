@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { Tabs, Tab, Col, Row, Table, Button, Offcanvas } from "react-bootstrap";
+import { Col, Row, Table, Button, Offcanvas } from "react-bootstrap";
 import "./App.css";
-import { ViewPlan } from "./components/viewPlan";
 import { Plan } from "./interfaces/plan";
 import { Semester } from "./interfaces/semester";
 import { Course } from "./interfaces/course";
-import plans from "./data/plans.json";
-import degreeplan from "./data/degreeplan.json";
+import { ListPlans } from "./components/listPlans";
 import { ListCoursesPool } from "./components/listCoursesPool";
 import { Listdegreeplan } from "./components/listdegreeplan";
+import plans from "./data/plans.json";
+import degreeplan from "./data/degreeplan.json";
 
 const PLANS = plans.map(
     (plan): Plan => ({
@@ -89,24 +89,12 @@ function App(): JSX.Element {
             <div>
                 <Row>
                     <Col sm={10}>
-                        <div>
-                            <Tabs defaultActiveKey={plans[0].id}>
-                                {plans.map((plan: Plan) => (
-                                    <Tab
-                                        key={plan.id}
-                                        eventKey={plan.id}
-                                        title={plan.name}
-                                    >
-                                        <ViewPlan
-                                            plan={plan}
-                                            deletePlan={deletePlan}
-                                            addPlan={addPlan}
-                                            setPlanName={setPlanName}
-                                        ></ViewPlan>
-                                    </Tab>
-                                ))}
-                            </Tabs>
-                        </div>
+                        <ListPlans
+                            plans={plans}
+                            addPlan={addPlan}
+                            deletePlan={deletePlan}
+                            setPlanName={setPlanName}
+                        ></ListPlans>
                     </Col>
                     <Col>
                         <Row>
