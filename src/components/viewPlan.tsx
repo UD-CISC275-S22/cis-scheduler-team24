@@ -67,9 +67,6 @@ export function ViewPlan({
                                     <Stack direction="horizontal" gap={3}>
                                         <Container>
                                             <div>
-                                                <h3>{plan.name}</h3>
-                                            </div>
-                                            <div>
                                                 {isEditing ? (
                                                     <EditPlan
                                                         plan={plan}
@@ -79,12 +76,20 @@ export function ViewPlan({
                                                         openEdit={openEdit}
                                                     ></EditPlan>
                                                 ) : (
-                                                    <Button
-                                                        variant="secondary"
-                                                        onClick={openEdit}
-                                                    >
-                                                        Edit Name
-                                                    </Button>
+                                                    <div>
+                                                        <h3>
+                                                            {plan.name}
+                                                            <Button
+                                                                onClick={
+                                                                    openEdit
+                                                                }
+                                                                variant="empty"
+                                                                className="me-8"
+                                                            >
+                                                                🖊
+                                                            </Button>
+                                                        </h3>
+                                                    </div>
                                                 )}
                                             </div>
                                         </Container>
