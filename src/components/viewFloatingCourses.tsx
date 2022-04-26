@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-import { Semester } from "../interfaces/semester";
+
 import {
     DragDropContext,
     Draggable,
@@ -11,21 +11,21 @@ import {
     NotDraggingStyle
 } from "react-beautiful-dnd";
 
-export function ViewCoursesPool({
-    semester
+export function ViewFloatingCourses({
+    floatingCourses,
+    setFloats
 }: {
-    semester: Semester;
+    floatingCourses: Course[];
+    setFloats: (newFloats: Course[]) => void;
 }): JSX.Element {
-    const [courses] = useState<Course[]>(semester.courses);
     const onDragEnd = (result: DropResult) => {
-        const [newcourses, setnewcourses] = useState<Course[]>(courses);
         const { source, destination } = result;
         if (!destination) return;
 
-        const items = Array.from(newcourses);
+        const items = Array.from(floatingCourses);
         const [newOrder] = items.splice(source.index, 1);
         items.splice(destination.index, 0, newOrder);
-        setnewcourses(items);
+        setFloats(items);
     };
 
     const getItemStyle = (
@@ -51,7 +51,7 @@ export function ViewCoursesPool({
                             {...Provided.droppableProps}
                             ref={Provided.innerRef}
                         >
-                            {courses.map((course, index) => {
+                            {floatingCourses.map((course, index) => {
                                 return (
                                     <Draggable
                                         key={course.id}

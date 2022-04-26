@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { Course } from "../interfaces/course";
-import { Semester } from "../interfaces/semester";
 import {
     DragDropContext,
     Draggable,
@@ -9,21 +8,22 @@ import {
     DropResult,
     NotDraggingStyle
 } from "react-beautiful-dnd";
-export function Viewdegreeplan({
-    semester
+
+export function ViewRequirements({
+    requirements,
+    setRequirements
 }: {
-    semester: Semester;
+    requirements: Course[];
+    setRequirements: (courses: Course[]) => void;
 }): JSX.Element {
-    const [courses /*setcourses*/] = useState<Course[]>(semester.courses);
     const onDragEnd = (result: DropResult) => {
-        const [newcourses, setnewcourses] = useState<Course[]>(courses);
         const { source, destination } = result;
         if (!destination) return;
 
-        const items = Array.from(newcourses);
+        const items = Array.from(requirements);
         const [newOrder] = items.splice(source.index, 1);
         items.splice(destination.index, 0, newOrder);
-        setnewcourses(items);
+        setRequirements(items);
     };
 
     const getItemStyle = (
@@ -42,18 +42,18 @@ export function Viewdegreeplan({
     return (
         <div>
             <DragDropContext onDragEnd={onDragEnd}>
-                <Droppable droppableId="courses">
+                <Droppable droppableId="requirements">
                     {(Provided) => (
                         <div
-                            className="courses"
+                            className="requirements"
                             {...Provided.droppableProps}
                             ref={Provided.innerRef}
                         >
-                            {courses.map((course, index) => {
+                            {requirements.map((requirement, index) => {
                                 return (
                                     <Draggable
-                                        key={course.id}
-                                        draggableId={course.id.toString()}
+                                        key={requirement.id}
+                                        draggableId={requirement.id.toString()}
                                         index={index}
                                     >
                                         {(provided, snapshot) => (
@@ -68,10 +68,10 @@ export function Viewdegreeplan({
                                                 )}
                                                 key={index}
                                             >
-                                                {course.name}
+                                                {requirement.name}
                                                 {"                        "}
                                                 {"       Credit: "}
-                                                {course.credits}
+                                                {requirement.credits}
                                             </div>
                                         )}
                                     </Draggable>

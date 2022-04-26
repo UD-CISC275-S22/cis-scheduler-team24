@@ -2,15 +2,18 @@ import React from "react";
 import { Nav, Tab, Button } from "react-bootstrap";
 import { ViewPlan } from "./viewPlan";
 import { Plan } from "../interfaces/plan";
+import { Course } from "../interfaces/course";
 import { DeletePlan } from "./deletePlan";
 
 export function ListPlans({
     plans,
+    courses,
     addPlan,
     deletePlan,
     setPlanName
 }: {
     plans: Plan[];
+    courses: Course[];
     addPlan: () => void;
     deletePlan: (id: number) => void;
     setPlanName: (id: number, name: string) => void;
@@ -43,6 +46,7 @@ export function ListPlans({
                         <Tab.Pane key={plan.id} eventKey={plan.id}>
                             <ViewPlan
                                 plan={plan}
+                                courses={courses}
                                 setPlanName={setPlanName}
                             ></ViewPlan>
                         </Tab.Pane>
