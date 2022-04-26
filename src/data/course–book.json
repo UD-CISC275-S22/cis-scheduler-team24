@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "name": "CISC108: Introduction to Computer Science I",
+        "credits": 3,
+        "description": "Python",
+        "prerequisites": [],
+        "isTaken": true,
+        "isEditing": false,
+        "isRequired": true,
+        "breadthType": "D"
+    },
+    {
+        "id": 2,
+        "name": "EGGG101: Introduction to Engineering",
+        "credits": 2,
+        "description": "Dumb class",
+        "prerequisites": [],
+        "isTaken": true,
+        "isEditing": false,
+        "isRequired": true,
+        "breadthType": "D"
+    },
+    {
+        "id": 3,
+        "name": "ENGL110: English",
+        "credits": 3,
+        "description": "Base required english class",
+        "prerequisites": [],
+        "isTaken": true,
+        "isEditing": false,
+        "isRequired": true,
+        "breadthType": "B"
+    },
+    {
+        "id": 4,
+        "name": "MATH241: Calculus A & B",
+        "credits": 4,
+        "description": "It's calc.",
+        "prerequisites": [],
+        "isTaken": true,
+        "isEditing": false,
+        "isRequired": true,
+        "breadthType": "D"
+    },
+    {
+        "id": 5,
+        "name": "GEOL107: The lab science for CIS majors",
+        "credits": 4,
+        "description": "Rocks for Jocks",
+        "prerequisites": [],
+        "isTaken": true,
+        "isEditing": false,
+        "isRequired": true,
+        "breadthType": "D"
+    },
+    {
+        "id": 6,
+        "name": "CISC210: Introduction to Systems Programming",
+        "credits": 3,
+        "description": "Bash and C",
+        "prerequisites": [1],
+        "isTaken": true,
+        "isEditing": false,
+        "isRequired": true,
+        "breadthType": "D"
+    },
+    {
+        "id": 7,
+        "name": "CISC181: Introduction to Computer Science II",
+        "credits": 3,
+        "description": "Java",
+        "prerequisites": [1],
+        "isTaken": true,
+        "isEditing": false,
+        "isRequired": true,
+        "breadthType": "D"
+    },
+    {
+        "id": 8,
+        "name": "GEOL105: Natural Hazards",
+        "credits": 4,
+        "description": "This one's exciting cause it has more lava",
+        "prerequisites": [],
+        "isTaken": true,
+        "isEditing": false,
+        "isRequired": true,
+        "breadthType": "D"
+    },
+    {
+        "id": 9,
+        "name": "MATH210: Discrete Math",
+        "credits": 4,
+        "description": "Annoying math class",
+        "prerequisites": [4],
+        "isTaken": true,
+        "isEditing": false,
+        "isRequired": true,
+        "breadthType": "D"
+    },
+    {
+        "id": 10,
+        "name": "MUSC207: History of Jazz",
+        "credits": 3,
+        "description": "Ya like jazz?",
+        "prerequisites": [],
+        "isTaken": true,
+        "isEditing": false,
+        "isRequired": false,
+        "breadthType": "B"
+    }
+]
