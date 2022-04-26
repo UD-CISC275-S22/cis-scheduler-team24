@@ -33,8 +33,7 @@ export function ViewSemester({
                     <thead>
                         <tr>
                             <th>
-                                {semester.name}
-                                <div>
+                                <span>
                                     {isEditing ? (
                                         <EditSemester
                                             semester={semester}
@@ -42,11 +41,18 @@ export function ViewSemester({
                                             openEdit={openEdit}
                                         ></EditSemester>
                                     ) : (
-                                        <Button onClick={openEdit}>
-                                            Edit Name
-                                        </Button>
+                                        <div>
+                                            {semester.name}
+                                            <Button
+                                                onClick={openEdit}
+                                                variant="empty"
+                                                className="me-8"
+                                            >
+                                                🖊
+                                            </Button>
+                                        </div>
                                     )}
-                                </div>
+                                </span>
                             </th>
                             <th>
                                 <Button onClick={deleteSemester}>
