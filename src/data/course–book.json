@@ -108,5 +108,49 @@
         "isEditing": false,
         "isRequired": false,
         "breadthType": "B"
+    },
+    {
+        "id": 11,
+        "name": "POSC150: Introduction to American Politics",
+        "credits": 3,
+        "description": "A brief overview of the American government",
+        "prerequisites": [],
+        "isTaken": false,
+        "isEditing": false,
+        "isRequired": false,
+        "breadthType": "C"
+    },
+    {
+        "id": 12,
+        "name": "POSC240: Introduction to Global Politics",
+        "credits": 3,
+        "description": "A brief overview of global politics",
+        "prerequisites": [11],
+        "isTaken": false,
+        "isEditing": false,
+        "isRequired": false,
+        "breadthType": "C"
+    },
+    {
+        "id": 13,
+        "name": "PHIL125: Philosophy in South Park",
+        "credits": 3,
+        "description": "A brief overview of global politics",
+        "prerequisites": [],
+        "isTaken": false,
+        "isEditing": false,
+        "isRequired": false,
+        "breadthType": "C"
+    },
+    {
+        "id": 14,
+        "name": "ENGL410: Technical Writing",
+        "credits": 3,
+        "description": "Writing for technology or whatever",
+        "prerequisites": [],
+        "isTaken": false,
+        "isEditing": false,
+        "isRequired": false,
+        "breadthType": "B"
     }
 ]

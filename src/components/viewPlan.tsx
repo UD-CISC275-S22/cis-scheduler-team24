@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import { Container, Button, Table, Stack } from "react-bootstrap";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
+import { Course } from "../interfaces/course";
 import { ListSemesters } from "./listSemesters";
 import { EditPlan } from "./editPlan";
 import { HelpButton } from "./HelpButton";
 
 export function ViewPlan({
     plan,
+    courses,
     setPlanName
 }: {
     plan: Plan;
+    courses: Course[];
     setPlanName: (id: number, name: string) => void;
 }): JSX.Element {
     const [semesters, setSemesters] = useState<Semester[]>(plan.semesters);
@@ -101,6 +104,7 @@ export function ViewPlan({
                             <td>
                                 <ListSemesters
                                     planSemesters={semesters}
+                                    courses={courses}
                                     removeSemester={removeSemester}
                                     setSemesterName={setSemesterName}
                                 ></ListSemesters>

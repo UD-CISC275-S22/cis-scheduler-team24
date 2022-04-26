@@ -8,14 +8,20 @@ import { EditSemester } from "./editSemester";
 
 export function ViewSemester({
     semester,
+    courses,
     removeSemester,
     setSemesterName
 }: {
     semester: Semester;
+    courses: Course[];
     removeSemester: (id: number) => void;
     setSemesterName: (id: number, name: string) => void;
 }): JSX.Element {
-    const [courses /*, setcourses*/] = useState<Course[]>(semester.courses);
+    const [semesterCourses /*, setSemesterCourses*/] = useState<Course[]>(
+        courses.filter((course: Course): boolean =>
+            semester.courses.includes(course.id)
+        )
+    );
     const [isEditing, setEditing] = useState<boolean>(false);
 
     function deleteSemester(): void {
@@ -57,7 +63,7 @@ export function ViewSemester({
                         <tr>
                             <th>
                                 <ListCourses
-                                    semesterCourses={courses}
+                                    semesterCourses={semesterCourses}
                                 ></ListCourses>
                             </th>
                         </tr>
