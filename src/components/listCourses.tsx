@@ -3,7 +3,14 @@ import { Button, Container, Table, Form } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { DeleteCourseModal } from "./DeleteCourseModal";
 import { EditCourseModal } from "./EditCourseModal";
-//import { DragDropContext, Draggable, DropResult } from "react-beautiful-dnd";
+import {
+    DragDropContext,
+    Draggable,
+    DraggingStyle,
+    Droppable,
+    DropResult,
+    NotDraggingStyle
+} from "react-beautiful-dnd";
 //import { ViewCourse } from "./viewCourse";
 
 interface Courses {
@@ -22,27 +29,29 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
 
     const handleCloseAddModal = () => setShowAddModal(false);
 
-    // const onDragEnd = (result: DropResult) => {
-    //     const { source, destination } = result;
-    //     if (!destination) return;
+    const onDragEnd = (result: DropResult) => {
+        const { source, destination } = result;
+        if (!destination) return;
 
-    //     const items = Array.from(courses);
-    //     const [newOrder] = items.splice(source.index, 1);
-    //     items.splice(destination.index, 0, newOrder);
-    //     setCourses(items);
-    // };
+        const items = Array.from(courses);
+        const [newOrder] = items.splice(source.index, 1);
+        items.splice(destination.index, 0, newOrder);
+        setCourses(items);
+    };
 
-    // const getItemStyle = (isDragging: boolean, draggableStyle: any) => ({
-    //     padding: 10,
-    //     margin: "0 50px 15px 50px",
-    //     background: isDragging ? "#4a2975" : "white",
-    //     color: isDragging ? "white" : "black",
-    //     border: "1px solid black",
-    //     frontsize: "20px",
-    //     borderRadius: "5px",
-
-    //     ...draggableStyle
-    // });
+    const getItemStyle = (
+        isDragging: boolean,
+        draggableStyle: DraggingStyle | NotDraggingStyle | undefined
+    ) => ({
+        padding: 10,
+        margin: "0 50px 15px 50px",
+        background: isDragging ? "#4a2975" : "white",
+        color: isDragging ? "white" : "black",
+        border: "1px solid black",
+        frontsize: "20px",
+        borderRadius: "5px",
+        ...draggableStyle
+    });
 
     const Credits = courses.reduce(
         (currentTotal: number, course: Course) => currentTotal + course.credits,
@@ -197,41 +206,49 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
             <Container>
                 <div>Total Credits: {Credits}</div>
             </Container>
-            {/* <Container>
+            <Container>
                 <DragDropContext onDragEnd={onDragEnd}>
-                    {courses.map((course, index) => {
-                        return (
-                            <Draggable
-                                key={course.id}
-                                draggableId={course.id.toString()}
-                                index={index}
+                    <Droppable droppableId="courses">
+                        {(Provided) => (
+                            <div
+                                className="courses"
+                                {...Provided.droppableProps}
+                                ref={Provided.innerRef}
                             >
-                                {(provided, snapshot) => (
-                                    <tr
-                                        ref={provided.innerRef}
-                                        {...provided.draggableProps}
-                                        {...provided.dragHandleProps}
-                                        style={getItemStyle(
-                                            snapshot.isDragging,
-                                            provided.draggableProps.style
-                                        )}
-                                        key={index}
-                                    >
-                                        <td>
-                                            {course.id}
-                                            {"|"}
-                                            {course.name}
-                                            {"|"}
-                                            {course.description}
-                                            {"|"}
-                                        </td>
-                                    </tr>
-                                )}
-                            </Draggable>
-                        );
-                    })}
+                                {courses.map((course, index) => {
+                                    return (
+                                        <Draggable
+                                            key={course.id}
+                                            draggableId={course.id.toString()}
+                                            index={index}
+                                        >
+                                            {(provided, snapshot) => (
+                                                <div
+                                                    ref={provided.innerRef}
+                                                    {...provided.draggableProps}
+                                                    {...provided.dragHandleProps}
+                                                    style={getItemStyle(
+                                                        snapshot.isDragging,
+                                                        provided.draggableProps
+                                                            .style
+                                                    )}
+                                                    key={index}
+                                                >
+                                                    {course.name}
+                                                    {"                        "}
+                                                    {"       Credit:  "}
+                                                    {course.credits}
+                                                </div>
+                                            )}
+                                        </Draggable>
+                                    );
+                                })}
+                                {Provided.placeholder}
+                            </div>
+                        )}
+                    </Droppable>
                 </DragDropContext>
-            </Container> */}
+            </Container>
         </div>
     );
 }
