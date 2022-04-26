@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Form, Button } from "react-bootstrap";
+import { Form, Button, InputGroup } from "react-bootstrap";
 import { Semester } from "../interfaces/semester";
 
 export function EditSemester({
@@ -20,20 +20,18 @@ export function EditSemester({
 
     return (
         <div>
-            <Form.Group>
-                <Form.Label>New Name:</Form.Label>
-                <Col>
-                    <Form.Control
-                        value={name}
-                        onChange={(
-                            event: React.ChangeEvent<HTMLInputElement>
-                        ) => setName(event.target.value)}
-                    />
-                </Col>
-            </Form.Group>
-            <Button variant="secondary" onClick={save}>
-                Save Name
-            </Button>
+            <InputGroup className="mb-3">
+                <Form.Control
+                    value={name}
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                        setName(event.target.value)
+                    }
+                    className="form-control-style-1"
+                />
+                <Button variant="secondary" onClick={save}>
+                    Save
+                </Button>
+            </InputGroup>
         </div>
     );
 }
