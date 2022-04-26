@@ -6,7 +6,7 @@ export function HelpButton() {
         <Popover id="popover-basic">
             <Popover.Header as="h3">Application Introduction</Popover.Header>
             <Popover.Body>
-                Still need detail here. If you need help, connect
+                Still need detail here. If you need help, contact
                 jinging@udel.edu. ^^
             </Popover.Body>
         </Popover>
