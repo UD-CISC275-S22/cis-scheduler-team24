@@ -16,7 +16,6 @@ export function ViewSemester({
     setSemesterName: (id: number, name: string) => void;
 }): JSX.Element {
     const [courses /*, setcourses*/] = useState<Course[]>(semester.courses);
-    const [showMore, setShowMore] = useState<boolean>(true);
     const [isEditing, setEditing] = useState<boolean>(false);
 
     function deleteSemester(): void {
@@ -50,27 +49,17 @@ export function ViewSemester({
                                 </div>
                             </th>
                             <th>
-                                <Button
-                                    className="btn"
-                                    onClick={() => setShowMore(!showMore)}
-                                >
-                                    {showMore ? "Hide" : "show more"}
-                                </Button>
                                 <Button onClick={deleteSemester}>
                                     Remove Semester
                                 </Button>
                             </th>
                         </tr>
                         <tr>
-                            {showMore ? (
-                                <th>
-                                    <ListCourses
-                                        semesterCourses={courses}
-                                    ></ListCourses>
-                                </th>
-                            ) : (
-                                <th> </th>
-                            )}
+                            <th>
+                                <ListCourses
+                                    semesterCourses={courses}
+                                ></ListCourses>
+                            </th>
                         </tr>
                     </thead>
                 </Table>
