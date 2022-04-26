@@ -8,7 +8,7 @@
         at table
         at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
         at div
-        at ListSemesters (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listSemesters.tsx:7:5)
+        at ListSemesters (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listSemesters.tsx:8:5)
         at td
         at tr
         at tbody
@@ -17,7 +17,7 @@
         at div
         at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
         at div
-        at ViewPlan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/viewPlan.tsx:10:5)
+        at ViewPlan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/viewPlan.tsx:11:5)
         at div
         at NoopTransition (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/NoopTransition.js:9:3)
         at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabPane.js:31:3
@@ -26,14 +26,14 @@
         at Tabs (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/Tabs.js:28:9)
         at TabContainer (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabContainer.js:21:3)
         at div
-        at ListPlans (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listPlans.tsx:8:5)
+        at ListPlans (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listPlans.tsx:9:5)
         at div
         at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
         at div
         at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
         at div
         at div
-        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:48:31)
+        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:46:31)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -44,7 +44,7 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (452 ms)
+  ✕ renders the course name somewhere (710 ms)
 
   ● renders the course name somewhere
 
@@ -82,11 +82,11 @@ FAIL src/App.test.tsx
                         [33mstyle[39m=[32m"display: flex;"[39m
                       [36m>[39m
                         [36m<a[39m
-                          [33maria-controls[39m=[32m"react-aria1517163624-1-tabpane-1"[39m
+                          [33maria-controls[39m=[32m"react-aria8086213570-1-tabpane-1"[39m
                           [33maria-selected[39m=[32m"true"[39m
                           [33mclass[39m=[32m"nav-link active"[39m
                           [33mdata-rr-ui-event-key[39m=[32m"1"[39m
-                          [33mid[39m=[32m"react-aria1517163624-1-tab-1"[39m
+                          [33mid[39m=[32m"react-aria8086213570-1-tab-1"[39m
                           [33mrole[39m=[32m"tab"[39m
                         [36m>[39m
                           [0mPlan 1[0m
@@ -106,10 +106,10 @@ FAIL src/App.test.tsx
                         [33mstyle[39m=[32m"display: flex;"[39m
                       [36m>[39m
                         [36m<a[39m
-                          [33maria-controls[39m=[32m"react-aria1517163624-1-tabpane-2"[39m
+                          [33maria-controls[39m=[32m"react-aria8086213570-1-tabpane-2"[39m
                           [33mclass[39m=[32m"nav-link"[39m
                           [33mdata-rr-ui-event-key[39m=[32m"2"[39m
-                          [33mid[39m=[32m"react-aria1517163624-1-tab-2"[39m
+                          [33mid[39m=[32m"react-aria8086213570-1-tab-2"[39m
                           [33mrole[39m=[32m"tab"[39m
                           [33mtabindex[39m=[32m"-1"[39m
                         [36m>[39m
@@ -138,9 +138,9 @@ FAIL src/App.test.tsx
                     [33mclass[39m=[32m"tab-content"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33maria-labelledby[39m=[32m"react-aria1517163624-1-tab-1"[39m
+                      [33maria-labelledby[39m=[32m"react-aria8086213570-1-tab-1"[39m
                       [33mclass[39m=[32m"tab-pane active"[39m
-                      [33mid[39m=[32m"react-aria1517163624-1-tabpane-1"[39m
+                      [33mid[39m=[32m"react-aria8086213570-1-tabpane-1"[39m
                     [36m>[39m
                       [36m<div>[39m
                         [36m<div[39m
@@ -220,36 +220,34 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
-------------------------|---------|----------|---------|---------|----------------------
-File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s    
-------------------------|---------|----------|---------|---------|----------------------
-All files               |   33.51 |    15.62 |   27.55 |   34.85 |                      
- src                    |   69.56 |        0 |   56.25 |   78.94 |                      
-  App.tsx               |   69.56 |        0 |   56.25 |   78.94 | 56-77                
- src/components         |   28.39 |    16.66 |   21.95 |   29.48 |                      
-  DeleteCourseModal.tsx |   42.85 |      100 |      25 |      50 | 14,47-48             
-  EditCourseModal.tsx   |   32.25 |      100 |    7.69 |   33.33 | 30-59,74-189         
-  HelpButton.tsx        |     100 |      100 |     100 |     100 |                      
-  ViewCoursesPool.tsx   |       0 |        0 |       0 |       0 | 19-87                
-  Viewdegreeplan.tsx    |       0 |        0 |       0 |       0 | 17-80                
-  deletePlan.tsx        |      50 |      100 |      50 |      50 | 13                   
-  editPlan.tsx          |       0 |      100 |       0 |       0 | 14-27                
-  editSemester.tsx      |       0 |      100 |       0 |       0 | 14-27                
-  listCourses.tsx       |   38.77 |       25 |   30.43 |   40.42 | 33-39,62-106,146-202 
-  listCoursesPool.tsx   |       0 |      100 |       0 |       0 | 7-11                 
-  listPlans.tsx         |     100 |      100 |     100 |     100 |                      
-  listSemesters.tsx     |     100 |      100 |     100 |     100 |                      
-  listdegreeplan.tsx    |       0 |      100 |       0 |       0 | 8-13                 
-  viewCourse.tsx        |       0 |      100 |       0 |       0 | 6                    
-  viewPlan.tsx          |      30 |       25 |    12.5 |      30 | 20-54                
-  viewSemester.tsx      |      60 |       50 |   33.33 |      60 | 22-26                
- src/interfaces         |       0 |        0 |       0 |       0 |                      
-  course.ts             |       0 |        0 |       0 |       0 |                      
-  plan.ts               |       0 |        0 |       0 |       0 |                      
-  semester.ts           |       0 |        0 |       0 |       0 |                      
-------------------------|---------|----------|---------|---------|----------------------
+--------------------------|---------|----------|---------|---------|----------------------
+File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s    
+--------------------------|---------|----------|---------|---------|----------------------
+All files                 |   36.46 |    15.62 |   28.12 |   38.37 |                      
+ src                      |   67.85 |        0 |   47.05 |      76 |                      
+  App.tsx                 |   67.85 |        0 |   47.05 |      76 | 58-89                
+ src/components           |   30.71 |    16.66 |   24.05 |   31.97 |                      
+  DeleteCourseModal.tsx   |   42.85 |      100 |      25 |      50 | 14,47-48             
+  EditCourseModal.tsx     |   32.25 |      100 |    7.69 |   33.33 | 30-59,74-189         
+  HelpButton.tsx          |     100 |      100 |     100 |     100 |                      
+  deletePlan.tsx          |      50 |      100 |      50 |      50 | 13                   
+  editPlan.tsx            |       0 |      100 |       0 |       0 | 14-27                
+  editSemester.tsx        |       0 |      100 |       0 |       0 | 14-27                
+  listCourses.tsx         |   38.77 |       25 |   30.43 |   40.42 | 33-39,62-106,146-202 
+  listPlans.tsx           |     100 |      100 |     100 |     100 |                      
+  listSemesters.tsx       |     100 |      100 |     100 |     100 |                      
+  viewCourse.tsx          |       0 |      100 |       0 |       0 | 6                    
+  viewFloatingCourses.tsx |       0 |        0 |       0 |       0 | 21-87                
+  viewPlan.tsx            |      30 |       25 |    12.5 |      30 | 23-57                
+  viewRequirements.tsx    |       0 |        0 |       0 |       0 | 19-80                
+  viewSemester.tsx        |   66.66 |       50 |      50 |   66.66 | 28-32                
+ src/interfaces           |       0 |        0 |       0 |       0 |                      
+  course.ts               |       0 |        0 |       0 |       0 |                      
+  plan.ts                 |       0 |        0 |       0 |       0 |                      
+  semester.ts             |       0 |        0 |       0 |       0 |                      
+--------------------------|---------|----------|---------|---------|----------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.054 s
+Time:        4.058 s
 Ran all test suites.
