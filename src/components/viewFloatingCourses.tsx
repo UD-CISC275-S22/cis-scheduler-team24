@@ -68,11 +68,6 @@ export function ViewFloatingCourses({
                                                     provided.draggableProps
                                                         .style
                                                 )}
-                                                // style={{
-                                                //     border: "1px solid #242424",
-                                                //     opacity: 0.5,
-                                                //     borderRadius: "5px"
-                                                // }}
                                                 key={index}
                                             >
                                                 {course.name}
