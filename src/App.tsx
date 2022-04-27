@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Row, Button, Offcanvas /*, Table*/ } from "react-bootstrap";
+import { Col, Row /*, Button, Offcanvas , Table*/ } from "react-bootstrap";
 import "./App.css";
 import { Plan } from "./interfaces/plan";
 import { Semester } from "./interfaces/semester";
@@ -49,10 +49,10 @@ function App(): JSX.Element {
         useState<Course[]>(FLOATING_COURSES);
     const [requiredCourses, setRequiredCourses] =
         useState<Course[]>(REQUIRED_COURSES);
-    const [show, setShow] = useState(false);
+    //onst [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    // const handleClose = () => setShow(false);
+    // const handleShow = () => setShow(true);
 
     function addPlan(): void {
         setPlans([
@@ -98,7 +98,7 @@ function App(): JSX.Element {
             </header>
             <div>
                 <Row>
-                    <Col sm={10}>
+                    <Col sm={9}>
                         <ListPlans
                             plans={plans}
                             courses={courses}
@@ -110,7 +110,7 @@ function App(): JSX.Element {
                     <Col>
                         <Row>
                             <div>
-                                <Button variant="primary" onClick={handleShow}>
+                                {/* <Button variant="primary" onClick={handleShow}>
                                     Show Courses Pool and Degree plan
                                 </Button>
 
@@ -124,18 +124,18 @@ function App(): JSX.Element {
                                             Degree Plan
                                         </Offcanvas.Title>
                                     </Offcanvas.Header>
-                                    <Offcanvas.Body>
-                                        Floating Courses:
-                                        <ViewFloatingCourses
-                                            floatingCourses={floatingCourses}
-                                            setFloats={setFloats}
-                                        ></ViewFloatingCourses>
-                                        Required Courses:
-                                        <ViewRequirements
-                                            requirements={requiredCourses}
-                                            setRequirements={setRequirements}
-                                        ></ViewRequirements>
-                                        {/*
+                                    <Offcanvas.Body> */}
+                                Floating Courses:
+                                <ViewFloatingCourses
+                                    floatingCourses={floatingCourses}
+                                    setFloats={setFloats}
+                                ></ViewFloatingCourses>
+                                Required Courses:
+                                <ViewRequirements
+                                    requirements={requiredCourses}
+                                    setRequirements={setRequirements}
+                                ></ViewRequirements>
+                                {/*
                                         <Table striped bordered hover>
                                             <thead>
                                                 <tr>
@@ -193,8 +193,8 @@ function App(): JSX.Element {
                                             </tbody>
                                         </Table>
                                                                 */}
-                                    </Offcanvas.Body>
-                                </Offcanvas>
+                                {/* </Offcanvas.Body>
+                                </Offcanvas> */}
                             </div>
                         </Row>
                     </Col>

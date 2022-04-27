@@ -45,7 +45,7 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
     ) => ({
         padding: 10,
         margin: "0 50px 15px 50px",
-        background: isDragging ? "#4a2975" : "white",
+        background: isDragging ? "green" : "white",
         color: isDragging ? "white" : "black",
         border: "1px solid black",
         frontsize: "20px",
@@ -206,7 +206,7 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
             <Container>
                 <div>Total Credits: {Credits}</div>
             </Container>
-            <Container>
+            <div className="scrollbox">
                 <DragDropContext onDragEnd={onDragEnd}>
                     <Droppable droppableId="courses">
                         {(Provided) => (
@@ -248,7 +248,7 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
                         )}
                     </Droppable>
                 </DragDropContext>
-            </Container>
+            </div>
         </div>
     );
 }
