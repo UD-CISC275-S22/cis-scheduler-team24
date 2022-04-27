@@ -86,49 +86,6 @@ export function ViewFloatingCourses({
                     )}
                 </Droppable>
             </DragDropContext>
-            {/* <DragDropContext onDragEnd={onDragEnd}>
-                {courses.map((course, index) => {
-                    return (
-                        <Draggable
-                            key={course.id}
-                            draggableId={course.id.toString()}
-                            index={index}
-                        >
-                            {(provided, snapshot) => (
-                                <div
-                                    ref={provided.innerRef}
-                                    {...provided.draggableProps}
-                                    {...provided.dragHandleProps}
-                                    style={getItemStyle(
-                                        snapshot.isDragging,
-                                        provided.draggableProps.style
-                                    )}
-                                    key={index}
-                                >
-                                    {course.id}
-                                    {course.name}
-                                    {course.description}
-                                    {course.credits}
-                                </div>
-                            )}
-                        </Draggable>
-                    );
-                })}
-            </DragDropContext> */}
-            {/* {courses.map((course: Course) => (
-                <div key={semester.id}>
-                    <Table>
-                        <thead>
-                            <tr>
-                                <th>{course.id}</th>
-                                <th>{course.name}</th>
-                                <th>{course.description}</th>
-                                <th>{course.credits}</th>
-                            </tr>
-                        </thead>
-                    </Table>
-                </div>
-            ))} */}
         </Container>
     );
 }
