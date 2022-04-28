@@ -49,7 +49,7 @@ export function DeleteCourseModal({
                             }}
                             variant="danger"
                         >
-                            Delete All Course
+                            Delete All Courses
                         </Button>
                         <Button onClick={cancel} variant="warning">
                             Cancel
