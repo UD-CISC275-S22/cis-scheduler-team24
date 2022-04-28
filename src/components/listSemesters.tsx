@@ -1,6 +1,7 @@
-import React from "react";
-import { Accordion, Table } from "react-bootstrap";
+import React, { useState } from "react";
+import { Accordion, Button, Table } from "react-bootstrap";
 import { Semester } from "../interfaces/semester";
+import { EditSemester } from "./editSemester";
 import { ViewSemester } from "./viewSemester";
 
 export function ListSemesters({
@@ -12,6 +13,12 @@ export function ListSemesters({
     removeSemester: (id: number) => void;
     setSemesterName: (id: number, name: string) => void;
 }): JSX.Element {
+    const [isEditing, setEditing] = useState<boolean>(false);
+
+    function openEdit(): void {
+        setEditing(!isEditing);
+    }
+
     return (
         <div>
             <Table striped bordered hover>
@@ -25,16 +32,47 @@ export function ListSemesters({
                             >
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>
-                                        {semester.name}
+                                        <div style={{ display: "flex" }}>
+                                            <div>
+                                                {isEditing ? (
+                                                    <EditSemester
+                                                        semester={semester}
+                                                        setSemesterName={
+                                                            setSemesterName
+                                                        }
+                                                        openEdit={openEdit}
+                                                    ></EditSemester>
+                                                ) : (
+                                                    <div>
+                                                        {semester.name}
+                                                        <Button
+                                                            onClick={openEdit}
+                                                            variant="empty"
+                                                            className="me-8"
+                                                        >
+                                                            🖊
+                                                        </Button>
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div placeholder="right">
+                                                <Button
+                                                    variant="empty"
+                                                    onClick={() =>
+                                                        removeSemester(
+                                                            semester.id
+                                                        )
+                                                    }
+                                                >
+                                                    ✖️
+                                                </Button>
+                                            </div>
+                                        </div>
                                     </Accordion.Header>
                                     <Accordion.Body>
                                         <div key={semester.id}>
                                             <ViewSemester
                                                 semester={semester}
-                                                removeSemester={removeSemester}
-                                                setSemesterName={
-                                                    setSemesterName
-                                                }
                                             ></ViewSemester>
                                         </div>
                                     </Accordion.Body>
