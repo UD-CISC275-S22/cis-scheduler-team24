@@ -1,5 +1,4 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 
 import {
@@ -32,8 +31,8 @@ export function ViewFloatingCourses({
         isDragging: boolean,
         draggableStyle: DraggingStyle | NotDraggingStyle | undefined
     ) => ({
-        padding: 10,
-        margin: "0 50px 15px 50px",
+        padding: 8,
+        margin: "0 1px 10px 1px",
         background: isDragging ? "#4a2975" : "white",
         color: isDragging ? "white" : "black",
         border: "1px solid black",
@@ -42,7 +41,7 @@ export function ViewFloatingCourses({
         ...draggableStyle
     });
     return (
-        <Container>
+        <div className="floating">
             <DragDropContext onDragEnd={onDragEnd}>
                 <Droppable droppableId="courses">
                     {(Provided) => (
@@ -71,8 +70,7 @@ export function ViewFloatingCourses({
                                                 key={index}
                                             >
                                                 {course.name}
-                                                {"                        "}
-                                                {"       Credit: "}
+                                                {"Credit: "}
                                                 {course.credits}
                                             </div>
                                         )}
@@ -86,6 +84,6 @@ export function ViewFloatingCourses({
                     )}
                 </Droppable>
             </DragDropContext>
-        </Container>
+        </div>
     );
 }
