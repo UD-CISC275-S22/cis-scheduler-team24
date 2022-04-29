@@ -1,4 +1,3 @@
-import { Course } from "./course";
 //export type SessionType = "Fall" | "Winter" | "Spring" | "Summer";
 
 export interface Semester {
@@ -6,7 +5,7 @@ export interface Semester {
     name: string;
     year: number;
     session: string;
-    courses: Course[];
+    courses: number[];
     totalCredits: number;
     isSkipped: boolean;
 }
