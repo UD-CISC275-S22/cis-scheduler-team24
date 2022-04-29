@@ -10,7 +10,6 @@ export function ViewSemester({
     semester: Semester;
 }): JSX.Element {
     const [courses /*, setcourses*/] = useState<Course[]>(semester.courses);
-
     return (
         <div>
             <Container>
