@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Table } from "react-bootstrap";
 import { Semester } from "../interfaces/semester";
+import { Course } from "../interfaces/course";
 import { ListCourses } from "./listCourses";
-
 export function ViewSemester({
     semester
 }: {
