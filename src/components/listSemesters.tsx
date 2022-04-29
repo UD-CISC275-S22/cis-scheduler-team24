@@ -69,6 +69,7 @@ export function ListSemesters({
                                             </div>
                                         </div>
                                     </Accordion.Header>
+
                                     <Accordion.Body>
                                         <div key={semester.id}>
                                             <ViewSemester
