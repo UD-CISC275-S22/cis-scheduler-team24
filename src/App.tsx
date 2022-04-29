@@ -98,7 +98,7 @@ function App(): JSX.Element {
             </header>
             <div>
                 <Row>
-                    <Col sm={10} style={{ overflow: "auto" }}>
+                    <Col sm={9}>
                         <ListPlans
                             plans={plans}
                             courses={courses}
@@ -108,18 +108,93 @@ function App(): JSX.Element {
                         ></ListPlans>
                     </Col>
                     <Col>
-                        <Row /*style={{ columnWidth: "100px" }}*/>
+                        <Row>
                             <div>
-                                <span>Floating Courses:</span>
+                                {/* <Button variant="primary" onClick={handleShow}>
+                                    Show Courses Pool and Degree plan
+                                </Button>
+
+                                <Offcanvas
+                                    show={show}
+                                    onHide={handleClose}
+                                    placement={"end"}
+                                >
+                                    <Offcanvas.Header closeButton>
+                                        <Offcanvas.Title>
+                                            Degree Plan
+                                        </Offcanvas.Title>
+                                    </Offcanvas.Header>
+                                    <Offcanvas.Body> */}
+                                Floating Courses:
                                 <ViewFloatingCourses
                                     floatingCourses={floatingCourses}
                                     setFloats={setFloats}
                                 ></ViewFloatingCourses>
-                                <div>Required Courses:</div>
+                                Required Courses:
                                 <ViewRequirements
                                     requirements={requiredCourses}
                                     setRequirements={setRequirements}
                                 ></ViewRequirements>
+                                {/*
+                                        <Table striped bordered hover>
+                                            <thead>
+                                                <tr>
+                                                    <th>Floating Courses</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        {floatingCourses.map(
+                                                            (
+                                                                course: Course
+                                                            ) => (
+                                                                <div
+                                                                    key={
+                                                                        course.id
+                                                                    }
+                                                                >
+                                                                    {
+                                                                        course.name
+                                                                    }
+                                                                </div>
+                                                            )
+                                                        )}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </Table>
+                                        <Table striped bordered hover>
+                                            <thead>
+                                                <tr>
+                                                    <th>Degree Requirements</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        {requiredCourses.map(
+                                                            (
+                                                                course: Course
+                                                            ) => (
+                                                                <div
+                                                                    key={
+                                                                        course.id
+                                                                    }
+                                                                >
+                                                                    {
+                                                                        course.name
+                                                                    }
+                                                                </div>
+                                                            )
+                                                        )}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </Table>
+                                                                */}
+                                {/* </Offcanvas.Body>
+                                </Offcanvas> */}
                             </div>
                         </Row>
                     </Col>
