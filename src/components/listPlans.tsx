@@ -19,7 +19,7 @@ export function ListPlans({
     setPlanName: (id: number, name: string) => void;
 }): JSX.Element {
     return (
-        <div style={{ overflow: "auto" }}>
+        <div>
             <Tab.Container defaultActiveKey={plans[0].id}>
                 <Nav variant="tabs">
                     {plans.map((plan: Plan) => (

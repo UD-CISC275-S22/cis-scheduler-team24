@@ -30,8 +30,8 @@ export function ViewRequirements({
         isDragging: boolean,
         draggableStyle: DraggingStyle | NotDraggingStyle | undefined
     ) => ({
-        padding: 8,
-        margin: "0 1px 10px 1px",
+        padding: 10,
+        margin: "0 50px 15px 50px",
         background: isDragging ? "#4a2975" : "white",
         color: isDragging ? "white" : "black",
         border: "1px solid black",
@@ -40,7 +40,7 @@ export function ViewRequirements({
         ...draggableStyle
     });
     return (
-        <div className="required">
+        <div>
             <DragDropContext onDragEnd={onDragEnd}>
                 <Droppable droppableId="requirements">
                     {(Provided) => (
