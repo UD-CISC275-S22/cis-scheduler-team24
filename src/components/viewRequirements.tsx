@@ -1,0 +1,89 @@
+import React from "react";
+import { Course } from "../interfaces/course";
+import {
+    DragDropContext,
+    Draggable,
+    DraggingStyle,
+    Droppable,
+    DropResult,
+    NotDraggingStyle
+} from "react-beautiful-dnd";
+
+export function ViewRequirements({
+    requirements,
+    setRequirements
+}: {
+    requirements: Course[];
+    setRequirements: (courses: Course[]) => void;
+}): JSX.Element {
+    const onDragEnd = (result: DropResult) => {
+        const { source, destination } = result;
+        if (!destination) return;
+
+        const items = Array.from(requirements);
+        const [newOrder] = items.splice(source.index, 1);
+        items.splice(destination.index, 0, newOrder);
+        setRequirements(items);
+    };
+
+    const getItemStyle = (
+        isDragging: boolean,
+        draggableStyle: DraggingStyle | NotDraggingStyle | undefined
+    ) => ({
+        padding: 8,
+        margin: "0 1px 10px 1px",
+        background: isDragging ? "#4a2975" : "white",
+        color: isDragging ? "white" : "black",
+        border: "1px solid black",
+        frontsize: "20px",
+        borderRadius: "5px",
+        ...draggableStyle
+    });
+    return (
+        <div className="required">
+            <DragDropContext onDragEnd={onDragEnd}>
+                <Droppable droppableId="requirements">
+                    {(Provided) => (
+                        <div
+                            className="requirements"
+                            {...Provided.droppableProps}
+                            ref={Provided.innerRef}
+                        >
+                            {requirements.map((requirement, index) => {
+                                return (
+                                    <Draggable
+                                        key={requirement.id}
+                                        draggableId={requirement.id.toString()}
+                                        index={index}
+                                    >
+                                        {(provided, snapshot) => (
+                                            <div
+                                                ref={provided.innerRef}
+                                                {...provided.draggableProps}
+                                                {...provided.dragHandleProps}
+                                                style={getItemStyle(
+                                                    snapshot.isDragging,
+                                                    provided.draggableProps
+                                                        .style
+                                                )}
+                                                key={index}
+                                            >
+                                                {requirement.name}
+                                                {"                        "}
+                                                {"       Credit: "}
+                                                {requirement.credits}
+                                            </div>
+                                        )}
+                                    </Draggable>
+                                );
+                                {
+                                    Provided.placeholder;
+                                }
+                            })}
+                        </div>
+                    )}
+                </Droppable>
+            </DragDropContext>
+        </div>
+    );
+}

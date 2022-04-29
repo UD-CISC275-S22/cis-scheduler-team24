@@ -1,14 +1,21 @@
 import React, { useState } from "react";
-import { Col, Row, Table, Button, Offcanvas } from "react-bootstrap";
+import { Col, Row /*, Button, Offcanvas , Table*/ } from "react-bootstrap";
 import "./App.css";
 import { Plan } from "./interfaces/plan";
 import { Semester } from "./interfaces/semester";
 import { Course } from "./interfaces/course";
 import { ListPlans } from "./components/listPlans";
-import { ListCoursesPool } from "./components/listCoursesPool";
-import { Listdegreeplan } from "./components/listdegreeplan";
+import { ViewFloatingCourses } from "./components/viewFloatingCourses";
+import { ViewRequirements } from "./components/viewRequirements";
 import plans from "./data/plans.json";
-import degreeplan from "./data/degreeplan.json";
+import courses from "./data/course–book.json";
+
+const COURSES = courses.map(
+    (course): Course => ({
+        ...course,
+        prerequisites: course.prerequisites.map(Number)
+    })
+);
 
 const PLANS = plans.map(
     (plan): Plan => ({
@@ -17,12 +24,9 @@ const PLANS = plans.map(
             (semester: Semester): Semester => ({
                 ...semester,
                 name: semester.session + ", " + semester.year,
-                courses: semester.courses.map(
-                    (course: Course): Course => ({
-                        ...course,
-                        prerequisites: course.prerequisites.map(Number)
-                    })
-                )
+                courses: COURSES.filter((course: Course): boolean =>
+                    semester.courses.includes(course.id)
+                ).map((course: Course): number => course.id)
             })
         ),
         requirements: plan.requirements.map(Number),
@@ -30,27 +34,25 @@ const PLANS = plans.map(
     })
 );
 
-const DegreePlan = degreeplan.map((plan: Plan) => ({
-    ...plan,
-    semesters: plan.semesters.map(
-        (semester: Semester): Semester => ({
-            ...semester,
-            courses: semester.courses.map(
-                (course: Course): Course => ({ ...course })
-            )
-        })
-    ),
-    requirements: plan.requirements.map(Number),
-    taken_courses: plan.taken_courses.map(Number)
-}));
+const FLOATING_COURSES = courses.filter(
+    (course: Course): boolean => !course.isTaken
+);
+
+const REQUIRED_COURSES = courses.filter(
+    (course: Course): boolean => course.isRequired
+);
 
 function App(): JSX.Element {
     const [plans, setPlans] = useState<Plan[]>(PLANS);
-    const [degreeplan /*setdegreeplan*/] = useState<Plan[]>(DegreePlan);
-    const [show, setShow] = useState(false);
+    const [courses /*, setCourses*/] = useState<Course[]>(COURSES);
+    const [floatingCourses, setFloatingCourses] =
+        useState<Course[]>(FLOATING_COURSES);
+    const [requiredCourses, setRequiredCourses] =
+        useState<Course[]>(REQUIRED_COURSES);
+    //onst [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    // const handleClose = () => setShow(false);
+    // const handleShow = () => setShow(true);
 
     function addPlan(): void {
         setPlans([
@@ -79,6 +81,14 @@ function App(): JSX.Element {
         );
     }
 
+    function setRequirements(newReqs: Course[]): void {
+        setRequiredCourses(newReqs);
+    }
+
+    function setFloats(newFloats: Course[]): void {
+        setFloatingCourses(newFloats);
+    }
+
     return (
         <div className="App">
             <header className="App-header">
@@ -88,90 +98,28 @@ function App(): JSX.Element {
             </header>
             <div>
                 <Row>
-                    <Col sm={10}>
+                    <Col sm={10} style={{ overflow: "auto" }}>
                         <ListPlans
                             plans={plans}
+                            courses={courses}
                             addPlan={addPlan}
                             deletePlan={deletePlan}
                             setPlanName={setPlanName}
                         ></ListPlans>
                     </Col>
                     <Col>
-                        <Row>
+                        <Row /*style={{ columnWidth: "100px" }}*/>
                             <div>
-                                <Button variant="primary" onClick={handleShow}>
-                                    Show Courses Pool and Degree plan
-                                </Button>
-
-                                <Offcanvas
-                                    show={show}
-                                    onHide={handleClose}
-                                    placement={"end"}
-                                >
-                                    <Offcanvas.Header closeButton>
-                                        <Offcanvas.Title>
-                                            Degree Plan
-                                        </Offcanvas.Title>
-                                    </Offcanvas.Header>
-                                    <Offcanvas.Body>
-                                        <Table striped bordered hover>
-                                            <thead>
-                                                <tr>
-                                                    <th>Course Pool</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        {plans.map(
-                                                            (plan: Plan) => (
-                                                                <div
-                                                                    key={
-                                                                        plan.id
-                                                                    }
-                                                                >
-                                                                    <ListCoursesPool
-                                                                        plan={
-                                                                            plan
-                                                                        }
-                                                                    ></ListCoursesPool>
-                                                                </div>
-                                                            )
-                                                        )}
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </Table>
-                                        <Table striped bordered hover>
-                                            <thead>
-                                                <tr>
-                                                    <th>Degree Plan</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        {degreeplan.map(
-                                                            (plan: Plan) => (
-                                                                <div
-                                                                    key={
-                                                                        plan.id
-                                                                    }
-                                                                >
-                                                                    <Listdegreeplan
-                                                                        plan={
-                                                                            plan
-                                                                        }
-                                                                    ></Listdegreeplan>
-                                                                </div>
-                                                            )
-                                                        )}
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </Table>
-                                    </Offcanvas.Body>
-                                </Offcanvas>
+                                <span>Floating Courses:</span>
+                                <ViewFloatingCourses
+                                    floatingCourses={floatingCourses}
+                                    setFloats={setFloats}
+                                ></ViewFloatingCourses>
+                                <div>Required Courses:</div>
+                                <ViewRequirements
+                                    requirements={requiredCourses}
+                                    setRequirements={setRequirements}
+                                ></ViewRequirements>
                             </div>
                         </Row>
                     </Col>

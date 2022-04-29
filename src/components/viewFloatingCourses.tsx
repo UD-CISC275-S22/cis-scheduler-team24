@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Course } from "../interfaces/course";
-import { Semester } from "../interfaces/semester";
+
 import {
     DragDropContext,
     Draggable,
@@ -9,29 +9,30 @@ import {
     DropResult,
     NotDraggingStyle
 } from "react-beautiful-dnd";
-export function Viewdegreeplan({
-    semester
+
+export function ViewFloatingCourses({
+    floatingCourses,
+    setFloats
 }: {
-    semester: Semester;
+    floatingCourses: Course[];
+    setFloats: (newFloats: Course[]) => void;
 }): JSX.Element {
-    const [courses /*setcourses*/] = useState<Course[]>(semester.courses);
     const onDragEnd = (result: DropResult) => {
-        const [newcourses, setnewcourses] = useState<Course[]>(courses);
         const { source, destination } = result;
         if (!destination) return;
 
-        const items = Array.from(newcourses);
+        const items = Array.from(floatingCourses);
         const [newOrder] = items.splice(source.index, 1);
         items.splice(destination.index, 0, newOrder);
-        setnewcourses(items);
+        setFloats(items);
     };
 
     const getItemStyle = (
         isDragging: boolean,
         draggableStyle: DraggingStyle | NotDraggingStyle | undefined
     ) => ({
-        padding: 10,
-        margin: "0 50px 15px 50px",
+        padding: 8,
+        margin: "0 1px 10px 1px",
         background: isDragging ? "#4a2975" : "white",
         color: isDragging ? "white" : "black",
         border: "1px solid black",
@@ -40,7 +41,7 @@ export function Viewdegreeplan({
         ...draggableStyle
     });
     return (
-        <div>
+        <div className="floating">
             <DragDropContext onDragEnd={onDragEnd}>
                 <Droppable droppableId="courses">
                     {(Provided) => (
@@ -49,7 +50,7 @@ export function Viewdegreeplan({
                             {...Provided.droppableProps}
                             ref={Provided.innerRef}
                         >
-                            {courses.map((course, index) => {
+                            {floatingCourses.map((course, index) => {
                                 return (
                                     <Draggable
                                         key={course.id}
@@ -69,8 +70,7 @@ export function Viewdegreeplan({
                                                 key={index}
                                             >
                                                 {course.name}
-                                                {"                        "}
-                                                {"       Credit: "}
+                                                {"Credit: "}
                                                 {course.credits}
                                             </div>
                                         )}

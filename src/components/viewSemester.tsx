@@ -1,20 +1,14 @@
 import React, { useState } from "react";
-
 import { Container, Table } from "react-bootstrap";
-
 import { Semester } from "../interfaces/semester";
-
 import { Course } from "../interfaces/course";
-
 import { ListCourses } from "./listCourses";
-
 export function ViewSemester({
     semester
 }: {
     semester: Semester;
 }): JSX.Element {
     const [courses /*, setcourses*/] = useState<Course[]>(semester.courses);
-
     return (
         <div>
             <Container>
