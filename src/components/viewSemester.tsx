@@ -18,7 +18,7 @@ export function ViewSemester({
                         <tr>
                             <th>
                                 <ListCourses
-                                    semesterCourses={courses}
+                                    semesterCourses={semesterCourses}
                                 ></ListCourses>
                             </th>
                         </tr>

@@ -8,31 +8,8 @@
                 "name": "",
                 "year": 2019,
                 "session": "Fall",
-                "courses": [
-                    {
-                        "id": 1,
-                        "name": "CISC108: Introduction to Computer Science I",
-                        "credits": 3,
-                        "description": "Python",
-                        "prerequisites": [],
-                        "isTaken": false,
-                        "isEditing": false,
-                        "isRequired": true,
-                        "breadthType": "D"
-                    },
-                    {
-                        "id": 2,
-                        "name": "EGGG101: Introduction to Engineering",
-                        "credits": 2,
-                        "description": "Dumb class",
-                        "prerequisites": [],
-                        "isTaken": false,
-                        "isEditing": false,
-                        "isRequired": true,
-                        "breadthType": "D"
-                    }
-                ],
-                "totalCredits": 0,
+                "courses": [1, 2, 3, 4, 5],
+                "totalCredits": 16,
                 "isSkipped": false
             },
             {
@@ -40,37 +17,14 @@
                 "name": "",
                 "year": 2020,
                 "session": "Spring",
-                "courses": [
-                    {
-                        "id": 3,
-                        "name": "CISC210: Introduction to Systems Programming",
-                        "credits": 3,
-                        "description": "Bash and C",
-                        "prerequisites": [1],
-                        "isTaken": false,
-                        "isEditing": false,
-                        "isRequired": true,
-                        "breadthType": "D"
-                    },
-                    {
-                        "id": 4,
-                        "name": "CISC181: Introduction to Computer Science II",
-                        "credits": 3,
-                        "description": "Java",
-                        "prerequisites": [1],
-                        "isTaken": false,
-                        "isEditing": false,
-                        "isRequired": true,
-                        "breadthType": "D"
-                    }
-                ],
-                "totalCredits": 0,
+                "courses": [6, 7, 8, 9, 10],
+                "totalCredits": 17,
                 "isSkipped": false
             }
         ],
-        "requirements": [],
-        "taken_courses": [1, 2, 3, 4],
-        "floating_courses": []
+        "requirements": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+        "taken_courses": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "floating_courses": [11, 12, 13, 14]
     },
     {
         "id": 2,
@@ -81,31 +35,8 @@
                 "name": "",
                 "year": 2019,
                 "session": "Fall",
-                "courses": [
-                    {
-                        "id": 1,
-                        "name": "CISC108: Introduction to Computer Science I",
-                        "credits": 3,
-                        "description": "Python",
-                        "prerequisites": [],
-                        "isTaken": false,
-                        "isEditing": false,
-                        "isRequired": true,
-                        "breadthType": "D"
-                    },
-                    {
-                        "id": 2,
-                        "name": "EGGG101: Introduction to Engineering",
-                        "credits": 2,
-                        "description": "Dumb class",
-                        "prerequisites": [],
-                        "isTaken": false,
-                        "isEditing": false,
-                        "isRequired": true,
-                        "breadthType": "D"
-                    }
-                ],
-                "totalCredits": 0,
+                "courses": [1, 2, 3, 4, 5],
+                "totalCredits": 16,
                 "isSkipped": false
             },
             {
@@ -113,36 +44,13 @@
                 "name": "",
                 "year": 2020,
                 "session": "Spring",
-                "courses": [
-                    {
-                        "id": 3,
-                        "name": "CISC210: Introduction to Systems Programming",
-                        "credits": 3,
-                        "description": "Bash and C",
-                        "prerequisites": [1],
-                        "isTaken": false,
-                        "isEditing": false,
-                        "isRequired": true,
-                        "breadthType": "D"
-                    },
-                    {
-                        "id": 4,
-                        "name": "CISC181: Introduction to Computer Science II",
-                        "credits": 3,
-                        "description": "Java",
-                        "prerequisites": [1],
-                        "isTaken": false,
-                        "isEditing": false,
-                        "isRequired": true,
-                        "breadthType": "D"
-                    }
-                ],
-                "totalCredits": 0,
+                "courses": [6, 7, 8, 9, 10],
+                "totalCredits": 17,
                 "isSkipped": false
             }
         ],
-        "requirements": [],
-        "taken_courses": [1, 2, 3, 4],
+        "requirements": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "taken_courses": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         "floating_courses": []
     }
 ]
