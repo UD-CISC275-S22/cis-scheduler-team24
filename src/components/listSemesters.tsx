@@ -2,17 +2,14 @@ import React, { useState } from "react";
 import { Accordion, Button, Table } from "react-bootstrap";
 import { Semester } from "../interfaces/semester";
 import { EditSemester } from "./editSemester";
-import { Course } from "../interfaces/course";
 import { ViewSemester } from "./viewSemester";
 
 export function ListSemesters({
     planSemesters,
-    courses,
     removeSemester,
     setSemesterName
 }: {
     planSemesters: Semester[];
-    courses: Course[];
     removeSemester: (id: number) => void;
     setSemesterName: (id: number, name: string) => void;
 }): JSX.Element {
@@ -77,11 +74,6 @@ export function ListSemesters({
                                         <div key={semester.id}>
                                             <ViewSemester
                                                 semester={semester}
-                                                courses={courses}
-                                                removeSemester={removeSemester}
-                                                setSemesterName={
-                                                    setSemesterName
-                                                }
                                             ></ViewSemester>
                                         </div>
                                     </Accordion.Body>
