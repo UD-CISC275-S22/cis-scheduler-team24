@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Table } from "react-bootstrap";
 import { Semester } from "../interfaces/semester";
-import { Course } from "../interfaces/course";
 import { ListCourses } from "./listCourses";
 
 export function ViewSemester({
@@ -9,8 +8,6 @@ export function ViewSemester({
 }: {
     semester: Semester;
 }): JSX.Element {
-    const [courses /*, setcourses*/] = useState<Course[]>(semester.courses);
-
     return (
         <div>
             <Container>
@@ -19,7 +16,7 @@ export function ViewSemester({
                         <tr>
                             <th>
                                 <ListCourses
-                                    semesterCourses={courses}
+                                    semesterCourses={semester.courses}
                                 ></ListCourses>
                             </th>
                         </tr>
