@@ -32,8 +32,8 @@ export function ViewFloatingCourses({
         isDragging: boolean,
         draggableStyle: DraggingStyle | NotDraggingStyle | undefined
     ) => ({
-        padding: 10,
-        margin: "0 50px 15px 50px",
+        padding: "3px",
+        margin: "3px -5px 10px -5px",
         background: isDragging ? "#4a2975" : "white",
         color: isDragging ? "white" : "black",
         border: "1px solid black",
@@ -42,7 +42,7 @@ export function ViewFloatingCourses({
         ...draggableStyle
     });
     return (
-        <Container>
+        <Container className="floating">
             <DragDropContext onDragEnd={onDragEnd}>
                 <Droppable droppableId="courses">
                     {(Provided) => (
