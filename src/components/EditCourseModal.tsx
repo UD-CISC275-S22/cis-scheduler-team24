@@ -5,13 +5,17 @@ import { Course } from "../interfaces/course";
 export function EditCourseModal({
     handleClose,
     course,
+    requiredCourses,
     editCourse,
-    deleteCourse
+    deleteCourse,
+    setRequirements
 }: {
     handleClose: () => void;
     course: Course;
+    requiredCourses: Course[];
     editCourse: (id: number, newCourse: Course) => void;
     deleteCourse: (course: Course) => void;
+    setRequirements: (courses: Course[]) => void;
 }) {
     const [id, setId] = useState<string>(course.id.toString());
     const [name, setName] = useState<string>(course.name);
@@ -37,6 +41,30 @@ export function EditCourseModal({
             isRequired: isRequired
         });
         changeEditing();
+        makeRequired();
+    }
+
+    function makeRequired() {
+        if (isRequired) {
+            setRequirements([
+                ...requiredCourses,
+                {
+                    ...course,
+                    id: parseInt(id),
+                    name: name,
+                    description: description,
+                    credits: parseInt(credits),
+                    prerequisites: prereqs.split(", ").map(Number),
+                    isRequired: isRequired
+                }
+            ]);
+        } else {
+            setRequirements(
+                requiredCourses.filter(
+                    (reqCourse: Course): boolean => reqCourse.id !== course.id
+                )
+            );
+        }
     }
 
     function cancel() {

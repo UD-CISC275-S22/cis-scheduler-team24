@@ -15,11 +15,15 @@ import {
 export function ListCourses({
     semesterCourses,
     floatingCourses,
-    setFloats
+    requiredCourses,
+    setFloats,
+    setRequirements
 }: {
     semesterCourses: Course[];
     floatingCourses: Course[];
+    requiredCourses: Course[];
     setFloats: (courses: Course[]) => void;
+    setRequirements: (courses: Course[]) => void;
 }): JSX.Element {
     const [courses, setCourses] = useState<Course[]>(semesterCourses);
     const [showAddModal, setShowAddModal] = useState(false);
@@ -137,8 +141,10 @@ export function ListCourses({
                                 <EditCourseModal
                                     handleClose={handleCloseAddModal}
                                     course={course}
+                                    requiredCourses={requiredCourses}
                                     editCourse={editCourse}
                                     deleteCourse={deleteCourse}
+                                    setRequirements={setRequirements}
                                 ></EditCourseModal>
                             </td>
                         </tr>

@@ -8,16 +8,20 @@ export function ListSemesters({
     planSemesters,
     courses,
     floatingCourses,
+    requiredCourses,
     removeSemester,
     setSemesterName,
-    setFloats
+    setFloats,
+    setRequirements
 }: {
     planSemesters: Semester[];
     courses: Course[];
     floatingCourses: Course[];
+    requiredCourses: Course[];
     removeSemester: (id: number) => void;
     setSemesterName: (id: number, name: string) => void;
     setFloats: (courses: Course[]) => void;
+    setRequirements: (courses: Course[]) => void;
 }): JSX.Element {
     return (
         <div>
@@ -42,11 +46,17 @@ export function ListSemesters({
                                                 floatingCourses={
                                                     floatingCourses
                                                 }
+                                                requiredCourses={
+                                                    requiredCourses
+                                                }
                                                 removeSemester={removeSemester}
                                                 setSemesterName={
                                                     setSemesterName
                                                 }
                                                 setFloats={setFloats}
+                                                setRequirements={
+                                                    setRequirements
+                                                }
                                             ></ViewSemester>
                                         </div>
                                     </Accordion.Body>
