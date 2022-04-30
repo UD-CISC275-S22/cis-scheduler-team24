@@ -227,7 +227,7 @@ export function ListCourses({
             <Container>
                 <div>Total Credits: {Credits}</div>
             </Container>
-            <div className="scrollbox">
+            <div className="coursesbox">
                 <DragDropContext onDragEnd={onDragEnd}>
                     <Droppable droppableId="courses">
                         {(Provided) => (
