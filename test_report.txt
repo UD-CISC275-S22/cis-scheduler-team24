@@ -15,9 +15,13 @@
         at table
         at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
         at div
+        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
+        at div
+        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
+        at div
         at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
         at div
-        at ViewPlan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/viewPlan.tsx:11:5)
+        at ViewPlan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/viewPlan.tsx:21:5)
         at div
         at NoopTransition (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/NoopTransition.js:9:3)
         at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabPane.js:31:3
@@ -26,14 +30,14 @@
         at Tabs (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/Tabs.js:28:9)
         at TabContainer (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabContainer.js:21:3)
         at div
-        at ListPlans (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listPlans.tsx:9:5)
+        at ListPlans (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listPlans.tsx:8:5)
         at div
         at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
         at div
         at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
         at div
         at div
-        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:46:31)
+        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:25:31)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -44,7 +48,7 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (970 ms)
+  ✕ renders the course name somewhere (1166 ms)
 
   ● renders the course name somewhere
 
@@ -82,11 +86,11 @@ FAIL src/App.test.tsx
                         [33mstyle[39m=[32m"display: flex;"[39m
                       [36m>[39m
                         [36m<a[39m
-                          [33maria-controls[39m=[32m"react-aria6005201826-1-tabpane-1"[39m
+                          [33maria-controls[39m=[32m"react-aria3276879155-1-tabpane-1"[39m
                           [33maria-selected[39m=[32m"true"[39m
                           [33mclass[39m=[32m"nav-link active"[39m
                           [33mdata-rr-ui-event-key[39m=[32m"1"[39m
-                          [33mid[39m=[32m"react-aria6005201826-1-tab-1"[39m
+                          [33mid[39m=[32m"react-aria3276879155-1-tab-1"[39m
                           [33mrole[39m=[32m"tab"[39m
                         [36m>[39m
                           [0mPlan 1[0m
@@ -106,10 +110,10 @@ FAIL src/App.test.tsx
                         [33mstyle[39m=[32m"display: flex;"[39m
                       [36m>[39m
                         [36m<a[39m
-                          [33maria-controls[39m=[32m"react-aria6005201826-1-tabpane-2"[39m
+                          [33maria-controls[39m=[32m"react-aria3276879155-1-tabpane-2"[39m
                           [33mclass[39m=[32m"nav-link"[39m
                           [33mdata-rr-ui-event-key[39m=[32m"2"[39m
-                          [33mid[39m=[32m"react-aria6005201826-1-tab-2"[39m
+                          [33mid[39m=[32m"react-aria3276879155-1-tab-2"[39m
                           [33mrole[39m=[32m"tab"[39m
                           [33mtabindex[39m=[32m"-1"[39m
                         [36m>[39m
@@ -138,69 +142,68 @@ FAIL src/App.test.tsx
                     [33mclass[39m=[32m"tab-content"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33maria-labelledby[39m=[32m"react-aria6005201826-1-tab-1"[39m
+                      [33maria-labelledby[39m=[32m"react-aria3276879155-1-tab-1"[39m
                       [33mclass[39m=[32m"tab-pane active"[39m
-                      [33mid[39m=[32m"react-aria6005201826-1-tabpane-1"[39m
+                      [33mid[39m=[32m"react-aria3276879155-1-tabpane-1"[39m
                     [36m>[39m
                       [36m<div>[39m
                         [36m<div[39m
                           [33mclass[39m=[32m"container"[39m
                         [36m>[39m
-                          [36m<table[39m
-                            [33mclass[39m=[32m"table table-striped table-borderless"[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"row"[39m
                           [36m>[39m
-                            [36m<thead>[39m
-                              [36m<tr>[39m
-                                [36m<th>[39m
-                                  [36m<span>[39m
-                                    [36m<div[39m
-                                      [33mclass[39m=[32m"hstack gap-3"[39m
-                                    [36m>[39m
-                                      [36m<div[39m
-                                        [33mclass[39m=[32m"container"[39m
-                                      [36m>[39m
-                                        [36m<div>[39m
-                                          [36m<div>[39m
-                                            [36m<h3>[39m
-                                              [0mPlan 1[0m
-                                              [36m<button[39m
-                                                [33mclass[39m=[32m"me-8 btn btn-empty"[39m
-                                                [33mtype[39m=[32m"button"[39m
-                                              [36m>[39m
-                                                [0m🖊[0m
-                                              [36m</button>[39m
-                                            [36m</h3>[39m
+                            [36m<div[39m
+                              [33mclass[39m=[32m"col"[39m
+                            [36m>[39m
+                              [36m<table[39m
+                                [33mclass[39m=[32m"table table-striped table-borderless"[39m
+                              [36m>[39m
+                                [36m<thead>[39m
+                                  [36m<tr>[39m
+                                    [36m<th>[39m
+                                      [36m<span>[39m
+                                        [36m<div[39m
+                                          [33mclass[39m=[32m"hstack gap-3"[39m
+                                        [36m>[39m
+                                          [36m<div[39m
+                                            [33mclass[39m=[32m"container"[39m
+                                          [36m>[39m
+                                            [36m<div>[39m
+                                              [36m<div>[39m
+                                                [36m<h3>[39m
+                                                  [0mPlan 1[0m
+                                                  [36m<button[39m
+                                                    [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+                                                    [33mtype[39m=[32m"button"[39m
+                                                  [36m>[39m
+                                                    [0m🖊[0m
+                                                  [36m</button>[39m
+                                                [36m</h3>[39m
+                                              [36m</div>[39m
+                                            [36m</div>[39m
+                                          [36m</div>[39m
+                                          [36m<div[39m
+                                            [33mclass[39m=[32m"bg-light border ms-auto"[39m
+                                          [36m>[39m
+                                            [36m<button[39m
+                                              [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+                                              [33mtype[39m=[32m"button"[39m
+                                            [36m>[39m
+                                              [0m❓[0m
+                                            [36m</button>[39m
                                           [36m</div>[39m
                                         [36m</div>[39m
-                                      [36m</div>[39m
-                                      [36m<div[39m
-                                        [33mclass[39m=[32m"bg-light border ms-auto"[39m
-                                      [36m>[39m
-                                        [36m<button[39m
-                                          [33mclass[39m=[32m"me-8 btn btn-empty"[39m
-                                          [33mtype[39m=[32m"button"[39m
-                                        [36m>[39m
-                                          [0m❓[0m
-                                        [36m</button>[39m
-                                      [36m</div>[39m
-                                    [36m</div>[39m
-                                  [36m</span>[39m
-                                [36m</th>[39m
-                              [36m</tr>[39m
-                            [36m</thead>[39m
-                            [36m<tbody>[39m
-                              [36m<tr>[39m
-                                [36m<td>[39m
-                                  [36m<div>[39m
-                                    [36m<table[39m
-                                      [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                                    [36m>[39m
-                                      [36m<tr>[39m
-                                        [36m<th>[39m
-                                          [36m<div[39m
-                                            [33mclass[39m=[32m"accordion accordion-flush"[39m
-                                          [36m>[39m
-                                  ...
+                                      [36m</span>[39m
+                                    [36m</th>[39m
+                                  [36m</tr>[39m
+                                [36m</thead>[39m
+                                [36m<tbody>[39m
+                                  [36m<tr>[39m
+                                    [36m<td>[39m
+                                      [36m<div>[39m
+                                        [36m<table[39m
+                                    ...
 
        5 | test("renders the course name somewhere", () => {
        6 |     render(<App />);
@@ -223,10 +226,10 @@ FAIL src/App.test.tsx
 --------------------------|---------|----------|---------|---------|----------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s    
 --------------------------|---------|----------|---------|---------|----------------------
-All files                 |   43.75 |    28.12 |   39.36 |   45.56 |                      
- src                      |   69.56 |        0 |   53.33 |   72.72 |                      
-  App.tsx                 |   69.56 |        0 |   53.33 |   72.72 | 58-89                
- src/components           |   39.86 |       30 |    36.7 |   41.49 |                      
+All files                 |   42.44 |    28.12 |   38.04 |   44.24 |                      
+ src                      |      50 |        0 |    37.5 |   55.55 |                      
+  App.tsx                 |      50 |        0 |    37.5 |   55.55 | 28-49                
+ src/components           |   41.97 |       30 |   38.09 |   43.58 |                      
   DeleteCourseModal.tsx   |   42.85 |      100 |      25 |      50 | 14,47-48             
   EditCourseModal.tsx     |   32.25 |      100 |    7.69 |   33.33 | 30-59,74-189         
   HelpButton.tsx          |     100 |      100 |     100 |     100 |                      
@@ -238,7 +241,7 @@ All files                 |   43.75 |    28.12 |   39.36 |   45.56 |
   listSemesters.tsx       |     100 |      100 |     100 |     100 |                      
   viewCourse.tsx          |       0 |      100 |       0 |       0 | 6                    
   viewFloatingCourses.tsx |   46.66 |    33.33 |   83.33 |      50 | 22-28,82             
-  viewPlan.tsx            |      30 |       25 |    12.5 |      30 | 23-57                
+  viewPlan.tsx            |   52.63 |       25 |   30.76 |   52.63 | 43-87                
   viewRequirements.tsx    |   46.66 |    33.33 |   83.33 |      50 | 20-26,80             
   viewSemester.tsx        |   66.66 |       50 |      50 |   66.66 | 28-32                
  src/interfaces           |       0 |        0 |       0 |       0 |                      
@@ -249,5 +252,5 @@ All files                 |   43.75 |    28.12 |   39.36 |   45.56 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        4.837 s
+Time:        5.269 s
 Ran all test suites.
