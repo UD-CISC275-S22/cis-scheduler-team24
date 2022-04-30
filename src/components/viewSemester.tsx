@@ -14,7 +14,8 @@ export function ViewSemester({
     removeSemester,
     setSemesterName,
     setFloats,
-    setRequirements
+    setRequirements,
+    updateCourses
 }: {
     semester: Semester;
     courses: Course[];
@@ -24,8 +25,9 @@ export function ViewSemester({
     setSemesterName: (id: number, name: string) => void;
     setFloats: (courses: Course[]) => void;
     setRequirements: (courses: Course[]) => void;
+    updateCourses: (newCourse: Course) => void;
 }): JSX.Element {
-    const [semesterCourses /*, setSemesterCourses*/] = useState<Course[]>(
+    const [semesterCourses, setSemesterCourses] = useState<Course[]>(
         courses.filter((course: Course): boolean =>
             semester.courses.includes(course.id)
         )
@@ -34,10 +36,20 @@ export function ViewSemester({
 
     function deleteSemester(): void {
         removeSemester(semester.id);
+        removeCourses();
+    }
+
+    function removeCourses(): void {
+        setFloats([...floatingCourses, ...semesterCourses]);
+        setSemesterCourses([]);
     }
 
     function openEdit(): void {
         setEditing(!isEditing);
+    }
+
+    function updateSemesterCourses(newCourse: Course): void {
+        setSemesterCourses([...semesterCourses, newCourse]);
     }
 
     return (
@@ -82,6 +94,11 @@ export function ViewSemester({
                                     requiredCourses={requiredCourses}
                                     setFloats={setFloats}
                                     setRequirements={setRequirements}
+                                    removeSemesterCourses={removeCourses}
+                                    updateCourses={updateCourses}
+                                    updateSemesterCourses={
+                                        updateSemesterCourses
+                                    }
                                 ></ListCourses>
                             </th>
                         </tr>

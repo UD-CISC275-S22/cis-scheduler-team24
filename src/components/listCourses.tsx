@@ -17,15 +17,21 @@ export function ListCourses({
     floatingCourses,
     requiredCourses,
     setFloats,
-    setRequirements
+    setRequirements,
+    removeSemesterCourses,
+    updateCourses,
+    updateSemesterCourses
 }: {
     semesterCourses: Course[];
     floatingCourses: Course[];
     requiredCourses: Course[];
     setFloats: (courses: Course[]) => void;
     setRequirements: (courses: Course[]) => void;
+    removeSemesterCourses: () => void;
+    updateCourses: (newCourse: Course) => void;
+    updateSemesterCourses: (newCourse: Course) => void;
 }): JSX.Element {
-    const [courses, setCourses] = useState<Course[]>(semesterCourses);
+    const [tableCourses, setTableCourses] = useState<Course[]>(semesterCourses);
     const [showAddModal, setShowAddModal] = useState(false);
     showAddModal;
     const [id, setId] = useState<string>("");
@@ -40,10 +46,10 @@ export function ListCourses({
         const { source, destination } = result;
         if (!destination) return;
 
-        const items = Array.from(courses);
+        const items = Array.from(tableCourses);
         const [newOrder] = items.splice(source.index, 1);
         items.splice(destination.index, 0, newOrder);
-        setCourses(items);
+        setTableCourses(items);
     };
 
     const getItemStyle = (
@@ -60,14 +66,14 @@ export function ListCourses({
         ...draggableStyle
     });
 
-    const Credits = courses.reduce(
+    const Credits = tableCourses.reduce(
         (currentTotal: number, course: Course) => currentTotal + course.credits,
         0
     );
 
     function editCourse(id: number, newCourse: Course) {
-        setCourses(
-            courses.map(
+        setTableCourses(
+            tableCourses.map(
                 (course: Course): Course =>
                     course.id === id ? newCourse : course
             )
@@ -75,8 +81,8 @@ export function ListCourses({
     }
 
     function deleteCourse(doomedCourse: Course) {
-        setCourses(
-            courses.filter(
+        setTableCourses(
+            tableCourses.filter(
                 (course: Course): boolean => course.id !== doomedCourse.id
             )
         );
@@ -85,11 +91,13 @@ export function ListCourses({
     }
 
     function addMovie(newCourse: Course) {
-        const existing = courses.find(
+        const existing = tableCourses.find(
             (course: Course): boolean => course.id === newCourse.id
         );
         if (existing === undefined) {
-            setCourses([...courses, newCourse]);
+            setTableCourses([...tableCourses, newCourse]);
+            updateSemesterCourses(newCourse);
+            updateCourses(newCourse);
         }
     }
 
@@ -113,7 +121,8 @@ export function ListCourses({
     }
 
     function deleteAllCourse() {
-        setCourses([]);
+        setTableCourses([]);
+        removeSemesterCourses();
     }
 
     return (
@@ -130,7 +139,7 @@ export function ListCourses({
                     </tr>
                 </thead>
                 <tbody>
-                    {courses.map((course: Course) => (
+                    {tableCourses.map((course: Course) => (
                         <tr key={course.id}>
                             <td>{course.id}</td>
                             <td>{course.name}</td>
@@ -227,7 +236,7 @@ export function ListCourses({
                                 {...Provided.droppableProps}
                                 ref={Provided.innerRef}
                             >
-                                {courses.map((course, index) => {
+                                {tableCourses.map((course, index) => {
                                     return (
                                         <Draggable
                                             key={course.id}
