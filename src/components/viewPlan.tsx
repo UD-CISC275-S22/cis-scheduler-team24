@@ -146,9 +146,11 @@ export function ViewPlan({
                                             planSemesters={semesters}
                                             courses={courses}
                                             floatingCourses={floatingCourses}
+                                            requiredCourses={requiredCourses}
                                             removeSemester={removeSemester}
                                             setSemesterName={setSemesterName}
                                             setFloats={setFloats}
+                                            setRequirements={setRequirements}
                                         ></ListSemesters>
                                     </td>
                                 </tr>

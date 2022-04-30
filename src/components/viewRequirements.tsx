@@ -42,18 +42,18 @@ export function ViewRequirements({
     return (
         <div>
             <DragDropContext onDragEnd={onDragEnd}>
-                <Droppable droppableId="requirements">
+                <Droppable droppableId="courses">
                     {(Provided) => (
                         <div
-                            className="requirements"
+                            className="courses"
                             {...Provided.droppableProps}
                             ref={Provided.innerRef}
                         >
-                            {requirements.map((requirement, index) => {
+                            {requirements.map((course, index) => {
                                 return (
                                     <Draggable
-                                        key={requirement.id}
-                                        draggableId={requirement.id.toString()}
+                                        key={course.id}
+                                        draggableId={course.id.toString()}
                                         index={index}
                                     >
                                         {(provided, snapshot) => (
@@ -68,10 +68,10 @@ export function ViewRequirements({
                                                 )}
                                                 key={index}
                                             >
-                                                {requirement.name}
+                                                {course.name}
                                                 {"                        "}
                                                 {"       Credit: "}
-                                                {requirement.credits}
+                                                {course.credits}
                                             </div>
                                         )}
                                     </Draggable>

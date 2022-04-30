@@ -10,16 +10,20 @@ export function ViewSemester({
     semester,
     courses,
     floatingCourses,
+    requiredCourses,
     removeSemester,
     setSemesterName,
-    setFloats
+    setFloats,
+    setRequirements
 }: {
     semester: Semester;
     courses: Course[];
     floatingCourses: Course[];
+    requiredCourses: Course[];
     removeSemester: (id: number) => void;
     setSemesterName: (id: number, name: string) => void;
     setFloats: (courses: Course[]) => void;
+    setRequirements: (courses: Course[]) => void;
 }): JSX.Element {
     const [semesterCourses /*, setSemesterCourses*/] = useState<Course[]>(
         courses.filter((course: Course): boolean =>
@@ -74,8 +78,10 @@ export function ViewSemester({
                             <th>
                                 <ListCourses
                                     semesterCourses={semesterCourses}
-                                    setFloats={setFloats}
                                     floatingCourses={floatingCourses}
+                                    requiredCourses={requiredCourses}
+                                    setFloats={setFloats}
+                                    setRequirements={setRequirements}
                                 ></ListCourses>
                             </th>
                         </tr>
