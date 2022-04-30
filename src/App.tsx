@@ -3,19 +3,8 @@ import { Col, Row /*, Button, Offcanvas , Table*/ } from "react-bootstrap";
 import "./App.css";
 import { Plan } from "./interfaces/plan";
 import { Semester } from "./interfaces/semester";
-import { Course } from "./interfaces/course";
 import { ListPlans } from "./components/listPlans";
-import { ViewFloatingCourses } from "./components/viewFloatingCourses";
-import { ViewRequirements } from "./components/viewRequirements";
 import plans from "./data/plans.json";
-import courses from "./data/course–book.json";
-
-const COURSES = courses.map(
-    (course): Course => ({
-        ...course,
-        prerequisites: course.prerequisites.map(Number)
-    })
-);
 
 const PLANS = plans.map(
     (plan): Plan => ({
@@ -24,9 +13,7 @@ const PLANS = plans.map(
             (semester: Semester): Semester => ({
                 ...semester,
                 name: semester.session + ", " + semester.year,
-                courses: COURSES.filter((course: Course): boolean =>
-                    semester.courses.includes(course.id)
-                ).map((course: Course): number => course.id)
+                courses: semester.courses.map(Number)
             })
         ),
         requirements: plan.requirements.map(Number),
@@ -34,25 +21,8 @@ const PLANS = plans.map(
     })
 );
 
-const FLOATING_COURSES = courses.filter(
-    (course: Course): boolean => !course.isTaken
-);
-
-const REQUIRED_COURSES = courses.filter(
-    (course: Course): boolean => course.isRequired
-);
-
 function App(): JSX.Element {
     const [plans, setPlans] = useState<Plan[]>(PLANS);
-    const [courses /*, setCourses*/] = useState<Course[]>(COURSES);
-    const [floatingCourses, setFloatingCourses] =
-        useState<Course[]>(FLOATING_COURSES);
-    const [requiredCourses, setRequiredCourses] =
-        useState<Course[]>(REQUIRED_COURSES);
-    //onst [show, setShow] = useState(false);
-
-    // const handleClose = () => setShow(false);
-    // const handleShow = () => setShow(true);
 
     function addPlan(): void {
         setPlans([
@@ -81,14 +51,6 @@ function App(): JSX.Element {
         );
     }
 
-    function setRequirements(newReqs: Course[]): void {
-        setRequiredCourses(newReqs);
-    }
-
-    function setFloats(newFloats: Course[]): void {
-        setFloatingCourses(newFloats);
-    }
-
     return (
         <div className="App">
             <header className="App-header">
@@ -101,102 +63,10 @@ function App(): JSX.Element {
                     <Col sm={9}>
                         <ListPlans
                             plans={plans}
-                            courses={courses}
                             addPlan={addPlan}
                             deletePlan={deletePlan}
                             setPlanName={setPlanName}
                         ></ListPlans>
-                    </Col>
-                    <Col>
-                        <Row>
-                            <div>
-                                {/* <Button variant="primary" onClick={handleShow}>
-                                    Show Courses Pool and Degree plan
-                                </Button>
-
-                                <Offcanvas
-                                    show={show}
-                                    onHide={handleClose}
-                                    placement={"end"}
-                                >
-                                    <Offcanvas.Header closeButton>
-                                        <Offcanvas.Title>
-                                            Degree Plan
-                                        </Offcanvas.Title>
-                                    </Offcanvas.Header>
-                                    <Offcanvas.Body> */}
-                                Floating Courses:
-                                <ViewFloatingCourses
-                                    floatingCourses={floatingCourses}
-                                    setFloats={setFloats}
-                                ></ViewFloatingCourses>
-                                Required Courses:
-                                <ViewRequirements
-                                    requirements={requiredCourses}
-                                    setRequirements={setRequirements}
-                                ></ViewRequirements>
-                                {/*
-                                        <Table striped bordered hover>
-                                            <thead>
-                                                <tr>
-                                                    <th>Floating Courses</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        {floatingCourses.map(
-                                                            (
-                                                                course: Course
-                                                            ) => (
-                                                                <div
-                                                                    key={
-                                                                        course.id
-                                                                    }
-                                                                >
-                                                                    {
-                                                                        course.name
-                                                                    }
-                                                                </div>
-                                                            )
-                                                        )}
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </Table>
-                                        <Table striped bordered hover>
-                                            <thead>
-                                                <tr>
-                                                    <th>Degree Requirements</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        {requiredCourses.map(
-                                                            (
-                                                                course: Course
-                                                            ) => (
-                                                                <div
-                                                                    key={
-                                                                        course.id
-                                                                    }
-                                                                >
-                                                                    {
-                                                                        course.name
-                                                                    }
-                                                                </div>
-                                                            )
-                                                        )}
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </Table>
-                                                                */}
-                                {/* </Offcanvas.Body>
-                                </Offcanvas> */}
-                            </div>
-                        </Row>
                     </Col>
                 </Row>
             </div>
