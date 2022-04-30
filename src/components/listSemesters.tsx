@@ -1,5 +1,5 @@
 import React from "react";
-import { Accordion, Table } from "react-bootstrap";
+import { Accordion, Table, Button } from "react-bootstrap";
 import { Semester } from "../interfaces/semester";
 import { Course } from "../interfaces/course";
 import { ViewSemester } from "./viewSemester";
@@ -9,6 +9,7 @@ export function ListSemesters({
     courses,
     floatingCourses,
     requiredCourses,
+    addSemester,
     removeSemester,
     setSemesterName,
     setFloats,
@@ -18,6 +19,7 @@ export function ListSemesters({
     courses: Course[];
     floatingCourses: Course[];
     requiredCourses: Course[];
+    addSemester: () => void;
     removeSemester: (id: number) => void;
     setSemesterName: (id: number, name: string) => void;
     setFloats: (courses: Course[]) => void;
@@ -66,6 +68,9 @@ export function ListSemesters({
                     </th>
                 </tr>
             </Table>
+            <Button variant="success" onClick={addSemester}>
+                Add Semester
+            </Button>
         </div>
     );
 }

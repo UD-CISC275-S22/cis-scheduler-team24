@@ -91,7 +91,7 @@ export function ViewPlan({
         <div>
             <Container>
                 <Row>
-                    <Col>
+                    <Col sm={9}>
                         <Table striped borderless>
                             <thead>
                                 <tr>
@@ -147,21 +147,12 @@ export function ViewPlan({
                                             courses={courses}
                                             floatingCourses={floatingCourses}
                                             requiredCourses={requiredCourses}
+                                            addSemester={addSemester}
                                             removeSemester={removeSemester}
                                             setSemesterName={setSemesterName}
                                             setFloats={setFloats}
                                             setRequirements={setRequirements}
                                         ></ListSemesters>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Button
-                                            variant="success"
-                                            onClick={addSemester}
-                                        >
-                                            Add Semester
-                                        </Button>
                                     </td>
                                 </tr>
                             </tbody>

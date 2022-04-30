@@ -60,7 +60,7 @@ function App(): JSX.Element {
             </header>
             <div>
                 <Row>
-                    <Col sm={9}>
+                    <Col>
                         <ListPlans
                             plans={plans}
                             addPlan={addPlan}
