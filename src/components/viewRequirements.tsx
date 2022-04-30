@@ -30,8 +30,8 @@ export function ViewRequirements({
         isDragging: boolean,
         draggableStyle: DraggingStyle | NotDraggingStyle | undefined
     ) => ({
-        padding: "1px 1px 1px 1px",
-        margin: "3px 1px 15px 1px",
+        padding: "3px",
+        margin: "3px -5px 10px -5px",
         background: isDragging ? "#4a2975" : "white",
         color: isDragging ? "white" : "black",
         border: "1px solid black",
