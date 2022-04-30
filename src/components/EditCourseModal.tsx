@@ -11,7 +11,7 @@ export function EditCourseModal({
     handleClose: () => void;
     course: Course;
     editCourse: (id: number, newCourse: Course) => void;
-    deleteCourse: (id: number) => void;
+    deleteCourse: (course: Course) => void;
 }) {
     const [id, setId] = useState<string>(course.id.toString());
     const [name, setName] = useState<string>(course.name);
@@ -59,6 +59,10 @@ export function EditCourseModal({
         console.log(isRequired);
     }
 
+    function removeCourse() {
+        deleteCourse(course);
+    }
+
     return (
         <div>
             <div>
@@ -70,11 +74,7 @@ export function EditCourseModal({
                 >
                     Edit
                 </Button>
-                <Button
-                    onClick={() => deleteCourse(course.id)}
-                    variant="empty"
-                    className="me-8"
-                >
+                <Button onClick={removeCourse} variant="empty" className="me-8">
                     ✖️
                 </Button>
             </div>
@@ -186,7 +186,7 @@ export function EditCourseModal({
                             Cancel
                         </Button>
                         <Button
-                            onClick={() => deleteCourse(course.id)}
+                            onClick={removeCourse}
                             variant="danger"
                             className="me-8"
                         >

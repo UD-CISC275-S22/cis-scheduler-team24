@@ -11,13 +11,16 @@ import {
     DropResult,
     NotDraggingStyle
 } from "react-beautiful-dnd";
-//import { ViewCourse } from "./viewCourse";
 
-interface Courses {
+export function ListCourses({
+    semesterCourses,
+    floatingCourses,
+    setFloats
+}: {
     semesterCourses: Course[];
-}
-
-export function ListCourses({ semesterCourses }: Courses): JSX.Element {
+    floatingCourses: Course[];
+    setFloats: (courses: Course[]) => void;
+}): JSX.Element {
     const [courses, setCourses] = useState<Course[]>(semesterCourses);
     const [showAddModal, setShowAddModal] = useState(false);
     showAddModal;
@@ -67,10 +70,13 @@ export function ListCourses({ semesterCourses }: Courses): JSX.Element {
         );
     }
 
-    function deleteCourse(id: number) {
+    function deleteCourse(doomedCourse: Course) {
         setCourses(
-            courses.filter((course: Course): boolean => course.id !== id)
+            courses.filter(
+                (course: Course): boolean => course.id !== doomedCourse.id
+            )
         );
+        setFloats([...floatingCourses, doomedCourse]);
         setShowAddModal(false);
     }
 

@@ -7,13 +7,17 @@ import { ViewSemester } from "./viewSemester";
 export function ListSemesters({
     planSemesters,
     courses,
+    floatingCourses,
     removeSemester,
-    setSemesterName
+    setSemesterName,
+    setFloats
 }: {
     planSemesters: Semester[];
     courses: Course[];
+    floatingCourses: Course[];
     removeSemester: (id: number) => void;
     setSemesterName: (id: number, name: string) => void;
+    setFloats: (courses: Course[]) => void;
 }): JSX.Element {
     return (
         <div>
@@ -35,10 +39,14 @@ export function ListSemesters({
                                             <ViewSemester
                                                 semester={semester}
                                                 courses={courses}
+                                                floatingCourses={
+                                                    floatingCourses
+                                                }
                                                 removeSemester={removeSemester}
                                                 setSemesterName={
                                                     setSemesterName
                                                 }
+                                                setFloats={setFloats}
                                             ></ViewSemester>
                                         </div>
                                     </Accordion.Body>
