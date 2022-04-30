@@ -48,7 +48,7 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (1166 ms)
+  ✕ renders the course name somewhere (919 ms)
 
   ● renders the course name somewhere
 
@@ -86,11 +86,11 @@ FAIL src/App.test.tsx
                         [33mstyle[39m=[32m"display: flex;"[39m
                       [36m>[39m
                         [36m<a[39m
-                          [33maria-controls[39m=[32m"react-aria3276879155-1-tabpane-1"[39m
+                          [33maria-controls[39m=[32m"react-aria2048491909-1-tabpane-1"[39m
                           [33maria-selected[39m=[32m"true"[39m
                           [33mclass[39m=[32m"nav-link active"[39m
                           [33mdata-rr-ui-event-key[39m=[32m"1"[39m
-                          [33mid[39m=[32m"react-aria3276879155-1-tab-1"[39m
+                          [33mid[39m=[32m"react-aria2048491909-1-tab-1"[39m
                           [33mrole[39m=[32m"tab"[39m
                         [36m>[39m
                           [0mPlan 1[0m
@@ -110,10 +110,10 @@ FAIL src/App.test.tsx
                         [33mstyle[39m=[32m"display: flex;"[39m
                       [36m>[39m
                         [36m<a[39m
-                          [33maria-controls[39m=[32m"react-aria3276879155-1-tabpane-2"[39m
+                          [33maria-controls[39m=[32m"react-aria2048491909-1-tabpane-2"[39m
                           [33mclass[39m=[32m"nav-link"[39m
                           [33mdata-rr-ui-event-key[39m=[32m"2"[39m
-                          [33mid[39m=[32m"react-aria3276879155-1-tab-2"[39m
+                          [33mid[39m=[32m"react-aria2048491909-1-tab-2"[39m
                           [33mrole[39m=[32m"tab"[39m
                           [33mtabindex[39m=[32m"-1"[39m
                         [36m>[39m
@@ -142,9 +142,9 @@ FAIL src/App.test.tsx
                     [33mclass[39m=[32m"tab-content"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33maria-labelledby[39m=[32m"react-aria3276879155-1-tab-1"[39m
+                      [33maria-labelledby[39m=[32m"react-aria2048491909-1-tab-1"[39m
                       [33mclass[39m=[32m"tab-pane active"[39m
-                      [33mid[39m=[32m"react-aria3276879155-1-tabpane-1"[39m
+                      [33mid[39m=[32m"react-aria2048491909-1-tabpane-1"[39m
                     [36m>[39m
                       [36m<div>[39m
                         [36m<div[39m
@@ -226,24 +226,23 @@ FAIL src/App.test.tsx
 --------------------------|---------|----------|---------|---------|----------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s    
 --------------------------|---------|----------|---------|---------|----------------------
-All files                 |   42.44 |    28.12 |   38.04 |   44.24 |                      
+All files                 |   42.69 |    28.12 |   38.88 |   44.51 |                      
  src                      |      50 |        0 |    37.5 |   55.55 |                      
   App.tsx                 |      50 |        0 |    37.5 |   55.55 | 28-49                
- src/components           |   41.97 |       30 |   38.09 |   43.58 |                      
+ src/components           |   42.23 |       30 |   39.02 |   43.87 |                      
   DeleteCourseModal.tsx   |   42.85 |      100 |      25 |      50 | 14,47-48             
-  EditCourseModal.tsx     |   32.25 |      100 |    7.69 |   33.33 | 30-59,74-189         
+  EditCourseModal.tsx     |   33.33 |      100 |    8.33 |   34.48 | 30-63,101-158        
   HelpButton.tsx          |     100 |      100 |     100 |     100 |                      
   deletePlan.tsx          |      50 |      100 |      50 |      50 | 13                   
   editPlan.tsx            |       0 |      100 |       0 |       0 | 14-27                
   editSemester.tsx        |       0 |      100 |       0 |       0 | 14-27                
-  listCourses.tsx         |   38.77 |       25 |   30.43 |   40.42 | 33-39,62-106,146-202 
+  listCourses.tsx         |      38 |       25 |   30.43 |   39.58 | 36-42,65-112,152-208 
   listPlans.tsx           |     100 |      100 |     100 |     100 |                      
   listSemesters.tsx       |     100 |      100 |     100 |     100 |                      
-  viewCourse.tsx          |       0 |      100 |       0 |       0 | 6                    
   viewFloatingCourses.tsx |   46.66 |    33.33 |   83.33 |      50 | 22-28,82             
   viewPlan.tsx            |   52.63 |       25 |   30.76 |   52.63 | 43-87                
   viewRequirements.tsx    |   46.66 |    33.33 |   83.33 |      50 | 20-26,80             
-  viewSemester.tsx        |   66.66 |       50 |      50 |   66.66 | 28-32                
+  viewSemester.tsx        |   66.66 |       50 |      50 |   66.66 | 32-36                
  src/interfaces           |       0 |        0 |       0 |       0 |                      
   course.ts               |       0 |        0 |       0 |       0 |                      
   plan.ts                 |       0 |        0 |       0 |       0 |                      
@@ -252,5 +251,5 @@ All files                 |   42.44 |    28.12 |   38.04 |   44.24 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        5.269 s
+Time:        4.365 s
 Ran all test suites.
