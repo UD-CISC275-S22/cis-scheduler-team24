@@ -24,7 +24,7 @@ export function ViewPlan({
     plan: Plan;
     setPlanName: (id: number, name: string) => void;
 }): JSX.Element {
-    const [courses /*, setCourses*/] = useState<Course[]>(COURSES);
+    const [courses, setCourses] = useState<Course[]>(COURSES);
     const [semesters, setSemesters] = useState<Semester[]>(plan.semesters);
     const [isEditing, setEditing] = useState<boolean>(false);
 
@@ -68,6 +68,7 @@ export function ViewPlan({
 
     function clearSemesters(): void {
         setSemesters([]);
+        setFloats([...courses]);
     }
 
     function setSemesterName(id: number, name: string): void {
@@ -85,6 +86,10 @@ export function ViewPlan({
 
     function setFloats(newFloats: Course[]): void {
         setFloatingCourses(newFloats);
+    }
+
+    function updateCourses(newCourse: Course): void {
+        setCourses([...courses, newCourse]);
     }
 
     return (
@@ -152,6 +157,7 @@ export function ViewPlan({
                                             setSemesterName={setSemesterName}
                                             setFloats={setFloats}
                                             setRequirements={setRequirements}
+                                            updateCourses={updateCourses}
                                         ></ListSemesters>
                                     </td>
                                 </tr>
