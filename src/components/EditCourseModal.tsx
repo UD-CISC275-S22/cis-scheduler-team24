@@ -29,6 +29,35 @@ export function EditCourseModal({
     );
     const [isRequired, setRequired] = useState<boolean>(course.isRequired);
 
+    const [resetid] = useState<string>(course.id.toString());
+    const [resetname] = useState<string>(course.name);
+    const [resetdescription] = useState<string>(course.description);
+    const [resetcredits] = useState<string>(course.credits.toString());
+    const [resetprereqs] = useState<string>(
+        course.prerequisites.map(String).join(", ")
+    );
+    const [resetisRequired] = useState<boolean>(course.isRequired);
+
+    function reset() {
+        editCourse(course.id, {
+            ...course,
+            id: parseInt(resetid),
+            name: resetname,
+            description: resetdescription,
+            credits: parseInt(resetcredits),
+            prerequisites: resetprereqs.split(", ").map(Number),
+            isRequired: resetisRequired
+        });
+        changeEditing();
+        makeRequired();
+        setId(resetid.toString());
+        setName(resetname);
+        setDescription(resetdescription);
+        setCredits(resetcredits.toString());
+        setPrereqs(resetprereqs);
+        setRequired(resetisRequired);
+        changeEditing();
+    }
     const handleShowAddModal = () => setShowAddModal(true);
 
     function save() {
@@ -223,6 +252,14 @@ export function EditCourseModal({
                                 removeCourse={removeCourse}
                             ></DeleteCourseWarningModal>
                         </div>
+                        <Button
+                            onClick={reset}
+                            variant="primary"
+                            className="me-4"
+                            disabled={!id}
+                        >
+                            Reset
+                        </Button>
                     </Modal.Footer>
                 </Modal>
             </div>
