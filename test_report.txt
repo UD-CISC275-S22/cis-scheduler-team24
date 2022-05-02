@@ -35,7 +35,7 @@
         at div
         at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
         at div
-        at ViewPlan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/viewPlan.tsx:21:5)
+        at ViewPlan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/viewPlan.tsx:22:5)
         at div
         at NoopTransition (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/NoopTransition.js:9:3)
         at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabPane.js:31:3
@@ -80,7 +80,47 @@
         at div
         at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
         at div
-        at ViewPlan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/viewPlan.tsx:21:5)
+        at ViewPlan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/viewPlan.tsx:22:5)
+        at div
+        at NoopTransition (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/NoopTransition.js:9:3)
+        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabPane.js:31:3
+        at div
+        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/createWithBsPrefix.js:31:5
+        at Tabs (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/Tabs.js:28:9)
+        at TabContainer (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabContainer.js:21:3)
+        at div
+        at ListPlans (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listPlans.tsx:8:5)
+        at div
+        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
+        at div
+        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
+        at div
+        at div
+        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:25:31)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10081:7)
+      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
+
+  console.error
+    Warning: validateDOMNesting(...): <div> cannot appear as a child of <tbody>.
+        at div
+        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
+        at tbody
+        at table
+        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
+        at div
+        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
+        at div
+        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
+        at div
+        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
+        at div
+        at ViewPlan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/viewPlan.tsx:22:5)
         at div
         at NoopTransition (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/NoopTransition.js:9:3)
         at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabPane.js:31:3
@@ -107,7 +147,7 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (683 ms)
+  ✕ renders the course name somewhere (768 ms)
 
   ● renders the course name somewhere
 
@@ -145,11 +185,11 @@ FAIL src/App.test.tsx
                         [33mstyle[39m=[32m"display: flex;"[39m
                       [36m>[39m
                         [36m<a[39m
-                          [33maria-controls[39m=[32m"react-aria4891721711-1-tabpane-1"[39m
+                          [33maria-controls[39m=[32m"react-aria4573380642-1-tabpane-1"[39m
                           [33maria-selected[39m=[32m"true"[39m
                           [33mclass[39m=[32m"nav-link active"[39m
                           [33mdata-rr-ui-event-key[39m=[32m"1"[39m
-                          [33mid[39m=[32m"react-aria4891721711-1-tab-1"[39m
+                          [33mid[39m=[32m"react-aria4573380642-1-tab-1"[39m
                           [33mrole[39m=[32m"tab"[39m
                         [36m>[39m
                           [0mPlan 1[0m
@@ -169,10 +209,10 @@ FAIL src/App.test.tsx
                         [33mstyle[39m=[32m"display: flex;"[39m
                       [36m>[39m
                         [36m<a[39m
-                          [33maria-controls[39m=[32m"react-aria4891721711-1-tabpane-2"[39m
+                          [33maria-controls[39m=[32m"react-aria4573380642-1-tabpane-2"[39m
                           [33mclass[39m=[32m"nav-link"[39m
                           [33mdata-rr-ui-event-key[39m=[32m"2"[39m
-                          [33mid[39m=[32m"react-aria4891721711-1-tab-2"[39m
+                          [33mid[39m=[32m"react-aria4573380642-1-tab-2"[39m
                           [33mrole[39m=[32m"tab"[39m
                           [33mtabindex[39m=[32m"-1"[39m
                         [36m>[39m
@@ -201,9 +241,9 @@ FAIL src/App.test.tsx
                     [33mclass[39m=[32m"tab-content"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33maria-labelledby[39m=[32m"react-aria4891721711-1-tab-1"[39m
+                      [33maria-labelledby[39m=[32m"react-aria4573380642-1-tab-1"[39m
                       [33mclass[39m=[32m"tab-pane active"[39m
-                      [33mid[39m=[32m"react-aria4891721711-1-tabpane-1"[39m
+                      [33mid[39m=[32m"react-aria4573380642-1-tabpane-1"[39m
                     [36m>[39m
                       [36m<div>[39m
                         [36m<div[39m
@@ -285,10 +325,11 @@ FAIL src/App.test.tsx
 --------------------------|---------|----------|---------|---------|----------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s    
 --------------------------|---------|----------|---------|---------|----------------------
-All files                 |      40 |    26.47 |   37.75 |   41.53 |                      
+All files                 |    40.1 |    26.47 |   37.25 |   41.79 |                      
  src                      |      50 |        0 |    37.5 |   55.55 |                      
   App.tsx                 |      50 |        0 |    37.5 |   55.55 | 28-49                
- src/components           |   39.44 |    28.12 |   37.77 |    40.8 |                      
+ src/components           |   39.57 |    28.12 |   37.23 |   41.11 |                      
+  ClearSemesterModal.tsx  |   42.85 |      100 |      25 |      50 | 14,51-52             
   DeleteCourseModal.tsx   |   42.85 |      100 |      25 |      50 | 14,47-48             
   DeleteSemester.tsx      |   42.85 |      100 |      50 |   42.85 | 26-32                
   EditCourseModal.tsx     |   28.57 |        0 |    7.14 |   29.41 | 34-91,129-186        
@@ -300,7 +341,7 @@ All files                 |      40 |    26.47 |   37.75 |   41.53 |
   listPlans.tsx           |     100 |      100 |     100 |     100 |                      
   listSemesters.tsx       |      75 |       50 |   66.66 |      75 | 35                   
   viewFloatingCourses.tsx |   46.66 |    33.33 |   83.33 |      50 | 22-28,82             
-  viewPlan.tsx            |   47.61 |       25 |   28.57 |   47.61 | 43-92                
+  viewPlan.tsx            |   47.61 |       25 |   28.57 |   47.61 | 44-93                
   viewRequirements.tsx    |   46.66 |    33.33 |   83.33 |      50 | 20-26,80             
   viewSemester.tsx        |      50 |      100 |      50 |      50 | 32-37                
  src/interfaces           |       0 |        0 |       0 |       0 |                      
@@ -311,5 +352,5 @@ All files                 |      40 |    26.47 |   37.75 |   41.53 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.165 s
+Time:        3.502 s
 Ran all test suites.
