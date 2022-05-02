@@ -50,6 +50,12 @@
     background-color: rgb(145, 145, 145);
 }
 
+.button-style-3 {
+    height: 40px;
+    width: 150px;
+    background-color: rgb(255, 0, 0);
+}
+
 .coursesbox {
     text-align: center;
     height: 200px;
