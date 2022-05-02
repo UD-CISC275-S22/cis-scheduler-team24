@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Accordion, Table, Button } from "react-bootstrap";
 import { Semester } from "../interfaces/semester";
 import { Course } from "../interfaces/course";
 import { ViewSemester } from "./viewSemester";
+import { EditSemester } from "./editSemester";
+import { DeleteSemester } from "./DeleteSemester";
 
 export function ListSemesters({
     planSemesters,
@@ -27,6 +29,12 @@ export function ListSemesters({
     setRequirements: (courses: Course[]) => void;
     updateCourses: (newCourse: Course) => void;
 }): JSX.Element {
+    const [isEditing, setEditing] = useState<boolean>(false);
+
+    function openEdit(): void {
+        setEditing(!isEditing);
+    }
+
     return (
         <div>
             <Table striped bordered hover>
@@ -40,7 +48,42 @@ export function ListSemesters({
                             >
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>
-                                        {semester.name}
+                                        <span>
+                                            <div style={{ display: "flex" }}>
+                                                {isEditing ? (
+                                                    <EditSemester
+                                                        semester={semester}
+                                                        setSemesterName={
+                                                            setSemesterName
+                                                        }
+                                                        openEdit={openEdit}
+                                                    ></EditSemester>
+                                                ) : (
+                                                    <div>
+                                                        {semester.name}
+                                                        <Button
+                                                            onClick={openEdit}
+                                                            variant="empty"
+                                                            className="me-8"
+                                                        >
+                                                            🖊
+                                                        </Button>
+                                                    </div>
+                                                )}
+
+                                                <DeleteSemester
+                                                    semester={semester}
+                                                    removeSemester={
+                                                        removeSemester
+                                                    }
+                                                    setFloats={setFloats}
+                                                    courses={courses}
+                                                    floatingCourses={
+                                                        floatingCourses
+                                                    }
+                                                ></DeleteSemester>
+                                            </div>
+                                        </span>
                                     </Accordion.Header>
                                     <Accordion.Body>
                                         <div key={semester.id}>
@@ -52,10 +95,6 @@ export function ListSemesters({
                                                 }
                                                 requiredCourses={
                                                     requiredCourses
-                                                }
-                                                removeSemester={removeSemester}
-                                                setSemesterName={
-                                                    setSemesterName
                                                 }
                                                 setFloats={setFloats}
                                                 setRequirements={
