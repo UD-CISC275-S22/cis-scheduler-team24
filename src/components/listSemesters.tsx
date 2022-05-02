@@ -110,7 +110,7 @@ export function ListSemesters({
                     </th>
                 </tr>
             </Table>
-            <Button variant="success" onClick={addSemester}>
+            <Button onClick={addSemester} className="button-style-5">
                 Add Semester
             </Button>
         </div>
