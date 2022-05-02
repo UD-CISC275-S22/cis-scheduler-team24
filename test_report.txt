@@ -147,7 +147,7 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (1082 ms)
+  ✕ renders the course name somewhere (818 ms)
 
   ● renders the course name somewhere
 
@@ -257,11 +257,11 @@ FAIL src/App.test.tsx
                         [33mstyle[39m=[32m"display: flex;"[39m
                       [36m>[39m
                         [36m<a[39m
-                          [33maria-controls[39m=[32m"react-aria7146122597-1-tabpane-1"[39m
+                          [33maria-controls[39m=[32m"react-aria2243106690-1-tabpane-1"[39m
                           [33maria-selected[39m=[32m"true"[39m
                           [33mclass[39m=[32m"nav-link active"[39m
                           [33mdata-rr-ui-event-key[39m=[32m"1"[39m
-                          [33mid[39m=[32m"react-aria7146122597-1-tab-1"[39m
+                          [33mid[39m=[32m"react-aria2243106690-1-tab-1"[39m
                           [33mrole[39m=[32m"tab"[39m
                         [36m>[39m
                           [0mPlan 1[0m
@@ -281,10 +281,10 @@ FAIL src/App.test.tsx
                         [33mstyle[39m=[32m"display: flex;"[39m
                       [36m>[39m
                         [36m<a[39m
-                          [33maria-controls[39m=[32m"react-aria7146122597-1-tabpane-2"[39m
+                          [33maria-controls[39m=[32m"react-aria2243106690-1-tabpane-2"[39m
                           [33mclass[39m=[32m"nav-link"[39m
                           [33mdata-rr-ui-event-key[39m=[32m"2"[39m
-                          [33mid[39m=[32m"react-aria7146122597-1-tab-2"[39m
+                          [33mid[39m=[32m"react-aria2243106690-1-tab-2"[39m
                           [33mrole[39m=[32m"tab"[39m
                           [33mtabindex[39m=[32m"-1"[39m
                         [36m>[39m
@@ -313,9 +313,9 @@ FAIL src/App.test.tsx
                     [33mclass[39m=[32m"tab-content"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33maria-labelledby[39m=[32m"react-aria7146122597-1-tab-1"[39m
+                      [33maria-labelledby[39m=[32m"react-aria2243106690-1-tab-1"[39m
                       [33mclass[39m=[32m"tab-pane active"[39m
-                      [33mid[39m=[32m"react-aria7146122597-1-tabpane-1"[39m
+                      [33mid[39m=[32m"react-aria2243106690-1-tabpane-1"[39m
                     [36m>[39m
                       [36m<div>[39m
                         [36m<div[39m
@@ -349,36 +349,38 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
---------------------------|---------|----------|---------|---------|----------------------
-File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s    
---------------------------|---------|----------|---------|---------|----------------------
-All files                 |    40.4 |    26.47 |   38.46 |    42.1 |                      
- src                      |      50 |        0 |    37.5 |   55.55 |                      
-  App.tsx                 |      50 |        0 |    37.5 |   55.55 | 29-50                
- src/components           |   39.89 |    28.12 |   38.54 |   41.43 |                      
-  Carouse.tsx             |     100 |      100 |     100 |     100 |                      
-  ClearSemesterModal.tsx  |   42.85 |      100 |      25 |      50 | 14,51-52             
-  DeleteCourseModal.tsx   |   42.85 |      100 |      25 |      50 | 14,47-48             
-  DeleteSemester.tsx      |   42.85 |      100 |      50 |   42.85 | 26-32                
-  EditCourseModal.tsx     |   28.57 |        0 |    7.14 |   29.41 | 34-91,129-186        
-  HelpButton.tsx          |     100 |      100 |     100 |     100 |                      
-  deletePlan.tsx          |      50 |      100 |      50 |      50 | 13                   
-  editPlan.tsx            |       0 |      100 |       0 |       0 | 14-27                
-  editSemester.tsx        |       0 |      100 |       0 |       0 | 14-27                
-  listCourses.tsx         |   35.84 |       25 |   30.43 |   37.25 | 46-52,75-125,167-223 
-  listPlans.tsx           |     100 |      100 |     100 |     100 |                      
-  listSemesters.tsx       |      75 |       50 |   66.66 |      75 | 35                   
-  viewFloatingCourses.tsx |   46.66 |    33.33 |   83.33 |      50 | 22-28,82             
-  viewPlan.tsx            |   47.61 |       25 |   28.57 |   47.61 | 44-93                
-  viewRequirements.tsx    |   46.66 |    33.33 |   83.33 |      50 | 20-26,80             
-  viewSemester.tsx        |      50 |      100 |      50 |      50 | 32-37                
- src/interfaces           |       0 |        0 |       0 |       0 |                      
-  course.ts               |       0 |        0 |       0 |       0 |                      
-  plan.ts                 |       0 |        0 |       0 |       0 |                      
-  semester.ts             |       0 |        0 |       0 |       0 |                      
---------------------------|---------|----------|---------|---------|----------------------
+--------------------------------|---------|----------|---------|---------|----------------------
+File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s    
+--------------------------------|---------|----------|---------|---------|----------------------
+All files                       |   38.78 |    26.47 |   35.96 |   40.68 |                      
+ src                            |      50 |        0 |    37.5 |   55.55 |                      
+  App.tsx                       |      50 |        0 |    37.5 |   55.55 | 29-50                
+ src/components                 |   38.23 |    28.12 |   35.84 |      40 |                      
+  Carouse.tsx                   |     100 |      100 |     100 |     100 |                      
+  ClearSemesterModal.tsx        |   42.85 |      100 |      25 |      50 | 14,51-52             
+  DeleteCourseModal.tsx         |   42.85 |      100 |      25 |      50 | 14,47-48             
+  DeleteCourseWarningModal.tsx  |       0 |      100 |       0 |       0 | 9-51                 
+  DeleteCourseWarningModalX.tsx |    37.5 |      100 |      20 |   42.85 | 14,22-51             
+  DeleteSemester.tsx            |   42.85 |      100 |      50 |   42.85 | 26-32                
+  EditCourseModal.tsx           |   28.57 |        0 |    7.14 |   29.41 | 35-92,134-191        
+  HelpButton.tsx                |     100 |      100 |     100 |     100 |                      
+  deletePlan.tsx                |      50 |      100 |      50 |      50 | 13                   
+  editPlan.tsx                  |       0 |      100 |       0 |       0 | 14-27                
+  editSemester.tsx              |       0 |      100 |       0 |       0 | 14-27                
+  listCourses.tsx               |   35.84 |       25 |   30.43 |   37.25 | 46-52,75-125,167-223 
+  listPlans.tsx                 |     100 |      100 |     100 |     100 |                      
+  listSemesters.tsx             |      75 |       50 |   66.66 |      75 | 35                   
+  viewFloatingCourses.tsx       |   46.66 |    33.33 |   83.33 |      50 | 22-28,82             
+  viewPlan.tsx                  |   47.61 |       25 |   28.57 |   47.61 | 44-93                
+  viewRequirements.tsx          |   46.66 |    33.33 |   83.33 |      50 | 20-26,80             
+  viewSemester.tsx              |      50 |      100 |      50 |      50 | 32-37                
+ src/interfaces                 |       0 |        0 |       0 |       0 |                      
+  course.ts                     |       0 |        0 |       0 |       0 |                      
+  plan.ts                       |       0 |        0 |       0 |       0 |                      
+  semester.ts                   |       0 |        0 |       0 |       0 |                      
+--------------------------------|---------|----------|---------|---------|----------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        5.111 s
+Time:        3.578 s
 Ran all test suites.
