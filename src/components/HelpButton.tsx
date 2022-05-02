@@ -2,20 +2,31 @@ import React from "react";
 import { Button, OverlayTrigger, Popover } from "react-bootstrap";
 
 export function HelpButton() {
-    const popover = (
-        <Popover id="popover-basic">
-            <Popover.Header as="h3">Application Introduction</Popover.Header>
-            <Popover.Body>
-                Still need detail here. If you need help, contact
-                jinging@udel.edu. ^^
-            </Popover.Body>
-        </Popover>
-    );
     return (
-        <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-            <Button variant="empty" className="me-8">
-                ❓
-            </Button>
+        <OverlayTrigger
+            placement="left"
+            overlay={
+                <Popover id="popover-basic">
+                    <Popover.Header as="h3">
+                        Application Introduction
+                    </Popover.Header>
+                    <Popover.Body>
+                        Still need detail here. If you need help, contact
+                        jinging@udel.edu. ^^
+                    </Popover.Body>
+                </Popover>
+            }
+        >
+            {({ ref, ...triggerHandler }) => (
+                <Button
+                    variant="white"
+                    {...triggerHandler}
+                    className="button-style-4 "
+                    ref={ref}
+                >
+                    ❓
+                </Button>
+            )}
         </OverlayTrigger>
     );
 }
