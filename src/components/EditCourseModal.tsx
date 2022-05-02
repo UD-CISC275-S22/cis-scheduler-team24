@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Button, Modal, Form, Col, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-
+import { DeleteCourseWarningModalX } from "./DeleteCourseWarningModalX";
+import { DeleteCourseWarningModal } from "./DeleteCourseWarningModal";
 export function EditCourseModal({
     handleClose,
     course,
@@ -93,18 +94,22 @@ export function EditCourseModal({
 
     return (
         <div>
-            <div>
-                <Button
-                    variant="success"
-                    className="button-style-1"
-                    onClick={handleShowAddModal}
-                    id="edit"
-                >
-                    Edit
-                </Button>
-                <Button onClick={removeCourse} variant="empty" className="me-8">
-                    ✖️
-                </Button>
+            <div style={{ display: "flex" }}>
+                <div>
+                    <Button
+                        variant="success"
+                        className="button-style-1"
+                        onClick={handleShowAddModal}
+                        id="edit"
+                    >
+                        Edit
+                    </Button>
+                </div>
+                <div>
+                    <DeleteCourseWarningModalX
+                        removeCourse={removeCourse}
+                    ></DeleteCourseWarningModalX>
+                </div>
             </div>
             <div>
                 <Modal
@@ -213,13 +218,11 @@ export function EditCourseModal({
                         >
                             Cancel
                         </Button>
-                        <Button
-                            onClick={removeCourse}
-                            variant="danger"
-                            className="me-8"
-                        >
-                            Delete
-                        </Button>
+                        <div>
+                            <DeleteCourseWarningModal
+                                removeCourse={removeCourse}
+                            ></DeleteCourseWarningModal>
+                        </div>
                     </Modal.Footer>
                 </Modal>
             </div>
