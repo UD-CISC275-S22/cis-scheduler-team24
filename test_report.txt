@@ -151,7 +151,7 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (815 ms)
+  ✕ renders the course name somewhere (768 ms)
 
   ● renders the course name somewhere
 
@@ -261,11 +261,11 @@ FAIL src/App.test.tsx
                         [33mstyle[39m=[32m"display: flex;"[39m
                       [36m>[39m
                         [36m<a[39m
-                          [33maria-controls[39m=[32m"react-aria456003826-1-tabpane-1"[39m
+                          [33maria-controls[39m=[32m"react-aria2668682942-1-tabpane-1"[39m
                           [33maria-selected[39m=[32m"true"[39m
                           [33mclass[39m=[32m"nav-link active"[39m
                           [33mdata-rr-ui-event-key[39m=[32m"1"[39m
-                          [33mid[39m=[32m"react-aria456003826-1-tab-1"[39m
+                          [33mid[39m=[32m"react-aria2668682942-1-tab-1"[39m
                           [33mrole[39m=[32m"tab"[39m
                         [36m>[39m
                           [0mPlan 1[0m
@@ -285,10 +285,10 @@ FAIL src/App.test.tsx
                         [33mstyle[39m=[32m"display: flex;"[39m
                       [36m>[39m
                         [36m<a[39m
-                          [33maria-controls[39m=[32m"react-aria456003826-1-tabpane-2"[39m
+                          [33maria-controls[39m=[32m"react-aria2668682942-1-tabpane-2"[39m
                           [33mclass[39m=[32m"nav-link"[39m
                           [33mdata-rr-ui-event-key[39m=[32m"2"[39m
-                          [33mid[39m=[32m"react-aria456003826-1-tab-2"[39m
+                          [33mid[39m=[32m"react-aria2668682942-1-tab-2"[39m
                           [33mrole[39m=[32m"tab"[39m
                           [33mtabindex[39m=[32m"-1"[39m
                         [36m>[39m
@@ -317,9 +317,9 @@ FAIL src/App.test.tsx
                     [33mclass[39m=[32m"tab-content"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33maria-labelledby[39m=[32m"react-aria456003826-1-tab-1"[39m
+                      [33maria-labelledby[39m=[32m"react-aria2668682942-1-tab-1"[39m
                       [33mclass[39m=[32m"tab-pane active"[39m
-                      [33mid[39m=[32m"react-aria456003826-1-tabpane-1"[39m
+                      [33mid[39m=[32m"react-aria2668682942-1-tabpane-1"[39m
                     [36m>[39m
                       [36m<div>[39m
                         [36m<div[39m
@@ -333,7 +333,7 @@ FAIL src/App.test.tsx
                             [36m>[39m
                               [36m<table[39m
                                 [33mclass[39m=[32m"table table-striped table-borderless"[39m
-             ...
+       ...
 
        5 | test("renders the course name somewhere", () => {
        6 |     render(<App />);
@@ -386,5 +386,5 @@ All files                       |   35.52 |       25 |    30.5 |   36.98 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.747 s
+Time:        3.554 s
 Ran all test suites.
