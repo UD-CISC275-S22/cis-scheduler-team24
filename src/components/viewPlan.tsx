@@ -8,6 +8,7 @@ import { EditPlan } from "./editPlan";
 import { HelpButton } from "./HelpButton";
 import { ViewFloatingCourses } from "./viewFloatingCourses";
 import { ViewRequirements } from "./viewRequirements";
+import { ClearSemesterModal } from "./ClearSemesterModal";
 import courses from "../data/course–book.json";
 
 const COURSES = courses.map(
@@ -68,16 +69,7 @@ export function ViewPlan({
 
     function clearSemesters(): void {
         setSemesters([]);
-        setFloats(
-            courses.map(
-                (course: Course): Course => ({ ...course, isTaken: false })
-            )
-        );
-        setRequirements(
-            requiredCourses.map(
-                (course: Course): Course => ({ ...course, isTaken: false })
-            )
-        );
+        setFloats([...courses]);
     }
 
     function setSemesterName(id: number, name: string): void {
@@ -170,6 +162,11 @@ export function ViewPlan({
                                         ></ListSemesters>
                                     </td>
                                 </tr>
+                                <Container>
+                                    <ClearSemesterModal
+                                        clearSemesters={clearSemesters}
+                                    ></ClearSemesterModal>
+                                </Container>
                             </tbody>
                         </Table>
                     </Col>
@@ -201,11 +198,6 @@ export function ViewPlan({
                             ></ViewRequirements>
                         </div>
                     </Col>
-                </Row>
-                <Row>
-                    <Button variant="success" onClick={clearSemesters}>
-                        Clear Semesters
-                    </Button>
                 </Row>
             </Container>
         </div>

@@ -152,16 +152,5 @@
         "isEditing": false,
         "isRequired": false,
         "breadthType": "B"
-    },
-    {
-        "id": 15,
-        "name": "CISC475: Advanced Software Engineering",
-        "credits": 3,
-        "description": "This is for the big kids",
-        "prerequisites": [],
-        "isTaken": false,
-        "isEditing": false,
-        "isRequired": true,
-        "breadthType": "D"
     }
 ]

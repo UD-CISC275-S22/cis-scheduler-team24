@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Button, Modal, Form, Col, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-
+import { DeleteCourseWarningModalX } from "./DeleteCourseWarningModalX";
+import { DeleteCourseWarningModal } from "./DeleteCourseWarningModal";
 export function EditCourseModal({
     handleClose,
     course,
@@ -28,6 +29,35 @@ export function EditCourseModal({
     );
     const [isRequired, setRequired] = useState<boolean>(course.isRequired);
 
+    const [resetid] = useState<string>(course.id.toString());
+    const [resetname] = useState<string>(course.name);
+    const [resetdescription] = useState<string>(course.description);
+    const [resetcredits] = useState<string>(course.credits.toString());
+    const [resetprereqs] = useState<string>(
+        course.prerequisites.map(String).join(", ")
+    );
+    const [resetisRequired] = useState<boolean>(course.isRequired);
+
+    function reset() {
+        editCourse(course.id, {
+            ...course,
+            id: parseInt(resetid),
+            name: resetname,
+            description: resetdescription,
+            credits: parseInt(resetcredits),
+            prerequisites: resetprereqs.split(", ").map(Number),
+            isRequired: resetisRequired
+        });
+        changeEditing();
+        makeRequired();
+        setId(resetid.toString());
+        setName(resetname);
+        setDescription(resetdescription);
+        setCredits(resetcredits.toString());
+        setPrereqs(resetprereqs);
+        setRequired(resetisRequired);
+        changeEditing();
+    }
     const handleShowAddModal = () => setShowAddModal(true);
 
     function save() {
@@ -93,18 +123,22 @@ export function EditCourseModal({
 
     return (
         <div>
-            <div>
-                <Button
-                    variant="success"
-                    className="button-style-1"
-                    onClick={handleShowAddModal}
-                    id="edit"
-                >
-                    Edit
-                </Button>
-                <Button onClick={removeCourse} variant="empty" className="me-8">
-                    ✖️
-                </Button>
+            <div style={{ display: "flex" }}>
+                <div>
+                    <Button
+                        variant="success"
+                        className="button-style-1"
+                        onClick={handleShowAddModal}
+                        id="edit"
+                    >
+                        Edit
+                    </Button>
+                </div>
+                <div>
+                    <DeleteCourseWarningModalX
+                        removeCourse={removeCourse}
+                    ></DeleteCourseWarningModalX>
+                </div>
             </div>
             <div>
                 <Modal
@@ -213,12 +247,18 @@ export function EditCourseModal({
                         >
                             Cancel
                         </Button>
+                        <div>
+                            <DeleteCourseWarningModal
+                                removeCourse={removeCourse}
+                            ></DeleteCourseWarningModal>
+                        </div>
                         <Button
-                            onClick={removeCourse}
-                            variant="danger"
-                            className="me-8"
+                            onClick={reset}
+                            variant="primary"
+                            className="me-4"
+                            disabled={!id}
                         >
-                            Delete
+                            Reset
                         </Button>
                     </Modal.Footer>
                 </Modal>
