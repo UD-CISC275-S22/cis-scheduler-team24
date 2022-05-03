@@ -69,16 +69,7 @@ export function ViewPlan({
 
     function clearSemesters(): void {
         setSemesters([]);
-        setFloats(
-            courses.map(
-                (course: Course): Course => ({ ...course, isTaken: false })
-            )
-        );
-        setRequirements(
-            requiredCourses.map(
-                (course: Course): Course => ({ ...course, isTaken: false })
-            )
-        );
+        setFloats([...courses]);
     }
 
     function setSemesterName(id: number, name: string): void {
@@ -106,7 +97,7 @@ export function ViewPlan({
         <div>
             <Container>
                 <Row>
-                    <Col>
+                    <Col sm={11}>
                         <Table striped borderless>
                             <thead>
                                 <tr>
@@ -179,7 +170,7 @@ export function ViewPlan({
                             </tbody>
                         </Table>
                     </Col>
-                    <Col>
+                    <Col sm={1}>
                         <div>
                             {/* <Button variant="primary" onClick={handleShow}>
                                     Show Courses Pool and Degree plan
