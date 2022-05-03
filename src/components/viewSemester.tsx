@@ -28,31 +28,8 @@ export function ViewSemester({
         )
     );
 
-    const [isEditing, setEditing] = useState<boolean>(false);
-
-    function deleteSemester(): void {
-        removeSemester(semester.id);
-        removeSemesterCourses();
-    }
-
-    function removeSemesterCourses(): void {
-        setFloats(
-            floatingCourses.concat(
-                semesterCourses.map(
-                    (course: Course): Course => ({ ...course, isTaken: false })
-                )
-            )
-        );
-        setRequirements(
-            requiredCourses.map(
-                (course: Course): Course =>
-                    semesterCourses
-                        .map((semCourse: Course): number => semCourse.id)
-                        .includes(course.id)
-                        ? { ...course, isTaken: false }
-                        : { ...course }
-            )
-        );
+    function removeCourses(): void {
+        setFloats([...floatingCourses, ...semesterCourses]);
         setSemesterCourses([]);
     }
 
@@ -73,9 +50,7 @@ export function ViewSemester({
                                     requiredCourses={requiredCourses}
                                     setFloats={setFloats}
                                     setRequirements={setRequirements}
-                                    removeSemesterCourses={
-                                        removeSemesterCourses
-                                    }
+                                    removeSemesterCourses={removeCourses}
                                     updateCourses={updateCourses}
                                     updateSemesterCourses={
                                         updateSemesterCourses
