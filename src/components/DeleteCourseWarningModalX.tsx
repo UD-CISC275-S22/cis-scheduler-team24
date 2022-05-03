@@ -51,6 +51,7 @@ export function DeleteCourseWarningModalX({
                                 cancel();
                             }}
                             variant="danger"
+                            data-testid="modal-Delete-button-x"
                         >
                             Delete
                         </Button>
