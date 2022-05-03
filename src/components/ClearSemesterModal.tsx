@@ -26,6 +26,7 @@ export function ClearSemesterModal({
                     variant="danger"
                     onClick={handleShowDeleteModal}
                     style={{ flex: "auto", margin: "15px" }}
+                    data-testid="Clear-semesters-button"
                 >
                     Clear Semesters
                 </Button>
@@ -51,8 +52,12 @@ export function ClearSemesterModal({
                         </p>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={clearSemestersbutton} variant="danger">
-                            Yes
+                        <Button
+                            onClick={clearSemestersbutton}
+                            variant="danger"
+                            data-testid="Clear-all-semesters-button"
+                        >
+                            Clear all semesters
                         </Button>
                         <Button onClick={cancel} variant="warning">
                             Cancel
