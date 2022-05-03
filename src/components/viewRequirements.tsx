@@ -1,16 +1,6 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-/*
-import {
-    DragDropContext,
-    Draggable,
-    DraggingStyle,
-    Droppable,
-    DropResult,
-    NotDraggingStyle
-} from "react-beautiful-dnd";
-*/
 
 export function ViewRequirements({
     requirements
