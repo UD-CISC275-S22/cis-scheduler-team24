@@ -2,7 +2,10 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
+PASS src/components/DeleteCourseModal.test.tsx
 PASS src/components/ClearSemesterModal.test.tsx
+PASS src/components/DeleteCourseWarningModalX.test.tsx
+PASS src/components/DeleteCourseWarningModal.test.tsx
 PASS src/components/Carouse.test.tsx
 PASS src/App.test.tsx
   ● Console
@@ -161,15 +164,15 @@ PASS src/App.test.tsx
 --------------------------------|---------|----------|---------|---------|----------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s    
 --------------------------------|---------|----------|---------|---------|----------------------
-All files                       |    37.5 |       25 |   32.77 |   38.56 |                      
+All files                       |   45.68 |       25 |   43.69 |   45.73 |                      
  src                            |      50 |        0 |    37.5 |   55.55 |                      
   App.tsx                       |      50 |        0 |    37.5 |   55.55 | 29-52                
- src/components                 |   36.93 |    26.47 |   32.43 |   37.85 |                      
+ src/components                 |   45.49 |    26.47 |   44.14 |   45.32 |                      
   Carouse.tsx                   |     100 |      100 |     100 |     100 |                      
-  ClearSemesterModal.tsx        |   71.42 |      100 |      75 |   66.66 | 18-19                
-  DeleteCourseModal.tsx         |   42.85 |      100 |      25 |      50 | 14,47-48             
-  DeleteCourseWarningModal.tsx  |       0 |      100 |       0 |       0 | 9-51                 
-  DeleteCourseWarningModalX.tsx |    37.5 |      100 |      20 |   42.85 | 14,22-51             
+  ClearSemesterModal.tsx        |     100 |      100 |     100 |     100 |                      
+  DeleteCourseModal.tsx         |     100 |      100 |     100 |     100 |                      
+  DeleteCourseWarningModal.tsx  |     100 |      100 |     100 |     100 |                      
+  DeleteCourseWarningModalX.tsx |     100 |      100 |     100 |     100 |                      
   DeleteSemester.tsx            |      30 |        0 |   33.33 |      30 | 30-48                
   EditCourseModal.tsx           |      32 |        0 |    6.66 |   32.65 | 44-122,164-221       
   deletePlan.tsx                |      50 |      100 |      50 |      50 | 13                   
@@ -188,8 +191,8 @@ All files                       |    37.5 |       25 |   32.77 |   38.56 |
   semester.ts                   |       0 |        0 |       0 |       0 |                      
 --------------------------------|---------|----------|---------|---------|----------------------
 
-Test Suites: 3 passed, 3 total
-Tests:       10 passed, 10 total
+Test Suites: 6 passed, 6 total
+Tests:       27 passed, 27 total
 Snapshots:   0 total
-Time:        5.835 s
+Time:        6.655 s
 Ran all test suites.
