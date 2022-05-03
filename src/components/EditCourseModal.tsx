@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Button, Modal, Form, Col, Row } from "react-bootstrap";
-import { Course } from "../interfaces/course";
 import { DeleteCourseWarningModalX } from "./DeleteCourseWarningModalX";
 import { DeleteCourseWarningModal } from "./DeleteCourseWarningModal";
+import { Course } from "../interfaces/course";
+
 export function EditCourseModal({
     handleClose,
     course,
@@ -28,6 +29,7 @@ export function EditCourseModal({
         course.prerequisites.map(String).join(", ")
     );
     const [isRequired, setRequired] = useState<boolean>(course.isRequired);
+    const handleShowAddModal = () => setShowAddModal(true);
 
     const [resetid] = useState<string>(course.id.toString());
     const [resetname] = useState<string>(course.name);
@@ -58,7 +60,6 @@ export function EditCourseModal({
         setRequired(resetisRequired);
         changeEditing();
     }
-    const handleShowAddModal = () => setShowAddModal(true);
 
     function save() {
         editCourse(course.id, {
@@ -114,7 +115,6 @@ export function EditCourseModal({
 
     function changeRequirement() {
         setRequired(!isRequired);
-        console.log(isRequired);
     }
 
     function removeCourse() {
