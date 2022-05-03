@@ -86,7 +86,8 @@ export function EditCourseModal({
                     description: description,
                     credits: parseInt(credits),
                     prerequisites: prereqs.split(", ").map(Number),
-                    isRequired: isRequired
+                    isRequired: isRequired,
+                    isTaken: true
                 }
             ]);
         } else {
