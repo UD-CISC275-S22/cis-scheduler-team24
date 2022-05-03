@@ -132,9 +132,41 @@ export function ListCourses({
         setTableCourses([]);
         removeSemesterCourses();
     }
+    function skipSemester(e: React.ChangeEvent<HTMLInputElement>): void {
+        setTableCourses([]);
+        removeSemesterCourses();
+        setIsCheckedA(e.target.checked);
+    }
+    const [isCheckedA, setIsCheckedA] = useState(false);
+    interface Props {
+        isChecked: boolean;
+        handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+        label: string;
+    }
+
+    const Checkbox = (props: Props) => {
+        return (
+            <div>
+                <label htmlFor={props.label}>{props.label}</label>
+                <input
+                    type="checkbox"
+                    checked={props.isChecked}
+                    onChange={props.handleChange /*, props.handleChangeA*/}
+                    id={props.label}
+                />
+            </div>
+        );
+    };
 
     return (
         <div>
+            <div style={{ marginLeft: "700px" }}>
+                <Checkbox
+                    handleChange={skipSemester}
+                    isChecked={isCheckedA}
+                    label="Skip!"
+                />
+            </div>
             <Table striped bordered hover>
                 <thead>
                     <tr>
