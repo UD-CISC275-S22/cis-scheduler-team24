@@ -8,6 +8,7 @@ import { EditPlan } from "./editPlan";
 import { ViewFloatingCourses } from "./viewFloatingCourses";
 import { ViewRequirements } from "./viewRequirements";
 import courses from "../data/course–book.json";
+import { ClearSemesterModal } from "./ClearSemesterModal";
 
 const COURSES = courses.map(
     (course): Course => ({
@@ -168,13 +169,9 @@ export function ViewPlan({
                                 </tr>
                             </tbody>
                         </Table>
-                        <Button
-                            variant="danger"
-                            onClick={clearSemesters}
-                            style={{ flex: "auto", margin: "15px" }}
-                        >
-                            Clear Semesters
-                        </Button>
+                        <ClearSemesterModal
+                            clearSemesters={clearSemesters}
+                        ></ClearSemesterModal>
                     </Col>
                     <Col sm={3}>
                         <div>
