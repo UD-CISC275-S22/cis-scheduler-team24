@@ -36,11 +36,27 @@ export function ViewSemester({
 
     function deleteSemester(): void {
         removeSemester(semester.id);
-        removeCourses();
+        removeSemesterCourses();
     }
 
-    function removeCourses(): void {
-        setFloats([...floatingCourses, ...semesterCourses]);
+    function removeSemesterCourses(): void {
+        setFloats(
+            floatingCourses.concat(
+                semesterCourses.map(
+                    (course: Course): Course => ({ ...course, isTaken: false })
+                )
+            )
+        );
+        setRequirements(
+            requiredCourses.map(
+                (course: Course): Course =>
+                    semesterCourses
+                        .map((semCourse: Course): number => semCourse.id)
+                        .includes(course.id)
+                        ? { ...course, isTaken: false }
+                        : { ...course }
+            )
+        );
         setSemesterCourses([]);
     }
 
@@ -94,7 +110,9 @@ export function ViewSemester({
                                     requiredCourses={requiredCourses}
                                     setFloats={setFloats}
                                     setRequirements={setRequirements}
-                                    removeSemesterCourses={removeCourses}
+                                    removeSemesterCourses={
+                                        removeSemesterCourses
+                                    }
                                     updateCourses={updateCourses}
                                     updateSemesterCourses={
                                         updateSemesterCourses

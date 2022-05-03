@@ -86,7 +86,15 @@ export function ListCourses({
                 (course: Course): boolean => course.id !== doomedCourse.id
             )
         );
-        setFloats([...floatingCourses, doomedCourse]);
+        setFloats([...floatingCourses, { ...doomedCourse, isTaken: false }]);
+        setRequirements(
+            requiredCourses.map(
+                (course: Course): Course =>
+                    course.id === doomedCourse.id
+                        ? { ...course, isTaken: false }
+                        : { ...course }
+            )
+        );
         setShowAddModal(false);
     }
 
@@ -218,14 +226,14 @@ export function ListCourses({
                 </tbody>
             </Table>
             <Container>
+                <div>Total Credits: {Credits}</div>
+            </Container>
+            <Container>
                 <DeleteCourseModal
                     deletCourse={() => {
                         deleteAllCourse();
                     }}
                 ></DeleteCourseModal>
-            </Container>
-            <Container>
-                <div>Total Credits: {Credits}</div>
             </Container>
             <div className="coursesbox">
                 <DragDropContext onDragEnd={onDragEnd}>
