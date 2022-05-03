@@ -2,56 +2,61 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-  console.error
-    Warning: validateDOMNesting(...): <button> cannot appear as a descendant of <button>.
-        at button
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Button.js:28:3
-        at div
-        at div
-        at span
-        at button
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/AccordionButton.js:58:7
-        at h2
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/AccordionHeader.js:24:7
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/AccordionItem.js:24:7
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Accordion.js:45:43
-        at th
-        at tr
-        at table
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
-        at div
-        at ListSemesters (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listSemesters.tsx:10:5)
-        at td
-        at tr
-        at tbody
-        at table
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
-        at div
-        at ViewPlan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/viewPlan.tsx:20:5)
-        at div
-        at NoopTransition (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/NoopTransition.js:9:3)
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabPane.js:31:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/createWithBsPrefix.js:31:5
-        at Tabs (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/Tabs.js:28:9)
-        at TabContainer (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabContainer.js:21:3)
-        at div
-        at ListPlans (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listPlans.tsx:8:5)
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at div
-        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:26:31)
+PASS src/components/ClearSemesterModal.test.tsx
+PASS src/components/Carouse.test.tsx
+PASS src/App.test.tsx
+  ● Console
+
+    console.error
+      Warning: validateDOMNesting(...): <button> cannot appear as a descendant of <button>.
+          at button
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Button.js:28:3
+          at div
+          at div
+          at span
+          at button
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/AccordionButton.js:58:7
+          at h2
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/AccordionHeader.js:24:7
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/AccordionItem.js:24:7
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Accordion.js:45:43
+          at th
+          at tr
+          at table
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
+          at div
+          at ListSemesters (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listSemesters.tsx:10:5)
+          at td
+          at tr
+          at tbody
+          at table
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at div
+          at ViewPlan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/viewPlan.tsx:21:5)
+          at div
+          at NoopTransition (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/NoopTransition.js:9:3)
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabPane.js:31:3
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/createWithBsPrefix.js:31:5
+          at Tabs (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/Tabs.js:28:9)
+          at TabContainer (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabContainer.js:21:3)
+          at div
+          at ListPlans (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listPlans.tsx:8:5)
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at div
+          at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:26:31)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -60,87 +65,44 @@
       at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
       at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
-  console.error
-    Warning: validateDOMNesting(...): <tr> cannot appear as a child of <table>. Add a <tbody>, <thead> or <tfoot> to your code to match the DOM tree generated by the browser.
-        at tr
-        at table
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
-        at div
-        at ListSemesters (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listSemesters.tsx:10:5)
-        at td
-        at tr
-        at tbody
-        at table
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
-        at div
-        at ViewPlan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/viewPlan.tsx:20:5)
-        at div
-        at NoopTransition (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/NoopTransition.js:9:3)
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabPane.js:31:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/createWithBsPrefix.js:31:5
-        at Tabs (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/Tabs.js:28:9)
-        at TabContainer (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabContainer.js:21:3)
-        at div
-        at ListPlans (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listPlans.tsx:8:5)
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at div
-        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:26:31)
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10081:7)
-      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
-      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
-      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
-
-  console.error
-    Warning: validateDOMNesting(...): <td> cannot appear as a child of <td>.
-        at td
-        at td
-        at tr
-        at tbody
-        at table
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
-        at div
-        at ViewRequirements (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/viewRequirements.tsx:6:5)
-        at div
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
-        at div
-        at ViewPlan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/viewPlan.tsx:20:5)
-        at div
-        at NoopTransition (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/NoopTransition.js:9:3)
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabPane.js:31:3
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/createWithBsPrefix.js:31:5
-        at Tabs (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/Tabs.js:28:9)
-        at TabContainer (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabContainer.js:21:3)
-        at div
-        at ListPlans (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listPlans.tsx:8:5)
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
-        at div
-        at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at div
-        at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:26:31)
+    console.error
+      Warning: validateDOMNesting(...): <tr> cannot appear as a child of <table>. Add a <tbody>, <thead> or <tfoot> to your code to match the DOM tree generated by the browser.
+          at tr
+          at table
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
+          at div
+          at ListSemesters (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listSemesters.tsx:10:5)
+          at td
+          at tr
+          at tbody
+          at table
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at div
+          at ViewPlan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/viewPlan.tsx:21:5)
+          at div
+          at NoopTransition (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/NoopTransition.js:9:3)
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabPane.js:31:3
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/createWithBsPrefix.js:31:5
+          at Tabs (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/Tabs.js:28:9)
+          at TabContainer (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabContainer.js:21:3)
+          at div
+          at ListPlans (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listPlans.tsx:8:5)
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at div
+          at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:26:31)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -149,219 +111,62 @@
       at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
       at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
-FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (788 ms)
+    console.error
+      Warning: validateDOMNesting(...): <td> cannot appear as a child of <td>.
+          at td
+          at td
+          at tr
+          at tbody
+          at table
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Table.js:21:3
+          at div
+          at ViewRequirements (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/viewRequirements.tsx:6:5)
+          at div
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at div
+          at ViewPlan (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/viewPlan.tsx:21:5)
+          at div
+          at NoopTransition (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/NoopTransition.js:9:3)
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabPane.js:31:3
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/createWithBsPrefix.js:31:5
+          at Tabs (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/@restart/ui/cjs/Tabs.js:28:9)
+          at TabContainer (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/TabContainer.js:21:3)
+          at div
+          at ListPlans (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/components/listPlans.tsx:8:5)
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Col.js:72:8
+          at div
+          at /home/runner/work/cis-scheduler-team24/cis-scheduler-team24/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at div
+          at App (/home/runner/work/cis-scheduler-team24/cis-scheduler-team24/src/App.tsx:26:31)
 
-  ● renders the course name somewhere
-
-    TestingLibraryElementError: Unable to find an element with the text: /CISC275/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"App"[39m
-        [36m>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"carousel slide"[39m
-          [36m>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"carousel-indicators"[39m
-            [36m>[39m
-              [36m<button[39m
-                [33maria-current[39m=[32m"true"[39m
-                [33maria-label[39m=[32m"Slide 1"[39m
-                [33mclass[39m=[32m"active"[39m
-                [33mdata-bs-target[39m=[32m""[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m/>[39m
-              [36m<button[39m
-                [33maria-current[39m=[32m"false"[39m
-                [33maria-label[39m=[32m"Slide 2"[39m
-                [33mdata-bs-target[39m=[32m""[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m/>[39m
-            [36m</div>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"carousel-inner"[39m
-            [36m>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"active carousel-item"[39m
-                [33minterval[39m=[32m"1000"[39m
-              [36m>[39m
-                [36m<header[39m
-                  [33mclass[39m=[32m"App-header"[39m
-                [36m>[39m
-                  [36m<div>[39m
-                    [0mUD CIS Scheduler[0m
-                  [36m</div>[39m
-                [36m</header>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"carousel-item"[39m
-                [33minterval[39m=[32m"1000"[39m
-              [36m>[39m
-                [36m<header[39m
-                  [33mclass[39m=[32m"App-header"[39m
-                [36m>[39m
-                  [36m<div>[39m
-                    [0mTeam 24 College Planner by Weldin, Zhiwen, and Jingqing[0m
-                  [36m</div>[39m
-                [36m</header>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-            [36m<a[39m
-              [33mclass[39m=[32m"carousel-control-prev"[39m
-              [33mrole[39m=[32m"button"[39m
-              [33mtabindex[39m=[32m"0"[39m
-            [36m>[39m
-              [36m<span[39m
-                [33maria-hidden[39m=[32m"true"[39m
-                [33mclass[39m=[32m"carousel-control-prev-icon"[39m
-              [36m/>[39m
-              [36m<span[39m
-                [33mclass[39m=[32m"visually-hidden"[39m
-              [36m>[39m
-                [0mPrevious[0m
-              [36m</span>[39m
-            [36m</a>[39m
-            [36m<a[39m
-              [33mclass[39m=[32m"carousel-control-next"[39m
-              [33mrole[39m=[32m"button"[39m
-              [33mtabindex[39m=[32m"0"[39m
-            [36m>[39m
-              [36m<span[39m
-                [33maria-hidden[39m=[32m"true"[39m
-                [33mclass[39m=[32m"carousel-control-next-icon"[39m
-              [36m/>[39m
-              [36m<span[39m
-                [33mclass[39m=[32m"visually-hidden"[39m
-              [36m>[39m
-                [0mNext[0m
-              [36m</span>[39m
-            [36m</a>[39m
-          [36m</div>[39m
-          [36m<div>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"row"[39m
-            [36m>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"col"[39m
-              [36m>[39m
-                [36m<div>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"nav nav-tabs"[39m
-                    [33mrole[39m=[32m"tablist"[39m
-                  [36m>[39m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"nav-item"[39m
-                    [36m>[39m
-                      [36m<div[39m
-                        [33mstyle[39m=[32m"display: flex;"[39m
-                      [36m>[39m
-                        [36m<a[39m
-                          [33maria-controls[39m=[32m"react-aria9347693944-1-tabpane-1"[39m
-                          [33maria-selected[39m=[32m"true"[39m
-                          [33mclass[39m=[32m"nav-link active"[39m
-                          [33mdata-rr-ui-event-key[39m=[32m"1"[39m
-                          [33mid[39m=[32m"react-aria9347693944-1-tab-1"[39m
-                          [33mrole[39m=[32m"tab"[39m
-                        [36m>[39m
-                          [0mPlan 1[0m
-                        [36m</a>[39m
-                        [36m<button[39m
-                          [33mclass[39m=[32m"btn btn-empty"[39m
-                          [33mtype[39m=[32m"button"[39m
-                        [36m>[39m
-                          [0m✖️[0m
-                        [36m</button>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"nav-item"[39m
-                    [36m>[39m
-                      [36m<div[39m
-                        [33mstyle[39m=[32m"display: flex;"[39m
-                      [36m>[39m
-                        [36m<a[39m
-                          [33maria-controls[39m=[32m"react-aria9347693944-1-tabpane-2"[39m
-                          [33mclass[39m=[32m"nav-link"[39m
-                          [33mdata-rr-ui-event-key[39m=[32m"2"[39m
-                          [33mid[39m=[32m"react-aria9347693944-1-tab-2"[39m
-                          [33mrole[39m=[32m"tab"[39m
-                          [33mtabindex[39m=[32m"-1"[39m
-                        [36m>[39m
-                          [0mPlan 2[0m
-                        [36m</a>[39m
-                        [36m<button[39m
-                          [33mclass[39m=[32m"btn btn-empty"[39m
-                          [33mtype[39m=[32m"button"[39m
-                        [36m>[39m
-                          [0m✖️[0m
-                        [36m</button>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"nav-item"[39m
-                    [36m>[39m
-                      [36m<button[39m
-                        [33mclass[39m=[32m"btn btn-outline-primary"[39m
-                        [33mtype[39m=[32m"button"[39m
-                      [36m>[39m
-                        [0mAdd Plan[0m
-                      [36m</button>[39m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"tab-content"[39m
-                  [36m>[39m
-                    [36m<div[39m
-                      [33maria-labelledby[39m=[32m"react-aria9347693944-1-tab-1"[39m
-                      [33mclass[39m=[32m"tab-pane active"[39m
-                      [33mid[39m=[32m"react-aria9347693944-1-tabpane-1"[39m
-                    [36m>[39m
-                      [36m<div>[39m
-                        [36m<div[39m
-                          [33mclass[39m=[32m"container"[39m
-                        [36m>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"row"[39m
-                          [36m>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"col-sm-9"[39m
-                            [36m>[39m
-                              [36m<table[39m
-                                [33mclass[39m=[32m"table table-striped table-borderless"[39m
-       ...
-
-       5 | test("renders the course name somewhere", () => {
-       6 |     render(<App />);
-    >  7 |     const linkElement = screen.getByText(/CISC275/i);
-         |                                ^
-       8 |     expect(linkElement).toBeInTheDocument();
-       9 | });
-      10 |
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
-      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/App.test.tsx:7:32)
-      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
-      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
-      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
-      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10081:7)
+      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
 --------------------------------|---------|----------|---------|---------|----------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s    
 --------------------------------|---------|----------|---------|---------|----------------------
-All files                       |   35.34 |       25 |   30.25 |   36.77 |                      
+All files                       |    37.5 |       25 |   32.77 |   38.56 |                      
  src                            |      50 |        0 |    37.5 |   55.55 |                      
   App.tsx                       |      50 |        0 |    37.5 |   55.55 | 29-52                
- src/components                 |   34.68 |    26.47 |   29.72 |   35.98 |                      
+ src/components                 |   36.93 |    26.47 |   32.43 |   37.85 |                      
   Carouse.tsx                   |     100 |      100 |     100 |     100 |                      
-  ClearSemesterModal.tsx        |       0 |      100 |       0 |       0 | 9-52                 
+  ClearSemesterModal.tsx        |   71.42 |      100 |      75 |   66.66 | 18-19                
   DeleteCourseModal.tsx         |   42.85 |      100 |      25 |      50 | 14,47-48             
   DeleteCourseWarningModal.tsx  |       0 |      100 |       0 |       0 | 9-51                 
   DeleteCourseWarningModalX.tsx |    37.5 |      100 |      20 |   42.85 | 14,22-51             
@@ -374,7 +179,7 @@ All files                       |   35.34 |       25 |   30.25 |   36.77 |
   listPlans.tsx                 |     100 |      100 |     100 |     100 |                      
   listSemesters.tsx             |      75 |       50 |   66.66 |      75 | 35                   
   viewFloatingCourses.tsx       |   46.66 |    33.33 |   83.33 |      50 | 22-28,82             
-  viewPlan.tsx                  |   41.66 |       25 |      25 |   41.66 | 42-100               
+  viewPlan.tsx                  |   41.66 |       25 |      25 |   41.66 | 43-101               
   viewRequirements.tsx          |     100 |      100 |     100 |     100 |                      
   viewSemester.tsx              |      30 |        0 |   28.57 |      30 | 32-53                
  src/interfaces                 |       0 |        0 |       0 |       0 |                      
@@ -382,8 +187,9 @@ All files                       |   35.34 |       25 |   30.25 |   36.77 |
   plan.ts                       |       0 |        0 |       0 |       0 |                      
   semester.ts                   |       0 |        0 |       0 |       0 |                      
 --------------------------------|---------|----------|---------|---------|----------------------
-Test Suites: 1 failed, 1 total
-Tests:       1 failed, 1 total
+
+Test Suites: 3 passed, 3 total
+Tests:       10 passed, 10 total
 Snapshots:   0 total
-Time:        3.763 s
+Time:        5.835 s
 Ran all test suites.
