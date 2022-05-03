@@ -77,15 +77,9 @@ export function ListSemesters({
                                                         removeSemester
                                                     }
                                                     setFloats={setFloats}
-                                                    setRequirements={
-                                                        setRequirements
-                                                    }
                                                     courses={courses}
                                                     floatingCourses={
                                                         floatingCourses
-                                                    }
-                                                    requiredCourses={
-                                                        requiredCourses
                                                     }
                                                 ></DeleteSemester>
                                             </div>
