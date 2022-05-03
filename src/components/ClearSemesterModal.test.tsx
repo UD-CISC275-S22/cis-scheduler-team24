@@ -1,23 +1,20 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { ClearSemesterModal } from "./ClearSemesterModal";
+import { cleanup } from "@testing-library/react";
 
 describe("ClearSemesterModal tests", () => {
     beforeEach(() => {
-        render(
-            <ClearSemesterModal
-                clearSemesters={function (): void {
-                    throw new Error("Function not implemented.");
-                }}
-            />
-        );
+        render(<ClearSemesterModal clearSemesters={() => []} />);
     });
 
+    afterEach(cleanup);
+
     test("There is a button labeled Clear Semesters", () => {
-        const changeTypeButton = screen.getByRole("button", {
+        const ClearButton = screen.getByRole("button", {
             name: /Clear Semesters/i
         });
-        expect(changeTypeButton).toBeInTheDocument();
+        expect(ClearButton).toBeInTheDocument();
     });
 
     test("Clicking Clear Semesters button show the warning modal", () => {
@@ -51,5 +48,15 @@ describe("ClearSemesterModal tests", () => {
         CancelButton.click();
         const answerText = screen.queryByText(/⚠️/);
         expect(answerText).toBeInTheDocument();
+    });
+
+    test("Clicking Delete button close the the warning modal and clear semster", () => {
+        const clearButton = screen.getByRole("button", {
+            name: /Clear Semesters/i
+        });
+        clearButton.click();
+        const DeleteButton = screen.getByTestId("Clear-all-semesters-button");
+        DeleteButton.click();
+        expect(DeleteButton).toBeEnabled();
     });
 });
