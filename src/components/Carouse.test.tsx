@@ -1,11 +1,13 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { Carouse } from "./Carouse";
+import { cleanup } from "@testing-library/react";
 
 describe("Carous tests", () => {
     beforeEach(() => {
         render(<Carouse />);
     });
+    afterEach(cleanup);
 
     test("Jingqing is visiable", () => {
         const answerText = screen.queryByText(/Jingqing/);
