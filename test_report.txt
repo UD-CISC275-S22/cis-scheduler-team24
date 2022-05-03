@@ -147,7 +147,7 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (819 ms)
+  ✕ renders the course name somewhere (865 ms)
 
   ● renders the course name somewhere
 
@@ -257,11 +257,11 @@ FAIL src/App.test.tsx
                         [33mstyle[39m=[32m"display: flex;"[39m
                       [36m>[39m
                         [36m<a[39m
-                          [33maria-controls[39m=[32m"react-aria7195620156-1-tabpane-1"[39m
+                          [33maria-controls[39m=[32m"react-aria6153067818-1-tabpane-1"[39m
                           [33maria-selected[39m=[32m"true"[39m
                           [33mclass[39m=[32m"nav-link active"[39m
                           [33mdata-rr-ui-event-key[39m=[32m"1"[39m
-                          [33mid[39m=[32m"react-aria7195620156-1-tab-1"[39m
+                          [33mid[39m=[32m"react-aria6153067818-1-tab-1"[39m
                           [33mrole[39m=[32m"tab"[39m
                         [36m>[39m
                           [0mPlan 1[0m
@@ -281,10 +281,10 @@ FAIL src/App.test.tsx
                         [33mstyle[39m=[32m"display: flex;"[39m
                       [36m>[39m
                         [36m<a[39m
-                          [33maria-controls[39m=[32m"react-aria7195620156-1-tabpane-2"[39m
+                          [33maria-controls[39m=[32m"react-aria6153067818-1-tabpane-2"[39m
                           [33mclass[39m=[32m"nav-link"[39m
                           [33mdata-rr-ui-event-key[39m=[32m"2"[39m
-                          [33mid[39m=[32m"react-aria7195620156-1-tab-2"[39m
+                          [33mid[39m=[32m"react-aria6153067818-1-tab-2"[39m
                           [33mrole[39m=[32m"tab"[39m
                           [33mtabindex[39m=[32m"-1"[39m
                         [36m>[39m
@@ -313,9 +313,9 @@ FAIL src/App.test.tsx
                     [33mclass[39m=[32m"tab-content"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33maria-labelledby[39m=[32m"react-aria7195620156-1-tab-1"[39m
+                      [33maria-labelledby[39m=[32m"react-aria6153067818-1-tab-1"[39m
                       [33mclass[39m=[32m"tab-pane active"[39m
-                      [33mid[39m=[32m"react-aria7195620156-1-tabpane-1"[39m
+                      [33mid[39m=[32m"react-aria6153067818-1-tabpane-1"[39m
                     [36m>[39m
                       [36m<div>[39m
                         [36m<div[39m
@@ -382,5 +382,5 @@ All files                       |   38.69 |    26.47 |   35.65 |   40.45 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.575 s
+Time:        3.929 s
 Ran all test suites.
