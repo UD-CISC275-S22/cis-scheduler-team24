@@ -53,7 +53,7 @@
 .coursesbox {
     text-align: center;
     height: auto;
-    width: 500px;
+    width: auto;
     overflow: auto;
     background-color: lightgray;
     color: gray;
@@ -84,22 +84,6 @@
 }
 
 .required {
-    /* DRAGBOX STYLE
-    text-align: auto;
-    height: 670px;
-    width: 150px;
-    overflow: auto;
-    background-color: lightgray;
-    color: gray;
-    scrollbar-base-color: gold;
-    font-family: arial;
-    padding: 15px;
-    justify-content: center;
-    border-style: groove;
-    border-color: gray;
-    border-radius: 5px;
-    */
-
     text-align: auto;
     height: auto;
     width: 100%;

@@ -105,7 +105,7 @@ export function ViewPlan({
         <div>
             <Container>
                 <Row>
-                    <Col>
+                    <Col sm={9}>
                         <Table striped borderless>
                             <thead>
                                 <tr>
@@ -173,7 +173,7 @@ export function ViewPlan({
                             </tbody>
                         </Table>
                     </Col>
-                    <Col>
+                    <Col sm={3}>
                         <div>
                             {/* <Button variant="primary" onClick={handleShow}>
                                     Show Courses Pool and Degree plan
@@ -198,7 +198,6 @@ export function ViewPlan({
                             Required Courses:
                             <ViewRequirements
                                 requirements={requiredCourses}
-                                setRequirements={setRequirements}
                             ></ViewRequirements>
                         </div>
                     </Col>
