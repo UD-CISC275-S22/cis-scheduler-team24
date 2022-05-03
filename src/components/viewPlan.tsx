@@ -172,6 +172,13 @@ export function ViewPlan({
                                 </tr>
                             </tbody>
                         </Table>
+                        <Button
+                            variant="danger"
+                            onClick={clearSemesters}
+                            style={{ flex: "auto", margin: "15px" }}
+                        >
+                            Clear Semesters
+                        </Button>
                     </Col>
                     <Col sm={3}>
                         <div>
@@ -201,11 +208,6 @@ export function ViewPlan({
                             ></ViewRequirements>
                         </div>
                     </Col>
-                </Row>
-                <Row>
-                    <Button variant="success" onClick={clearSemesters}>
-                        Clear Semesters
-                    </Button>
                 </Row>
             </Container>
         </div>
