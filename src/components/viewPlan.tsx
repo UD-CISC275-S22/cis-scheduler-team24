@@ -198,7 +198,6 @@ export function ViewPlan({
                             Required Courses:
                             <ViewRequirements
                                 requirements={requiredCourses}
-                                setRequirements={setRequirements}
                             ></ViewRequirements>
                         </div>
                     </Col>
