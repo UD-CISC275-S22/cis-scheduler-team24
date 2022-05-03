@@ -5,7 +5,6 @@ import { Semester } from "../interfaces/semester";
 import { Course } from "../interfaces/course";
 import { ListSemesters } from "./listSemesters";
 import { EditPlan } from "./editPlan";
-import { HelpButton } from "./HelpButton";
 import { ViewFloatingCourses } from "./viewFloatingCourses";
 import { ViewRequirements } from "./viewRequirements";
 import courses from "../data/course–book.json";
@@ -145,9 +144,6 @@ export function ViewPlan({
                                                         )}
                                                     </div>
                                                 </Container>
-                                                <div className="bg-light border ms-auto">
-                                                    <HelpButton></HelpButton>
-                                                </div>
                                             </Stack>
                                         </span>
                                     </th>
