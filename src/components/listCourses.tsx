@@ -116,7 +116,7 @@ export function ListCourses({
             credits: parseInt(credits),
             description: description,
             prerequisites: prereqs.split(", ").map(Number),
-            isTaken: false,
+            isTaken: true,
             isEditing: false,
             isRequired: false,
             breadthType: ""
