@@ -58,27 +58,27 @@
 
 .coursesbox {
     text-align: center;
-    height: 200px;
+    height: auto;
     width: 500px;
     overflow: auto;
-    background-color: rgb(197, 216, 242);
+    background-color: lightgray;
     color: gray;
     scrollbar-base-color: gold;
     font-family: arial;
     padding: 15px;
     justify-content: center;
-    margin-left: 210px;
     border-style: groove;
     border-color: gray;
     border-radius: 5px;
+    margin-top: 15px;
 }
 
 .floating {
     text-align: auto;
-    height: 400px;
-    width: 150px;
+    height: auto;
+    width: 100%;
     overflow: auto;
-    background-color: rgb(197, 216, 242);
+    background-color: lightgray;
     color: gray;
     scrollbar-base-color: gold;
     font-family: arial;
@@ -90,11 +90,12 @@
 }
 
 .required {
+    /* DRAGBOX STYLE
     text-align: auto;
     height: 670px;
     width: 150px;
     overflow: auto;
-    background-color: rgb(197, 216, 242);
+    background-color: lightgray;
     color: gray;
     scrollbar-base-color: gold;
     font-family: arial;
@@ -103,5 +104,13 @@
     border-style: groove;
     border-color: gray;
     border-radius: 5px;
-    /* margin-right: 5px; */
+    */
+
+    text-align: auto;
+    height: auto;
+    width: 100%;
+    overflow: auto;
+    font-family: arial;
+    padding: 15px;
+    justify-content: center;
 }
