@@ -7,14 +7,18 @@ export function DeleteSemester({
     semester,
     removeSemester,
     setFloats,
+    setRequirements,
     courses,
-    floatingCourses
+    floatingCourses,
+    requiredCourses
 }: {
     semester: Semester;
     removeSemester: (id: number) => void;
     setFloats: (courses: Course[]) => void;
+    setRequirements: (course: Course[]) => void;
     courses: Course[];
     floatingCourses: Course[];
+    requiredCourses: Course[];
 }): JSX.Element {
     const [semesterCourses, setSemesterCourses] = useState<Course[]>(
         courses.filter((course: Course): boolean =>
@@ -24,11 +28,23 @@ export function DeleteSemester({
 
     function deleteSemester(): void {
         removeSemester(semester.id);
-        removeCourses();
-    }
-
-    function removeCourses(): void {
-        setFloats([...floatingCourses, ...semesterCourses]);
+        setFloats(
+            floatingCourses.concat(
+                semesterCourses.map(
+                    (course: Course): Course => ({ ...course, isTaken: false })
+                )
+            )
+        );
+        setRequirements(
+            requiredCourses.map(
+                (course: Course): Course =>
+                    semesterCourses
+                        .map((semCourse: Course): number => semCourse.id)
+                        .includes(course.id)
+                        ? { ...course, isTaken: false }
+                        : { ...course }
+            )
+        );
         setSemesterCourses([]);
     }
 

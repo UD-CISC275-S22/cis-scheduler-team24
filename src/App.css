@@ -58,8 +58,8 @@
 
 .coursesbox {
     text-align: center;
-    height: 200px;
-    width: 500px;
+    height: auto;
+    width: auto;
     overflow: auto;
     background-color: rgb(197, 216, 242);
     color: gray;
@@ -91,17 +91,10 @@
 
 .required {
     text-align: auto;
-    height: 670px;
-    width: 150px;
+    height: auto;
+    width: 100%;
     overflow: auto;
-    background-color: rgb(197, 216, 242);
-    color: gray;
-    scrollbar-base-color: gold;
     font-family: arial;
     padding: 15px;
     justify-content: center;
-    border-style: groove;
-    border-color: gray;
-    border-radius: 5px;
-    /* margin-right: 5px; */
 }

@@ -18,7 +18,7 @@ export function DeleteCourseModal({
         <div>
             <div>
                 <Button onClick={handleShowDeleteModal} variant="danger">
-                    Delete All Course
+                    Delete All Courses
                 </Button>
             </div>
             <div>
