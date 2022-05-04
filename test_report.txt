@@ -4,6 +4,7 @@
 
 PASS src/components/EditCourseModal.test.tsx
 PASS src/components/DeleteCourseModal.test.tsx
+PASS src/components/viewFloatingCourses.test.tsx
 PASS src/components/ClearSemesterModal.test.tsx
 PASS src/components/DeleteCourseWarningModalX.test.tsx
 PASS src/components/DeleteCourseWarningModal.test.tsx
@@ -381,6 +382,8 @@ PASS src/components/viewPlan.test.tsx
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
       at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
+PASS src/components/editPlan.test.tsx
+PASS src/components/editSemester.test.tsx
 PASS src/components/deletePlan.test.tsx
 PASS src/components/Carouse.test.tsx
 PASS src/components/viewRequirements.test.tsx
@@ -563,10 +566,10 @@ PASS src/App.test.tsx
 --------------------------------|---------|----------|---------|---------|----------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s    
 --------------------------------|---------|----------|---------|---------|----------------------
-All files                       |   60.08 |    31.57 |   54.62 |   60.26 |                      
+All files                       |   62.66 |    31.57 |   57.14 |   62.94 |                      
  src                            |      50 |        0 |    37.5 |   55.55 |                      
   App.tsx                       |      50 |        0 |    37.5 |   55.55 | 29-52                
- src/components                 |   60.53 |    33.33 |   55.85 |   60.46 |                      
+ src/components                 |   63.22 |    33.33 |   58.55 |   63.25 |                      
   Carouse.tsx                   |     100 |      100 |     100 |     100 |                      
   ClearSemesterModal.tsx        |     100 |      100 |     100 |     100 |                      
   DeleteCourseModal.tsx         |     100 |      100 |     100 |     100 |                      
@@ -575,13 +578,13 @@ All files                       |   60.08 |    31.57 |   54.62 |   60.26 |
   DeleteSemester.tsx            |      30 |        0 |   33.33 |      30 | 30-48                
   EditCourseModal.tsx           |   98.03 |       75 |   93.33 |      98 | 96                   
   deletePlan.tsx                |      50 |      100 |      50 |      50 | 13                   
-  editPlan.tsx                  |       0 |      100 |       0 |       0 | 14-27                
-  editSemester.tsx              |       0 |      100 |       0 |       0 | 14-27                
+  editPlan.tsx                  |      80 |      100 |   66.66 |      80 | 27                   
+  editSemester.tsx              |      40 |      100 |   33.33 |      40 | 17-18,27             
   listCourses.tsx               |   36.06 |    21.42 |   30.76 |   37.28 | 46-52,75-138,207-266 
   listPlans.tsx                 |     100 |      100 |     100 |     100 |                      
   listSemesters.tsx             |      75 |       50 |   66.66 |      75 | 35                   
-  viewFloatingCourses.tsx       |   46.66 |    33.33 |   83.33 |      50 | 22-28,82             
-  viewPlan.tsx                  |   41.66 |       25 |      25 |   41.66 | 43-101               
+  viewFloatingCourses.tsx       |   46.66 |    33.33 |   83.33 |      50 | 22-28,81             
+  viewPlan.tsx                  |   41.66 |       25 |      25 |   41.66 | 38-96                
   viewRequirements.tsx          |     100 |      100 |     100 |     100 |                      
   viewSemester.tsx              |      30 |        0 |   28.57 |      30 | 32-53                
  src/interfaces                 |       0 |        0 |       0 |       0 |                      
@@ -590,8 +593,8 @@ All files                       |   60.08 |    31.57 |   54.62 |   60.26 |
   semester.ts                   |       0 |        0 |       0 |       0 |                      
 --------------------------------|---------|----------|---------|---------|----------------------
 
-Test Suites: 12 passed, 12 total
-Tests:       48 passed, 48 total
+Test Suites: 15 passed, 15 total
+Tests:       57 passed, 57 total
 Snapshots:   0 total
-Time:        13.674 s
+Time:        17.217 s
 Ran all test suites.
