@@ -40,15 +40,9 @@ describe("DeleteSemester tests", () => {
         render(
             <DeleteSemester
                 semester={PLANS[0].semesters[0]}
-                removeSemester={function (): void {
-                    throw new Error("Function not implemented.");
-                }}
-                setFloats={function (): void {
-                    throw new Error("Function not implemented.");
-                }}
-                setRequirements={function (): void {
-                    throw new Error("Function not implemented.");
-                }}
+                removeSemester={() => []}
+                setFloats={() => []}
+                setRequirements={() => []}
                 courses={COURSES}
                 requiredCourses={REQUIREMENTS}
                 floatingCourses={FLOATING}
@@ -60,6 +54,7 @@ describe("DeleteSemester tests", () => {
         const deleteButton = screen.getByRole("button", {
             name: /✖️/i
         });
-        expect(deleteButton).toBeInTheDocument();
+        deleteButton.click();
+        expect(deleteButton).toBeEnabled();
     });
 });
