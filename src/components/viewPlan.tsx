@@ -34,11 +34,6 @@ export function ViewPlan({
     const [requiredCourses, setRequiredCourses] = useState<Course[]>(
         courses.filter((course: Course): boolean => course.isRequired)
     );
-
-    // const [show, setShow] = useState(false);
-    // const handleClose = () => setShow(false);
-    // const handleShow = () => setShow(true);
-
     function openEdit(): void {
         setEditing(!isEditing);
     }

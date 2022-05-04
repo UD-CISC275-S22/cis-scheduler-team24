@@ -27,6 +27,7 @@ export function EditPlan({
                         setName(event.target.value)
                     }
                     className="form-control-style-1"
+                    data-testid="editplan"
                 />
                 <Button variant="secondary" onClick={save}>
                     Save

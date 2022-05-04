@@ -56,6 +56,7 @@ function App(): JSX.Element {
 
     return (
         <div className="App">
+            CISC275
             <Carouse></Carouse>
             <div>
                 <Row>
