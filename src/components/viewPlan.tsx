@@ -190,12 +190,16 @@ export function ViewPlan({
                                         </Offcanvas.Title>
                                     </Offcanvas.Header>
                                     <Offcanvas.Body> */}
-                            Floating Courses:
+                            <span data-testid="floating-text">
+                                Floating Courses:
+                            </span>
                             <ViewFloatingCourses
                                 floatingCourses={floatingCourses}
                                 setFloats={setFloats}
                             ></ViewFloatingCourses>
-                            Required Courses:
+                            <span data-testid="required-text">
+                                Required Courses:
+                            </span>
                             <ViewRequirements
                                 requirements={requiredCourses}
                             ></ViewRequirements>
