@@ -14,13 +14,19 @@ export function ClearSemesterModal({
         setShowDeleteModal(false);
     }
 
+    function clearSemestersbutton() {
+        setShowDeleteModal(false);
+        clearSemesters();
+    }
+
     return (
         <div>
             <div>
                 <Button
                     variant="danger"
                     onClick={handleShowDeleteModal}
-                    className="button-style-3"
+                    style={{ flex: "auto", margin: "15px" }}
+                    data-testid="Clear-semesters-button"
                 >
                     Clear Semesters
                 </Button>
@@ -41,19 +47,17 @@ export function ClearSemesterModal({
                     </Modal.Header>
                     <Modal.Body>
                         <p>
-                            Are you sure you want to delete all your semesters
+                            Are you sure you want to clear all your semesters
                             this plan?
                         </p>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button
-                            onClick={() => {
-                                clearSemesters();
-                                cancel();
-                            }}
+                            onClick={clearSemestersbutton}
                             variant="danger"
+                            data-testid="Clear-all-semesters-button"
                         >
-                            Delete All Semesters
+                            Clear all semesters
                         </Button>
                         <Button onClick={cancel} variant="warning">
                             Cancel

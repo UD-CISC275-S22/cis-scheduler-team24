@@ -5,10 +5,10 @@ import { Semester } from "../interfaces/semester";
 import { Course } from "../interfaces/course";
 import { ListSemesters } from "./listSemesters";
 import { EditPlan } from "./editPlan";
-import { HelpButton } from "./HelpButton";
 import { ViewFloatingCourses } from "./viewFloatingCourses";
 import { ViewRequirements } from "./viewRequirements";
 import courses from "../data/course–book.json";
+import { ClearSemesterModal } from "./ClearSemesterModal";
 
 const COURSES = courses.map(
     (course): Course => ({
@@ -140,9 +140,6 @@ export function ViewPlan({
                                                         )}
                                                     </div>
                                                 </Container>
-                                                <div className="bg-light border ms-auto">
-                                                    <HelpButton></HelpButton>
-                                                </div>
                                             </Stack>
                                         </span>
                                     </th>
@@ -167,13 +164,9 @@ export function ViewPlan({
                                 </tr>
                             </tbody>
                         </Table>
-                        <Button
-                            variant="danger"
-                            onClick={clearSemesters}
-                            style={{ flex: "auto", margin: "15px" }}
-                        >
-                            Clear Semesters
-                        </Button>
+                        <ClearSemesterModal
+                            clearSemesters={clearSemesters}
+                        ></ClearSemesterModal>
                     </Col>
                     <Col sm={3}>
                         <div>
@@ -192,12 +185,16 @@ export function ViewPlan({
                                         </Offcanvas.Title>
                                     </Offcanvas.Header>
                                     <Offcanvas.Body> */}
-                            Floating Courses:
+                            <span data-testid="floating-text">
+                                Floating Courses:
+                            </span>
                             <ViewFloatingCourses
                                 floatingCourses={floatingCourses}
                                 setFloats={setFloats}
                             ></ViewFloatingCourses>
-                            Required Courses:
+                            <span data-testid="required-text">
+                                Required Courses:
+                            </span>
                             <ViewRequirements
                                 requirements={requiredCourses}
                             ></ViewRequirements>
