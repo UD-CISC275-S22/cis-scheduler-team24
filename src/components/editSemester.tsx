@@ -26,6 +26,7 @@ export function EditSemester({
                     onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                         setName(event.target.value)
                     }
+                    data-testid="editSemester"
                     className="form-control-style-1"
                 />
                 <Button variant="secondary" onClick={save}>
