@@ -38,83 +38,62 @@ export function ListSemesters({
     return (
         <div>
             <Table striped bordered hover>
-                <tr>
-                    <th>
-                        {planSemesters.map((semester: Semester) => (
-                            <Accordion
-                                key={semester.id}
-                                defaultActiveKey="0"
-                                flush
-                            >
-                                <Accordion.Item eventKey="0">
-                                    <Accordion.Header>
-                                        <span>
-                                            <div style={{ display: "flex" }}>
-                                                {isEditing ? (
-                                                    <EditSemester
-                                                        semester={semester}
-                                                        setSemesterName={
-                                                            setSemesterName
-                                                        }
-                                                        openEdit={openEdit}
-                                                    ></EditSemester>
-                                                ) : (
-                                                    <div>
-                                                        {semester.name}
-                                                        <Button
-                                                            onClick={openEdit}
-                                                            variant="empty"
-                                                            className="me-8"
-                                                        >
-                                                            🖊
-                                                        </Button>
-                                                    </div>
-                                                )}
-
-                                                <DeleteSemester
-                                                    semester={semester}
-                                                    removeSemester={
-                                                        removeSemester
-                                                    }
-                                                    setFloats={setFloats}
-                                                    setRequirements={
-                                                        setRequirements
-                                                    }
-                                                    courses={courses}
-                                                    floatingCourses={
-                                                        floatingCourses
-                                                    }
-                                                    requiredCourses={
-                                                        requiredCourses
-                                                    }
-                                                ></DeleteSemester>
-                                            </div>
-                                        </span>
-                                    </Accordion.Header>
-                                    <Accordion.Body>
-                                        <div key={semester.id}>
-                                            <ViewSemester
+                {planSemesters.map((semester: Semester) => (
+                    <Accordion key={semester.id} defaultActiveKey="0" flush>
+                        <Accordion.Item eventKey="0">
+                            <Accordion.Header>
+                                <span>
+                                    <div style={{ display: "flex" }}>
+                                        {isEditing ? (
+                                            <EditSemester
                                                 semester={semester}
-                                                courses={courses}
-                                                floatingCourses={
-                                                    floatingCourses
+                                                setSemesterName={
+                                                    setSemesterName
                                                 }
-                                                requiredCourses={
-                                                    requiredCourses
-                                                }
-                                                setFloats={setFloats}
-                                                setRequirements={
-                                                    setRequirements
-                                                }
-                                                updateCourses={updateCourses}
-                                            ></ViewSemester>
-                                        </div>
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-                        ))}
-                    </th>
-                </tr>
+                                                openEdit={openEdit}
+                                            ></EditSemester>
+                                        ) : (
+                                            <div>
+                                                {semester.name}
+                                                <Button
+                                                    onClick={openEdit}
+                                                    variant="empty"
+                                                    className="me-8"
+                                                    data-testid="Edit-semester-name"
+                                                >
+                                                    🖊
+                                                </Button>
+                                            </div>
+                                        )}
+
+                                        <DeleteSemester
+                                            semester={semester}
+                                            removeSemester={removeSemester}
+                                            setFloats={setFloats}
+                                            setRequirements={setRequirements}
+                                            courses={courses}
+                                            floatingCourses={floatingCourses}
+                                            requiredCourses={requiredCourses}
+                                        ></DeleteSemester>
+                                    </div>
+                                </span>
+                            </Accordion.Header>
+                            <Accordion.Body>
+                                <div key={semester.id}>
+                                    <ViewSemester
+                                        semester={semester}
+                                        courses={courses}
+                                        floatingCourses={floatingCourses}
+                                        requiredCourses={requiredCourses}
+                                        setFloats={setFloats}
+                                        setRequirements={setRequirements}
+                                        updateCourses={updateCourses}
+                                    ></ViewSemester>
+                                </div>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
+                ))}
             </Table>
             <Button onClick={addSemester} className="button-style-5">
                 Add Semester
