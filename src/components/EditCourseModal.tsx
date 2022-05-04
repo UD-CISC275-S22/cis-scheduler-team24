@@ -90,7 +90,7 @@ export function EditCourseModal({
                     isTaken: true
                 }
             ]);
-        } else {
+        } else if (!isRequired) {
             setRequirements(
                 requiredCourses.filter(
                     (reqCourse: Course): boolean => reqCourse.id !== course.id
@@ -163,6 +163,7 @@ export function EditCourseModal({
                                         event: React.ChangeEvent<HTMLInputElement>
                                     ) => setId(event.target.value)}
                                     placeholder="Must have a course ID"
+                                    data-testid="Edit Course ID"
                                 />
                             </Col>
                         </Form.Group>
@@ -177,6 +178,7 @@ export function EditCourseModal({
                                     onChange={(
                                         event: React.ChangeEvent<HTMLInputElement>
                                     ) => setName(event.target.value)}
+                                    data-testid="Edit Course name"
                                 />
                             </Col>
                         </Form.Group>
@@ -191,6 +193,7 @@ export function EditCourseModal({
                                     onChange={(
                                         event: React.ChangeEvent<HTMLInputElement>
                                     ) => setDescription(event.target.value)}
+                                    data-testid="Edit Course description"
                                 />
                             </Col>
                         </Form.Group>
@@ -205,6 +208,7 @@ export function EditCourseModal({
                                     onChange={(
                                         event: React.ChangeEvent<HTMLInputElement>
                                     ) => setCredits(event.target.value)}
+                                    data-testid="Edit Course credits"
                                 />
                             </Col>
                         </Form.Group>
@@ -219,6 +223,7 @@ export function EditCourseModal({
                                     onChange={(
                                         event: React.ChangeEvent<HTMLInputElement>
                                     ) => setPrereqs(event.target.value)}
+                                    data-testid="Edit Course Prerequisities"
                                 />
                             </Col>
                         </Form.Group>
@@ -231,6 +236,7 @@ export function EditCourseModal({
                             label="Required?"
                             onChange={changeRequirement}
                             checked={isRequired}
+                            data-testid="Required?"
                         />
                         {/* Save/Cancel */}
                         <Button
