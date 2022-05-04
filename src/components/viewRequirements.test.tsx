@@ -15,7 +15,7 @@ const REQUIREMENTS = COURSES.filter(
     (course: Course): boolean => course.isRequired
 );
 
-describe("ViewPlan tests", () => {
+describe("ViewRequirements tests", () => {
     beforeEach(() => {
         render(<ViewRequirements requirements={REQUIREMENTS} />);
     });
