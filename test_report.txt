@@ -381,6 +381,7 @@ PASS src/components/viewPlan.test.tsx
 
 PASS src/components/DeleteSemester.test.tsx
 PASS src/components/editPlan.test.tsx
+PASS src/components/viewSemester.test.tsx
 PASS src/components/editSemester.test.tsx
 PASS src/components/deletePlan.test.tsx
 PASS src/components/Carouse.test.tsx
@@ -408,6 +409,7 @@ PASS src/components/viewRequirements.test.tsx
       at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
 PASS src/components/listSemesters.test.tsx
+PASS src/components/listCourses.test.tsx
 PASS src/App.test.tsx
   ● Console
 
@@ -591,8 +593,8 @@ All files                       |   65.66 |    36.84 |    60.5 |   66.07 |
   semester.ts                   |       0 |        0 |       0 |       0 |                      
 --------------------------------|---------|----------|---------|---------|----------------------
 
-Test Suites: 16 passed, 16 total
-Tests:       58 passed, 58 total
+Test Suites: 18 passed, 18 total
+Tests:       60 passed, 60 total
 Snapshots:   0 total
-Time:        14.887 s
+Time:        16.834 s
 Ran all test suites.
