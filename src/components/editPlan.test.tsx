@@ -4,6 +4,8 @@ import { EditPlan } from "./editPlan";
 import plans from "../data/plans.json";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
+import userEvent from "@testing-library/user-event";
+
 describe("edit plan", () => {
     beforeEach(() => {
         const oldplan = plans.map(
@@ -34,9 +36,14 @@ describe("edit plan", () => {
         const savebutton = screen.getByRole("button", { name: /Save/i });
         savebutton.click();
     });
+
     test("test the HTML input", () => {
         const htmlinput = screen.getByTestId("editplan");
-        htmlinput.click();
+        userEvent.type(htmlinput, "CISC275");
+        const savebutton = screen.getByRole("button", {
+            name: /Save/i
+        });
+        savebutton.click();
         expect(htmlinput).toBeEnabled;
     });
 });
