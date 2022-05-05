@@ -3,7 +3,7 @@
 > react-scripts test "--coverage"
 
 PASS src/components/EditCourseModal.test.tsx
-PASS src/App.test.tsx (20.51 s)
+PASS src/App.test.tsx (21.567 s)
   ● Console
 
     console.error
@@ -776,5 +776,5 @@ All files                       |    93.5 |       75 |   97.47 |   94.59 |
 Test Suites: 18 passed, 18 total
 Tests:       76 passed, 76 total
 Snapshots:   0 total
-Time:        35.045 s
+Time:        36.994 s
 Ran all test suites.
