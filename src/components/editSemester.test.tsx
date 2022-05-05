@@ -4,6 +4,7 @@ import plans from "../data/plans.json";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
 import { EditSemester } from "./editSemester";
+import userEvent from "@testing-library/user-event";
 
 describe("editSemesters", () => {
     const oldplan = plans.map(
@@ -29,9 +30,10 @@ describe("editSemesters", () => {
             openEdit={() => []}
         />
     );
+
     test("test the HTML input", () => {
         const htmlinput = screen.getByTestId("editSemester");
-        htmlinput.click();
+        userEvent.type(htmlinput, "CISC275");
         expect(htmlinput).toBeEnabled;
     });
 });
