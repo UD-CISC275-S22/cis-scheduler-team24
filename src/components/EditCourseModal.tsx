@@ -90,7 +90,7 @@ export function EditCourseModal({
                     isTaken: true
                 }
             ]);
-        } else if (!isRequired) {
+        } else {
             setRequirements(
                 requiredCourses.filter(
                     (reqCourse: Course): boolean => reqCourse.id !== course.id
