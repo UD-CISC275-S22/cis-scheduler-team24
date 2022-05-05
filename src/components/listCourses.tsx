@@ -165,6 +165,7 @@ export function ListCourses({
                     handleChange={skipSemester}
                     isChecked={isCheckedA}
                     label="Skip!"
+                    data-testid="SkipSemester-Checkbox"
                 />
             </div>
             <Table striped bordered hover>
@@ -216,6 +217,7 @@ export function ListCourses({
                                     event: React.ChangeEvent<HTMLInputElement>
                                 ) => setName(event.target.value)}
                                 placeholder="Enter Name"
+                                data-testid="Enter-Name"
                             />
                         </td>
                         <td>
@@ -225,6 +227,7 @@ export function ListCourses({
                                     event: React.ChangeEvent<HTMLInputElement>
                                 ) => setDescription(event.target.value)}
                                 placeholder="Enter Description"
+                                data-testid="Enter-Description"
                             />
                         </td>
                         <td>
@@ -244,6 +247,7 @@ export function ListCourses({
                                     event: React.ChangeEvent<HTMLInputElement>
                                 ) => setPrereqs(event.target.value)}
                                 placeholder="Enter Prerequisites"
+                                data-testid="Enter-Prerequisites"
                             />
                         </td>
                         <td>
