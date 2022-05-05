@@ -48,7 +48,6 @@ export function ViewSemester({
         );
         setSemesterCourses([]);
     }
-
     function updateSemesterCourses(newCourse: Course): void {
         setSemesterCourses([...semesterCourses, newCourse]);
     }
