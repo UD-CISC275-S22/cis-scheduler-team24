@@ -48,6 +48,30 @@ export function ViewSemester({
         );
         setSemesterCourses([]);
     }
+
+    function Noskip(): void {
+        setFloats(
+            floatingCourses.filter(
+                (course: Course): boolean =>
+                    !semester.courses.includes(course.id)
+            )
+        );
+        setRequirements(
+            requiredCourses.map(
+                (course: Course): Course =>
+                    semesterCourses
+                        .map((semCourse: Course): number => semCourse.id)
+                        .includes(course.id)
+                        ? { ...course, isTaken: true }
+                        : { ...course }
+            )
+        );
+        setSemesterCourses(
+            courses.filter((course: Course): boolean =>
+                semester.courses.includes(course.id)
+            )
+        );
+    }
     function updateSemesterCourses(newCourse: Course): void {
         setSemesterCourses([...semesterCourses, newCourse]);
     }
@@ -72,6 +96,7 @@ export function ViewSemester({
                                     updateSemesterCourses={
                                         updateSemesterCourses
                                     }
+                                    Noskip={Noskip}
                                 ></ListCourses>
                             </th>
                         </tr>
