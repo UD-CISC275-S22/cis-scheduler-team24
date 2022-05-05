@@ -71,7 +71,7 @@ export function ViewFloatingCourses({
                                                 key={index}
                                             >
                                                 {course.name}
-                                                {"Credit: "}
+                                                {" Credit: "}
                                                 {course.credits}
                                             </div>
                                         )}

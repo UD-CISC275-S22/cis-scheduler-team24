@@ -29,7 +29,11 @@ export function EditSemester({
                     data-testid="editSemester"
                     className="form-control-style-1"
                 />
-                <Button variant="secondary" onClick={save}>
+                <Button
+                    variant="secondary"
+                    onClick={save}
+                    data-testid="editSemester-save"
+                >
                     Save
                 </Button>
             </InputGroup>

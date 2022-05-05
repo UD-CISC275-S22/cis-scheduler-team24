@@ -98,7 +98,7 @@ export function ListCourses({
         setShowAddModal(false);
     }
 
-    function addMovie(newCourse: Course) {
+    function addCourse(newCourse: Course) {
         const existing = tableCourses.find(
             (course: Course): boolean => course.id === newCourse.id
         );
@@ -110,7 +110,7 @@ export function ListCourses({
     }
 
     function saveAddChange() {
-        addMovie({
+        addCourse({
             id: parseInt(id),
             name: name,
             credits: parseInt(credits),
@@ -206,6 +206,7 @@ export function ListCourses({
                                     event: React.ChangeEvent<HTMLInputElement>
                                 ) => setId(event.target.value)}
                                 placeholder="Enter Course ID*"
+                                data-testid="Enter-Course-ID"
                             />
                         </td>
                         <td>
@@ -233,6 +234,7 @@ export function ListCourses({
                                     event: React.ChangeEvent<HTMLInputElement>
                                 ) => setCredits(event.target.value)}
                                 placeholder="Enter Credits"
+                                data-testid="Enter-Credits"
                             />
                         </td>
                         <td>

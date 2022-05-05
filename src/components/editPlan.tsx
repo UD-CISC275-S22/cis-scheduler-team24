@@ -29,7 +29,11 @@ export function EditPlan({
                     className="form-control-style-1"
                     data-testid="editplan"
                 />
-                <Button variant="secondary" onClick={save}>
+                <Button
+                    variant="secondary"
+                    onClick={save}
+                    data-testid="editplan-save"
+                >
                     Save
                 </Button>
             </InputGroup>
