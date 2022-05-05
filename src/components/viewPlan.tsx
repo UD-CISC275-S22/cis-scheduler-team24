@@ -132,6 +132,7 @@ export function ViewPlan({
                                                                         }
                                                                         variant="empty"
                                                                         className="me-8"
+                                                                        data-testid="Edit Plan Name Button"
                                                                     >
                                                                         🖊
                                                                     </Button>
