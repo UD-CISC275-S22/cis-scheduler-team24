@@ -23,6 +23,7 @@ export function DeleteCourseWarningModalX({
                     }}
                     variant="empty"
                     className="me-8"
+                    data-testid="Delete-course-X"
                 >
                     ✖️
                 </Button>
