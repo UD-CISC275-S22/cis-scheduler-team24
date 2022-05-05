@@ -76,12 +76,20 @@ test("Delete All Course can be used", () => {
     expect(answerText[0]).toBeInTheDocument();
 });
 
-test("test the Add Course", () => {
+test("test the Edit Course", () => {
     render(<App />);
     const EnterCourseIDButton = screen.getAllByTestId("Enter-Course-ID");
     const EnterCreditsButton = screen.getAllByTestId("Enter-Credits");
+    const EnterNameButton = screen.getAllByTestId("Enter-Name");
+    const EnterDescriptionButton = screen.getAllByTestId("Enter-Description");
+    const EnterPrerequisitesButton = screen.getAllByTestId(
+        "Enter-Prerequisites"
+    );
+    userEvent.type(EnterNameButton[0], "GUESS101");
     userEvent.type(EnterCourseIDButton[0], "10");
     userEvent.type(EnterCreditsButton[0], "3");
+    userEvent.type(EnterDescriptionButton[0], "Guess what course here");
+    userEvent.type(EnterPrerequisitesButton[0], "5");
     const savebutton = screen.getAllByRole("button", { name: /Add Course/i });
     savebutton[0].click();
     const answerText = screen.queryAllByText(/10/i);
@@ -142,6 +150,28 @@ test("Edit Semester name can be used", () => {
     userEvent.type(htmlinput[0], "3");
     const EditSemesterSaveButton = screen.getAllByTestId("editSemester-save");
     EditSemesterSaveButton[0].click();
+    const answerText = screen.queryAllByText(/Jingqing/i);
+    expect(answerText[0]).toBeInTheDocument();
+});
+
+test("Delete course X can be used", () => {
+    render(<App />);
+    const DeletecourseXButton = screen.getAllByTestId("Delete-course-X");
+    DeletecourseXButton[0].click();
+    const modalDeletebuttonxButton = screen.getAllByTestId(
+        "modal-Delete-button-x"
+    );
+    modalDeletebuttonxButton[0].click();
+    const answerText = screen.queryAllByText(/Jingqing/i);
+    expect(answerText[0]).toBeInTheDocument();
+});
+
+test("Skip Semester can be used", () => {
+    render(<App />);
+    const SkipSemesterCheckbox = screen.getAllByRole("checkbox", {
+        name: /Skip!/i
+    });
+    SkipSemesterCheckbox[0].click();
     const answerText = screen.queryAllByText(/Jingqing/i);
     expect(answerText[0]).toBeInTheDocument();
 });
