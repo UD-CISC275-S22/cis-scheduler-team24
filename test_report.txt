@@ -3,7 +3,7 @@
 > react-scripts test "--coverage"
 
 PASS src/components/EditCourseModal.test.tsx
-PASS src/App.test.tsx (21.567 s)
+FAIL src/App.test.tsx (115.662 s)
   ● Console
 
     console.error
@@ -206,6 +206,2377 @@ PASS src/App.test.tsx (21.567 s)
       at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16997:28)
       at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
       at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+  ● Skip Semester can be used
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "checkbox" and name `/Skip!/i`
+
+    Here are the accessible roles:
+
+      button:
+
+      Name "Slide 1":
+      [36m<button[39m
+        [33maria-current[39m=[32m"true"[39m
+        [33maria-label[39m=[32m"Slide 1"[39m
+        [33mclass[39m=[32m"active"[39m
+        [33mdata-bs-target[39m=[32m""[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Slide 2":
+      [36m<button[39m
+        [33maria-current[39m=[32m"false"[39m
+        [33maria-label[39m=[32m"Slide 2"[39m
+        [33mdata-bs-target[39m=[32m""[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Previous":
+      [36m<a[39m
+        [33mclass[39m=[32m"carousel-control-prev"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "Next":
+      [36m<a[39m
+        [33mclass[39m=[32m"carousel-control-next"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-empty"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-empty"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Add Plan":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-outline-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "🖊":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Edit Plan Name Button"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Fall, 2019 🖊 ✖️":
+      [36m<button[39m
+        [33maria-expanded[39m=[32m"true"[39m
+        [33mclass[39m=[32m"accordion-button"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "🖊":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Edit-semester-name"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "skip!":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Undo!":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Add Course":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-2 btn btn-primary"[39m
+        [33mdisabled[39m=[32m""[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Delete All Course":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-danger"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "CISC108: Introduction to Computer Science I Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-86-hidden-text-619"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"86"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"1"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"86"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"1"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "EGGG101: Introduction to Engineering Credit: 2":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-86-hidden-text-619"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"86"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"2"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"86"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"2"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "ENGL110: English Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-86-hidden-text-619"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"86"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"3"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"86"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"3"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "MATH241: Calculus A & B Credit: 4":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-86-hidden-text-619"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"86"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"4"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"86"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"4"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "GEOL107: The lab science for CIS majors Credit: 4":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-86-hidden-text-619"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"86"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"5"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"86"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"5"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "Spring, 2020 🖊 ✖️":
+      [36m<button[39m
+        [33maria-expanded[39m=[32m"true"[39m
+        [33mclass[39m=[32m"accordion-button"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "🖊":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Edit-semester-name"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "skip!":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Undo!":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Add Course":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-2 btn btn-primary"[39m
+        [33mdisabled[39m=[32m""[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Delete All Course":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-danger"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "CISC210: Introduction to Systems Programming Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-87-hidden-text-626"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"87"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"6"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"87"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"6"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "CISC181: Introduction to Computer Science II Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-87-hidden-text-626"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"87"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"7"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"87"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"7"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "GEOL105: Natural Hazards Credit: 4":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-87-hidden-text-626"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"87"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"8"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"87"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"8"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "MATH210: Discrete Math Credit: 4":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-87-hidden-text-626"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"87"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"9"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"87"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"9"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "MUSC207: History of Jazz Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-87-hidden-text-626"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"87"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"10"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"87"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"10"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "Add Semester":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-5 btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Clear Semesters":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-danger"[39m
+        [33mdata-testid[39m=[32m"Clear-semesters-button"[39m
+        [33mstyle[39m=[32m"flex-basis: auto; margin: 15px;"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "POSC150: Introduction to American Politics Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-88-hidden-text-633"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"88"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"11"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"88"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"11"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 3px; margin: 3px -5px 10px -5px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "POSC240: Introduction to Global Politics Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-88-hidden-text-633"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"88"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"12"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"88"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"12"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 3px; margin: 3px -5px 10px -5px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "PHIL125: Philosophy in South Park Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-88-hidden-text-633"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"88"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"13"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"88"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"13"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 3px; margin: 3px -5px 10px -5px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "ENGL410: Technical Writing Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-88-hidden-text-633"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"88"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"14"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"88"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"14"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 3px; margin: 3px -5px 10px -5px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "CISC475: Advanced Software Engineering Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-88-hidden-text-633"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"88"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"15"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"88"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"15"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 3px; margin: 3px -5px 10px -5px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "🖊":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Edit Plan Name Button"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Fall, 2019 🖊 ✖️":
+      [36m<button[39m
+        [33maria-expanded[39m=[32m"true"[39m
+        [33mclass[39m=[32m"accordion-button"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "🖊":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Edit-semester-name"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "skip!":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Undo!":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Add Course":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-2 btn btn-primary"[39m
+        [33mdisabled[39m=[32m""[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Delete All Course":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-danger"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "CISC108: Introduction to Computer Science I Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-89-hidden-text-640"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"89"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"1"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"89"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"1"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "EGGG101: Introduction to Engineering Credit: 2":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-89-hidden-text-640"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"89"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"2"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"89"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"2"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "ENGL110: English Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-89-hidden-text-640"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"89"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"3"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"89"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"3"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "MATH241: Calculus A & B Credit: 4":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-89-hidden-text-640"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"89"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"4"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"89"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"4"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "GEOL107: The lab science for CIS majors Credit: 4":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-89-hidden-text-640"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"89"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"5"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"89"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"5"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "Spring, 2020 🖊 ✖️":
+      [36m<button[39m
+        [33maria-expanded[39m=[32m"true"[39m
+        [33mclass[39m=[32m"accordion-button"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "🖊":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Edit-semester-name"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "skip!":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Undo!":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+        [33mid[39m=[32m"edit"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "✖️":
+      [36m<button[39m
+        [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+        [33mdata-testid[39m=[32m"Delete-course-X"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Add Course":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-2 btn btn-primary"[39m
+        [33mdisabled[39m=[32m""[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Delete All Course":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-danger"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "CISC210: Introduction to Systems Programming Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-90-hidden-text-647"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"90"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"6"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"90"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"6"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "CISC181: Introduction to Computer Science II Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-90-hidden-text-647"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"90"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"7"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"90"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"7"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "GEOL105: Natural Hazards Credit: 4":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-90-hidden-text-647"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"90"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"8"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"90"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"8"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "MATH210: Discrete Math Credit: 4":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-90-hidden-text-647"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"90"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"9"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"90"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"9"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "MUSC207: History of Jazz Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-90-hidden-text-647"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"90"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"10"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"90"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"10"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 10px; margin: 0px 50px 15px 50px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "Add Semester":
+      [36m<button[39m
+        [33mclass[39m=[32m"button-style-5 btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Clear Semesters":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-danger"[39m
+        [33mdata-testid[39m=[32m"Clear-semesters-button"[39m
+        [33mstyle[39m=[32m"flex-basis: auto; margin: 15px;"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "POSC150: Introduction to American Politics Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-91-hidden-text-654"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"91"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"11"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"91"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"11"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 3px; margin: 3px -5px 10px -5px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "POSC240: Introduction to Global Politics Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-91-hidden-text-654"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"91"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"12"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"91"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"12"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 3px; margin: 3px -5px 10px -5px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "PHIL125: Philosophy in South Park Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-91-hidden-text-654"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"91"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"13"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"91"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"13"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 3px; margin: 3px -5px 10px -5px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "ENGL410: Technical Writing Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-91-hidden-text-654"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"91"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"14"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"91"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"14"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 3px; margin: 3px -5px 10px -5px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      Name "CISC475: Advanced Software Engineering Credit: 3":
+      [36m<div[39m
+        [33maria-describedby[39m=[32m"rbd-hidden-text-91-hidden-text-654"[39m
+        [33mdata-rbd-drag-handle-context-id[39m=[32m"91"[39m
+        [33mdata-rbd-drag-handle-draggable-id[39m=[32m"15"[39m
+        [33mdata-rbd-draggable-context-id[39m=[32m"91"[39m
+        [33mdata-rbd-draggable-id[39m=[32m"15"[39m
+        [33mdraggable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"button"[39m
+        [33mstyle[39m=[32m"padding: 3px; margin: 3px -5px 10px -5px; background: white; color: black; border: 1px solid black; border-radius: 5px;"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      banner:
+
+      Name "":
+      [36m<header[39m
+        [33mclass[39m=[32m"App-header"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<header[39m
+        [33mclass[39m=[32m"App-header"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      tablist:
+
+      Name "":
+      [36m<div[39m
+        [33mclass[39m=[32m"nav nav-tabs"[39m
+        [33mrole[39m=[32m"tablist"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      tab:
+
+      Name "Plan 1":
+      [36m<a[39m
+        [33maria-controls[39m=[32m"react-aria3599291409-15-tabpane-1"[39m
+        [33maria-selected[39m=[32m"true"[39m
+        [33mclass[39m=[32m"nav-link active"[39m
+        [33mdata-rr-ui-event-key[39m=[32m"1"[39m
+        [33mid[39m=[32m"react-aria3599291409-15-tab-1"[39m
+        [33mrole[39m=[32m"tab"[39m
+      [36m/>[39m
+
+      Name "Plan 2":
+      [36m<a[39m
+        [33maria-controls[39m=[32m"react-aria3599291409-15-tabpane-2"[39m
+        [33mclass[39m=[32m"nav-link"[39m
+        [33mdata-rr-ui-event-key[39m=[32m"2"[39m
+        [33mid[39m=[32m"react-aria3599291409-15-tab-2"[39m
+        [33mrole[39m=[32m"tab"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      table:
+
+      Name "":
+      [36m<table[39m
+        [33mclass[39m=[32m"table table-striped table-borderless"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<table[39m
+        [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<table[39m
+        [33mclass[39m=[32m"table table-striped table-borderless table-hover"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<table[39m
+        [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<table[39m
+        [33mclass[39m=[32m"table table-striped table-borderless table-hover"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<table[39m
+        [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<table[39m
+        [33mclass[39m=[32m"required table table-striped table-bordered table-hover"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<table[39m
+        [33mclass[39m=[32m"table table-striped table-borderless"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<table[39m
+        [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<table[39m
+        [33mclass[39m=[32m"table table-striped table-borderless table-hover"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<table[39m
+        [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<table[39m
+        [33mclass[39m=[32m"table table-striped table-borderless table-hover"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<table[39m
+        [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<table[39m
+        [33mclass[39m=[32m"required table table-striped table-bordered table-hover"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      rowgroup:
+
+      Name "":
+      [36m<thead />[39m
+
+      Name "":
+      [36m<tbody />[39m
+
+      Name "":
+      [36m<thead />[39m
+
+      Name "":
+      [36m<thead />[39m
+
+      Name "":
+      [36m<tbody />[39m
+
+      Name "":
+      [36m<thead />[39m
+
+      Name "":
+      [36m<thead />[39m
+
+      Name "":
+      [36m<tbody />[39m
+
+      Name "":
+      [36m<thead />[39m
+
+      Name "":
+      [36m<tbody />[39m
+
+      Name "":
+      [36m<thead />[39m
+
+      Name "":
+      [36m<tbody />[39m
+
+      Name "":
+      [36m<thead />[39m
+
+      Name "":
+      [36m<thead />[39m
+
+      Name "":
+      [36m<tbody />[39m
+
+      Name "":
+      [36m<thead />[39m
+
+      Name "":
+      [36m<thead />[39m
+
+      Name "":
+      [36m<tbody />[39m
+
+      Name "":
+      [36m<thead />[39m
+
+      Name "":
+      [36m<tbody />[39m
+
+      --------------------------------------------------
+      row:
+
+      Name "Plan 1 🖊":
+      [36m<tr />[39m
+
+      Name "Fall, 2019 🖊 ✖️ skip! Undo! Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit 1 CISC108: Introduction to Computer Science I Python 3 Edit ✖️ 2 EGGG101: Introduction to Engineering Dumb class 2 Edit ✖️ 3 ENGL110: English Base required english class 3 Edit ✖️ 4 MATH241: Calculus A & B It's calc. 4 Edit ✖️ 5 GEOL107: The lab science for CIS majors Rocks for Jocks 4 Edit ✖️ Add Course Total Credits: 16 Delete All Course CISC108: Introduction to Computer Science I Credit: 3 EGGG101: Introduction to Engineering Credit: 2 ENGL110: English Credit: 3 MATH241: Calculus A & B Credit: 4 GEOL107: The lab science for CIS majors Credit: 4 Spring, 2020 🖊 ✖️ skip! Undo! Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit 6 CISC210: Introduction to Systems Programming Bash and C 3 1 Edit ✖️ 7 CISC181: Introduction to Computer Science II Java 3 1 Edit ✖️ 8 GEOL105: Natural Hazards This one's exciting cause it has more lava 4 Edit ✖️ 9 MATH210: Discrete Math Annoying math class 4 4 Edit ✖️ 10 MUSC207: History of Jazz Ya like jazz? 3 Edit ✖️ Add Course Total Credits: 17 Delete All Course CISC210: Introduction to Systems Programming Credit: 3 CISC181: Introduction to Computer Science II Credit: 3 GEOL105: Natural Hazards Credit: 4 MATH210: Discrete Math Credit: 4 MUSC207: History of Jazz Credit: 3 Add Semester":
+      [36m<tr />[39m
+
+      Name "skip! Undo! Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit 1 CISC108: Introduction to Computer Science I Python 3 Edit ✖️ 2 EGGG101: Introduction to Engineering Dumb class 2 Edit ✖️ 3 ENGL110: English Base required english class 3 Edit ✖️ 4 MATH241: Calculus A & B It's calc. 4 Edit ✖️ 5 GEOL107: The lab science for CIS majors Rocks for Jocks 4 Edit ✖️ Add Course Total Credits: 16 Delete All Course CISC108: Introduction to Computer Science I Credit: 3 EGGG101: Introduction to Engineering Credit: 2 ENGL110: English Credit: 3 MATH241: Calculus A & B Credit: 4 GEOL107: The lab science for CIS majors Credit: 4":
+      [36m<tr />[39m
+
+      Name "Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit":
+      [36m<tr />[39m
+
+      Name "1 CISC108: Introduction to Computer Science I Python 3 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "2 EGGG101: Introduction to Engineering Dumb class 2 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "3 ENGL110: English Base required english class 3 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "4 MATH241: Calculus A & B It's calc. 4 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "5 GEOL107: The lab science for CIS majors Rocks for Jocks 4 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "Add Course":
+      [36m<tr />[39m
+
+      Name "skip! Undo! Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit 6 CISC210: Introduction to Systems Programming Bash and C 3 1 Edit ✖️ 7 CISC181: Introduction to Computer Science II Java 3 1 Edit ✖️ 8 GEOL105: Natural Hazards This one's exciting cause it has more lava 4 Edit ✖️ 9 MATH210: Discrete Math Annoying math class 4 4 Edit ✖️ 10 MUSC207: History of Jazz Ya like jazz? 3 Edit ✖️ Add Course Total Credits: 17 Delete All Course CISC210: Introduction to Systems Programming Credit: 3 CISC181: Introduction to Computer Science II Credit: 3 GEOL105: Natural Hazards Credit: 4 MATH210: Discrete Math Credit: 4 MUSC207: History of Jazz Credit: 3":
+      [36m<tr />[39m
+
+      Name "Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit":
+      [36m<tr />[39m
+
+      Name "6 CISC210: Introduction to Systems Programming Bash and C 3 1 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "7 CISC181: Introduction to Computer Science II Java 3 1 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "8 GEOL105: Natural Hazards This one's exciting cause it has more lava 4 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "9 MATH210: Discrete Math Annoying math class 4 4 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "10 MUSC207: History of Jazz Ya like jazz? 3 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "Add Course":
+      [36m<tr />[39m
+
+      Name "Course Taken?":
+      [36m<tr />[39m
+
+      Name "CISC108: Introduction to Computer Science I ✓":
+      [36m<tr />[39m
+
+      Name "EGGG101: Introduction to Engineering ✓":
+      [36m<tr />[39m
+
+      Name "ENGL110: English ✓":
+      [36m<tr />[39m
+
+      Name "MATH241: Calculus A & B ✓":
+      [36m<tr />[39m
+
+      Name "GEOL107: The lab science for CIS majors ✓":
+      [36m<tr />[39m
+
+      Name "CISC210: Introduction to Systems Programming ✓":
+      [36m<tr />[39m
+
+      Name "CISC181: Introduction to Computer Science II ✓":
+      [36m<tr />[39m
+
+      Name "GEOL105: Natural Hazards ✓":
+      [36m<tr />[39m
+
+      Name "MATH210: Discrete Math ✓":
+      [36m<tr />[39m
+
+      Name "CISC475: Advanced Software Engineering ✗":
+      [36m<tr />[39m
+
+      Name "Plan 2 🖊":
+      [36m<tr />[39m
+
+      Name "Fall, 2019 🖊 ✖️ skip! Undo! Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit 1 CISC108: Introduction to Computer Science I Python 3 Edit ✖️ 2 EGGG101: Introduction to Engineering Dumb class 2 Edit ✖️ 3 ENGL110: English Base required english class 3 Edit ✖️ 4 MATH241: Calculus A & B It's calc. 4 Edit ✖️ 5 GEOL107: The lab science for CIS majors Rocks for Jocks 4 Edit ✖️ Add Course Total Credits: 16 Delete All Course CISC108: Introduction to Computer Science I Credit: 3 EGGG101: Introduction to Engineering Credit: 2 ENGL110: English Credit: 3 MATH241: Calculus A & B Credit: 4 GEOL107: The lab science for CIS majors Credit: 4 Spring, 2020 🖊 ✖️ skip! Undo! Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit 6 CISC210: Introduction to Systems Programming Bash and C 3 1 Edit ✖️ 7 CISC181: Introduction to Computer Science II Java 3 1 Edit ✖️ 8 GEOL105: Natural Hazards This one's exciting cause it has more lava 4 Edit ✖️ 9 MATH210: Discrete Math Annoying math class 4 4 Edit ✖️ 10 MUSC207: History of Jazz Ya like jazz? 3 Edit ✖️ Add Course Total Credits: 17 Delete All Course CISC210: Introduction to Systems Programming Credit: 3 CISC181: Introduction to Computer Science II Credit: 3 GEOL105: Natural Hazards Credit: 4 MATH210: Discrete Math Credit: 4 MUSC207: History of Jazz Credit: 3 Add Semester":
+      [36m<tr />[39m
+
+      Name "skip! Undo! Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit 1 CISC108: Introduction to Computer Science I Python 3 Edit ✖️ 2 EGGG101: Introduction to Engineering Dumb class 2 Edit ✖️ 3 ENGL110: English Base required english class 3 Edit ✖️ 4 MATH241: Calculus A & B It's calc. 4 Edit ✖️ 5 GEOL107: The lab science for CIS majors Rocks for Jocks 4 Edit ✖️ Add Course Total Credits: 16 Delete All Course CISC108: Introduction to Computer Science I Credit: 3 EGGG101: Introduction to Engineering Credit: 2 ENGL110: English Credit: 3 MATH241: Calculus A & B Credit: 4 GEOL107: The lab science for CIS majors Credit: 4":
+      [36m<tr />[39m
+
+      Name "Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit":
+      [36m<tr />[39m
+
+      Name "1 CISC108: Introduction to Computer Science I Python 3 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "2 EGGG101: Introduction to Engineering Dumb class 2 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "3 ENGL110: English Base required english class 3 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "4 MATH241: Calculus A & B It's calc. 4 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "5 GEOL107: The lab science for CIS majors Rocks for Jocks 4 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "Add Course":
+      [36m<tr />[39m
+
+      Name "skip! Undo! Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit 6 CISC210: Introduction to Systems Programming Bash and C 3 1 Edit ✖️ 7 CISC181: Introduction to Computer Science II Java 3 1 Edit ✖️ 8 GEOL105: Natural Hazards This one's exciting cause it has more lava 4 Edit ✖️ 9 MATH210: Discrete Math Annoying math class 4 4 Edit ✖️ 10 MUSC207: History of Jazz Ya like jazz? 3 Edit ✖️ Add Course Total Credits: 17 Delete All Course CISC210: Introduction to Systems Programming Credit: 3 CISC181: Introduction to Computer Science II Credit: 3 GEOL105: Natural Hazards Credit: 4 MATH210: Discrete Math Credit: 4 MUSC207: History of Jazz Credit: 3":
+      [36m<tr />[39m
+
+      Name "Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit":
+      [36m<tr />[39m
+
+      Name "6 CISC210: Introduction to Systems Programming Bash and C 3 1 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "7 CISC181: Introduction to Computer Science II Java 3 1 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "8 GEOL105: Natural Hazards This one's exciting cause it has more lava 4 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "9 MATH210: Discrete Math Annoying math class 4 4 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "10 MUSC207: History of Jazz Ya like jazz? 3 Edit ✖️":
+      [36m<tr />[39m
+
+      Name "Add Course":
+      [36m<tr />[39m
+
+      Name "Course Taken?":
+      [36m<tr />[39m
+
+      Name "CISC108: Introduction to Computer Science I ✓":
+      [36m<tr />[39m
+
+      Name "EGGG101: Introduction to Engineering ✓":
+      [36m<tr />[39m
+
+      Name "ENGL110: English ✓":
+      [36m<tr />[39m
+
+      Name "MATH241: Calculus A & B ✓":
+      [36m<tr />[39m
+
+      Name "GEOL107: The lab science for CIS majors ✓":
+      [36m<tr />[39m
+
+      Name "CISC210: Introduction to Systems Programming ✓":
+      [36m<tr />[39m
+
+      Name "CISC181: Introduction to Computer Science II ✓":
+      [36m<tr />[39m
+
+      Name "GEOL105: Natural Hazards ✓":
+      [36m<tr />[39m
+
+      Name "MATH210: Discrete Math ✓":
+      [36m<tr />[39m
+
+      Name "CISC475: Advanced Software Engineering ✗":
+      [36m<tr />[39m
+
+      --------------------------------------------------
+      columnheader:
+
+      Name "Plan 1 🖊":
+      [36m<th />[39m
+
+      Name "skip! Undo! Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit 1 CISC108: Introduction to Computer Science I Python 3 Edit ✖️ 2 EGGG101: Introduction to Engineering Dumb class 2 Edit ✖️ 3 ENGL110: English Base required english class 3 Edit ✖️ 4 MATH241: Calculus A & B It's calc. 4 Edit ✖️ 5 GEOL107: The lab science for CIS majors Rocks for Jocks 4 Edit ✖️ Add Course Total Credits: 16 Delete All Course CISC108: Introduction to Computer Science I Credit: 3 EGGG101: Introduction to Engineering Credit: 2 ENGL110: English Credit: 3 MATH241: Calculus A & B Credit: 4 GEOL107: The lab science for CIS majors Credit: 4":
+      [36m<th />[39m
+
+      Name "Course ID":
+      [36m<th />[39m
+
+      Name "Course Name":
+      [36m<th />[39m
+
+      Name "Course Description":
+      [36m<th />[39m
+
+      Name "Course Credit":
+      [36m<th />[39m
+
+      Name "Course Prerequisites (ID)":
+      [36m<th />[39m
+
+      Name "Edit":
+      [36m<th />[39m
+
+      Name "skip! Undo! Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit 6 CISC210: Introduction to Systems Programming Bash and C 3 1 Edit ✖️ 7 CISC181: Introduction to Computer Science II Java 3 1 Edit ✖️ 8 GEOL105: Natural Hazards This one's exciting cause it has more lava 4 Edit ✖️ 9 MATH210: Discrete Math Annoying math class 4 4 Edit ✖️ 10 MUSC207: History of Jazz Ya like jazz? 3 Edit ✖️ Add Course Total Credits: 17 Delete All Course CISC210: Introduction to Systems Programming Credit: 3 CISC181: Introduction to Computer Science II Credit: 3 GEOL105: Natural Hazards Credit: 4 MATH210: Discrete Math Credit: 4 MUSC207: History of Jazz Credit: 3":
+      [36m<th />[39m
+
+      Name "Course ID":
+      [36m<th />[39m
+
+      Name "Course Name":
+      [36m<th />[39m
+
+      Name "Course Description":
+      [36m<th />[39m
+
+      Name "Course Credit":
+      [36m<th />[39m
+
+      Name "Course Prerequisites (ID)":
+      [36m<th />[39m
+
+      Name "Edit":
+      [36m<th />[39m
+
+      Name "Course":
+      [36m<th />[39m
+
+      Name "Taken?":
+      [36m<th />[39m
+
+      Name "Plan 2 🖊":
+      [36m<th />[39m
+
+      Name "skip! Undo! Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit 1 CISC108: Introduction to Computer Science I Python 3 Edit ✖️ 2 EGGG101: Introduction to Engineering Dumb class 2 Edit ✖️ 3 ENGL110: English Base required english class 3 Edit ✖️ 4 MATH241: Calculus A & B It's calc. 4 Edit ✖️ 5 GEOL107: The lab science for CIS majors Rocks for Jocks 4 Edit ✖️ Add Course Total Credits: 16 Delete All Course CISC108: Introduction to Computer Science I Credit: 3 EGGG101: Introduction to Engineering Credit: 2 ENGL110: English Credit: 3 MATH241: Calculus A & B Credit: 4 GEOL107: The lab science for CIS majors Credit: 4":
+      [36m<th />[39m
+
+      Name "Course ID":
+      [36m<th />[39m
+
+      Name "Course Name":
+      [36m<th />[39m
+
+      Name "Course Description":
+      [36m<th />[39m
+
+      Name "Course Credit":
+      [36m<th />[39m
+
+      Name "Course Prerequisites (ID)":
+      [36m<th />[39m
+
+      Name "Edit":
+      [36m<th />[39m
+
+      Name "skip! Undo! Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit 6 CISC210: Introduction to Systems Programming Bash and C 3 1 Edit ✖️ 7 CISC181: Introduction to Computer Science II Java 3 1 Edit ✖️ 8 GEOL105: Natural Hazards This one's exciting cause it has more lava 4 Edit ✖️ 9 MATH210: Discrete Math Annoying math class 4 4 Edit ✖️ 10 MUSC207: History of Jazz Ya like jazz? 3 Edit ✖️ Add Course Total Credits: 17 Delete All Course CISC210: Introduction to Systems Programming Credit: 3 CISC181: Introduction to Computer Science II Credit: 3 GEOL105: Natural Hazards Credit: 4 MATH210: Discrete Math Credit: 4 MUSC207: History of Jazz Credit: 3":
+      [36m<th />[39m
+
+      Name "Course ID":
+      [36m<th />[39m
+
+      Name "Course Name":
+      [36m<th />[39m
+
+      Name "Course Description":
+      [36m<th />[39m
+
+      Name "Course Credit":
+      [36m<th />[39m
+
+      Name "Course Prerequisites (ID)":
+      [36m<th />[39m
+
+      Name "Edit":
+      [36m<th />[39m
+
+      Name "Course":
+      [36m<th />[39m
+
+      Name "Taken?":
+      [36m<th />[39m
+
+      --------------------------------------------------
+      heading:
+
+      Name "Plan 1 🖊":
+      [36m<h3 />[39m
+
+      Name "Fall, 2019 🖊 ✖️":
+      [36m<h2[39m
+        [33mclass[39m=[32m"accordion-header"[39m
+      [36m/>[39m
+
+      Name "Spring, 2020 🖊 ✖️":
+      [36m<h2[39m
+        [33mclass[39m=[32m"accordion-header"[39m
+      [36m/>[39m
+
+      Name "Plan 2 🖊":
+      [36m<h3 />[39m
+
+      Name "Fall, 2019 🖊 ✖️":
+      [36m<h2[39m
+        [33mclass[39m=[32m"accordion-header"[39m
+      [36m/>[39m
+
+      Name "Spring, 2020 🖊 ✖️":
+      [36m<h2[39m
+        [33mclass[39m=[32m"accordion-header"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      cell:
+
+      Name "Fall, 2019 🖊 ✖️ skip! Undo! Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit 1 CISC108: Introduction to Computer Science I Python 3 Edit ✖️ 2 EGGG101: Introduction to Engineering Dumb class 2 Edit ✖️ 3 ENGL110: English Base required english class 3 Edit ✖️ 4 MATH241: Calculus A & B It's calc. 4 Edit ✖️ 5 GEOL107: The lab science for CIS majors Rocks for Jocks 4 Edit ✖️ Add Course Total Credits: 16 Delete All Course CISC108: Introduction to Computer Science I Credit: 3 EGGG101: Introduction to Engineering Credit: 2 ENGL110: English Credit: 3 MATH241: Calculus A & B Credit: 4 GEOL107: The lab science for CIS majors Credit: 4 Spring, 2020 🖊 ✖️ skip! Undo! Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit 6 CISC210: Introduction to Systems Programming Bash and C 3 1 Edit ✖️ 7 CISC181: Introduction to Computer Science II Java 3 1 Edit ✖️ 8 GEOL105: Natural Hazards This one's exciting cause it has more lava 4 Edit ✖️ 9 MATH210: Discrete Math Annoying math class 4 4 Edit ✖️ 10 MUSC207: History of Jazz Ya like jazz? 3 Edit ✖️ Add Course Total Credits: 17 Delete All Course CISC210: Introduction to Systems Programming Credit: 3 CISC181: Introduction to Computer Science II Credit: 3 GEOL105: Natural Hazards Credit: 4 MATH210: Discrete Math Credit: 4 MUSC207: History of Jazz Credit: 3 Add Semester":
+      [36m<td />[39m
+
+      Name "1":
+      [36m<td />[39m
+
+      Name "CISC108: Introduction to Computer Science I":
+      [36m<td />[39m
+
+      Name "Python":
+      [36m<td />[39m
+
+      Name "3":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "2":
+      [36m<td />[39m
+
+      Name "EGGG101: Introduction to Engineering":
+      [36m<td />[39m
+
+      Name "Dumb class":
+      [36m<td />[39m
+
+      Name "2":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "3":
+      [36m<td />[39m
+
+      Name "ENGL110: English":
+      [36m<td />[39m
+
+      Name "Base required english class":
+      [36m<td />[39m
+
+      Name "3":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "4":
+      [36m<td />[39m
+
+      Name "MATH241: Calculus A & B":
+      [36m<td />[39m
+
+      Name "It's calc.":
+      [36m<td />[39m
+
+      Name "4":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "5":
+      [36m<td />[39m
+
+      Name "GEOL107: The lab science for CIS majors":
+      [36m<td />[39m
+
+      Name "Rocks for Jocks":
+      [36m<td />[39m
+
+      Name "4":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "Add Course":
+      [36m<td />[39m
+
+      Name "6":
+      [36m<td />[39m
+
+      Name "CISC210: Introduction to Systems Programming":
+      [36m<td />[39m
+
+      Name "Bash and C":
+      [36m<td />[39m
+
+      Name "3":
+      [36m<td />[39m
+
+      Name "1":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "7":
+      [36m<td />[39m
+
+      Name "CISC181: Introduction to Computer Science II":
+      [36m<td />[39m
+
+      Name "Java":
+      [36m<td />[39m
+
+      Name "3":
+      [36m<td />[39m
+
+      Name "1":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "8":
+      [36m<td />[39m
+
+      Name "GEOL105: Natural Hazards":
+      [36m<td />[39m
+
+      Name "This one's exciting cause it has more lava":
+      [36m<td />[39m
+
+      Name "4":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "9":
+      [36m<td />[39m
+
+      Name "MATH210: Discrete Math":
+      [36m<td />[39m
+
+      Name "Annoying math class":
+      [36m<td />[39m
+
+      Name "4":
+      [36m<td />[39m
+
+      Name "4":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "10":
+      [36m<td />[39m
+
+      Name "MUSC207: History of Jazz":
+      [36m<td />[39m
+
+      Name "Ya like jazz?":
+      [36m<td />[39m
+
+      Name "3":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "Add Course":
+      [36m<td />[39m
+
+      Name "CISC108: Introduction to Computer Science I":
+      [36m<td />[39m
+
+      Name "CISC108: Introduction to Computer Science I":
+      [36m<td />[39m
+
+      Name "✓":
+      [36m<td />[39m
+
+      Name "EGGG101: Introduction to Engineering":
+      [36m<td />[39m
+
+      Name "EGGG101: Introduction to Engineering":
+      [36m<td />[39m
+
+      Name "✓":
+      [36m<td />[39m
+
+      Name "ENGL110: English":
+      [36m<td />[39m
+
+      Name "ENGL110: English":
+      [36m<td />[39m
+
+      Name "✓":
+      [36m<td />[39m
+
+      Name "MATH241: Calculus A & B":
+      [36m<td />[39m
+
+      Name "MATH241: Calculus A & B":
+      [36m<td />[39m
+
+      Name "✓":
+      [36m<td />[39m
+
+      Name "GEOL107: The lab science for CIS majors":
+      [36m<td />[39m
+
+      Name "GEOL107: The lab science for CIS majors":
+      [36m<td />[39m
+
+      Name "✓":
+      [36m<td />[39m
+
+      Name "CISC210: Introduction to Systems Programming":
+      [36m<td />[39m
+
+      Name "CISC210: Introduction to Systems Programming":
+      [36m<td />[39m
+
+      Name "✓":
+      [36m<td />[39m
+
+      Name "CISC181: Introduction to Computer Science II":
+      [36m<td />[39m
+
+      Name "CISC181: Introduction to Computer Science II":
+      [36m<td />[39m
+
+      Name "✓":
+      [36m<td />[39m
+
+      Name "GEOL105: Natural Hazards":
+      [36m<td />[39m
+
+      Name "GEOL105: Natural Hazards":
+      [36m<td />[39m
+
+      Name "✓":
+      [36m<td />[39m
+
+      Name "MATH210: Discrete Math":
+      [36m<td />[39m
+
+      Name "MATH210: Discrete Math":
+      [36m<td />[39m
+
+      Name "✓":
+      [36m<td />[39m
+
+      Name "CISC475: Advanced Software Engineering":
+      [36m<td />[39m
+
+      Name "CISC475: Advanced Software Engineering":
+      [36m<td />[39m
+
+      Name "✗":
+      [36m<td />[39m
+
+      Name "Fall, 2019 🖊 ✖️ skip! Undo! Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit 1 CISC108: Introduction to Computer Science I Python 3 Edit ✖️ 2 EGGG101: Introduction to Engineering Dumb class 2 Edit ✖️ 3 ENGL110: English Base required english class 3 Edit ✖️ 4 MATH241: Calculus A & B It's calc. 4 Edit ✖️ 5 GEOL107: The lab science for CIS majors Rocks for Jocks 4 Edit ✖️ Add Course Total Credits: 16 Delete All Course CISC108: Introduction to Computer Science I Credit: 3 EGGG101: Introduction to Engineering Credit: 2 ENGL110: English Credit: 3 MATH241: Calculus A & B Credit: 4 GEOL107: The lab science for CIS majors Credit: 4 Spring, 2020 🖊 ✖️ skip! Undo! Course ID Course Name Course Description Course Credit Course Prerequisites (ID) Edit 6 CISC210: Introduction to Systems Programming Bash and C 3 1 Edit ✖️ 7 CISC181: Introduction to Computer Science II Java 3 1 Edit ✖️ 8 GEOL105: Natural Hazards This one's exciting cause it has more lava 4 Edit ✖️ 9 MATH210: Discrete Math Annoying math class 4 4 Edit ✖️ 10 MUSC207: History of Jazz Ya like jazz? 3 Edit ✖️ Add Course Total Credits: 17 Delete All Course CISC210: Introduction to Systems Programming Credit: 3 CISC181: Introduction to Computer Science II Credit: 3 GEOL105: Natural Hazards Credit: 4 MATH210: Discrete Math Credit: 4 MUSC207: History of Jazz Credit: 3 Add Semester":
+      [36m<td />[39m
+
+      Name "1":
+      [36m<td />[39m
+
+      Name "CISC108: Introduction to Computer Science I":
+      [36m<td />[39m
+
+      Name "Python":
+      [36m<td />[39m
+
+      Name "3":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "2":
+      [36m<td />[39m
+
+      Name "EGGG101: Introduction to Engineering":
+      [36m<td />[39m
+
+      Name "Dumb class":
+      [36m<td />[39m
+
+      Name "2":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "3":
+      [36m<td />[39m
+
+      Name "ENGL110: English":
+      [36m<td />[39m
+
+      Name "Base required english class":
+      [36m<td />[39m
+
+      Name "3":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "4":
+      [36m<td />[39m
+
+      Name "MATH241: Calculus A & B":
+      [36m<td />[39m
+
+      Name "It's calc.":
+      [36m<td />[39m
+
+      Name "4":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "5":
+      [36m<td />[39m
+
+      Name "GEOL107: The lab science for CIS majors":
+      [36m<td />[39m
+
+      Name "Rocks for Jocks":
+      [36m<td />[39m
+
+      Name "4":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "Add Course":
+      [36m<td />[39m
+
+      Name "6":
+      [36m<td />[39m
+
+      Name "CISC210: Introduction to Systems Programming":
+      [36m<td />[39m
+
+      Name "Bash and C":
+      [36m<td />[39m
+
+      Name "3":
+      [36m<td />[39m
+
+      Name "1":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "7":
+      [36m<td />[39m
+
+      Name "CISC181: Introduction to Computer Science II":
+      [36m<td />[39m
+
+      Name "Java":
+      [36m<td />[39m
+
+      Name "3":
+      [36m<td />[39m
+
+      Name "1":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "8":
+      [36m<td />[39m
+
+      Name "GEOL105: Natural Hazards":
+      [36m<td />[39m
+
+      Name "This one's exciting cause it has more lava":
+      [36m<td />[39m
+
+      Name "4":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "9":
+      [36m<td />[39m
+
+      Name "MATH210: Discrete Math":
+      [36m<td />[39m
+
+      Name "Annoying math class":
+      [36m<td />[39m
+
+      Name "4":
+      [36m<td />[39m
+
+      Name "4":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "10":
+      [36m<td />[39m
+
+      Name "MUSC207: History of Jazz":
+      [36m<td />[39m
+
+      Name "Ya like jazz?":
+      [36m<td />[39m
+
+      Name "3":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "Edit ✖️":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "":
+      [36m<td />[39m
+
+      Name "Add Course":
+      [36m<td />[39m
+
+      Name "CISC108: Introduction to Computer Science I":
+      [36m<td />[39m
+
+      Name "CISC108: Introduction to Computer Science I":
+      [36m<td />[39m
+
+      Name "✓":
+      [36m<td />[39m
+
+      Name "EGGG101: Introduction to Engineering":
+      [36m<td />[39m
+
+      Name "EGGG101: Introduction to Engineering":
+      [36m<td />[39m
+
+      Name "✓":
+      [36m<td />[39m
+
+      Name "ENGL110: English":
+      [36m<td />[39m
+
+      Name "ENGL110: English":
+      [36m<td />[39m
+
+      Name "✓":
+      [36m<td />[39m
+
+      Name "MATH241: Calculus A & B":
+      [36m<td />[39m
+
+      Name "MATH241: Calculus A & B":
+      [36m<td />[39m
+
+      Name "✓":
+      [36m<td />[39m
+
+      Name "GEOL107: The lab science for CIS majors":
+      [36m<td />[39m
+
+      Name "GEOL107: The lab science for CIS majors":
+      [36m<td />[39m
+
+      Name "✓":
+      [36m<td />[39m
+
+      Name "CISC210: Introduction to Systems Programming":
+      [36m<td />[39m
+
+      Name "CISC210: Introduction to Systems Programming":
+      [36m<td />[39m
+
+      Name "✓":
+      [36m<td />[39m
+
+      Name "CISC181: Introduction to Computer Science II":
+      [36m<td />[39m
+
+      Name "CISC181: Introduction to Computer Science II":
+      [36m<td />[39m
+
+      Name "✓":
+      [36m<td />[39m
+
+      Name "GEOL105: Natural Hazards":
+      [36m<td />[39m
+
+      Name "GEOL105: Natural Hazards":
+      [36m<td />[39m
+
+      Name "✓":
+      [36m<td />[39m
+
+      Name "MATH210: Discrete Math":
+      [36m<td />[39m
+
+      Name "MATH210: Discrete Math":
+      [36m<td />[39m
+
+      Name "✓":
+      [36m<td />[39m
+
+      Name "CISC475: Advanced Software Engineering":
+      [36m<td />[39m
+
+      Name "CISC475: Advanced Software Engineering":
+      [36m<td />[39m
+
+      Name "✗":
+      [36m<td />[39m
+
+      --------------------------------------------------
+      textbox:
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Course-ID"[39m
+        [33mplaceholder[39m=[32m"Enter Course ID*"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Name"[39m
+        [33mplaceholder[39m=[32m"Enter Name"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Description"[39m
+        [33mplaceholder[39m=[32m"Enter Description"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Credits"[39m
+        [33mplaceholder[39m=[32m"Enter Credits"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Prerequisites"[39m
+        [33mplaceholder[39m=[32m"Enter Prerequisites"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Course-ID"[39m
+        [33mplaceholder[39m=[32m"Enter Course ID*"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Name"[39m
+        [33mplaceholder[39m=[32m"Enter Name"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Description"[39m
+        [33mplaceholder[39m=[32m"Enter Description"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Credits"[39m
+        [33mplaceholder[39m=[32m"Enter Credits"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Prerequisites"[39m
+        [33mplaceholder[39m=[32m"Enter Prerequisites"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Course-ID"[39m
+        [33mplaceholder[39m=[32m"Enter Course ID*"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Name"[39m
+        [33mplaceholder[39m=[32m"Enter Name"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Description"[39m
+        [33mplaceholder[39m=[32m"Enter Description"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Credits"[39m
+        [33mplaceholder[39m=[32m"Enter Credits"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Prerequisites"[39m
+        [33mplaceholder[39m=[32m"Enter Prerequisites"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Course-ID"[39m
+        [33mplaceholder[39m=[32m"Enter Course ID*"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Name"[39m
+        [33mplaceholder[39m=[32m"Enter Name"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Description"[39m
+        [33mplaceholder[39m=[32m"Enter Description"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Credits"[39m
+        [33mplaceholder[39m=[32m"Enter Credits"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mdata-testid[39m=[32m"Enter-Prerequisites"[39m
+        [33mplaceholder[39m=[32m"Enter Prerequisites"[39m
+        [33mvalue[39m=[32m""[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body[39m
+      [33mclass[39m=[32m""[39m
+      [33mstyle[39m=[32m"padding-right: 1024px;"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-0"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-1"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-2"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-3"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-4"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-5"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-6"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-7"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-8"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-9"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-10"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-11"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-12"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-13"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-14"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-15"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-16"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-17"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-18"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-19"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-atomic[39m=[32m"true"[39m
+        [33maria-live[39m=[32m"assertive"[39m
+        [33mid[39m=[32m"rbd-announcement-20"[39m
+        [33mstyle[39m=[32m"position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: in...
+
+      169 | test("Skip Semester can be used", () => {
+      170 |     render(<App />);
+    > 171 |     const SkipSemesterCheckbox = screen.getAllByRole("checkbox", {
+          |                                         ^
+      172 |         name: /Skip!/i
+      173 |     });
+      174 |     SkipSemesterCheckbox[0].click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at getAllByRole (node_modules/@testing-library/dom/dist/query-helpers.js:130:15)
+      at Object.<anonymous> (src/App.test.tsx:171:41)
 
 PASS src/components/DeleteCourseModal.test.tsx
 PASS src/components/viewFloatingCourses.test.tsx
@@ -746,10 +3117,10 @@ PASS src/components/listCourses.test.tsx
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
-All files                       |    93.5 |       75 |   97.47 |   94.59 |                   
+All files                       |   89.74 |    71.05 |   92.68 |   90.66 |                   
  src                            |     100 |      100 |     100 |     100 |                   
   App.tsx                       |     100 |      100 |     100 |     100 |                   
- src/components                 |   93.21 |    73.52 |   97.29 |   94.36 |                   
+ src/components                 |   89.28 |    69.44 |   92.17 |   90.27 |                   
   Carouse.tsx                   |     100 |      100 |     100 |     100 |                   
   ClearSemesterModal.tsx        |     100 |      100 |     100 |     100 |                   
   DeleteCourseModal.tsx         |     100 |      100 |     100 |     100 |                   
@@ -760,21 +3131,21 @@ All files                       |    93.5 |       75 |   97.47 |   94.59 |
   deletePlan.tsx                |     100 |      100 |     100 |     100 |                   
   editPlan.tsx                  |     100 |      100 |     100 |     100 |                   
   editSemester.tsx              |     100 |      100 |     100 |     100 |                   
-  listCourses.tsx               |   86.88 |    64.28 |    92.3 |   89.83 | 46-52             
+  listCourses.tsx               |   82.45 |    64.28 |      88 |   85.45 | 48-54,139-140     
   listPlans.tsx                 |     100 |      100 |     100 |     100 |                   
   listSemesters.tsx             |     100 |      100 |     100 |     100 |                   
   viewFloatingCourses.tsx       |      50 |    33.33 |   83.33 |   53.84 | 22-28             
   viewPlan.tsx                  |     100 |      100 |     100 |     100 |                   
   viewRequirements.tsx          |     100 |      100 |     100 |     100 |                   
-  viewSemester.tsx              |     100 |      100 |     100 |     100 |                   
+  viewSemester.tsx              |   58.82 |       50 |   58.33 |   58.82 | 53-71             
  src/interfaces                 |       0 |        0 |       0 |       0 |                   
   course.ts                     |       0 |        0 |       0 |       0 |                   
   plan.ts                       |       0 |        0 |       0 |       0 |                   
   semester.ts                   |       0 |        0 |       0 |       0 |                   
 --------------------------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 18 passed, 18 total
-Tests:       76 passed, 76 total
+Test Suites: 1 failed, 17 passed, 18 total
+Tests:       1 failed, 75 passed, 76 total
 Snapshots:   0 total
-Time:        36.994 s
+Time:        134.609 s
 Ran all test suites.
