@@ -19,7 +19,6 @@ export function EditCourseModal({
     deleteCourse: (course: Course) => void;
     setRequirements: (courses: Course[]) => void;
 }) {
-    const [id, setId] = useState<string>(course.id.toString());
     const [name, setName] = useState<string>(course.name);
     const [description, setDescription] = useState<string>(course.description);
     const [credits, setCredits] = useState<string>(course.credits.toString());
@@ -31,7 +30,6 @@ export function EditCourseModal({
     const [isRequired, setRequired] = useState<boolean>(course.isRequired);
     const handleShowAddModal = () => setShowAddModal(true);
 
-    const [resetid] = useState<string>(course.id.toString());
     const [resetname] = useState<string>(course.name);
     const [resetdescription] = useState<string>(course.description);
     const [resetcredits] = useState<string>(course.credits.toString());
@@ -43,7 +41,6 @@ export function EditCourseModal({
     function reset() {
         editCourse(course.id, {
             ...course,
-            id: parseInt(resetid),
             name: resetname,
             description: resetdescription,
             credits: parseInt(resetcredits),
@@ -52,7 +49,6 @@ export function EditCourseModal({
         });
         changeEditing();
         makeRequired();
-        setId(resetid.toString());
         setName(resetname);
         setDescription(resetdescription);
         setCredits(resetcredits.toString());
@@ -64,7 +60,6 @@ export function EditCourseModal({
     function save() {
         editCourse(course.id, {
             ...course,
-            id: parseInt(id),
             name: name,
             description: description,
             credits: parseInt(credits),
@@ -81,7 +76,6 @@ export function EditCourseModal({
                 ...requiredCourses,
                 {
                     ...course,
-                    id: parseInt(id),
                     name: name,
                     description: description,
                     credits: parseInt(credits),
@@ -100,7 +94,6 @@ export function EditCourseModal({
     }
 
     function cancel() {
-        setId(course.id.toString());
         setName(course.name);
         setDescription(course.description);
         setCredits(course.credits.toString());
@@ -151,22 +144,6 @@ export function EditCourseModal({
                         <Modal.Title>Edit Course</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        {/* ID */}
-                        <Form.Group controlId="formCourseID" as={Row}>
-                            <Form.Label column sm={2}>
-                                Course ID:
-                            </Form.Label>
-                            <Col>
-                                <Form.Control
-                                    value={id}
-                                    onChange={(
-                                        event: React.ChangeEvent<HTMLInputElement>
-                                    ) => setId(event.target.value)}
-                                    placeholder="Must have a course ID"
-                                    data-testid="Edit Course ID"
-                                />
-                            </Col>
-                        </Form.Group>
                         {/* Name */}
                         <Form.Group controlId="formCourseName" as={Row}>
                             <Form.Label column sm={2}>
@@ -243,7 +220,7 @@ export function EditCourseModal({
                             onClick={save}
                             variant="success"
                             className="me-4"
-                            disabled={!id}
+                            disabled={!name}
                         >
                             Save
                         </Button>
@@ -263,7 +240,7 @@ export function EditCourseModal({
                             onClick={reset}
                             variant="primary"
                             className="me-4"
-                            disabled={!id}
+                            disabled={!name}
                         >
                             Reset
                         </Button>

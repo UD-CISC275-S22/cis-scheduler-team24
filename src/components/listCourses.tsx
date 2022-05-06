@@ -13,6 +13,7 @@ import {
 } from "react-beautiful-dnd";
 
 export function ListCourses({
+    allCourses,
     semesterCourses,
     floatingCourses,
     requiredCourses,
@@ -23,6 +24,7 @@ export function ListCourses({
     updateSemesterCourses,
     Noskip
 }: {
+    allCourses: Course[];
     semesterCourses: Course[];
     floatingCourses: Course[];
     requiredCourses: Course[];
@@ -36,7 +38,6 @@ export function ListCourses({
     const [tableCourses, setTableCourses] = useState<Course[]>(semesterCourses);
     const [showAddModal, setShowAddModal] = useState(false);
     showAddModal;
-    const [id, setId] = useState<string>("");
     const [name, setName] = useState<string>("");
     const [description, setDescription] = useState<string>("");
     const [credits, setCredits] = useState<string>("");
@@ -101,7 +102,7 @@ export function ListCourses({
     }
 
     function addCourse(newCourse: Course) {
-        const existing = tableCourses.find(
+        const existing = allCourses.find(
             (course: Course): boolean => course.id === newCourse.id
         );
         if (existing === undefined) {
@@ -113,7 +114,7 @@ export function ListCourses({
 
     function saveAddChange() {
         addCourse({
-            id: parseInt(id),
+            id: allCourses.length + 1,
             name: name,
             credits: parseInt(credits),
             description: description,
@@ -123,11 +124,11 @@ export function ListCourses({
             isRequired: false,
             breadthType: ""
         });
-        setId("");
         setName("");
         setDescription("");
         setCredits("");
         setPrereqs("");
+        console.log(allCourses[allCourses.length].id + 1);
     }
 
     function deleteAllCourse() {
@@ -150,7 +151,6 @@ export function ListCourses({
             <Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th>Course ID</th>
                         <th>Course Name</th>
                         <th>Course Description</th>
                         <th>Course Credit</th>
@@ -161,7 +161,6 @@ export function ListCourses({
                 <tbody>
                     {tableCourses.map((course: Course) => (
                         <tr key={course.id}>
-                            <td>{course.id}</td>
                             <td>{course.name}</td>
                             <td>{course.description}</td>
                             <td>{course.credits}</td>
@@ -179,16 +178,6 @@ export function ListCourses({
                         </tr>
                     ))}
                     <tr key="CourseInput">
-                        <td>
-                            <Form.Control
-                                value={id}
-                                onChange={(
-                                    event: React.ChangeEvent<HTMLInputElement>
-                                ) => setId(event.target.value)}
-                                placeholder="Enter Course ID*"
-                                data-testid="Enter-Course-ID"
-                            />
-                        </td>
                         <td>
                             <Form.Control
                                 value={name}
@@ -234,7 +223,7 @@ export function ListCourses({
                                 variant="primary"
                                 onClick={saveAddChange}
                                 className="button-style-2"
-                                disabled={!id || !credits}
+                                disabled={!name || !credits}
                             >
                                 Add Course
                             </Button>
