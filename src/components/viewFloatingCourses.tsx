@@ -1,15 +1,6 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Dropdown, DropdownButton, InputGroup, Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-
-import {
-    DragDropContext,
-    Draggable,
-    DraggingStyle,
-    Droppable,
-    DropResult,
-    NotDraggingStyle
-} from "react-beautiful-dnd";
 
 export function ViewFloatingCourses({
     floatingCourses,
@@ -18,70 +9,63 @@ export function ViewFloatingCourses({
     floatingCourses: Course[];
     setFloats: (newFloats: Course[]) => void;
 }): JSX.Element {
-    const onDragEnd = (result: DropResult) => {
-        const { source, destination } = result;
-        if (!destination) return;
-
-        const items = Array.from(floatingCourses);
-        const [newOrder] = items.splice(source.index, 1);
-        items.splice(destination.index, 0, newOrder);
-        setFloats(items);
-    };
-
-    const getItemStyle = (
-        isDragging: boolean,
-        draggableStyle: DraggingStyle | NotDraggingStyle | undefined
-    ) => ({
-        padding: "3px",
-        margin: "3px -5px 10px -5px",
-        background: isDragging ? "#4a2975" : "white",
-        color: isDragging ? "white" : "black",
-        border: "1px solid black",
-        frontsize: "20px",
-        borderRadius: "5px",
-        ...draggableStyle
-    });
     return (
-        <Container className="floating">
-            <DragDropContext onDragEnd={onDragEnd}>
-                <Droppable droppableId="courses">
-                    {(Provided) => (
-                        <div
-                            className="courses"
-                            {...Provided.droppableProps}
-                            ref={Provided.innerRef}
-                        >
-                            {floatingCourses.map((course, index) => {
-                                return (
-                                    <Draggable
-                                        key={course.id}
-                                        draggableId={course.id.toString()}
-                                        index={index}
+        <div>
+            <Table striped bordered hover className="required">
+                <thead>
+                    <tr>
+                        <th>
+                            <div>Course</div>
+                        </th>
+                        <th>
+                            <div>Move</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {floatingCourses.map((course: Course) => (
+                        <tr key={course.id}>
+                            <td>
+                                <td>{course.name}</td>
+                            </td>
+                            <td>
+                                <InputGroup className="mb-3">
+                                    <DropdownButton
+                                        variant="outline-secondary"
+                                        title="Move"
+                                        id="input-group-dropdown-2"
                                     >
-                                        {(provided, snapshot) => (
-                                            <div
-                                                ref={provided.innerRef}
-                                                {...provided.draggableProps}
-                                                {...provided.dragHandleProps}
-                                                style={getItemStyle(
-                                                    snapshot.isDragging,
-                                                    provided.draggableProps
-                                                        .style
-                                                )}
-                                                key={index}
-                                            >
-                                                {course.name}
-                                                {" Credit: "}
-                                                {course.credits}
-                                            </div>
-                                        )}
-                                    </Draggable>
-                                );
-                            })}
-                        </div>
-                    )}
-                </Droppable>
-            </DragDropContext>
-        </Container>
+                                        <Dropdown.Item
+                                            href="#"
+                                            onClick={() => setFloats}
+                                        >
+                                            Spring
+                                        </Dropdown.Item>
+                                        <Dropdown.Item
+                                            href="#"
+                                            onClick={() => setFloats}
+                                        >
+                                            Summer
+                                        </Dropdown.Item>
+                                        <Dropdown.Item
+                                            href="#"
+                                            onClick={() => setFloats}
+                                        >
+                                            Fall
+                                        </Dropdown.Item>
+                                        <Dropdown.Item
+                                            href="#"
+                                            onClick={() => setFloats}
+                                        >
+                                            Winter
+                                        </Dropdown.Item>
+                                    </DropdownButton>
+                                </InputGroup>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </Table>
+        </div>
     );
 }
