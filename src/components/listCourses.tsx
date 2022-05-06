@@ -3,16 +3,9 @@ import { Button, Container, Table, Form } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { DeleteCourseModal } from "./DeleteCourseModal";
 import { EditCourseModal } from "./EditCourseModal";
-import {
-    DragDropContext,
-    Draggable,
-    DraggingStyle,
-    Droppable,
-    DropResult,
-    NotDraggingStyle
-} from "react-beautiful-dnd";
 
 export function ListCourses({
+    allCourses,
     semesterCourses,
     floatingCourses,
     requiredCourses,
@@ -23,6 +16,7 @@ export function ListCourses({
     updateSemesterCourses,
     Noskip
 }: {
+    allCourses: Course[];
     semesterCourses: Course[];
     floatingCourses: Course[];
     requiredCourses: Course[];
@@ -36,37 +30,12 @@ export function ListCourses({
     const [tableCourses, setTableCourses] = useState<Course[]>(semesterCourses);
     const [showAddModal, setShowAddModal] = useState(false);
     showAddModal;
-    const [id, setId] = useState<string>("");
     const [name, setName] = useState<string>("");
     const [description, setDescription] = useState<string>("");
     const [credits, setCredits] = useState<string>("");
     const [prereqs, setPrereqs] = useState<string>("");
 
     const handleCloseAddModal = () => setShowAddModal(false);
-
-    const onDragEnd = (result: DropResult) => {
-        const { source, destination } = result;
-        if (!destination) return;
-
-        const items = Array.from(tableCourses);
-        const [newOrder] = items.splice(source.index, 1);
-        items.splice(destination.index, 0, newOrder);
-        setTableCourses(items);
-    };
-
-    const getItemStyle = (
-        isDragging: boolean,
-        draggableStyle: DraggingStyle | NotDraggingStyle | undefined
-    ) => ({
-        padding: 10,
-        margin: "0 50px 15px 50px",
-        background: isDragging ? "green" : "white",
-        color: isDragging ? "white" : "black",
-        border: "1px solid black",
-        frontsize: "20px",
-        borderRadius: "5px",
-        ...draggableStyle
-    });
 
     const Credits = tableCourses.reduce(
         (currentTotal: number, course: Course) => currentTotal + course.credits,
@@ -101,7 +70,7 @@ export function ListCourses({
     }
 
     function addCourse(newCourse: Course) {
-        const existing = tableCourses.find(
+        const existing = allCourses.find(
             (course: Course): boolean => course.id === newCourse.id
         );
         if (existing === undefined) {
@@ -113,7 +82,7 @@ export function ListCourses({
 
     function saveAddChange() {
         addCourse({
-            id: parseInt(id),
+            id: allCourses.length + 1,
             name: name,
             credits: parseInt(credits),
             description: description,
@@ -123,11 +92,11 @@ export function ListCourses({
             isRequired: false,
             breadthType: ""
         });
-        setId("");
         setName("");
         setDescription("");
         setCredits("");
         setPrereqs("");
+        console.log(allCourses[allCourses.length].id + 1);
     }
 
     function deleteAllCourse() {
@@ -143,16 +112,17 @@ export function ListCourses({
     }
     return (
         <div>
-            <div style={{ marginLeft: "700px" }}>
+            <div style={{ marginLeft: "auto" }}>
                 <span>
                     <Button onClick={deleteAllCourse}>skip!</Button>
-                    <Button onClick={undeleteAllCourse}>Undo!</Button>
+                    <span>
+                        <Button onClick={undeleteAllCourse}>Undo!</Button>
+                    </span>
                 </span>
             </div>
             <Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th>Course ID</th>
                         <th>Course Name</th>
                         <th>Course Description</th>
                         <th>Course Credit</th>
@@ -163,7 +133,6 @@ export function ListCourses({
                 <tbody>
                     {tableCourses.map((course: Course) => (
                         <tr key={course.id}>
-                            <td>{course.id}</td>
                             <td>{course.name}</td>
                             <td>{course.description}</td>
                             <td>{course.credits}</td>
@@ -181,16 +150,6 @@ export function ListCourses({
                         </tr>
                     ))}
                     <tr key="CourseInput">
-                        <td>
-                            <Form.Control
-                                value={id}
-                                onChange={(
-                                    event: React.ChangeEvent<HTMLInputElement>
-                                ) => setId(event.target.value)}
-                                placeholder="Enter Course ID*"
-                                data-testid="Enter-Course-ID"
-                            />
-                        </td>
                         <td>
                             <Form.Control
                                 value={name}
@@ -236,7 +195,7 @@ export function ListCourses({
                                 variant="primary"
                                 onClick={saveAddChange}
                                 className="button-style-2"
-                                disabled={!id || !credits}
+                                disabled={!name || !credits}
                             >
                                 Add Course
                             </Button>
@@ -254,49 +213,6 @@ export function ListCourses({
                     }}
                 ></DeleteCourseModal>
             </Container>
-            <div className="coursesbox">
-                <DragDropContext onDragEnd={onDragEnd}>
-                    <Droppable droppableId="courses">
-                        {(Provided) => (
-                            <div
-                                className="courses"
-                                {...Provided.droppableProps}
-                                ref={Provided.innerRef}
-                            >
-                                {tableCourses.map((course, index) => {
-                                    return (
-                                        <Draggable
-                                            key={course.id}
-                                            draggableId={course.id.toString()}
-                                            index={index}
-                                        >
-                                            {(provided, snapshot) => (
-                                                <div
-                                                    ref={provided.innerRef}
-                                                    {...provided.draggableProps}
-                                                    {...provided.dragHandleProps}
-                                                    style={getItemStyle(
-                                                        snapshot.isDragging,
-                                                        provided.draggableProps
-                                                            .style
-                                                    )}
-                                                    key={index}
-                                                >
-                                                    {course.name}
-                                                    {"                        "}
-                                                    {"       Credit:  "}
-                                                    {course.credits}
-                                                </div>
-                                            )}
-                                        </Draggable>
-                                    );
-                                })}
-                                {Provided.placeholder}
-                            </div>
-                        )}
-                    </Droppable>
-                </DragDropContext>
-            </div>
         </div>
     );
 }

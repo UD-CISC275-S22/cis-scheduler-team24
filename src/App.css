@@ -91,3 +91,17 @@
     font-family: arial;
     padding: 15px;
 }
+
+.welcome {
+    height: auto;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.help {
+    height: auto;
+    width: 100%;
+    text-align: left;
+    padding: 15px;
+}
