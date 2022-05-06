@@ -25,15 +25,9 @@ describe("ListPlans tests", () => {
         render(
             <ListPlans
                 plans={PLANS}
-                addPlan={function (): void {
-                    throw new Error("Function not implemented.");
-                }}
-                deletePlan={function (): void {
-                    throw new Error("Function not implemented.");
-                }}
-                setPlanName={function (): void {
-                    throw new Error("Function not implemented.");
-                }}
+                addPlan={() => []}
+                deletePlan={() => []}
+                setPlanName={() => []}
             />
         );
     });
