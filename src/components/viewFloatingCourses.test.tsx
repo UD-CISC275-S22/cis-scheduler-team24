@@ -18,53 +18,8 @@ describe("ViewFloatingCourses", () => {
             />
         );
     });
-
-    test("Whether there is a Credit showing up on screen", () => {
-        const showfloatingcorses = screen.queryByText(
-            /POSC150: Introduction to American Politics Credit: 3 (.*)/i
-        );
-        expect(showfloatingcorses).toBeNull();
+    test("There is a Table", () => {
+        const table = screen.getByRole("table");
+        expect(table).toBeInTheDocument();
     });
-
-    test("Whether there is a Credit showing up on screen", () => {
-        const showfloatingcorses = screen.queryByText(
-            /POSC240: Introduction to Global Politics Credit: 3 (.*)/i
-        );
-        expect(showfloatingcorses).toBeNull();
-    });
-
-    test("Whether there is a Credit showing up on screen", () => {
-        const showfloatingcorses = screen.queryByText(
-            /PHIL125: Philosophy in South Park Credit: 3 (.*)/i
-        );
-        expect(showfloatingcorses).toBeNull();
-    });
-
-    test("Whether there is a Credit showing up on screen", () => {
-        const showfloatingcorses = screen.queryByText(
-            /ENGL410: Technical Writing Credit: 3 (.*)/i
-        );
-        expect(showfloatingcorses).toBeNull();
-    });
-
-    test("Whether there is a Credit showing up on screen", () => {
-        const showfloatingcorses = screen.queryByText(
-            /CISC475: Advanced Software Engineering Credit: 3 (.*)/i
-        );
-        expect(showfloatingcorses).toBeNull();
-    });
-
-    test("There is a lists of Courses", () => {
-        const NewCourses = courses.filter(
-            (course: Course): boolean => !course.isTaken
-        );
-        expect([NewCourses]).toEqual([NewCourses]);
-    });
-    // test("Expect default CoursesPool to appear", () => {
-    //     const coursesPool = screen.getByTestId("ViewFloatingCourses");
-
-    //     expect(within(coursesPool).queryAllByTestId(/draggable/i)).toHaveLength(
-    //         8
-    //     );
-    // });
 });
