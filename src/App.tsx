@@ -5,6 +5,7 @@ import { Plan } from "./interfaces/plan";
 import { Semester } from "./interfaces/semester";
 import { ListPlans } from "./components/listPlans";
 import { Carouse } from "./components/Carouse";
+import { GreetingMessage } from "./components/greetingMessage";
 import plans from "./data/plans.json";
 
 const PLANS = plans.map(
@@ -56,9 +57,8 @@ function App(): JSX.Element {
 
     return (
         <div className="App">
-            CISC275
             <Carouse></Carouse>
-            CISC275
+            <GreetingMessage></GreetingMessage>
             <div>
                 <Row>
                     <Col>
