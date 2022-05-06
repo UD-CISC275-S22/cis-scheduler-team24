@@ -5,6 +5,7 @@ import { ListCourses } from "./listCourses";
 describe("listCourses", () => {
     render(
         <ListCourses
+            allCourses={[]}
             semesterCourses={[]}
             floatingCourses={[]}
             requiredCourses={[]}

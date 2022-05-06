@@ -3,12 +3,6 @@ import { render, screen } from "@testing-library/react";
 import App from "./App";
 import userEvent from "@testing-library/user-event";
 
-test("renders the course name somewhere", () => {
-    render(<App />);
-    const linkElement = screen.getByText(/CISC275/i);
-    expect(linkElement).toBeInTheDocument();
-});
-
 test("renders the Python somewhere 1", () => {
     render(<App />);
     const answerText = screen.queryAllByText(/Python/i);

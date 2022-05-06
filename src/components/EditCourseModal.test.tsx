@@ -95,7 +95,7 @@ describe("EditCourseModal tests", () => {
         const RequiredButton = screen.getByTestId("Required?");
         RequiredButton.click();
         SaveButton.click();
-        expect(SaveButton).toBeEnabled();
+        expect(SaveButton).toBeDisabled();
         expect(CancelButton).toBeEnabled();
         const DeleteCourseModalButton = screen.getByTestId(
             "modal-Delete-button"
@@ -103,7 +103,6 @@ describe("EditCourseModal tests", () => {
         DeleteCourseModalButton.click();
         SaveButton.click();
         expect(DeleteButton).toBeEnabled();
-        expect(ResetButton).toBeEnabled();
         expect(RequiredButton).toBeEnabled();
     });
 
@@ -129,16 +128,6 @@ describe("EditCourseModal tests", () => {
         });
         SaveButton2.click();
         expect(EditCourseButton).toBeEnabled();
-    });
-
-    test("Clicking Delete button and Course ID control", () => {
-        const EditCourseButton = screen.getByRole("button", {
-            name: /Edit/i
-        });
-        EditCourseButton.click();
-        const ControlCourseID = screen.getByTestId("Edit Course ID");
-        userEvent.type(ControlCourseID, "42");
-        expect(ControlCourseID).toBeEnabled();
     });
 
     test("Clicking Delete button and Course name control", () => {
