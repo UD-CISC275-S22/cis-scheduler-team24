@@ -171,21 +171,6 @@ export function ViewPlan({
                     </Col>
                     <Col sm={3}>
                         <div>
-                            {/* <Button variant="primary" onClick={handleShow}>
-                                    Show Courses Pool and Degree plan
-                                </Button>
-
-                                <Offcanvas
-                                    show={show}
-                                    onHide={handleClose}
-                                    placement={"end"}
-                                >
-                                    <Offcanvas.Header closeButton>
-                                        <Offcanvas.Title>
-                                            Degree Plan
-                                        </Offcanvas.Title>
-                                    </Offcanvas.Header>
-                                    <Offcanvas.Body> */}
                             <span data-testid="floating-text">
                                 Floating Courses:
                             </span>

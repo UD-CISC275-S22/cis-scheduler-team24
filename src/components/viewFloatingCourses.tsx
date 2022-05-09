@@ -9,6 +9,8 @@ export function ViewFloatingCourses({
     floatingCourses: Course[];
     setFloats: (newFloats: Course[]) => void;
 }): JSX.Element {
+    // const [newfloatingCourses, setnewfloatingCourses] =
+    //     useState<Course[]>(floatingCourses);
     return (
         <div>
             <div>COURSE</div>
