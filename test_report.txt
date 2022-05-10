@@ -8,10 +8,10 @@ PASS src/components/ClearSemesterModal.test.tsx
 PASS src/components/DeleteCourseWarningModalX.test.tsx
 PASS src/components/DeleteCourseWarningModal.test.tsx
 PASS src/components/DeleteSemester.test.tsx
+PASS src/components/editSemester.test.tsx
 PASS src/components/editPlan.test.tsx
 PASS src/components/greetingMessage.test.tsx
 PASS src/components/listCourses.test.tsx
-PASS src/components/editSemester.test.tsx
 PASS src/components/viewSemester.test.tsx
 PASS src/components/deletePlan.test.tsx
 PASS src/components/Carouse.test.tsx
@@ -19,20 +19,20 @@ PASS src/components/viewRequirements.test.tsx
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
-All files                       |   44.03 |    15.62 |   39.66 |   43.12 |                   
+All files                       |   52.29 |    21.87 |    43.8 |   51.65 |                   
  src                            |       0 |        0 |       0 |       0 |                   
   App.tsx                       |       0 |        0 |       0 |       0 | 11-58             
- src/components                 |   46.15 |    16.66 |   42.47 |   45.04 |                   
+ src/components                 |    54.8 |    23.33 |    46.9 |   53.96 |                   
   Carouse.tsx                   |     100 |      100 |     100 |     100 |                   
   ClearSemesterModal.tsx        |     100 |      100 |     100 |     100 |                   
   DeleteCourseModal.tsx         |     100 |      100 |     100 |     100 |                   
   DeleteCourseWarningModal.tsx  |     100 |      100 |     100 |     100 |                   
   DeleteCourseWarningModalX.tsx |     100 |      100 |     100 |     100 |                   
+  DeletePlan.tsx                |     100 |      100 |     100 |     100 |                   
   DeleteSemester.tsx            |     100 |      100 |     100 |     100 |                   
-  EditCourseModal.tsx           |   64.44 |        0 |   71.42 |   63.63 | 42-90             
-  deletePlan.tsx                |     100 |      100 |     100 |     100 |                   
+  EditCourseModal.tsx           |     100 |      100 |     100 |     100 |                   
   editPlan.tsx                  |     100 |      100 |     100 |     100 |                   
-  editSemester.tsx              |      60 |      100 |   66.66 |      60 | 17-18             
+  editSemester.tsx              |     100 |      100 |     100 |     100 |                   
   greetingMessage.tsx           |     100 |      100 |     100 |     100 |                   
   listCourses.tsx               |    20.4 |       10 |    4.34 |   20.83 | 53-135,163-260    
   listPlans.tsx                 |       0 |      100 |       0 |       0 | 18-43             
@@ -48,7 +48,7 @@ All files                       |   44.03 |    15.62 |   39.66 |   43.12 |
 --------------------------------|---------|----------|---------|---------|-------------------
 
 Test Suites: 14 passed, 14 total
-Tests:       48 passed, 48 total
+Tests:       52 passed, 52 total
 Snapshots:   0 total
-Time:        10.655 s
+Time:        11.178 s
 Ran all test suites.
