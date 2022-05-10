@@ -13,7 +13,7 @@ PASS src/components/editPlan.test.tsx
 PASS src/components/greetingMessage.test.tsx
 PASS src/components/listCourses.test.tsx
 PASS src/components/viewSemester.test.tsx
-PASS src/components/deletePlan.test.tsx
+PASS src/components/DeletePlan.test.tsx
 PASS src/components/Carouse.test.tsx
 PASS src/components/viewRequirements.test.tsx
 --------------------------------|---------|----------|---------|---------|-------------------
@@ -50,5 +50,5 @@ All files                       |   52.29 |    21.87 |    43.8 |   51.65 |
 Test Suites: 14 passed, 14 total
 Tests:       52 passed, 52 total
 Snapshots:   0 total
-Time:        11.178 s
+Time:        11.671 s
 Ran all test suites.
