@@ -97,7 +97,6 @@ export function ListCourses({
         setTableCourses([...tableCourses, newCourse]);
         updateSemesterCourses(newCourse);
         updateCourses(newCourse);
-        setFloats([...floatingCourses, { ...newCourse, isTaken: true }]);
         setRequirements(
             requiredCourses.map(
                 (course: Course): Course =>
