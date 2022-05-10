@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/App.test.tsx (59.135 s)
+PASS src/App.test.tsx (36.663 s)
   ● Console
 
     console.error
@@ -3954,7 +3954,7 @@ PASS src/components/listSemesters.test.tsx
 PASS src/components/ClearSemesterModal.test.tsx
 PASS src/components/DeleteCourseWarningModalX.test.tsx
 PASS src/components/DeleteCourseWarningModal.test.tsx
-FAIL src/components/viewPlan.test.tsx (41.614 s)
+FAIL src/components/viewPlan.test.tsx (26.049 s)
   ● Console
 
     console.error
@@ -7426,7 +7426,7 @@ FAIL src/components/viewPlan.test.tsx (41.614 s)
       at Object.<anonymous> (src/components/viewPlan.test.tsx:52:40)
 
 PASS src/components/DeleteSemester.test.tsx
-PASS src/components/listPlans.test.tsx (83.976 s)
+PASS src/components/listPlans.test.tsx (44.581 s)
   ● Console
 
     console.error
@@ -12847,25 +12847,25 @@ PASS src/components/viewRequirements.test.tsx
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
-All files                       |   54.82 |    22.22 |    53.6 |   54.29 |                   
+All files                       |   57.07 |       25 |   54.91 |    56.6 |                   
  src                            |      50 |        0 |    37.5 |   55.55 |                   
   App.tsx                       |      50 |        0 |    37.5 |   55.55 | 30-53             
- src/components                 |   55.04 |    23.52 |    54.7 |   54.24 |                   
+ src/components                 |   57.41 |    26.66 |   56.14 |   56.65 |                   
   Carouse.tsx                   |     100 |      100 |     100 |     100 |                   
   ClearSemesterModal.tsx        |     100 |      100 |     100 |     100 |                   
   DeleteCourseModal.tsx         |     100 |      100 |     100 |     100 |                   
   DeleteCourseWarningModal.tsx  |     100 |      100 |     100 |     100 |                   
   DeleteCourseWarningModalX.tsx |     100 |      100 |     100 |     100 |                   
   DeleteSemester.tsx            |     100 |      100 |     100 |     100 |                   
-  EditCourseModal.tsx           |   64.44 |        0 |   71.42 |   63.63 | 42-90             
+  EditCourseModal.tsx           |   63.04 |        0 |   66.66 |   62.22 | 42-90,227         
   deletePlan.tsx                |      50 |      100 |      50 |      50 | 13                
   editPlan.tsx                  |     100 |      100 |     100 |     100 |                   
   editSemester.tsx              |     100 |      100 |     100 |     100 |                   
   greetingMessage.tsx           |     100 |      100 |     100 |     100 |                   
-  listCourses.tsx               |   27.45 |       10 |   21.73 |      28 | 59-138,219-289    
+  listCourses.tsx               |   28.57 |       10 |   21.73 |   29.16 | 59-136,217-287    
   listPlans.tsx                 |     100 |      100 |     100 |     100 |                   
   listSemesters.tsx             |     100 |      100 |     100 |     100 |                   
-  viewFloatingCourses.tsx       |   11.11 |        0 |      20 |   11.11 | 45-123            
+  viewFloatingCourses.tsx       |      20 |        0 |   33.33 |      20 | 45-79             
   viewPlan.tsx                  |   41.66 |       25 |      25 |   41.66 | 40-104            
   viewRequirements.tsx          |     100 |      100 |     100 |     100 |                   
   viewSemester.tsx              |   17.64 |        0 |   16.66 |   17.64 | 32-76             
@@ -12878,5 +12878,5 @@ All files                       |   54.82 |    22.22 |    53.6 |   54.29 |
 Test Suites: 1 failed, 17 passed, 18 total
 Tests:       2 failed, 55 passed, 57 total
 Snapshots:   0 total
-Time:        199.946 s
+Time:        118.217 s
 Ran all test suites.
