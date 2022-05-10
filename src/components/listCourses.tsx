@@ -134,8 +134,6 @@ export function ListCourses({
     function undeleteAllCourse() {
         setTableCourses(semesterCourses);
         Noskip();
-        setTableCourses(semesterCourses);
-        Noskip();
     }
     return (
         <div>

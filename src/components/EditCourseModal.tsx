@@ -224,6 +224,7 @@ export function EditCourseModal({
                         >
                             Save
                         </Button>
+                        <Button onClick={() => removeCourse()}>Move</Button>
                         <Button
                             onClick={cancel}
                             variant="warning"
