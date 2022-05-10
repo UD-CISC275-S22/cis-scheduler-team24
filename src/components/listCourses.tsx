@@ -154,7 +154,7 @@ export function ListCourses({
                                 <th>Course Name</th>
                                 <th>Course Description</th>
                                 <th>Course Credit</th>
-                                <th>Course Prerequisites (ID)</th>
+                                <th>Course Prerequisites</th>
                                 <th>Edit</th>
                             </tr>
                         </thead>
