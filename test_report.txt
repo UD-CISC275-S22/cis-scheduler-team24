@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/App.test.tsx (35.904 s)
+PASS src/App.test.tsx (59.135 s)
   ● Console
 
     console.error
@@ -3954,7 +3954,7 @@ PASS src/components/listSemesters.test.tsx
 PASS src/components/ClearSemesterModal.test.tsx
 PASS src/components/DeleteCourseWarningModalX.test.tsx
 PASS src/components/DeleteCourseWarningModal.test.tsx
-FAIL src/components/viewPlan.test.tsx (25.519 s)
+FAIL src/components/viewPlan.test.tsx (41.614 s)
   ● Console
 
     console.error
@@ -7426,7 +7426,7 @@ FAIL src/components/viewPlan.test.tsx (25.519 s)
       at Object.<anonymous> (src/components/viewPlan.test.tsx:52:40)
 
 PASS src/components/DeleteSemester.test.tsx
-PASS src/components/listPlans.test.tsx (46.55 s)
+PASS src/components/listPlans.test.tsx (83.976 s)
   ● Console
 
     console.error
@@ -12847,10 +12847,10 @@ PASS src/components/viewRequirements.test.tsx
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
-All files                       |    55.3 |    23.52 |   54.03 |   54.79 |                   
+All files                       |   54.82 |    22.22 |    53.6 |   54.29 |                   
  src                            |      50 |        0 |    37.5 |   55.55 |                   
   App.tsx                       |      50 |        0 |    37.5 |   55.55 | 30-53             
- src/components                 |   55.55 |       25 |   55.17 |   54.76 |                   
+ src/components                 |   55.04 |    23.52 |    54.7 |   54.24 |                   
   Carouse.tsx                   |     100 |      100 |     100 |     100 |                   
   ClearSemesterModal.tsx        |     100 |      100 |     100 |     100 |                   
   DeleteCourseModal.tsx         |     100 |      100 |     100 |     100 |                   
@@ -12862,7 +12862,7 @@ All files                       |    55.3 |    23.52 |   54.03 |   54.79 |
   editPlan.tsx                  |     100 |      100 |     100 |     100 |                   
   editSemester.tsx              |     100 |      100 |     100 |     100 |                   
   greetingMessage.tsx           |     100 |      100 |     100 |     100 |                   
-  listCourses.tsx               |   28.57 |     12.5 |   22.72 |   29.16 | 59-130,211-281    
+  listCourses.tsx               |   27.45 |       10 |   21.73 |      28 | 59-138,219-289    
   listPlans.tsx                 |     100 |      100 |     100 |     100 |                   
   listSemesters.tsx             |     100 |      100 |     100 |     100 |                   
   viewFloatingCourses.tsx       |   11.11 |        0 |      20 |   11.11 | 45-123            
@@ -12878,5 +12878,5 @@ All files                       |    55.3 |    23.52 |   54.03 |   54.79 |
 Test Suites: 1 failed, 17 passed, 18 total
 Tests:       2 failed, 55 passed, 57 total
 Snapshots:   0 total
-Time:        118.374 s
+Time:        199.946 s
 Ran all test suites.
