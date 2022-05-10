@@ -136,7 +136,18 @@ export function ListCourses({
                             <td>{course.name}</td>
                             <td>{course.description}</td>
                             <td>{course.credits}</td>
-                            <td>{course.prerequisites.map(String)}</td>
+                            <td>
+                                {allCourses
+                                    .filter((degreeCourse: Course): boolean =>
+                                        course.prerequisites.includes(
+                                            degreeCourse.id
+                                        )
+                                    )
+                                    .map(
+                                        (degreeCourse: Course): string =>
+                                            degreeCourse.name + "\n"
+                                    )}
+                            </td>
                             <td>
                                 <EditCourseModal
                                     handleClose={handleCloseAddModal}
