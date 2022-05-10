@@ -97,6 +97,14 @@ export function ListCourses({
         setTableCourses([...tableCourses, newCourse]);
         updateSemesterCourses(newCourse);
         updateCourses(newCourse);
+        setRequirements(
+            requiredCourses.map(
+                (course: Course): Course =>
+                    course.id === newCourse.id
+                        ? { ...course, isTaken: true }
+                        : { ...course }
+            )
+        );
     }
 
     function saveAddChange() {
