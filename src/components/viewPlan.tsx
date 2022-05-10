@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Button, Table, Stack } from "react-bootstrap";
+import { Container, Button, Table, Stack, Col, Row } from "react-bootstrap";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
 import { Course } from "../interfaces/course";
@@ -7,6 +7,7 @@ import { ListSemesters } from "./listSemesters";
 import { EditPlan } from "./editPlan";
 import courses from "../data/course–book.json";
 import { ClearSemesterModal } from "./ClearSemesterModal";
+import { ViewRequirements } from "./viewRequirements";
 
 const COURSES = courses.map(
     (course): Course => ({
@@ -107,68 +108,87 @@ export function ViewPlan({
     return (
         <div>
             <Container>
-                <Table striped borderless>
-                    <thead>
-                        <tr>
-                            <th>
-                                <span>
-                                    <Stack direction="horizontal" gap={3}>
-                                        <Container>
-                                            <div>
-                                                {isEditing ? (
-                                                    <EditPlan
-                                                        plan={plan}
-                                                        setPlanName={
-                                                            setPlanName
-                                                        }
-                                                        openEdit={openEdit}
-                                                    ></EditPlan>
-                                                ) : (
+                <Row>
+                    <Col>
+                        <Table striped borderless>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span>
+                                            <Stack
+                                                direction="horizontal"
+                                                gap={3}
+                                            >
+                                                <Container>
                                                     <div>
-                                                        <h3>
-                                                            {plan.name}
-                                                            <Button
-                                                                onClick={
+                                                        {isEditing ? (
+                                                            <EditPlan
+                                                                plan={plan}
+                                                                setPlanName={
+                                                                    setPlanName
+                                                                }
+                                                                openEdit={
                                                                     openEdit
                                                                 }
-                                                                variant="empty"
-                                                                className="me-8"
-                                                                data-testid="Edit Plan Name Button"
-                                                            >
-                                                                🖊
-                                                            </Button>
-                                                        </h3>
+                                                            ></EditPlan>
+                                                        ) : (
+                                                            <div>
+                                                                <h3>
+                                                                    {plan.name}
+                                                                    <Button
+                                                                        onClick={
+                                                                            openEdit
+                                                                        }
+                                                                        variant="empty"
+                                                                        className="me-8"
+                                                                        data-testid="Edit Plan Name Button"
+                                                                    >
+                                                                        🖊
+                                                                    </Button>
+                                                                </h3>
+                                                            </div>
+                                                        )}
                                                     </div>
-                                                )}
-                                            </div>
-                                        </Container>
-                                    </Stack>
-                                </span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <ListSemesters
-                                    planSemesters={semesters}
-                                    courses={courses}
-                                    floatingCourses={floatingCourses}
-                                    requiredCourses={requiredCourses}
-                                    addSemester={addSemester}
-                                    removeSemester={removeSemester}
-                                    setSemesterName={setSemesterName}
-                                    setFloats={setFloats}
-                                    setRequirements={setRequirements}
-                                    updateCourses={updateCourses}
-                                ></ListSemesters>
-                            </td>
-                        </tr>
-                    </tbody>
-                </Table>
-                <ClearSemesterModal
-                    clearSemesters={clearSemesters}
-                ></ClearSemesterModal>
+                                                </Container>
+                                            </Stack>
+                                        </span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <ListSemesters
+                                            planSemesters={semesters}
+                                            courses={courses}
+                                            floatingCourses={floatingCourses}
+                                            requiredCourses={requiredCourses}
+                                            addSemester={addSemester}
+                                            removeSemester={removeSemester}
+                                            setSemesterName={setSemesterName}
+                                            setFloats={setFloats}
+                                            setRequirements={setRequirements}
+                                            updateCourses={updateCourses}
+                                        ></ListSemesters>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </Table>
+                        <ClearSemesterModal
+                            clearSemesters={clearSemesters}
+                        ></ClearSemesterModal>
+                    </Col>
+                    <Col xs={2}>
+                        <div>
+                            <span data-testid="required-text">
+                                Required Courses:
+                            </span>
+                            <ViewRequirements
+                                requirements={requiredCourses}
+                            ></ViewRequirements>
+                        </div>
+                    </Col>
+                </Row>
             </Container>
         </div>
     );
