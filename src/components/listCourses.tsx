@@ -137,7 +137,7 @@ export function ListCourses({
     return (
         <div>
             <Row>
-                <Col xs={12} md={10}>
+                <Col xs={12} md={9}>
                     <div style={{ marginLeft: "auto" }}>
                         <span>
                             <Button onClick={deleteAllCourse}>skip!</Button>
