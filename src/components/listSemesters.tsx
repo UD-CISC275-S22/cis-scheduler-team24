@@ -5,7 +5,6 @@ import { Course } from "../interfaces/course";
 import { ViewSemester } from "./viewSemester";
 import { EditSemester } from "./editSemester";
 import { DeleteSemester } from "./DeleteSemester";
-
 export function ListSemesters({
     planSemesters,
     courses,

@@ -1,13 +1,17 @@
 import React from "react";
 import { Dropdown, DropdownButton, InputGroup, Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-
+import { Semester } from "../interfaces/semester";
 export function ViewFloatingCourses({
     floatingCourses,
-    setFloats
+    setFloats,
+    addedCourse,
+    semester
 }: {
     floatingCourses: Course[];
     setFloats: (newFloats: Course[]) => void;
+    addedCourse: (newCourse: Course) => void;
+    semester: Semester;
 }): JSX.Element {
     return (
         <div>
@@ -37,25 +41,88 @@ export function ViewFloatingCourses({
                                     >
                                         <Dropdown.Item
                                             href="#"
-                                            onClick={() => setFloats}
+                                            onClick={() => {
+                                                if (
+                                                    semester.session ===
+                                                    "Spring"
+                                                ) {
+                                                    setFloats(
+                                                        floatingCourses.filter(
+                                                            (
+                                                                isexit: Course
+                                                            ): boolean =>
+                                                                isexit.id !==
+                                                                course.id
+                                                        )
+                                                    );
+                                                    addedCourse(course);
+                                                }
+                                            }}
                                         >
                                             Spring
                                         </Dropdown.Item>
                                         <Dropdown.Item
                                             href="#"
-                                            onClick={() => setFloats}
+                                            onClick={() => {
+                                                if (
+                                                    semester.session ===
+                                                    "Summer"
+                                                ) {
+                                                    setFloats(
+                                                        floatingCourses.filter(
+                                                            (
+                                                                isexit: Course
+                                                            ): boolean =>
+                                                                isexit.id !==
+                                                                course.id
+                                                        )
+                                                    );
+                                                    addedCourse(course);
+                                                }
+                                            }}
                                         >
                                             Summer
                                         </Dropdown.Item>
                                         <Dropdown.Item
                                             href="#"
-                                            onClick={() => setFloats}
+                                            onClick={() => {
+                                                if (
+                                                    semester.session === "Fall"
+                                                ) {
+                                                    setFloats(
+                                                        floatingCourses.filter(
+                                                            (
+                                                                isexit: Course
+                                                            ): boolean =>
+                                                                isexit.id !==
+                                                                course.id
+                                                        )
+                                                    );
+                                                    addedCourse(course);
+                                                }
+                                            }}
                                         >
                                             Fall
                                         </Dropdown.Item>
                                         <Dropdown.Item
                                             href="#"
-                                            onClick={() => setFloats}
+                                            onClick={() => {
+                                                if (
+                                                    semester.session ===
+                                                    "Winter"
+                                                ) {
+                                                    setFloats(
+                                                        floatingCourses.filter(
+                                                            (
+                                                                isexit: Course
+                                                            ): boolean =>
+                                                                isexit.id !==
+                                                                course.id
+                                                        )
+                                                    );
+                                                    addedCourse(course);
+                                                }
+                                            }}
                                         >
                                             Winter
                                         </Dropdown.Item>
