@@ -1,11 +1,18 @@
 import React, { useState } from "react";
-import { Button, Container, Table, Form, Col, Row } from "react-bootstrap";
+import {
+    Button,
+    Container,
+    Table,
+    Form,
+    Card,
+    Col,
+    Row
+} from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Semester } from "../interfaces/semester";
 import { DeleteCourseModal } from "./DeleteCourseModal";
 import { EditCourseModal } from "./EditCourseModal";
 import { ViewFloatingCourses } from "./viewFloatingCourses";
-import { ViewRequirements } from "./viewRequirements";
 
 export function ListCourses({
     semester,
@@ -124,8 +131,7 @@ export function ListCourses({
     return (
         <div>
             <Row>
-                <Col>
-                    {" "}
+                <Col xl={10}>
                     <div style={{ marginLeft: "auto" }}>
                         <span>
                             <Button onClick={deleteAllCourse}>skip!</Button>
@@ -152,7 +158,27 @@ export function ListCourses({
                                     <td>{course.name}</td>
                                     <td>{course.description}</td>
                                     <td>{course.credits}</td>
-                                    <td>{course.prerequisites.map(String)}</td>
+                                    <td>
+                                        {allCourses
+                                            .filter(
+                                                (
+                                                    degreeCourse: Course
+                                                ): boolean =>
+                                                    course.prerequisites.includes(
+                                                        degreeCourse.id
+                                                    )
+                                            )
+                                            .map((degreeCourse: Course) => (
+                                                <Card
+                                                    key={degreeCourse.id}
+                                                    border="info"
+                                                    bg=""
+                                                    className="mb-1"
+                                                >
+                                                    {degreeCourse.name}
+                                                </Card>
+                                            ))}
+                                    </td>
                                     <td>
                                         <EditCourseModal
                                             handleClose={handleCloseAddModal}
@@ -219,18 +245,9 @@ export function ListCourses({
                             </tr>
                         </tbody>
                     </Table>
-                    <Container>
-                        <div>Total Credits: {Credits}</div>
-                    </Container>
-                    <Container>
-                        <DeleteCourseModal
-                            deletCourse={() => {
-                                deleteAllCourse();
-                            }}
-                        ></DeleteCourseModal>
-                    </Container>
                 </Col>
-                <Col sm={3}>
+
+                <Col sm={2}>
                     <div>
                         <span data-testid="floating-text">
                             Floating Courses:
@@ -241,15 +258,19 @@ export function ListCourses({
                             addedCourse={addedCourse}
                             semester={semester}
                         ></ViewFloatingCourses>
-                        <span data-testid="required-text">
-                            Required Courses:
-                        </span>
-                        <ViewRequirements
-                            requirements={requiredCourses}
-                        ></ViewRequirements>
                     </div>
                 </Col>
             </Row>
+            <Container>
+                <div>Total Credits: {Credits}</div>
+            </Container>
+            <Container>
+                <DeleteCourseModal
+                    deletCourse={() => {
+                        deleteAllCourse();
+                    }}
+                ></DeleteCourseModal>
+            </Container>
         </div>
     );
 }
