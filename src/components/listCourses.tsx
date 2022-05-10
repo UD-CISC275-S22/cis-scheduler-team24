@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Container, Table, Form } from "react-bootstrap";
+import { Button, Container, Table, Form, Card } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { DeleteCourseModal } from "./DeleteCourseModal";
 import { EditCourseModal } from "./EditCourseModal";
@@ -136,7 +136,24 @@ export function ListCourses({
                             <td>{course.name}</td>
                             <td>{course.description}</td>
                             <td>{course.credits}</td>
-                            <td>{course.prerequisites.map(String)}</td>
+                            <td>
+                                {allCourses
+                                    .filter((degreeCourse: Course): boolean =>
+                                        course.prerequisites.includes(
+                                            degreeCourse.id
+                                        )
+                                    )
+                                    .map((degreeCourse: Course) => (
+                                        <Card
+                                            key={degreeCourse.id}
+                                            border="info"
+                                            bg=""
+                                            className="mb-1"
+                                        >
+                                            {degreeCourse.name}
+                                        </Card>
+                                    ))}
+                            </td>
                             <td>
                                 <EditCourseModal
                                     handleClose={handleCloseAddModal}
