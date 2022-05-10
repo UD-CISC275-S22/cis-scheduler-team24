@@ -65,28 +65,6 @@ export function ViewFloatingCourses({
                                             href="#"
                                             onClick={() => {
                                                 if (
-                                                    semester.session ===
-                                                    "Summer"
-                                                ) {
-                                                    setFloats(
-                                                        floatingCourses.filter(
-                                                            (
-                                                                isexit: Course
-                                                            ): boolean =>
-                                                                isexit.id !==
-                                                                course.id
-                                                        )
-                                                    );
-                                                    addedCourse(course);
-                                                }
-                                            }}
-                                        >
-                                            Summer
-                                        </Dropdown.Item>
-                                        <Dropdown.Item
-                                            href="#"
-                                            onClick={() => {
-                                                if (
                                                     semester.session === "Fall"
                                                 ) {
                                                     setFloats(
@@ -103,28 +81,6 @@ export function ViewFloatingCourses({
                                             }}
                                         >
                                             Fall
-                                        </Dropdown.Item>
-                                        <Dropdown.Item
-                                            href="#"
-                                            onClick={() => {
-                                                if (
-                                                    semester.session ===
-                                                    "Winter"
-                                                ) {
-                                                    setFloats(
-                                                        floatingCourses.filter(
-                                                            (
-                                                                isexit: Course
-                                                            ): boolean =>
-                                                                isexit.id !==
-                                                                course.id
-                                                        )
-                                                    );
-                                                    addedCourse(course);
-                                                }
-                                            }}
-                                        >
-                                            Winter
                                         </Dropdown.Item>
                                     </DropdownButton>
                                 </InputGroup>
