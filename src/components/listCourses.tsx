@@ -13,6 +13,7 @@ import { Semester } from "../interfaces/semester";
 import { DeleteCourseModal } from "./DeleteCourseModal";
 import { EditCourseModal } from "./EditCourseModal";
 import { ViewFloatingCourses } from "./viewFloatingCourses";
+import { ViewRequirements } from "./viewRequirements";
 
 export function ListCourses({
     semester,
@@ -131,7 +132,17 @@ export function ListCourses({
     return (
         <div>
             <Row>
-                <Col xl={10}>
+                <Col>
+                    <div>
+                        <span data-testid="required-text">
+                            Required Courses:
+                        </span>
+                        <ViewRequirements
+                            requirements={requiredCourses}
+                        ></ViewRequirements>
+                    </div>
+                </Col>
+                <Col xs={7}>
                     <div style={{ marginLeft: "auto" }}>
                         <span>
                             <Button onClick={deleteAllCourse}>skip!</Button>
@@ -247,7 +258,7 @@ export function ListCourses({
                     </Table>
                 </Col>
 
-                <Col sm={2}>
+                <Col>
                     <div>
                         <span data-testid="floating-text">
                             Floating Courses:
