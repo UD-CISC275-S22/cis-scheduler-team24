@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { DeletePlan } from "./deletePlan";
+import { DeletePlan } from "./DeletePlan";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
 import plans from "../data/plans.json";
