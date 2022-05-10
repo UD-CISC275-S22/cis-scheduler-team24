@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { Container, Button, Table, Stack, Row, Col } from "react-bootstrap";
+import { Container, Button, Table, Stack } from "react-bootstrap";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
 import { Course } from "../interfaces/course";
 import { ListSemesters } from "./listSemesters";
 import { EditPlan } from "./editPlan";
-import { ViewFloatingCourses } from "./viewFloatingCourses";
-import { ViewRequirements } from "./viewRequirements";
 import courses from "../data/course–book.json";
 import { ClearSemesterModal } from "./ClearSemesterModal";
 
@@ -99,94 +97,68 @@ export function ViewPlan({
     return (
         <div>
             <Container>
-                <Row>
-                    <Col sm={9}>
-                        <Table striped borderless>
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <span>
-                                            <Stack
-                                                direction="horizontal"
-                                                gap={3}
-                                            >
-                                                <Container>
+                <Table striped borderless>
+                    <thead>
+                        <tr>
+                            <th>
+                                <span>
+                                    <Stack direction="horizontal" gap={3}>
+                                        <Container>
+                                            <div>
+                                                {isEditing ? (
+                                                    <EditPlan
+                                                        plan={plan}
+                                                        setPlanName={
+                                                            setPlanName
+                                                        }
+                                                        openEdit={openEdit}
+                                                    ></EditPlan>
+                                                ) : (
                                                     <div>
-                                                        {isEditing ? (
-                                                            <EditPlan
-                                                                plan={plan}
-                                                                setPlanName={
-                                                                    setPlanName
-                                                                }
-                                                                openEdit={
+                                                        <h3>
+                                                            {plan.name}
+                                                            <Button
+                                                                onClick={
                                                                     openEdit
                                                                 }
-                                                            ></EditPlan>
-                                                        ) : (
-                                                            <div>
-                                                                <h3>
-                                                                    {plan.name}
-                                                                    <Button
-                                                                        onClick={
-                                                                            openEdit
-                                                                        }
-                                                                        variant="empty"
-                                                                        className="me-8"
-                                                                        data-testid="Edit Plan Name Button"
-                                                                    >
-                                                                        🖊
-                                                                    </Button>
-                                                                </h3>
-                                                            </div>
-                                                        )}
+                                                                variant="empty"
+                                                                className="me-8"
+                                                                data-testid="Edit Plan Name Button"
+                                                            >
+                                                                🖊
+                                                            </Button>
+                                                        </h3>
                                                     </div>
-                                                </Container>
-                                            </Stack>
-                                        </span>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <ListSemesters
-                                            planSemesters={semesters}
-                                            courses={courses}
-                                            floatingCourses={floatingCourses}
-                                            requiredCourses={requiredCourses}
-                                            addSemester={addSemester}
-                                            removeSemester={removeSemester}
-                                            setSemesterName={setSemesterName}
-                                            setFloats={setFloats}
-                                            setRequirements={setRequirements}
-                                            updateCourses={updateCourses}
-                                        ></ListSemesters>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </Table>
-                        <ClearSemesterModal
-                            clearSemesters={clearSemesters}
-                        ></ClearSemesterModal>
-                    </Col>
-                    <Col sm={3}>
-                        <div>
-                            <span data-testid="floating-text">
-                                Floating Courses:
-                            </span>
-                            <ViewFloatingCourses
-                                floatingCourses={floatingCourses}
-                                setFloats={setFloats}
-                            ></ViewFloatingCourses>
-                            <span data-testid="required-text">
-                                Required Courses:
-                            </span>
-                            <ViewRequirements
-                                requirements={requiredCourses}
-                            ></ViewRequirements>
-                        </div>
-                    </Col>
-                </Row>
+                                                )}
+                                            </div>
+                                        </Container>
+                                    </Stack>
+                                </span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <ListSemesters
+                                    planSemesters={semesters}
+                                    courses={courses}
+                                    floatingCourses={floatingCourses}
+                                    requiredCourses={requiredCourses}
+                                    addSemester={addSemester}
+                                    removeSemester={removeSemester}
+                                    setSemesterName={setSemesterName}
+                                    setFloats={setFloats}
+                                    setRequirements={setRequirements}
+                                    updateCourses={updateCourses}
+                                ></ListSemesters>
+                            </td>
+                        </tr>
+                    </tbody>
+                </Table>
+                <ClearSemesterModal
+                    clearSemesters={clearSemesters}
+                ></ClearSemesterModal>
             </Container>
         </div>
     );

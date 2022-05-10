@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import { Button, Container, Table, Form } from "react-bootstrap";
+import { Button, Container, Table, Form, Col, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
+import { Semester } from "../interfaces/semester";
 import { DeleteCourseModal } from "./DeleteCourseModal";
 import { EditCourseModal } from "./EditCourseModal";
+import { ViewFloatingCourses } from "./viewFloatingCourses";
+import { ViewRequirements } from "./viewRequirements";
 
 export function ListCourses({
+    semester,
     allCourses,
     semesterCourses,
     floatingCourses,
@@ -16,6 +20,7 @@ export function ListCourses({
     updateSemesterCourses,
     Noskip
 }: {
+    semester: Semester;
     allCourses: Course[];
     semesterCourses: Course[];
     floatingCourses: Course[];
@@ -80,6 +85,12 @@ export function ListCourses({
         }
     }
 
+    function addedCourse(newCourse: Course) {
+        setTableCourses([...tableCourses, newCourse]);
+        updateSemesterCourses(newCourse);
+        updateCourses(newCourse);
+    }
+
     function saveAddChange() {
         addCourse({
             id: allCourses.length + 1,
@@ -112,107 +123,133 @@ export function ListCourses({
     }
     return (
         <div>
-            <div style={{ marginLeft: "auto" }}>
-                <span>
-                    <Button onClick={deleteAllCourse}>skip!</Button>
-                    <span>
-                        <Button onClick={undeleteAllCourse}>Undo!</Button>
-                    </span>
-                </span>
-            </div>
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>Course Name</th>
-                        <th>Course Description</th>
-                        <th>Course Credit</th>
-                        <th>Course Prerequisites (ID)</th>
-                        <th>Edit</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {tableCourses.map((course: Course) => (
-                        <tr key={course.id}>
-                            <td>{course.name}</td>
-                            <td>{course.description}</td>
-                            <td>{course.credits}</td>
-                            <td>{course.prerequisites.map(String)}</td>
-                            <td>
-                                <EditCourseModal
-                                    handleClose={handleCloseAddModal}
-                                    course={course}
-                                    requiredCourses={requiredCourses}
-                                    editCourse={editCourse}
-                                    deleteCourse={deleteCourse}
-                                    setRequirements={setRequirements}
-                                ></EditCourseModal>
-                            </td>
-                        </tr>
-                    ))}
-                    <tr key="CourseInput">
-                        <td>
-                            <Form.Control
-                                value={name}
-                                onChange={(
-                                    event: React.ChangeEvent<HTMLInputElement>
-                                ) => setName(event.target.value)}
-                                placeholder="Enter Name"
-                                data-testid="Enter-Name"
-                            />
-                        </td>
-                        <td>
-                            <Form.Control
-                                value={description}
-                                onChange={(
-                                    event: React.ChangeEvent<HTMLInputElement>
-                                ) => setDescription(event.target.value)}
-                                placeholder="Enter Description"
-                                data-testid="Enter-Description"
-                            />
-                        </td>
-                        <td>
-                            <Form.Control
-                                value={credits}
-                                onChange={(
-                                    event: React.ChangeEvent<HTMLInputElement>
-                                ) => setCredits(event.target.value)}
-                                placeholder="Enter Credits"
-                                data-testid="Enter-Credits"
-                            />
-                        </td>
-                        <td>
-                            <Form.Control
-                                value={prereqs}
-                                onChange={(
-                                    event: React.ChangeEvent<HTMLInputElement>
-                                ) => setPrereqs(event.target.value)}
-                                placeholder="Enter Prerequisites"
-                                data-testid="Enter-Prerequisites"
-                            />
-                        </td>
-                        <td>
-                            <Button
-                                variant="primary"
-                                onClick={saveAddChange}
-                                className="button-style-2"
-                                disabled={!name || !credits}
-                            >
-                                Add Course
-                            </Button>
-                        </td>
-                    </tr>
-                </tbody>
-            </Table>
-            <Container>
-                <div>Total Credits: {Credits}</div>
-            </Container>
-            <Container>
-                <DeleteCourseModal
-                    deletCourse={() => {
-                        deleteAllCourse();
-                    }}
-                ></DeleteCourseModal>
-            </Container>
+            <Row>
+                <Col>
+                    {" "}
+                    <div style={{ marginLeft: "auto" }}>
+                        <span>
+                            <Button onClick={deleteAllCourse}>skip!</Button>
+                            <span>
+                                <Button onClick={undeleteAllCourse}>
+                                    Undo!
+                                </Button>
+                            </span>
+                        </span>
+                    </div>
+                    <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th>Course Name</th>
+                                <th>Course Description</th>
+                                <th>Course Credit</th>
+                                <th>Course Prerequisites (ID)</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {tableCourses.map((course: Course) => (
+                                <tr key={course.id}>
+                                    <td>{course.name}</td>
+                                    <td>{course.description}</td>
+                                    <td>{course.credits}</td>
+                                    <td>{course.prerequisites.map(String)}</td>
+                                    <td>
+                                        <EditCourseModal
+                                            handleClose={handleCloseAddModal}
+                                            course={course}
+                                            requiredCourses={requiredCourses}
+                                            editCourse={editCourse}
+                                            deleteCourse={deleteCourse}
+                                            setRequirements={setRequirements}
+                                        ></EditCourseModal>
+                                    </td>
+                                </tr>
+                            ))}
+                            <tr key="CourseInput">
+                                <td>
+                                    <Form.Control
+                                        value={name}
+                                        onChange={(
+                                            event: React.ChangeEvent<HTMLInputElement>
+                                        ) => setName(event.target.value)}
+                                        placeholder="Enter Name"
+                                        data-testid="Enter-Name"
+                                    />
+                                </td>
+                                <td>
+                                    <Form.Control
+                                        value={description}
+                                        onChange={(
+                                            event: React.ChangeEvent<HTMLInputElement>
+                                        ) => setDescription(event.target.value)}
+                                        placeholder="Enter Description"
+                                        data-testid="Enter-Description"
+                                    />
+                                </td>
+                                <td>
+                                    <Form.Control
+                                        value={credits}
+                                        onChange={(
+                                            event: React.ChangeEvent<HTMLInputElement>
+                                        ) => setCredits(event.target.value)}
+                                        placeholder="Enter Credits"
+                                        data-testid="Enter-Credits"
+                                    />
+                                </td>
+                                <td>
+                                    <Form.Control
+                                        value={prereqs}
+                                        onChange={(
+                                            event: React.ChangeEvent<HTMLInputElement>
+                                        ) => setPrereqs(event.target.value)}
+                                        placeholder="Enter Prerequisites"
+                                        data-testid="Enter-Prerequisites"
+                                    />
+                                </td>
+                                <td>
+                                    <Button
+                                        variant="primary"
+                                        onClick={saveAddChange}
+                                        className="button-style-2"
+                                        disabled={!name || !credits}
+                                    >
+                                        Add Course
+                                    </Button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </Table>
+                    <Container>
+                        <div>Total Credits: {Credits}</div>
+                    </Container>
+                    <Container>
+                        <DeleteCourseModal
+                            deletCourse={() => {
+                                deleteAllCourse();
+                            }}
+                        ></DeleteCourseModal>
+                    </Container>
+                </Col>
+                <Col sm={3}>
+                    <div>
+                        <span data-testid="floating-text">
+                            Floating Courses:
+                        </span>
+                        <ViewFloatingCourses
+                            floatingCourses={floatingCourses}
+                            setFloats={setFloats}
+                            addedCourse={addedCourse}
+                            semester={semester}
+                        ></ViewFloatingCourses>
+                        <span data-testid="required-text">
+                            Required Courses:
+                        </span>
+                        <ViewRequirements
+                            requirements={requiredCourses}
+                        ></ViewRequirements>
+                    </div>
+                </Col>
+            </Row>
         </div>
     );
 }

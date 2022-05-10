@@ -84,6 +84,7 @@ export function ViewSemester({
                         <tr>
                             <th>
                                 <ListCourses
+                                    semester={semester}
                                     allCourses={courses}
                                     semesterCourses={semesterCourses}
                                     floatingCourses={floatingCourses}
