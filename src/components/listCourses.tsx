@@ -13,7 +13,6 @@ import { Semester } from "../interfaces/semester";
 import { DeleteCourseModal } from "./DeleteCourseModal";
 import { EditCourseModal } from "./EditCourseModal";
 import { ViewFloatingCourses } from "./viewFloatingCourses";
-import { ViewRequirements } from "./viewRequirements";
 
 export function ListCourses({
     semester,
@@ -138,17 +137,7 @@ export function ListCourses({
     return (
         <div>
             <Row>
-                <Col>
-                    <div>
-                        <span data-testid="required-text">
-                            Required Courses:
-                        </span>
-                        <ViewRequirements
-                            requirements={requiredCourses}
-                        ></ViewRequirements>
-                    </div>
-                </Col>
-                <Col xs={7}>
+                <Col xs={12} md={10}>
                     <div style={{ marginLeft: "auto" }}>
                         <span>
                             <Button onClick={deleteAllCourse}>skip!</Button>
@@ -262,9 +251,18 @@ export function ListCourses({
                             </tr>
                         </tbody>
                     </Table>
+                    <Container>
+                        <div>Total Credits: {Credits}</div>
+                    </Container>
+                    <Container>
+                        <DeleteCourseModal
+                            deletCourse={() => {
+                                deleteAllCourse();
+                            }}
+                        ></DeleteCourseModal>
+                    </Container>
                 </Col>
-
-                <Col>
+                <Col xs={6} md={2}>
                     <div>
                         <span data-testid="floating-text">
                             Floating Courses:
@@ -278,16 +276,6 @@ export function ListCourses({
                     </div>
                 </Col>
             </Row>
-            <Container>
-                <div>Total Credits: {Credits}</div>
-            </Container>
-            <Container>
-                <DeleteCourseModal
-                    deletCourse={() => {
-                        deleteAllCourse();
-                    }}
-                ></DeleteCourseModal>
-            </Container>
         </div>
     );
 }
