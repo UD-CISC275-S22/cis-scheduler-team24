@@ -23,12 +23,8 @@ export function ViewRequirements({
                 <tbody>
                     {requirements.map((course: Course) => (
                         <tr key={course.id}>
-                            <td>
-                                <td>{course.name}</td>
-                            </td>
-                            <td>
-                                {course.isTaken ? <div>✓</div> : <div>✗</div>}
-                            </td>
+                            <td>{course.name}</td>
+                            <td>{course.isTaken ? "✓" : "✗"}</td>
                         </tr>
                     ))}
                 </tbody>

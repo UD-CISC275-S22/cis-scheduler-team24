@@ -34,7 +34,7 @@ export function ListPlans({
                     ))}
                     <Nav.Item>
                         <Button variant="outline-primary" onClick={addPlan}>
-                            Add Plan
+                            <div>Add Plan</div>
                         </Button>
                     </Nav.Item>
                 </Nav>

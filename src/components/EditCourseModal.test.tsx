@@ -173,4 +173,16 @@ describe("EditCourseModal tests", () => {
         userEvent.type(ControlCoursePrerequisities, "CISC108");
         expect(ControlCoursePrerequisities).toBeEnabled();
     });
+
+    test("Cliking the save button and can be used", () => {
+        const EditCourseButton = screen.getAllByRole("button", {
+            name: /Edit/i
+        });
+        EditCourseButton[0].click();
+        const SaveButton = screen.getAllByRole("button", {
+            name: /Save/i
+        });
+        SaveButton[0].click();
+        expect(EditCourseButton[0]).toBeInTheDocument();
+    });
 });
