@@ -29,10 +29,14 @@ export function ViewPlan({
     const [isEditing, setEditing] = useState<boolean>(false);
 
     const [floatingCourses, setFloatingCourses] = useState<Course[]>(
-        courses.filter((course: Course): boolean => !course.isTaken)
+        courses.filter((course: Course): boolean =>
+            plan.floating_courses.includes(course.id)
+        )
     );
     const [requiredCourses, setRequiredCourses] = useState<Course[]>(
-        courses.filter((course: Course): boolean => course.isRequired)
+        courses.filter((course: Course): boolean =>
+            plan.requirements.includes(course.id)
+        )
     );
     function openEdit(): void {
         setEditing(!isEditing);
@@ -65,12 +69,18 @@ export function ViewPlan({
         setSemesters([]);
         setFloats(
             courses.map(
-                (course: Course): Course => ({ ...course, isTaken: false })
+                (course: Course): Course => ({
+                    ...course,
+                    isTaken: false
+                })
             )
         );
         setRequirements(
             requiredCourses.map(
-                (course: Course): Course => ({ ...course, isTaken: false })
+                (course: Course): Course => ({
+                    ...course,
+                    isTaken: false
+                })
             )
         );
     }
@@ -171,21 +181,6 @@ export function ViewPlan({
                     </Col>
                     <Col sm={3}>
                         <div>
-                            {/* <Button variant="primary" onClick={handleShow}>
-                                    Show Courses Pool and Degree plan
-                                </Button>
-
-                                <Offcanvas
-                                    show={show}
-                                    onHide={handleClose}
-                                    placement={"end"}
-                                >
-                                    <Offcanvas.Header closeButton>
-                                        <Offcanvas.Title>
-                                            Degree Plan
-                                        </Offcanvas.Title>
-                                    </Offcanvas.Header>
-                                    <Offcanvas.Body> */}
                             <span data-testid="floating-text">
                                 Floating Courses:
                             </span>

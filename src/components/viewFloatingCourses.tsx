@@ -11,7 +11,6 @@ export function ViewFloatingCourses({
 }): JSX.Element {
     return (
         <div>
-            <div>COURSE</div>
             <Table striped bordered hover className="required">
                 <thead>
                     <tr>
