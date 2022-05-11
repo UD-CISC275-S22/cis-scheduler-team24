@@ -39,6 +39,19 @@ export function ListCourses({
     updateSemesterCourses: (newCourse: Course) => void;
     Noskip: () => void;
 }): JSX.Element {
+    // if (semester.session === "Fall") {
+    //     const saveDataKey = "MY-PAGE-DATA";
+
+    //     let newsemesterCourses: Course[] = [...semesterCourses];
+
+    //     const previousData = localStorage.getItem(saveDataKey);
+
+    //     if (previousData !== null) {
+    //         newsemesterCourses = JSON.parse(previousData);
+    //     }
+    // } else {
+
+    // }
     const [tableCourses, setTableCourses] = useState<Course[]>(semesterCourses);
     const [showAddModal, setShowAddModal] = useState(false);
     showAddModal;
@@ -53,6 +66,10 @@ export function ListCourses({
         (currentTotal: number, course: Course) => currentTotal + course.credits,
         0
     );
+
+    // function SaveData() {
+    //     localStorage.setItem(saveDataKey, JSON.stringify(tableCourses));
+    // }
 
     function editCourse(id: number, newCourse: Course) {
         setTableCourses(
@@ -253,6 +270,7 @@ export function ListCourses({
                     </Table>
                     <Container>
                         <div>Total Credits: {Credits}</div>
+                        {/* <Button onClick={SaveData}>Save</Button> */}
                     </Container>
                     <Container>
                         <DeleteCourseModal
