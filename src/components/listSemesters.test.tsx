@@ -32,11 +32,13 @@ describe("ListSemestersl tests", () => {
                 courses={[]}
                 floatingCourses={[]}
                 requiredCourses={[]}
+                takenCourses={[]}
                 addSemester={() => []}
                 removeSemester={() => []}
                 setSemesterName={() => []}
                 setFloats={() => []}
                 setRequirements={() => []}
+                setTakenCourses={() => []}
                 updateCourses={() => []}
             />
         );

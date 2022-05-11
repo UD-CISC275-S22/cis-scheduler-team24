@@ -4,14 +4,16 @@ import { Course } from "../interfaces/course";
 import { Semester } from "../interfaces/semester";
 export function ViewFloatingCourses({
     floatingCourses,
+    takenCourses,
     setFloats,
-    addedCourse,
-    semester
+    setTakenCourses,
+    semesters
 }: {
     floatingCourses: Course[];
+    takenCourses: Course[];
     setFloats: (newFloats: Course[]) => void;
-    addedCourse: (newCourse: Course) => void;
-    semester: Semester;
+    setTakenCourses: (newCourses: Course[]) => void;
+    semesters: Semester[];
 }): JSX.Element {
     return (
         <div>
@@ -39,49 +41,32 @@ export function ViewFloatingCourses({
                                         title="Move"
                                         id="input-group-dropdown-2"
                                     >
-                                        <Dropdown.Item
-                                            href="#"
-                                            onClick={() => {
-                                                if (
-                                                    semester.session ===
-                                                    "Spring"
-                                                ) {
+                                        {semesters.map((semester: Semester) => (
+                                            <Dropdown.Item
+                                                key={semester.id}
+                                                onClick={() => {
                                                     setFloats(
                                                         floatingCourses.filter(
                                                             (
-                                                                isexit: Course
+                                                                floater: Course
                                                             ): boolean =>
-                                                                isexit.id !==
-                                                                course.id
+                                                                course.id !==
+                                                                floater.id
                                                         )
                                                     );
-                                                    addedCourse(course);
-                                                }
-                                            }}
-                                        >
-                                            Spring
-                                        </Dropdown.Item>
-                                        <Dropdown.Item
-                                            href="#"
-                                            onClick={() => {
-                                                if (
-                                                    semester.session === "Fall"
-                                                ) {
-                                                    setFloats(
-                                                        floatingCourses.filter(
-                                                            (
-                                                                isexit: Course
-                                                            ): boolean =>
-                                                                isexit.id !==
-                                                                course.id
-                                                        )
-                                                    );
-                                                    addedCourse(course);
-                                                }
-                                            }}
-                                        >
-                                            Fall
-                                        </Dropdown.Item>
+                                                    setTakenCourses([
+                                                        ...takenCourses,
+                                                        {
+                                                            ...course,
+                                                            prerequisites:
+                                                                course.prerequisites
+                                                        }
+                                                    ]);
+                                                }}
+                                            >
+                                                {semester.name}
+                                            </Dropdown.Item>
+                                        ))}
                                     </DropdownButton>
                                 </InputGroup>
                             </td>
