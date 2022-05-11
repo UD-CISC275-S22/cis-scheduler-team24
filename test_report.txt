@@ -3,52 +3,326 @@
 > react-scripts test "--coverage"
 
 PASS src/components/EditCourseModal.test.tsx
-PASS src/components/DeleteCourseModal.test.tsx
+FAIL src/components/DeleteCourseModal.test.tsx
+  ● DeleteCourseModal tests › Clicking Clear Semesters button show a button labeled Delete All Courses
+
+    TestingLibraryElementError: Found multiple elements with the role "button" and name `/Delete All Courses/i`
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<button[39m
+      [33mclass[39m=[32m"btn btn-danger"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [0mDelete All Courses[0m
+    [36m</button>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<button[39m
+      [33mclass[39m=[32m"btn btn-danger"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [0mDelete All Courses[0m
+    [36m</button>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body[39m
+      [33mclass[39m=[32m"modal-open"[39m
+      [33mdata-rr-ui-modal-open[39m=[32m""[39m
+      [33mstyle[39m=[32m"padding-right: 2048px;"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-danger"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mDelete All Courses[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div />[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"fade modal-backdrop show"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-labelledby[39m=[32m"contained-modal-title-vcenter"[39m
+        [33maria-modal[39m=[32m"true"[39m
+        [33mclass[39m=[32m"fade modal show"[39m
+        [33mrole[39m=[32m"dialog"[39m
+        [33mstyle[39m=[32m"display: block; padding-right: 0px;"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"modal-dialog modal-lg modal-dialog-centered"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"modal-content"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-header"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"modal-title h4"[39m
+                [33mid[39m=[32m"contained-modal-title-vcenter"[39m
+              [36m>[39m
+                [0m⚠️[0m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-body"[39m
+            [36m>[39m
+              [36m<p>[39m
+                [0mAre you sure you want to delete all your classes this semester?[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-footer"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-danger"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mDelete All Courses[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-warning"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mCancel[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      56 |         });
+      57 |         DeleteButton.click();
+    > 58 |         const DeleteAllButton = screen.getByRole("button", {
+         |                                        ^
+      59 |             name: /Delete All Courses/i
+      60 |         });
+      61 |         DeleteAllButton.click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:25:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:29:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:66:13
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/DeleteCourseModal.test.tsx:58:40)
+
+  ● DeleteCourseModal tests › Clicking Clear Semesters button and Clicking a button labeled Delete All Courses
+
+    TestingLibraryElementError: Found multiple elements with the role "button" and name `/Delete All Courses/i`
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<button[39m
+      [33mclass[39m=[32m"btn btn-danger"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [0mDelete All Courses[0m
+    [36m</button>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<button[39m
+      [33mclass[39m=[32m"btn btn-danger"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [0mDelete All Courses[0m
+    [36m</button>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body[39m
+      [33mclass[39m=[32m"modal-open"[39m
+      [33mdata-rr-ui-modal-open[39m=[32m""[39m
+      [33mstyle[39m=[32m"padding-right: 2048px;"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-danger"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mDelete All Courses[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div />[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"fade modal-backdrop show"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-labelledby[39m=[32m"contained-modal-title-vcenter"[39m
+        [33maria-modal[39m=[32m"true"[39m
+        [33mclass[39m=[32m"fade modal show"[39m
+        [33mrole[39m=[32m"dialog"[39m
+        [33mstyle[39m=[32m"display: block; padding-right: 0px;"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"modal-dialog modal-lg modal-dialog-centered"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"modal-content"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-header"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"modal-title h4"[39m
+                [33mid[39m=[32m"contained-modal-title-vcenter"[39m
+              [36m>[39m
+                [0m⚠️[0m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-body"[39m
+            [36m>[39m
+              [36m<p>[39m
+                [0mAre you sure you want to delete all your classes this semester?[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-footer"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-danger"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mDelete All Courses[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-warning"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mCancel[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      68 |         });
+      69 |         DeleteButton.click();
+    > 70 |         const DeleteAllButton = screen.getByRole("button", {
+         |                                        ^
+      71 |             name: /Delete All Courses/i
+      72 |         });
+      73 |         DeleteAllButton.click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:25:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:29:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:66:13
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/DeleteCourseModal.test.tsx:70:40)
+
 PASS src/components/ClearSemesterModal.test.tsx
 PASS src/components/DeleteCourseWarningModalX.test.tsx
 PASS src/components/DeleteCourseWarningModal.test.tsx
-PASS src/components/DeleteSemester.test.tsx
 PASS src/components/editSemester.test.tsx
 PASS src/components/editPlan.test.tsx
 PASS src/components/greetingMessage.test.tsx
-PASS src/components/listCourses.test.tsx
+PASS src/components/DeleteSemester.test.tsx
 PASS src/components/viewSemester.test.tsx
 PASS src/components/DeletePlan.test.tsx
 PASS src/components/Carouse.test.tsx
-PASS src/components/viewRequirements.test.tsx
+PASS src/components/listCourses.test.tsx
+FAIL src/components/viewRequirements.test.tsx
+  ● ViewRequirements tests › There is a course in the table
+
+    TestingLibraryElementError: Unable to find an element with the text: CISC108: Introduction to Computer Science I. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<table[39m
+            [33mclass[39m=[32m"required table table-striped table-bordered table-hover"[39m
+          [36m>[39m
+            [36m<thead>[39m
+              [36m<tr>[39m
+                [36m<th>[39m
+                  [36m<div>[39m
+                    [0mCourse[0m
+                  [36m</div>[39m
+                [36m</th>[39m
+                [36m<th>[39m
+                  [36m<div>[39m
+                    [0mTaken?[0m
+                  [36m</div>[39m
+                [36m</th>[39m
+              [36m</tr>[39m
+            [36m</thead>[39m
+            [36m<tbody />[39m
+          [36m</table>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      13 |     });
+      14 |     test("There is a course in the table", () => {
+    > 15 |         const course = screen.getByText(
+         |                               ^
+      16 |             "CISC108: Introduction to Computer Science I"
+      17 |         );
+      18 |         expect(course).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/viewRequirements.test.tsx:15:31)
+      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
+      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
+      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
+      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
-All files                       |   52.29 |    21.87 |    43.8 |   51.65 |                   
+All files                       |   49.29 |    16.66 |   38.84 |   48.54 |                   
  src                            |       0 |        0 |       0 |       0 |                   
   App.tsx                       |       0 |        0 |       0 |       0 | 11-58             
- src/components                 |    54.8 |    23.33 |    46.9 |   53.96 |                   
+ src/components                 |   51.72 |    18.75 |   41.59 |   50.76 |                   
   Carouse.tsx                   |     100 |      100 |     100 |     100 |                   
   ClearSemesterModal.tsx        |     100 |      100 |     100 |     100 |                   
-  DeleteCourseModal.tsx         |     100 |      100 |     100 |     100 |                   
+  DeleteCourseModal.tsx         |   71.42 |      100 |      75 |   66.66 | 47-48             
   DeleteCourseWarningModal.tsx  |     100 |      100 |     100 |     100 |                   
   DeleteCourseWarningModalX.tsx |     100 |      100 |     100 |     100 |                   
   DeletePlan.tsx                |     100 |      100 |     100 |     100 |                   
-  DeleteSemester.tsx            |     100 |      100 |     100 |     100 |                   
+  DeleteSemester.tsx            |   58.33 |      100 |   28.57 |   58.33 | 29,38,47,57-58    
   EditCourseModal.tsx           |     100 |      100 |     100 |     100 |                   
   editPlan.tsx                  |     100 |      100 |     100 |     100 |                   
   editSemester.tsx              |     100 |      100 |     100 |     100 |                   
   greetingMessage.tsx           |     100 |      100 |     100 |     100 |                   
-  listCourses.tsx               |    20.4 |       10 |    4.34 |   20.83 | 53-135,163-260    
+  listCourses.tsx               |   20.93 |    16.66 |    4.76 |   21.42 | 54-117,145-242    
   listPlans.tsx                 |       0 |      100 |       0 |       0 | 18-43             
-  listSemesters.tsx             |       0 |        0 |       0 |       0 | 31-40             
-  viewFloatingCourses.tsx       |      10 |        0 |   16.66 |      10 | 31-77             
-  viewPlan.tsx                  |       0 |        0 |       0 |       0 | 12-108            
-  viewRequirements.tsx          |     100 |      100 |     100 |     100 |                   
-  viewSemester.tsx              |   11.76 |        0 |    8.33 |   11.76 | 27-76             
+  listSemesters.tsx             |       0 |        0 |       0 |       0 | 35-45             
+  viewFloatingCourses.tsx       |       0 |      100 |       0 |       0 | 18-55             
+  viewPlan.tsx                  |       0 |        0 |       0 |       0 | 13-116            
+  viewRequirements.tsx          |   33.33 |        0 |   33.33 |   33.33 | 27-34             
+  viewSemester.tsx              |   11.76 |      100 |    9.09 |   11.76 | 31-81             
  src/interfaces                 |       0 |        0 |       0 |       0 |                   
   course.ts                     |       0 |        0 |       0 |       0 |                   
   plan.ts                       |       0 |        0 |       0 |       0 |                   
   semester.ts                   |       0 |        0 |       0 |       0 |                   
 --------------------------------|---------|----------|---------|---------|-------------------
-
-Test Suites: 14 passed, 14 total
-Tests:       52 passed, 52 total
+Test Suites: 2 failed, 12 passed, 14 total
+Tests:       3 failed, 49 passed, 52 total
 Snapshots:   0 total
-Time:        11.671 s
+Time:        13.834 s
 Ran all test suites.
