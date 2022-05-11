@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Accordion, Table, Button } from "react-bootstrap";
+import { Accordion, Button, Table } from "react-bootstrap";
 import { Semester } from "../interfaces/semester";
 import { Course } from "../interfaces/course";
 import { ViewSemester } from "./viewSemester";

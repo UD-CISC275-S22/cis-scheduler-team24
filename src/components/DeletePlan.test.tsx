@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { DeletePlan } from "./deletePlan";
+import { DeletePlan } from "./DeletePlan";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
 import plans from "../data/plans.json";
@@ -22,20 +22,14 @@ const PLANS = plans.map(
 
 describe("DeletePlan tests", () => {
     beforeEach(() => {
-        render(
-            <DeletePlan
-                plan={PLANS[0]}
-                deletePlan={function (): void {
-                    throw new Error("Function not implemented.");
-                }}
-            />
-        );
+        render(<DeletePlan plan={PLANS[0]} deletePlan={() => []} />);
     });
 
     test("There is a delete button", () => {
         const deleteButton = screen.getByRole("button", {
             name: /✖️/i
         });
+        deleteButton.click();
         expect(deleteButton).toBeInTheDocument();
     });
 });

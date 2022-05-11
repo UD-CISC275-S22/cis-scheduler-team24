@@ -2,7 +2,7 @@ import React from "react";
 import { Nav, Tab, Button } from "react-bootstrap";
 import { ViewPlan } from "./viewPlan";
 import { Plan } from "../interfaces/plan";
-import { DeletePlan } from "./deletePlan";
+import { DeletePlan } from "./DeletePlan";
 
 export function ListPlans({
     plans,
@@ -34,7 +34,7 @@ export function ListPlans({
                     ))}
                     <Nav.Item>
                         <Button variant="outline-primary" onClick={addPlan}>
-                            Add Plan
+                            <div>Add Plan</div>
                         </Button>
                     </Nav.Item>
                 </Nav>

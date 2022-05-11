@@ -117,14 +117,13 @@ export function EditCourseModal({
     return (
         <div>
             <div style={{ display: "flex" }}>
-                <div>
+                <div onClick={handleShowAddModal}>
                     <Button
                         variant="success"
                         className="button-style-1"
-                        onClick={handleShowAddModal}
                         id="edit"
                     >
-                        Edit
+                        <div>Edit</div>
                     </Button>
                 </div>
                 <div>
@@ -235,14 +234,15 @@ export function EditCourseModal({
                                 removeCourse={removeCourse}
                             ></DeleteCourseWarningModal>
                         </div>
-                        <Button
-                            onClick={reset}
-                            variant="primary"
-                            className="me-4"
-                            disabled={!name}
-                        >
-                            Reset
-                        </Button>
+                        <div onClick={reset}>
+                            <Button
+                                variant="primary"
+                                className="me-4"
+                                disabled={!name}
+                            >
+                                <div>Reset</div>
+                            </Button>
+                        </div>
                     </Modal.Footer>
                 </Modal>
             </div>

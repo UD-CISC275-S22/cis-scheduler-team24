@@ -5,24 +5,36 @@ import { cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 describe("EditCourseModal tests", () => {
-    const examplecourse = {
-        id: 0,
-        name: "",
-        credits: 0,
-        description: "",
-        prerequisites: [],
-        isTaken: false,
-        isEditing: false,
-        isRequired: false,
-        breadthType: ""
-    };
-
     beforeEach(() => {
+        const examplecourse = {
+            id: 0,
+            name: "",
+            credits: 0,
+            description: "",
+            prerequisites: [],
+            isTaken: false,
+            isEditing: false,
+            isRequired: true,
+            breadthType: ""
+        };
+        const exampleRequiredCourses = [
+            {
+                id: 0,
+                name: "",
+                credits: 0,
+                description: "",
+                prerequisites: [],
+                isTaken: false,
+                isEditing: false,
+                isRequired: true,
+                breadthType: ""
+            }
+        ];
         render(
             <EditCourseModal
                 handleClose={() => []}
                 course={examplecourse}
-                requiredCourses={[]}
+                requiredCourses={exampleRequiredCourses}
                 editCourse={() => []}
                 deleteCourse={() => []}
                 setRequirements={() => []}
@@ -172,5 +184,86 @@ describe("EditCourseModal tests", () => {
         );
         userEvent.type(ControlCoursePrerequisities, "CISC108");
         expect(ControlCoursePrerequisities).toBeEnabled();
+    });
+
+    test("Cliking the save button and can be used", () => {
+        const EditCourseButton = screen.getAllByRole("button", {
+            name: /Edit/i
+        });
+        EditCourseButton[0].click();
+        const SaveButton = screen.getAllByRole("button", {
+            name: /Save/i
+        });
+        const ControlCoursename = screen.getByTestId("Edit Course name");
+        userEvent.type(ControlCoursename, "CISC275");
+        SaveButton[0].click();
+        expect(EditCourseButton[0]).toBeInTheDocument();
+    });
+
+    test("Cliking the require checkbox and can be used", () => {
+        const EditCourseButton = screen.getAllByRole("button", {
+            name: /Edit/i
+        });
+        EditCourseButton[0].click();
+        const RequireCheckbox = screen.getByRole("checkbox", {
+            name: /Required?/i
+        });
+        const SaveButton = screen.getAllByRole("button", {
+            name: /Save/i
+        });
+        RequireCheckbox.click();
+        const ControlCoursename = screen.getByTestId("Edit Course name");
+        userEvent.type(ControlCoursename, "CISC275");
+        SaveButton[0].click();
+
+        EditCourseButton[0].click();
+        RequireCheckbox.click();
+        SaveButton[0].click();
+
+        expect(EditCourseButton[0]).toBeInTheDocument();
+    });
+
+    test("Cliking the reset button and can be used", () => {
+        const EditCourseButton = screen.getAllByRole("button", {
+            name: /Edit/i
+        });
+        EditCourseButton[0].click();
+        const RequireCheckbox = screen.getByRole("checkbox", {
+            name: /Required?/i
+        });
+        const SaveButton = screen.getAllByRole("button", {
+            name: /Save/i
+        });
+        RequireCheckbox.click();
+        const ControlCoursename = screen.getByTestId("Edit Course name");
+        userEvent.type(ControlCoursename, "CISC275");
+        SaveButton[0].click();
+        EditCourseButton[0].click();
+        const ResetButton = screen.getByRole("button", {
+            name: /Reset/i
+        });
+        ResetButton.click();
+        expect(EditCourseButton[0]).toBeInTheDocument();
+    });
+
+    test("Cliking the require checkbox again and can be used", () => {
+        const EditCourseButton = screen.getAllByRole("button", {
+            name: /Edit/i
+        });
+        EditCourseButton[0].click();
+        const RequireCheckbox = screen.getAllByRole("checkbox", {
+            name: /Required?/i
+        });
+        RequireCheckbox[0].click();
+        const SaveButton = screen.getAllByRole("button", {
+            name: /Save/i
+        });
+        SaveButton[0].click();
+
+        EditCourseButton[0].click();
+        RequireCheckbox[0].click();
+        SaveButton[0].click();
+
+        expect(EditCourseButton[0]).toBeInTheDocument();
     });
 });
