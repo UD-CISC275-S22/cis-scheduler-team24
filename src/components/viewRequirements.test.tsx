@@ -1,23 +1,10 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { ViewRequirements } from "./viewRequirements";
-import { Course } from "../interfaces/course";
-import courses from "../data/course–book.json";
-
-const COURSES = courses.map(
-    (course): Course => ({
-        ...course,
-        prerequisites: course.prerequisites.map(Number)
-    })
-);
-
-const REQUIREMENTS = COURSES.filter(
-    (course: Course): boolean => course.isRequired
-);
 
 describe("ViewRequirements tests", () => {
     beforeEach(() => {
-        render(<ViewRequirements requirements={REQUIREMENTS} />);
+        render(<ViewRequirements requirements={[]} takenCourses={[]} />);
     });
 
     test("There is a Table", () => {

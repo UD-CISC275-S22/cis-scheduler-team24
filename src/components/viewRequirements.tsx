@@ -3,9 +3,11 @@ import { Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 
 export function ViewRequirements({
-    requirements
+    requirements,
+    takenCourses
 }: {
     requirements: Course[];
+    takenCourses: Course[];
 }): JSX.Element {
     return (
         <div>
@@ -21,10 +23,19 @@ export function ViewRequirements({
                     </tr>
                 </thead>
                 <tbody>
-                    {requirements.map((course: Course) => (
-                        <tr key={course.id}>
-                            <td>{course.name}</td>
-                            <td>{course.isTaken ? "✓" : "✗"}</td>
+                    {requirements.map((requirement: Course) => (
+                        <tr key={requirement.id}>
+                            <td>
+                                <td>{requirement.name}</td>
+                            </td>
+                            {takenCourses
+                                .map(
+                                    (takenCourse: Course): number =>
+                                        takenCourse.id
+                                )
+                                .includes(requirement.id)
+                                ? "✓"
+                                : "✗"}
                         </tr>
                     ))}
                 </tbody>

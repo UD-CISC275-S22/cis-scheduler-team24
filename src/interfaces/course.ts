@@ -6,8 +6,6 @@ export interface Course {
     credits: number;
     description: string;
     prerequisites: number[];
-    isTaken: boolean;
     isEditing: boolean;
-    isRequired: boolean;
     breadthType: string;
 }

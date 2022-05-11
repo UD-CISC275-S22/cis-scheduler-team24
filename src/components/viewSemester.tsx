@@ -10,16 +10,20 @@ export function ViewSemester({
     courses,
     floatingCourses,
     requiredCourses,
+    takenCourses,
     setFloats,
     setRequirements,
+    setTakenCourses,
     updateCourses
 }: {
     semester: Semester;
     courses: Course[];
     floatingCourses: Course[];
     requiredCourses: Course[];
+    takenCourses: Course[];
     setFloats: (courses: Course[]) => void;
     setRequirements: (courses: Course[]) => void;
+    setTakenCourses: (courses: Course[]) => void;
     updateCourses: (newCourse: Course) => void;
 }): JSX.Element {
     const [semesterCourses, setSemesterCourses] = useState<Course[]>(
@@ -32,21 +36,30 @@ export function ViewSemester({
         setFloats(
             floatingCourses.concat(
                 semesterCourses.map(
-                    (course: Course): Course => ({ ...course, isTaken: false })
+                    (course: Course): Course => ({
+                        ...course,
+                        prerequisites: course.prerequisites.map(Number)
+                    })
                 )
             )
         );
         setRequirements(
             requiredCourses.map(
-                (course: Course): Course =>
-                    semesterCourses
-                        .map((semCourse: Course): number => semCourse.id)
-                        .includes(course.id)
-                        ? { ...course, isTaken: false }
-                        : { ...course }
+                (course: Course): Course => ({
+                    ...course,
+                    prerequisites: course.prerequisites.map(Number)
+                })
             )
         );
         setSemesterCourses([]);
+        setTakenCourses(
+            takenCourses.filter(
+                (course: Course): boolean =>
+                    !semesterCourses
+                        .map((semCourse: Course): number => semCourse.id)
+                        .includes(course.id)
+            )
+        );
     }
 
     function Noskip(): void {
@@ -56,22 +69,14 @@ export function ViewSemester({
                     !semester.courses.includes(course.id)
             )
         );
-        setRequirements(
-            requiredCourses.map(
-                (course: Course): Course =>
-                    semesterCourses
-                        .map((semCourse: Course): number => semCourse.id)
-                        .includes(course.id)
-                        ? { ...course, isTaken: true }
-                        : { ...course }
-            )
-        );
+        setRequirements([...requiredCourses]);
         setSemesterCourses(
             courses.filter((course: Course): boolean =>
                 semester.courses.includes(course.id)
             )
         );
     }
+
     function updateSemesterCourses(newCourse: Course): void {
         setSemesterCourses([...semesterCourses, newCourse]);
     }
@@ -84,13 +89,15 @@ export function ViewSemester({
                         <tr>
                             <th>
                                 <ListCourses
-                                    semester={semester}
                                     allCourses={courses}
                                     semesterCourses={semesterCourses}
                                     floatingCourses={floatingCourses}
                                     requiredCourses={requiredCourses}
+                                    takenCourses={takenCourses}
                                     setFloats={setFloats}
                                     setRequirements={setRequirements}
+                                    setTakenCourses={setTakenCourses}
+                                    setSemesterCourses={setSemesterCourses}
                                     removeSemesterCourses={
                                         removeSemesterCourses
                                     }
