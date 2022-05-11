@@ -26,8 +26,10 @@ describe("viewSemester", () => {
             courses={[]}
             floatingCourses={[]}
             requiredCourses={[]}
+            takenCourses={[]}
             setFloats={() => []}
             setRequirements={() => []}
+            setTakenCourses={() => []}
             updateCourses={() => []}
         />
     );

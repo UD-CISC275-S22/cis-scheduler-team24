@@ -1,10 +1,8 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { DeleteSemester } from "./DeleteSemester";
-import { Course } from "../interfaces/course";
 import { Semester } from "../interfaces/semester";
 import { Plan } from "../interfaces/plan";
-import courses from "../data/course–book.json";
 import plans from "../data/plans.json";
 
 const PLANS = plans.map(
@@ -22,19 +20,6 @@ const PLANS = plans.map(
     })
 );
 
-const COURSES = courses.map(
-    (course): Course => ({
-        ...course,
-        prerequisites: course.prerequisites.map(Number)
-    })
-);
-
-const REQUIREMENTS = COURSES.filter(
-    (course: Course): boolean => course.isRequired
-);
-
-const FLOATING = COURSES.filter((course: Course): boolean => !course.isTaken);
-
 describe("DeleteSemester tests", () => {
     beforeEach(() => {
         render(
@@ -43,9 +28,11 @@ describe("DeleteSemester tests", () => {
                 removeSemester={() => []}
                 setFloats={() => []}
                 setRequirements={() => []}
-                courses={COURSES}
-                requiredCourses={REQUIREMENTS}
-                floatingCourses={FLOATING}
+                setTakenCourses={() => []}
+                courses={[]}
+                requiredCourses={[]}
+                floatingCourses={[]}
+                takenCourses={[]}
             />
         );
     });

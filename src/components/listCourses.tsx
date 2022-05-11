@@ -9,50 +9,38 @@ import {
     Row
 } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-import { Semester } from "../interfaces/semester";
 import { DeleteCourseModal } from "./DeleteCourseModal";
 import { EditCourseModal } from "./EditCourseModal";
-import { ViewFloatingCourses } from "./viewFloatingCourses";
 
 export function ListCourses({
-    semester,
     allCourses,
     semesterCourses,
     floatingCourses,
     requiredCourses,
+    takenCourses,
     setFloats,
     setRequirements,
+    setTakenCourses,
+    setSemesterCourses,
     removeSemesterCourses,
     updateCourses,
     updateSemesterCourses,
     Noskip
 }: {
-    semester: Semester;
     allCourses: Course[];
     semesterCourses: Course[];
     floatingCourses: Course[];
     requiredCourses: Course[];
+    takenCourses: Course[];
     setFloats: (courses: Course[]) => void;
     setRequirements: (courses: Course[]) => void;
+    setTakenCourses: (courses: Course[]) => void;
+    setSemesterCourses: (courses: Course[]) => void;
     removeSemesterCourses: () => void;
     updateCourses: (newCourse: Course) => void;
     updateSemesterCourses: (newCourse: Course) => void;
     Noskip: () => void;
 }): JSX.Element {
-    // if (semester.session === "Fall") {
-    //     const saveDataKey = "MY-PAGE-DATA";
-
-    //     let newsemesterCourses: Course[] = [...semesterCourses];
-
-    //     const previousData = localStorage.getItem(saveDataKey);
-
-    //     if (previousData !== null) {
-    //         newsemesterCourses = JSON.parse(previousData);
-    //     }
-    // } else {
-
-    // }
-    const [tableCourses, setTableCourses] = useState<Course[]>(semesterCourses);
     const [showAddModal, setShowAddModal] = useState(false);
     showAddModal;
     const [name, setName] = useState<string>("");
@@ -62,7 +50,7 @@ export function ListCourses({
 
     const handleCloseAddModal = () => setShowAddModal(false);
 
-    const Credits = tableCourses.reduce(
+    const Credits = semesterCourses.reduce(
         (currentTotal: number, course: Course) => currentTotal + course.credits,
         0
     );
@@ -72,8 +60,8 @@ export function ListCourses({
     // }
 
     function editCourse(id: number, newCourse: Course) {
-        setTableCourses(
-            tableCourses.map(
+        setSemesterCourses(
+            semesterCourses.map(
                 (course: Course): Course =>
                     course.id === id ? newCourse : course
             )
@@ -81,18 +69,15 @@ export function ListCourses({
     }
 
     function deleteCourse(doomedCourse: Course) {
-        setTableCourses(
-            tableCourses.filter(
+        setSemesterCourses(
+            semesterCourses.filter(
                 (course: Course): boolean => course.id !== doomedCourse.id
             )
         );
-        setFloats([...floatingCourses, { ...doomedCourse, isTaken: false }]);
-        setRequirements(
-            requiredCourses.map(
-                (course: Course): Course =>
-                    course.id === doomedCourse.id
-                        ? { ...course, isTaken: false }
-                        : { ...course }
+        setFloats([...floatingCourses, { ...doomedCourse }]);
+        setTakenCourses(
+            takenCourses.filter(
+                (course: Course): boolean => course.id !== doomedCourse.id
             )
         );
         setShowAddModal(false);
@@ -103,24 +88,10 @@ export function ListCourses({
             (course: Course): boolean => course.id === newCourse.id
         );
         if (existing === undefined) {
-            setTableCourses([...tableCourses, newCourse]);
+            setSemesterCourses([...semesterCourses, newCourse]);
             updateSemesterCourses(newCourse);
             updateCourses(newCourse);
         }
-    }
-
-    function addedCourse(newCourse: Course) {
-        setTableCourses([...tableCourses, newCourse]);
-        updateSemesterCourses(newCourse);
-        updateCourses(newCourse);
-        setRequirements(
-            requiredCourses.map(
-                (course: Course): Course =>
-                    course.id === newCourse.id
-                        ? { ...course, isTaken: true }
-                        : { ...course }
-            )
-        );
     }
 
     function saveAddChange() {
@@ -130,9 +101,7 @@ export function ListCourses({
             credits: parseInt(credits),
             description: description,
             prerequisites: prereqs.split(", ").map(Number),
-            isTaken: true,
             isEditing: false,
-            isRequired: false,
             breadthType: ""
         });
         setName("");
@@ -143,18 +112,18 @@ export function ListCourses({
     }
 
     function deleteAllCourse() {
-        setTableCourses([]);
+        setSemesterCourses([]);
         removeSemesterCourses();
     }
 
     function undeleteAllCourse() {
-        setTableCourses(semesterCourses);
+        setSemesterCourses(semesterCourses);
         Noskip();
     }
     return (
         <div>
             <Row>
-                <Col xs={12} md={10}>
+                <Col>
                     <div style={{ marginLeft: "auto" }}>
                         <span>
                             <Button onClick={deleteAllCourse}>skip!</Button>
@@ -171,12 +140,12 @@ export function ListCourses({
                                 <th>Course Name</th>
                                 <th>Course Description</th>
                                 <th>Course Credit</th>
-                                <th>Course Prerequisites (ID)</th>
+                                <th>Course Prerequisites</th>
                                 <th>Edit</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {tableCourses.map((course: Course) => (
+                            {semesterCourses.map((course: Course) => (
                                 <tr key={course.id}>
                                     <td>{course.name}</td>
                                     <td>{course.description}</td>
@@ -279,19 +248,6 @@ export function ListCourses({
                             }}
                         ></DeleteCourseModal>
                     </Container>
-                </Col>
-                <Col xs={6} md={2}>
-                    <div>
-                        <span data-testid="floating-text">
-                            Floating Courses:
-                        </span>
-                        <ViewFloatingCourses
-                            floatingCourses={floatingCourses}
-                            setFloats={setFloats}
-                            addedCourse={addedCourse}
-                            semester={semester}
-                        ></ViewFloatingCourses>
-                    </div>
                 </Col>
             </Row>
         </div>

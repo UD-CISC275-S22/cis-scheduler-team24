@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Accordion, Table, Button } from "react-bootstrap";
+import { Accordion, Button, Table } from "react-bootstrap";
 import { Semester } from "../interfaces/semester";
 import { Course } from "../interfaces/course";
 import { ViewSemester } from "./viewSemester";
@@ -10,22 +10,26 @@ export function ListSemesters({
     courses,
     floatingCourses,
     requiredCourses,
+    takenCourses,
     addSemester,
     removeSemester,
     setSemesterName,
     setFloats,
     setRequirements,
+    setTakenCourses,
     updateCourses
 }: {
     planSemesters: Semester[];
     courses: Course[];
     floatingCourses: Course[];
     requiredCourses: Course[];
+    takenCourses: Course[];
     addSemester: () => void;
     removeSemester: (id: number) => void;
     setSemesterName: (id: number, name: string) => void;
     setFloats: (courses: Course[]) => void;
     setRequirements: (courses: Course[]) => void;
+    setTakenCourses: (courses: Course[]) => void;
     updateCourses: (newCourse: Course) => void;
 }): JSX.Element {
     const [isEditing, setEditing] = useState<boolean>(false);
@@ -70,9 +74,11 @@ export function ListSemesters({
                                             removeSemester={removeSemester}
                                             setFloats={setFloats}
                                             setRequirements={setRequirements}
+                                            setTakenCourses={setTakenCourses}
                                             courses={courses}
                                             floatingCourses={floatingCourses}
                                             requiredCourses={requiredCourses}
+                                            takenCourses={takenCourses}
                                         ></DeleteSemester>
                                     </div>
                                 </span>
@@ -84,8 +90,10 @@ export function ListSemesters({
                                         courses={courses}
                                         floatingCourses={floatingCourses}
                                         requiredCourses={requiredCourses}
+                                        takenCourses={takenCourses}
                                         setFloats={setFloats}
                                         setRequirements={setRequirements}
+                                        setTakenCourses={setTakenCourses}
                                         updateCourses={updateCourses}
                                     ></ViewSemester>
                                 </div>

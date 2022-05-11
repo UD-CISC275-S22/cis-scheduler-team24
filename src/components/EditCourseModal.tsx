@@ -27,7 +27,11 @@ export function EditCourseModal({
     const [prereqs, setPrereqs] = useState<string>(
         course.prerequisites.map(String).join(", ")
     );
-    const [isRequired, setRequired] = useState<boolean>(course.isRequired);
+    const [isRequired, setRequired] = useState<boolean>(
+        requiredCourses
+            .map((course: Course): number => course.id)
+            .includes(course.id)
+    );
     const handleShowAddModal = () => setShowAddModal(true);
 
     const [resetname] = useState<string>(course.name);
@@ -36,7 +40,6 @@ export function EditCourseModal({
     const [resetprereqs] = useState<string>(
         course.prerequisites.map(String).join(", ")
     );
-    const [resetisRequired] = useState<boolean>(course.isRequired);
 
     function reset() {
         editCourse(course.id, {
@@ -44,8 +47,7 @@ export function EditCourseModal({
             name: resetname,
             description: resetdescription,
             credits: parseInt(resetcredits),
-            prerequisites: resetprereqs.split(", ").map(Number),
-            isRequired: resetisRequired
+            prerequisites: resetprereqs.split(", ").map(Number)
         });
         changeEditing();
         makeRequired();
@@ -53,7 +55,7 @@ export function EditCourseModal({
         setDescription(resetdescription);
         setCredits(resetcredits.toString());
         setPrereqs(resetprereqs);
-        setRequired(resetisRequired);
+        setRequired(requiredCourses.map(Number).includes(course.id));
         changeEditing();
     }
 
@@ -63,8 +65,7 @@ export function EditCourseModal({
             name: name,
             description: description,
             credits: parseInt(credits),
-            prerequisites: prereqs.split(", ").map(Number),
-            isRequired: isRequired
+            prerequisites: prereqs.split(", ").map(Number)
         });
         changeEditing();
         makeRequired();
@@ -79,15 +80,14 @@ export function EditCourseModal({
                     name: name,
                     description: description,
                     credits: parseInt(credits),
-                    prerequisites: prereqs.split(", ").map(Number),
-                    isRequired: isRequired,
-                    isTaken: true
+                    prerequisites: prereqs.split(", ").map(Number)
                 }
             ]);
         } else {
             setRequirements(
                 requiredCourses.filter(
-                    (reqCourse: Course): boolean => reqCourse.id !== course.id
+                    (requirement: Course): boolean =>
+                        course.id !== requirement.id
                 )
             );
         }
@@ -98,7 +98,6 @@ export function EditCourseModal({
         setDescription(course.description);
         setCredits(course.credits.toString());
         setPrereqs(course.prerequisites.map(String).join(", "));
-        setRequired(course.isRequired);
         changeEditing();
     }
 
@@ -118,14 +117,13 @@ export function EditCourseModal({
     return (
         <div>
             <div style={{ display: "flex" }}>
-                <div>
+                <div onClick={handleShowAddModal}>
                     <Button
                         variant="success"
                         className="button-style-1"
-                        onClick={handleShowAddModal}
                         id="edit"
                     >
-                        Edit
+                        <div>Edit</div>
                     </Button>
                 </div>
                 <div>
@@ -224,7 +222,6 @@ export function EditCourseModal({
                         >
                             Save
                         </Button>
-                        <Button onClick={() => removeCourse()}>Move</Button>
                         <Button
                             onClick={cancel}
                             variant="warning"
@@ -237,14 +234,15 @@ export function EditCourseModal({
                                 removeCourse={removeCourse}
                             ></DeleteCourseWarningModal>
                         </div>
-                        <Button
-                            onClick={reset}
-                            variant="primary"
-                            className="me-4"
-                            disabled={!name}
-                        >
-                            Reset
-                        </Button>
+                        <div onClick={reset}>
+                            <Button
+                                variant="primary"
+                                className="me-4"
+                                disabled={!name}
+                            >
+                                <div>Reset</div>
+                            </Button>
+                        </div>
                     </Modal.Footer>
                 </Modal>
             </div>

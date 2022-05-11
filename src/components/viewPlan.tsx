@@ -8,6 +8,7 @@ import { EditPlan } from "./editPlan";
 import courses from "../data/course–book.json";
 import { ClearSemesterModal } from "./ClearSemesterModal";
 import { ViewRequirements } from "./viewRequirements";
+import { ViewFloatingCourses } from "./viewFloatingCourses";
 
 const COURSES = courses.map(
     (course): Course => ({
@@ -37,6 +38,12 @@ export function ViewPlan({
             plan.requirements.includes(course.id)
         )
     );
+    const [takenCourses, setTakenCourses] = useState<Course[]>(
+        courses.filter((course: Course): boolean =>
+            plan.taken_courses.includes(course.id)
+        )
+    );
+
     function openEdit(): void {
         setEditing(!isEditing);
     }
@@ -70,7 +77,7 @@ export function ViewPlan({
             courses.map(
                 (course: Course): Course => ({
                     ...course,
-                    isTaken: false
+                    prerequisites: course.prerequisites.map(Number)
                 })
             )
         );
@@ -78,10 +85,11 @@ export function ViewPlan({
             requiredCourses.map(
                 (course: Course): Course => ({
                     ...course,
-                    isTaken: false
+                    prerequisites: course.prerequisites.map(Number)
                 })
             )
         );
+        setTakenCourses([]);
     }
 
     function setSemesterName(id: number, name: string): void {
@@ -109,7 +117,7 @@ export function ViewPlan({
         <div>
             <Container>
                 <Row>
-                    <Col>
+                    <Col sm={9}>
                         <Table striped borderless>
                             <thead>
                                 <tr>
@@ -163,11 +171,13 @@ export function ViewPlan({
                                             courses={courses}
                                             floatingCourses={floatingCourses}
                                             requiredCourses={requiredCourses}
+                                            takenCourses={takenCourses}
                                             addSemester={addSemester}
                                             removeSemester={removeSemester}
                                             setSemesterName={setSemesterName}
                                             setFloats={setFloats}
                                             setRequirements={setRequirements}
+                                            setTakenCourses={setTakenCourses}
                                             updateCourses={updateCourses}
                                         ></ListSemesters>
                                     </td>
@@ -178,13 +188,24 @@ export function ViewPlan({
                             clearSemesters={clearSemesters}
                         ></ClearSemesterModal>
                     </Col>
-                    <Col xs={2}>
+                    <Col sm={3}>
                         <div>
+                            <span data-testid="floating-text">
+                                Floating Courses:
+                            </span>
+                            <ViewFloatingCourses
+                                floatingCourses={floatingCourses}
+                                takenCourses={takenCourses}
+                                setFloats={setFloats}
+                                setTakenCourses={setTakenCourses}
+                                semesters={semesters}
+                            ></ViewFloatingCourses>
                             <span data-testid="required-text">
                                 Required Courses:
                             </span>
                             <ViewRequirements
                                 requirements={requiredCourses}
+                                takenCourses={takenCourses}
                             ></ViewRequirements>
                         </div>
                     </Col>
