@@ -53,6 +53,10 @@ export function ListCourses({
         0
     );
 
+    // function SaveData() {
+    //     localStorage.setItem(saveDataKey, JSON.stringify(tableCourses));
+    // }
+
     function editCourse(id: number, newCourse: Course) {
         setSemesterCourses(
             semesterCourses.map(
@@ -219,6 +223,7 @@ export function ListCourses({
                     </Table>
                     <Container>
                         <div>Total Credits: {Credits}</div>
+                        {/* <Button onClick={SaveData}>Save</Button> */}
                     </Container>
                     <Container>
                         <DeleteCourseModal
