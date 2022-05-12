@@ -24,8 +24,7 @@ export function ListCourses({
     setSemesterCourses,
     removeSemesterCourses,
     updateCourses,
-    updateSemesterCourses,
-    Noskip
+    updateSemesterCourses
 }: {
     allCourses: Course[];
     semesterCourses: Course[];
@@ -39,7 +38,6 @@ export function ListCourses({
     removeSemesterCourses: () => void;
     updateCourses: (newCourse: Course) => void;
     updateSemesterCourses: (newCourse: Course) => void;
-    Noskip: () => void;
 }): JSX.Element {
     const [showAddModal, setShowAddModal] = useState(false);
     showAddModal;
@@ -116,24 +114,10 @@ export function ListCourses({
         removeSemesterCourses();
     }
 
-    function undeleteAllCourse() {
-        setSemesterCourses(semesterCourses);
-        Noskip();
-    }
     return (
         <div>
             <Row>
                 <Col>
-                    <div style={{ marginLeft: "auto" }}>
-                        <span>
-                            <Button onClick={deleteAllCourse}>skip!</Button>
-                            <span>
-                                <Button onClick={undeleteAllCourse}>
-                                    Undo!
-                                </Button>
-                            </span>
-                        </span>
-                    </div>
                     <Table striped bordered hover>
                         <thead>
                             <tr>

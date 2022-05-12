@@ -17,7 +17,6 @@ describe("listCourses", () => {
             removeSemesterCourses={() => []}
             updateCourses={() => []}
             updateSemesterCourses={() => []}
-            Noskip={() => []}
         />
     );
     test("test the button", () => {
