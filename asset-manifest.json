@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/cis-scheduler-team24/static/css/main.527661c8.css",
-    "main.js": "/cis-scheduler-team24/static/js/main.0c6d4797.js",
+    "main.css": "/cis-scheduler-team24/static/css/main.f9c6a24f.css",
+    "main.js": "/cis-scheduler-team24/static/js/main.8684f8a4.js",
     "static/js/787.4ef7427d.chunk.js": "/cis-scheduler-team24/static/js/787.4ef7427d.chunk.js",
     "index.html": "/cis-scheduler-team24/index.html",
-    "main.527661c8.css.map": "/cis-scheduler-team24/static/css/main.527661c8.css.map",
-    "main.0c6d4797.js.map": "/cis-scheduler-team24/static/js/main.0c6d4797.js.map",
+    "main.f9c6a24f.css.map": "/cis-scheduler-team24/static/css/main.f9c6a24f.css.map",
+    "main.8684f8a4.js.map": "/cis-scheduler-team24/static/js/main.8684f8a4.js.map",
     "787.4ef7427d.chunk.js.map": "/cis-scheduler-team24/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.527661c8.css",
-    "static/js/main.0c6d4797.js"
+    "static/css/main.f9c6a24f.css",
+    "static/js/main.8684f8a4.js"
   ]
 }

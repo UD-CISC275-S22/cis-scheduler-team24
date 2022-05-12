@@ -294,10 +294,10 @@ FAIL src/components/viewRequirements.test.tsx
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
-All files                       |   49.29 |    16.66 |   38.84 |   48.54 |                   
+All files                       |   48.85 |    18.18 |    38.4 |   48.11 |                   
  src                            |       0 |        0 |       0 |       0 |                   
   App.tsx                       |       0 |        0 |       0 |       0 | 11-58             
- src/components                 |   51.72 |    18.75 |   41.59 |   50.76 |                   
+ src/components                 |   51.19 |       20 |   41.02 |   50.24 |                   
   Carouse.tsx                   |     100 |      100 |     100 |     100 |                   
   ClearSemesterModal.tsx        |     100 |      100 |     100 |     100 |                   
   DeleteCourseModal.tsx         |   71.42 |      100 |      75 |   66.66 | 47-48             
@@ -309,13 +309,14 @@ All files                       |   49.29 |    16.66 |   38.84 |   48.54 |
   editPlan.tsx                  |     100 |      100 |     100 |     100 |                   
   editSemester.tsx              |     100 |      100 |     100 |     100 |                   
   greetingMessage.tsx           |     100 |      100 |     100 |     100 |                   
-  listCourses.tsx               |   20.93 |    16.66 |    4.76 |   21.42 | 54-117,145-242    
+  listCourses.tsx               |   21.95 |    16.66 |       5 |    22.5 | 52-110,129-226    
   listPlans.tsx                 |       0 |      100 |       0 |       0 | 18-43             
   listSemesters.tsx             |       0 |        0 |       0 |       0 | 35-45             
+  skipSemester.tsx              |    8.33 |        0 |    12.5 |    8.33 | 23-49             
   viewFloatingCourses.tsx       |       0 |      100 |       0 |       0 | 18-55             
   viewPlan.tsx                  |       0 |        0 |       0 |       0 | 13-116            
   viewRequirements.tsx          |   33.33 |        0 |   33.33 |   33.33 | 27-34             
-  viewSemester.tsx              |   11.76 |      100 |    9.09 |   11.76 | 31-81             
+  viewSemester.tsx              |   23.07 |       50 |    12.5 |   23.07 | 32,39-69          
  src/interfaces                 |       0 |        0 |       0 |       0 |                   
   course.ts                     |       0 |        0 |       0 |       0 |                   
   plan.ts                       |       0 |        0 |       0 |       0 |                   
@@ -324,5 +325,5 @@ All files                       |   49.29 |    16.66 |   38.84 |   48.54 |
 Test Suites: 2 failed, 12 passed, 14 total
 Tests:       3 failed, 49 passed, 52 total
 Snapshots:   0 total
-Time:        13.834 s
+Time:        15.291 s
 Ran all test suites.
