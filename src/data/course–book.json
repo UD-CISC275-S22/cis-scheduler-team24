@@ -5,9 +5,7 @@
         "credits": 3,
         "description": "Python",
         "prerequisites": [],
-        "isTaken": true,
         "isEditing": false,
-        "isRequired": true,
         "breadthType": "D"
     },
     {
@@ -16,9 +14,7 @@
         "credits": 2,
         "description": "Dumb class",
         "prerequisites": [],
-        "isTaken": true,
         "isEditing": false,
-        "isRequired": true,
         "breadthType": "D"
     },
     {
@@ -27,9 +23,7 @@
         "credits": 3,
         "description": "Base required english class",
         "prerequisites": [],
-        "isTaken": true,
         "isEditing": false,
-        "isRequired": true,
         "breadthType": "B"
     },
     {
@@ -38,9 +32,7 @@
         "credits": 4,
         "description": "It's calc.",
         "prerequisites": [],
-        "isTaken": true,
         "isEditing": false,
-        "isRequired": true,
         "breadthType": "D"
     },
     {
@@ -49,9 +41,7 @@
         "credits": 4,
         "description": "Rocks for Jocks",
         "prerequisites": [],
-        "isTaken": true,
         "isEditing": false,
-        "isRequired": true,
         "breadthType": "D"
     },
     {
@@ -60,9 +50,7 @@
         "credits": 3,
         "description": "Bash and C",
         "prerequisites": [1],
-        "isTaken": true,
         "isEditing": false,
-        "isRequired": true,
         "breadthType": "D"
     },
     {
@@ -71,9 +59,7 @@
         "credits": 3,
         "description": "Java",
         "prerequisites": [1],
-        "isTaken": true,
         "isEditing": false,
-        "isRequired": true,
         "breadthType": "D"
     },
     {
@@ -82,9 +68,7 @@
         "credits": 4,
         "description": "This one's exciting cause it has more lava",
         "prerequisites": [],
-        "isTaken": true,
         "isEditing": false,
-        "isRequired": true,
         "breadthType": "D"
     },
     {
@@ -93,9 +77,7 @@
         "credits": 4,
         "description": "Annoying math class",
         "prerequisites": [4],
-        "isTaken": true,
         "isEditing": false,
-        "isRequired": true,
         "breadthType": "D"
     },
     {
@@ -104,9 +86,7 @@
         "credits": 3,
         "description": "Ya like jazz?",
         "prerequisites": [],
-        "isTaken": true,
         "isEditing": false,
-        "isRequired": false,
         "breadthType": "B"
     },
     {
@@ -115,9 +95,7 @@
         "credits": 3,
         "description": "A brief overview of the American government",
         "prerequisites": [],
-        "isTaken": false,
         "isEditing": false,
-        "isRequired": false,
         "breadthType": "C"
     },
     {
@@ -126,9 +104,7 @@
         "credits": 3,
         "description": "A brief overview of global politics",
         "prerequisites": [11],
-        "isTaken": false,
         "isEditing": false,
-        "isRequired": false,
         "breadthType": "C"
     },
     {
@@ -137,9 +113,7 @@
         "credits": 3,
         "description": "A brief overview of global politics",
         "prerequisites": [],
-        "isTaken": false,
         "isEditing": false,
-        "isRequired": false,
         "breadthType": "C"
     },
     {
@@ -148,9 +122,7 @@
         "credits": 3,
         "description": "Writing for technology or whatever",
         "prerequisites": [],
-        "isTaken": false,
         "isEditing": false,
-        "isRequired": false,
         "breadthType": "B"
     },
     {
@@ -159,9 +131,7 @@
         "credits": 3,
         "description": "This is for the big kids",
         "prerequisites": [],
-        "isTaken": false,
         "isEditing": false,
-        "isRequired": true,
         "breadthType": "D"
     }
 ]
