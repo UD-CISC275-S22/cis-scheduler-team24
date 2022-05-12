@@ -5,7 +5,7 @@ import { cleanup } from "@testing-library/react";
 
 describe("DeleteCourseModal tests", () => {
     beforeEach(() => {
-        render(<DeleteCourseModal deletCourse={() => []} />);
+        render(<DeleteCourseModal deleteCourse={() => []} />);
     });
 
     afterEach(cleanup);
