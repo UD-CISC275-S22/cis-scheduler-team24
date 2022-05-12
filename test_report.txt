@@ -294,9 +294,9 @@ FAIL src/components/viewRequirements.test.tsx
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
-All files                       |   48.85 |    18.18 |    38.4 |   48.11 |                   
+All files                       |   44.58 |    18.18 |   37.79 |   43.96 |                   
  src                            |       0 |        0 |       0 |       0 |                   
-  App.tsx                       |       0 |        0 |       0 |       0 | 11-58             
+  App.tsx                       |       0 |        0 |       0 |       0 | 13-118            
  src/components                 |   51.19 |       20 |   41.02 |   50.24 |                   
   Carouse.tsx                   |     100 |      100 |     100 |     100 |                   
   ClearSemesterModal.tsx        |     100 |      100 |     100 |     100 |                   
@@ -309,7 +309,7 @@ All files                       |   48.85 |    18.18 |    38.4 |   48.11 |
   editPlan.tsx                  |     100 |      100 |     100 |     100 |                   
   editSemester.tsx              |     100 |      100 |     100 |     100 |                   
   greetingMessage.tsx           |     100 |      100 |     100 |     100 |                   
-  listCourses.tsx               |   21.95 |    16.66 |       5 |    22.5 | 52-110,129-226    
+  listCourses.tsx               |   21.95 |    16.66 |       5 |    22.5 | 52-114,133-231    
   listPlans.tsx                 |       0 |      100 |       0 |       0 | 18-43             
   listSemesters.tsx             |       0 |        0 |       0 |       0 | 35-45             
   skipSemester.tsx              |    8.33 |        0 |    12.5 |    8.33 | 23-49             
@@ -325,5 +325,5 @@ All files                       |   48.85 |    18.18 |    38.4 |   48.11 |
 Test Suites: 2 failed, 12 passed, 14 total
 Tests:       3 failed, 49 passed, 52 total
 Snapshots:   0 total
-Time:        12.976 s
+Time:        14.283 s
 Ran all test suites.
