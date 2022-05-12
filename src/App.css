@@ -105,3 +105,8 @@
     text-align: left;
     padding: 15px;
 }
+
+.skip-button {
+    text-align: start;
+    padding: 15px;
+}
