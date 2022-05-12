@@ -4,6 +4,7 @@ import { Container, Table } from "react-bootstrap";
 import { Semester } from "../interfaces/semester";
 import { Course } from "../interfaces/course";
 import { ListCourses } from "./listCourses";
+import { SkipSemester } from "./skipSemester";
 
 export function ViewSemester({
     semester,
@@ -31,6 +32,8 @@ export function ViewSemester({
             semester.courses.includes(course.id)
         )
     );
+
+    const [isSkipped, setSkipped] = useState<boolean>(false);
 
     function removeSemesterCourses(): void {
         setFloats(
@@ -62,21 +65,6 @@ export function ViewSemester({
         );
     }
 
-    function Noskip(): void {
-        setFloats(
-            floatingCourses.filter(
-                (course: Course): boolean =>
-                    !semester.courses.includes(course.id)
-            )
-        );
-        setRequirements([...requiredCourses]);
-        setSemesterCourses(
-            courses.filter((course: Course): boolean =>
-                semester.courses.includes(course.id)
-            )
-        );
-    }
-
     function updateSemesterCourses(newCourse: Course): void {
         setSemesterCourses([...semesterCourses, newCourse]);
     }
@@ -88,25 +76,37 @@ export function ViewSemester({
                     <thead>
                         <tr>
                             <th>
-                                <ListCourses
-                                    allCourses={courses}
+                                <SkipSemester
+                                    isSkipped={isSkipped}
                                     semesterCourses={semesterCourses}
                                     floatingCourses={floatingCourses}
-                                    requiredCourses={requiredCourses}
                                     takenCourses={takenCourses}
+                                    setSkipped={setSkipped}
                                     setFloats={setFloats}
-                                    setRequirements={setRequirements}
                                     setTakenCourses={setTakenCourses}
-                                    setSemesterCourses={setSemesterCourses}
-                                    removeSemesterCourses={
-                                        removeSemesterCourses
-                                    }
-                                    updateCourses={updateCourses}
-                                    updateSemesterCourses={
-                                        updateSemesterCourses
-                                    }
-                                    Noskip={Noskip}
-                                ></ListCourses>
+                                ></SkipSemester>
+                                {isSkipped ? (
+                                    <div></div>
+                                ) : (
+                                    <ListCourses
+                                        allCourses={courses}
+                                        semesterCourses={semesterCourses}
+                                        floatingCourses={floatingCourses}
+                                        requiredCourses={requiredCourses}
+                                        takenCourses={takenCourses}
+                                        setFloats={setFloats}
+                                        setRequirements={setRequirements}
+                                        setTakenCourses={setTakenCourses}
+                                        setSemesterCourses={setSemesterCourses}
+                                        removeSemesterCourses={
+                                            removeSemesterCourses
+                                        }
+                                        updateCourses={updateCourses}
+                                        updateSemesterCourses={
+                                            updateSemesterCourses
+                                        }
+                                    ></ListCourses>
+                                )}
                             </th>
                         </tr>
                     </thead>
