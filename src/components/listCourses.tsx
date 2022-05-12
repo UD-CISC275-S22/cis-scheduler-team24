@@ -222,7 +222,7 @@ export function ListCourses({
                     </Container>
                     <Container>
                         <DeleteCourseModal
-                            deletCourse={() => {
+                            deleteCourse={() => {
                                 deleteAllCourse();
                             }}
                         ></DeleteCourseModal>
