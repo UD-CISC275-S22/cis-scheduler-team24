@@ -294,9 +294,9 @@ FAIL src/components/viewRequirements.test.tsx
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
-All files                       |   44.58 |    18.18 |   37.79 |   43.96 |                   
+All files                       |   38.76 |    16.66 |    37.2 |   38.93 |                   
  src                            |       0 |        0 |       0 |       0 |                   
-  App.tsx                       |       0 |        0 |       0 |       0 | 13-118            
+  App.tsx                       |       0 |        0 |       0 |       0 | 13-205            
  src/components                 |   51.19 |       20 |   41.02 |   50.24 |                   
   Carouse.tsx                   |     100 |      100 |     100 |     100 |                   
   ClearSemesterModal.tsx        |     100 |      100 |     100 |     100 |                   
@@ -325,5 +325,5 @@ All files                       |   44.58 |    18.18 |   37.79 |   43.96 |
 Test Suites: 2 failed, 12 passed, 14 total
 Tests:       3 failed, 49 passed, 52 total
 Snapshots:   0 total
-Time:        14.283 s
+Time:        11.799 s
 Ran all test suites.
