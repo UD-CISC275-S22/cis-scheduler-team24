@@ -99,6 +99,90 @@ function App(): JSX.Element {
         document.body.removeChild(link);
     };
 
+    const exportPlanCSV = (plans: Array<Plan>) => {
+        let str =
+            "id, name, , , , semesters, ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , , , , , requirements, taken_courses, floating_courses";
+
+        for (let i = 0; i < plans.length; i++) {
+            const data = plans[i];
+            str += i + "," + "\n";
+            str += data.id + ",";
+            str += data.name.replace(",", "-") + ",";
+            for (let j = 0; j < data.semesters.length; j++) {
+                if (j < 1) {
+                    str +=
+                        "," +
+                        "," +
+                        "," +
+                        "," +
+                        "," +
+                        data.semesters[j].id +
+                        "," +
+                        data.semesters[j].name +
+                        "," +
+                        data.semesters[j].year +
+                        "," +
+                        data.semesters[j].session +
+                        "," +
+                        data.semesters[j].courses +
+                        "," +
+                        data.semesters[j].totalCredits +
+                        "," +
+                        data.semesters[j].isSkipped +
+                        "," +
+                        "\n";
+                } else {
+                    str +=
+                        "," +
+                        "," +
+                        "," +
+                        "," +
+                        "," +
+                        "," +
+                        "," +
+                        data.semesters[j].id +
+                        "," +
+                        data.semesters[j].name +
+                        "," +
+                        data.semesters[j].year +
+                        "," +
+                        data.semesters[j].session +
+                        "," +
+                        data.semesters[j].courses +
+                        "," +
+                        data.semesters[j].totalCredits +
+                        "," +
+                        data.semesters[j].isSkipped +
+                        "," +
+                        "\n";
+                }
+            }
+            for (let l = 0; l < 21; l++) {
+                str += ",";
+            }
+            for (let k = 0; k < data.requirements.length; k++) {
+                str += data.requirements[k] + "-";
+            }
+            str += ",";
+            for (let f = 0; f < data.taken_courses.length; f++) {
+                str += data.taken_courses[f] + "-";
+            }
+            str += ",";
+            for (let u = 0; u < data.floating_courses.length; u++) {
+                str += data.floating_courses[u] + "-";
+            }
+            str += "\n";
+        }
+        const uri =
+            "data:text/csv;charaset=utf-8,\ufeff" + encodeURIComponent(str);
+        const link = document.createElement("a");
+        link.href = uri;
+        link.download = "plans";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <div className="App">
             <Carouse></Carouse>
@@ -116,7 +200,10 @@ function App(): JSX.Element {
                 </Row>
                 <div>
                     <Button onClick={() => exportCSV(coursebook)}>
-                        Download courses
+                        Download courses refeneces
+                    </Button>
+                    <Button onClick={() => exportPlanCSV(plans)}>
+                        Download plans
                     </Button>{" "}
                 </div>
             </div>
