@@ -87,7 +87,6 @@ function App(): JSX.Element {
         <div className="App">
             <Carouse></Carouse>
             <GreetingMessage></GreetingMessage>
-            <ExportPlans courses={courses} plans={plans}></ExportPlans>
             <div>
                 <Row>
                     <Col>
@@ -102,6 +101,7 @@ function App(): JSX.Element {
                     </Col>
                 </Row>
             </div>
+            <ExportPlans courses={courses} plans={plans}></ExportPlans>
         </div>
     );
 }

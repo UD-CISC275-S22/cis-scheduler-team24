@@ -120,11 +120,21 @@ export function ExportPlans({
     };
 
     return (
-        <div>
-            <Button onClick={() => exportCSV(courses)}>
-                Download courses refeneces
+        <div className="export-button">
+            <Button
+                variant="secondary"
+                style={{ margin: "5px" }}
+                onClick={() => exportCSV(courses)}
+            >
+                Download all courses
             </Button>
-            <Button onClick={() => exportPlanCSV(plans)}>Download plans</Button>{" "}
+            <Button
+                variant="secondary"
+                style={{ margin: "5px" }}
+                onClick={() => exportPlanCSV(plans)}
+            >
+                Download all plans
+            </Button>
         </div>
     );
 }
