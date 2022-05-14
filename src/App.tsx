@@ -2,11 +2,21 @@ import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import "./App.css";
 import { Plan } from "./interfaces/plan";
+import { Course } from "./interfaces/course";
 import { Semester } from "./interfaces/semester";
 import { ListPlans } from "./components/listPlans";
 import { Carouse } from "./components/Carouse";
 import { GreetingMessage } from "./components/greetingMessage";
+import { ExportPlans } from "./components/exportPlans";
+import courses from "./data/course–book.json";
 import plans from "./data/plans.json";
+
+const COURSES = courses.map(
+    (course): Course => ({
+        ...course,
+        prerequisites: course.prerequisites.map(Number)
+    })
+);
 
 const PLANS = plans.map(
     (plan): Plan => ({
@@ -32,6 +42,7 @@ const PLANS = plans.map(
 
 function App(): JSX.Element {
     const [plans, setPlans] = useState<Plan[]>(PLANS);
+    const [courses, setCourses] = useState<Course[]>(COURSES);
 
     function addPlan(): void {
         setPlans([
@@ -76,11 +87,14 @@ function App(): JSX.Element {
         <div className="App">
             <Carouse></Carouse>
             <GreetingMessage></GreetingMessage>
+            <ExportPlans courses={courses} plans={plans}></ExportPlans>
             <div>
                 <Row>
                     <Col>
                         <ListPlans
+                            courses={courses}
                             plans={plans}
+                            setCourses={setCourses}
                             addPlan={addPlan}
                             deletePlan={deletePlan}
                             setPlanName={setPlanName}
