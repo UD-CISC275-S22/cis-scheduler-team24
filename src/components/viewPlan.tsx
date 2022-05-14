@@ -5,26 +5,21 @@ import { Semester } from "../interfaces/semester";
 import { Course } from "../interfaces/course";
 import { ListSemesters } from "./listSemesters";
 import { EditPlan } from "./editPlan";
-import courses from "../data/course–book.json";
 import { ClearSemesterModal } from "./ClearSemesterModal";
 import { ViewRequirements } from "./viewRequirements";
 import { ViewFloatingCourses } from "./viewFloatingCourses";
 
-const COURSES = courses.map(
-    (course): Course => ({
-        ...course,
-        prerequisites: course.prerequisites.map(Number)
-    })
-);
-
 export function ViewPlan({
+    courses,
     plan,
+    setCourses,
     setPlanName
 }: {
+    courses: Course[];
     plan: Plan;
+    setCourses: (courses: Course[]) => void;
     setPlanName: (id: number, name: string) => void;
 }): JSX.Element {
-    const [courses, setCourses] = useState<Course[]>(COURSES);
     const [semesters, setSemesters] = useState<Semester[]>(plan.semesters);
     const [isEditing, setEditing] = useState<boolean>(false);
 

@@ -54,6 +54,20 @@ export function GreetingMessage(): JSX.Element {
                                                 to its name.
                                             </Accordion.Body>
                                         </Accordion.Item>
+                                        <Accordion.Item eventKey="p4">
+                                            <Accordion.Header>
+                                                How can download my plans and
+                                                courses?
+                                            </Accordion.Header>
+                                            <Accordion.Body>
+                                                You can download your plans and
+                                                courses by scrolling to the
+                                                bottom of the page and using the
+                                                &quot;Download all plans&quot;
+                                                and &quot;Download all
+                                                courses&quot; buttons.
+                                            </Accordion.Body>
+                                        </Accordion.Item>
                                     </Accordion.Body>
                                 </Accordion.Item>
                             </Accordion>
