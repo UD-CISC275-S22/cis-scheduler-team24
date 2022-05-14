@@ -3,5 +3,5 @@
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "workbench.preferredDarkColorTheme": "Default Dark+",
-    "workbench.colorTheme": "Visual Studio Light"
+    "workbench.colorTheme": "Visual Studio Dark - C++"
 }

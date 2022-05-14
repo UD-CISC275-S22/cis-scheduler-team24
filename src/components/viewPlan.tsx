@@ -5,10 +5,11 @@ import { Semester } from "../interfaces/semester";
 import { Course } from "../interfaces/course";
 import { ListSemesters } from "./listSemesters";
 import { EditPlan } from "./editPlan";
-import courses from "../data/course–book.json";
 import { ClearSemesterModal } from "./ClearSemesterModal";
 import { ViewRequirements } from "./viewRequirements";
 import { ViewFloatingCourses } from "./viewFloatingCourses";
+import { ExportPlans } from "./exportPlans";
+import courses from "../data/course–book.json";
 
 const COURSES = courses.map(
     (course): Course => ({
@@ -19,9 +20,11 @@ const COURSES = courses.map(
 
 export function ViewPlan({
     plan,
+    plans,
     setPlanName
 }: {
     plan: Plan;
+    plans: Plan[];
     setPlanName: (id: number, name: string) => void;
 }): JSX.Element {
     const [courses, setCourses] = useState<Course[]>(COURSES);
@@ -156,6 +159,12 @@ export function ViewPlan({
                                                                 </h3>
                                                             </div>
                                                         )}
+                                                    </div>
+                                                    <div>
+                                                        <ExportPlans
+                                                            courses={courses}
+                                                            plans={plans}
+                                                        ></ExportPlans>
                                                     </div>
                                                 </Container>
                                             </Stack>

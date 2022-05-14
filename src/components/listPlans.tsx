@@ -43,6 +43,7 @@ export function ListPlans({
                         <Tab.Pane key={plan.id} eventKey={plan.id}>
                             <ViewPlan
                                 plan={plan}
+                                plans={plans}
                                 setPlanName={setPlanName}
                             ></ViewPlan>
                         </Tab.Pane>
