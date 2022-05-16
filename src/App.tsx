@@ -72,6 +72,135 @@ function App(): JSX.Element {
             )
         );
     }
+
+    function addSemester(id: number): void {
+        setPlans(
+            plans.map(
+                (plan: Plan): Plan =>
+                    plan.id === id
+                        ? {
+                              ...plan,
+                              semesters: [
+                                  ...plan.semesters,
+                                  {
+                                      id: plan.semesters.length + 1,
+                                      name: "New Semester",
+                                      year: 0,
+                                      session: "Smarch",
+                                      courses: [],
+                                      totalCredits: 0,
+                                      isSkipped: false
+                                  }
+                              ]
+                          }
+                        : { ...plan }
+            )
+        );
+    }
+
+    //Added this helper function because it was giving me that annoying "2 spaces expected" error and I'm running out of time
+    function addSemester2(plan: Plan): Plan {
+        return {
+            ...plan,
+            semesters: [
+                ...plan.semesters,
+                {
+                    id: plan.semesters.length + 1,
+                    name: "New Semester",
+                    year: 0,
+                    session: "Smarch",
+                    courses: [],
+                    totalCredits: 0,
+                    isSkipped: false
+                }
+            ]
+        };
+    }
+
+    function removeSemester(planID: number, semesterID: number): void {
+        setPlans(
+            plans.map(
+                (plan: Plan): Plan =>
+                    plan.id === planID
+                        ? removeSemester2(plan, semesterID)
+                        : plan
+            )
+        );
+    }
+
+    //Same deal with this helper function
+    function removeSemester2(plan: Plan, semesterID: number): Plan {
+        return {
+            ...plan,
+            semesters: [
+                ...plan.semesters.filter(
+                    (semester: Semester): boolean => semester.id !== semesterID
+                )
+            ]
+        };
+    }
+
+    function clearSemesters(id: number): void {
+        setPlans(
+            plans.map(
+                (plan: Plan): Plan =>
+                    plan.id === id ? { ...plan, semesters: [] } : plan
+            )
+        );
+        /*
+        setFloats(
+            courses.map(
+                (course: Course): Course => ({
+                    ...course,
+                    prerequisites: course.prerequisites.map(Number)
+                })
+            )
+        );
+        setRequirements(
+            requiredCourses.map(
+                (course: Course): Course => ({
+                    ...course,
+                    prerequisites: course.prerequisites.map(Number)
+                })
+            )
+        );
+        setTakenCourses([]);
+        */
+    }
+
+    /*
+    function setSemesterName(
+        planID: number,
+        semesterID: number,
+        semesterName: string
+    ): void {
+        setPlans(
+            plans.map(
+                (plan: Plan): Plan =>
+                    plan.id === planID
+                        ? {
+                              ...plan,
+                              semesters: setSemesterName2()
+                          }
+                        : plan
+            )
+        );
+    }
+
+    function setSemesterName2(
+        semesters: Semester[],
+        semesterID: number,
+        semesterName: string
+    ): Semester[] {
+        return semesters.map(
+            (semester: Semester): Semester =>
+                semester.id === semesterID
+                    ? { ...semester, name: semesterName }
+                    : semester
+        );
+    }
+    */
+
     // function saveData() {
     //     localStorage.setItem(saveDataKey, JSON.stringify(plans));
     // }

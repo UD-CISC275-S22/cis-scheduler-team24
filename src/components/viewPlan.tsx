@@ -43,6 +43,7 @@ export function ViewPlan({
         setEditing(!isEditing);
     }
 
+    /*
     function addSemester(): void {
         setSemesters([
             ...semesters,
@@ -86,6 +87,7 @@ export function ViewPlan({
         );
         setTakenCourses([]);
     }
+    */
 
     function setSemesterName(id: number, name: string): void {
         setSemesters(
@@ -191,8 +193,10 @@ export function ViewPlan({
                             <ViewFloatingCourses
                                 floatingCourses={floatingCourses}
                                 takenCourses={takenCourses}
+                                semesterCourses={semesterCourses}
                                 setFloats={setFloats}
                                 setTakenCourses={setTakenCourses}
+                                setSemesterCourses={setSemesterCourses}
                                 semesters={semesters}
                             ></ViewFloatingCourses>
                             <span data-testid="required-text">

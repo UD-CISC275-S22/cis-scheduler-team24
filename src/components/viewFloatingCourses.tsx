@@ -5,14 +5,18 @@ import { Semester } from "../interfaces/semester";
 export function ViewFloatingCourses({
     floatingCourses,
     takenCourses,
+    semesterCourses,
     setFloats,
     setTakenCourses,
+    setSemesterCourses,
     semesters
 }: {
     floatingCourses: Course[];
     takenCourses: Course[];
+    semesterCourses: Course[];
     setFloats: (newFloats: Course[]) => void;
     setTakenCourses: (newCourses: Course[]) => void;
+    setSemesterCourses: (newCourses: Course[]) => void;
     semesters: Semester[];
 }): JSX.Element {
     return (
@@ -54,6 +58,14 @@ export function ViewFloatingCourses({
                                                     );
                                                     setTakenCourses([
                                                         ...takenCourses,
+                                                        {
+                                                            ...course,
+                                                            prerequisites:
+                                                                course.prerequisites
+                                                        }
+                                                    ]);
+                                                    setSemesterCourses([
+                                                        ...semesterCourses,
                                                         {
                                                             ...course,
                                                             prerequisites:
