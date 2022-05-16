@@ -124,33 +124,24 @@ function App(): JSX.Element {
         };
     }
 
-    function clearSemesters(id: number): void {
+    function clearSemesters(planID: number): void {
         setPlans(
             plans.map(
                 (plan: Plan): Plan =>
-                    plan.id === id ? { ...plan, semesters: [] } : plan
+                    plan.id === planID ? clearSemesters2(plan) : plan
             )
         );
+    }
 
-        /*
-        setFloats(
-            courses.map(
-                (course: Course): Course => ({
-                    ...course,
-                    prerequisites: course.prerequisites.map(Number)
-                })
-            )
-        );
-        setRequirements(
-            requiredCourses.map(
-                (course: Course): Course => ({
-                    ...course,
-                    prerequisites: course.prerequisites.map(Number)
-                })
-            )
-        );
-        setTakenCourses([]);
-        */
+    function clearSemesters2(plan: Plan): Plan {
+        return {
+            ...plan,
+            semesters: [],
+            floating_courses: courses.map(
+                (course: Course): number => course.id
+            ),
+            taken_courses: []
+        };
     }
 
     function setSemesterName(
