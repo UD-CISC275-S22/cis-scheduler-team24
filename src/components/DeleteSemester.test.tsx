@@ -25,12 +25,12 @@ describe("DeleteSemester tests", () => {
         render(
             <DeleteSemester
                 semester={PLANS[0].semesters[0]}
+                planID={0}
                 removeSemester={() => []}
-                setFloats={() => []}
-                setRequirements={() => []}
+                setFloatingCourses={() => []}
                 setTakenCourses={() => []}
+                setSemesterCourses={() => []}
                 courses={[]}
-                requiredCourses={[]}
                 floatingCourses={[]}
                 takenCourses={[]}
             />

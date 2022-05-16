@@ -24,12 +24,14 @@ describe("viewSemester", () => {
         <ViewSemester
             semester={oldplan[0].semesters[0]}
             courses={[]}
+            planID={0}
             floatingCourses={[]}
             requiredCourses={[]}
             takenCourses={[]}
-            setFloats={() => []}
-            setRequirements={() => []}
+            setFloatingCourses={() => []}
+            setRequiredCourses={() => []}
             setTakenCourses={() => []}
+            setSemesterCourses={() => []}
             updateCourses={() => []}
         />
     );

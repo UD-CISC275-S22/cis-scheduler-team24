@@ -5,7 +5,7 @@ import { cleanup } from "@testing-library/react";
 
 describe("ClearSemesterModal tests", () => {
     beforeEach(() => {
-        render(<ClearSemesterModal clearSemesters={() => []} />);
+        render(<ClearSemesterModal clearSemesters={() => []} planID={0} />);
     });
 
     afterEach(cleanup);
