@@ -54,7 +54,7 @@ function App(): JSX.Element {
                 requirements: [],
                 taken_courses: [],
                 floating_courses: [
-                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+                    ...courses.map((course: Course): number => course.id)
                 ]
             }
         ]);
