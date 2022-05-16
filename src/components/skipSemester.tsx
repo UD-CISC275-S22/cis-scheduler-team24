@@ -7,17 +7,19 @@ export function SkipSemester({
     semesterCourses,
     floatingCourses,
     takenCourses,
+    planID,
     setSkipped,
-    setFloats,
+    setFloatingCourses,
     setTakenCourses
 }: {
     isSkipped: boolean;
     semesterCourses: Course[];
     floatingCourses: Course[];
     takenCourses: Course[];
+    planID: number;
     setSkipped: (skip: boolean) => void;
-    setFloats: (courses: Course[]) => void;
-    setTakenCourses: (courses: Course[]) => void;
+    setFloatingCourses: (planID: number, floats: Course[]) => void;
+    setTakenCourses: (planID: number, takenCourses: Course[]) => void;
 }): JSX.Element {
     function changeSkip() {
         isSkipped ? unskipCourse() : skipCourse();
@@ -25,8 +27,9 @@ export function SkipSemester({
 
     function skipCourse() {
         setSkipped(true);
-        setFloats([...floatingCourses, ...semesterCourses]);
+        setFloatingCourses(planID, [...floatingCourses, ...semesterCourses]);
         setTakenCourses(
+            planID,
             takenCourses.filter(
                 (course: Course): boolean =>
                     !semesterCourses
@@ -38,7 +41,8 @@ export function SkipSemester({
 
     function unskipCourse() {
         setSkipped(false);
-        setFloats(
+        setFloatingCourses(
+            planID,
             floatingCourses.filter(
                 (course: Course): boolean =>
                     !semesterCourses
@@ -46,7 +50,7 @@ export function SkipSemester({
                         .includes(course.id)
             )
         );
-        setTakenCourses([...takenCourses, ...semesterCourses]);
+        setTakenCourses(planID, [...takenCourses, ...semesterCourses]);
     }
 
     return (

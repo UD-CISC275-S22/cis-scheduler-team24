@@ -11,12 +11,14 @@ export function ListSemesters({
     floatingCourses,
     requiredCourses,
     takenCourses,
+    planID,
     addSemester,
     removeSemester,
     setSemesterName,
-    setFloats,
-    setRequirements,
+    setFloatingCourses,
+    setRequiredCourses,
     setTakenCourses,
+    setSemesterCourses,
     updateCourses
 }: {
     planSemesters: Semester[];
@@ -24,18 +26,32 @@ export function ListSemesters({
     floatingCourses: Course[];
     requiredCourses: Course[];
     takenCourses: Course[];
-    addSemester: () => void;
-    removeSemester: (id: number) => void;
-    setSemesterName: (id: number, name: string) => void;
-    setFloats: (courses: Course[]) => void;
-    setRequirements: (courses: Course[]) => void;
-    setTakenCourses: (courses: Course[]) => void;
+    planID: number;
+    addSemester: (planID: number) => void;
+    removeSemester: (planID: number, semesterID: number) => void;
+    setSemesterName: (
+        planID: number,
+        semesterID: number,
+        semesterName: string
+    ) => void;
+    setFloatingCourses: (planID: number, floats: Course[]) => void;
+    setRequiredCourses: (planID: number, requirements: Course[]) => void;
+    setTakenCourses: (planID: number, takenCourses: Course[]) => void;
+    setSemesterCourses: (
+        planID: number,
+        semesterID: number,
+        semesterCourses: Course[]
+    ) => void;
     updateCourses: (newCourse: Course) => void;
 }): JSX.Element {
     const [isEditing, setEditing] = useState<boolean>(false);
 
     function openEdit(): void {
         setEditing(!isEditing);
+    }
+
+    function newSemester(): void {
+        addSemester(planID);
     }
 
     return (
@@ -50,6 +66,7 @@ export function ListSemesters({
                                         {isEditing ? (
                                             <EditSemester
                                                 semester={semester}
+                                                planID={planID}
                                                 setSemesterName={
                                                     setSemesterName
                                                 }
@@ -71,13 +88,17 @@ export function ListSemesters({
 
                                         <DeleteSemester
                                             semester={semester}
+                                            planID={planID}
                                             removeSemester={removeSemester}
-                                            setFloats={setFloats}
-                                            setRequirements={setRequirements}
+                                            setFloatingCourses={
+                                                setFloatingCourses
+                                            }
                                             setTakenCourses={setTakenCourses}
+                                            setSemesterCourses={
+                                                setSemesterCourses
+                                            }
                                             courses={courses}
                                             floatingCourses={floatingCourses}
-                                            requiredCourses={requiredCourses}
                                             takenCourses={takenCourses}
                                         ></DeleteSemester>
                                     </div>
@@ -88,11 +109,13 @@ export function ListSemesters({
                                     <ViewSemester
                                         semester={semester}
                                         courses={courses}
+                                        planID={planID}
                                         floatingCourses={floatingCourses}
                                         requiredCourses={requiredCourses}
                                         takenCourses={takenCourses}
-                                        setFloats={setFloats}
-                                        setRequirements={setRequirements}
+                                        setSemesterCourses={setSemesterCourses}
+                                        setFloatingCourses={setFloatingCourses}
+                                        setRequiredCourses={setRequiredCourses}
                                         setTakenCourses={setTakenCourses}
                                         updateCourses={updateCourses}
                                     ></ViewSemester>
@@ -102,7 +125,7 @@ export function ListSemesters({
                     </Accordion>
                 ))}
             </Table>
-            <Button onClick={addSemester} className="button-style-5">
+            <Button onClick={newSemester} className="button-style-5">
                 Add Semester
             </Button>
         </div>

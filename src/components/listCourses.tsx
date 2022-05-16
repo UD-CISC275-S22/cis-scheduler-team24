@@ -13,28 +13,36 @@ import { DeleteCourseModal } from "./DeleteCourseModal";
 import { EditCourseModal } from "./EditCourseModal";
 
 export function ListCourses({
-    allCourses,
+    courses,
     semesterCourses,
     floatingCourses,
     requiredCourses,
     takenCourses,
-    setFloats,
-    setRequirements,
+    planID,
+    semesterID,
+    setFloatingCourses,
+    setRequiredCourses,
     setTakenCourses,
     setSemesterCourses,
     removeSemesterCourses,
     updateCourses,
     updateSemesterCourses
 }: {
-    allCourses: Course[];
+    courses: Course[];
     semesterCourses: Course[];
     floatingCourses: Course[];
     requiredCourses: Course[];
     takenCourses: Course[];
-    setFloats: (courses: Course[]) => void;
-    setRequirements: (courses: Course[]) => void;
-    setTakenCourses: (courses: Course[]) => void;
-    setSemesterCourses: (courses: Course[]) => void;
+    planID: number;
+    semesterID: number;
+    setFloatingCourses: (planID: number, floats: Course[]) => void;
+    setRequiredCourses: (planID: number, requirements: Course[]) => void;
+    setTakenCourses: (planID: number, takenCourses: Course[]) => void;
+    setSemesterCourses: (
+        planID: number,
+        semesterID: number,
+        semesterCourses: Course[]
+    ) => void;
     removeSemesterCourses: () => void;
     updateCourses: (newCourse: Course) => void;
     updateSemesterCourses: (newCourse: Course) => void;
@@ -59,6 +67,8 @@ export function ListCourses({
 
     function editCourse(id: number, newCourse: Course) {
         setSemesterCourses(
+            planID,
+            semesterID,
             semesterCourses.map(
                 (course: Course): Course =>
                     course.id === id ? newCourse : course
@@ -68,12 +78,15 @@ export function ListCourses({
 
     function deleteCourse(doomedCourse: Course) {
         setSemesterCourses(
+            planID,
+            semesterID,
             semesterCourses.filter(
                 (course: Course): boolean => course.id !== doomedCourse.id
             )
         );
-        setFloats([...floatingCourses, { ...doomedCourse }]);
+        setFloatingCourses(planID, [...floatingCourses, { ...doomedCourse }]);
         setTakenCourses(
+            planID,
             takenCourses.filter(
                 (course: Course): boolean => course.id !== doomedCourse.id
             )
@@ -82,11 +95,14 @@ export function ListCourses({
     }
 
     function addCourse(newCourse: Course) {
-        const existing = allCourses.find(
+        const existing = courses.find(
             (course: Course): boolean => course.id === newCourse.id
         );
         if (existing === undefined) {
-            setSemesterCourses([...semesterCourses, newCourse]);
+            setSemesterCourses(planID, semesterID, [
+                ...semesterCourses,
+                newCourse
+            ]);
             updateSemesterCourses(newCourse);
             updateCourses(newCourse);
         }
@@ -94,7 +110,7 @@ export function ListCourses({
 
     function saveAddChange() {
         addCourse({
-            id: allCourses.length + 1,
+            id: courses.length + 1,
             name: name,
             credits: parseInt(credits),
             description: description,
@@ -106,11 +122,10 @@ export function ListCourses({
         setDescription("");
         setCredits("");
         setPrereqs("");
-        console.log(allCourses[allCourses.length].id + 1);
     }
 
     function deleteAllCourse() {
-        setSemesterCourses([]);
+        setSemesterCourses(planID, semesterID, []);
         removeSemesterCourses();
     }
 
@@ -135,7 +150,7 @@ export function ListCourses({
                                     <td>{course.description}</td>
                                     <td>{course.credits}</td>
                                     <td>
-                                        {allCourses
+                                        {courses
                                             .filter(
                                                 (
                                                     degreeCourse: Course
@@ -159,10 +174,13 @@ export function ListCourses({
                                         <EditCourseModal
                                             handleClose={handleCloseAddModal}
                                             course={course}
+                                            planID={planID}
                                             requiredCourses={requiredCourses}
                                             editCourse={editCourse}
                                             deleteCourse={deleteCourse}
-                                            setRequirements={setRequirements}
+                                            setRequiredCourses={
+                                                setRequiredCourses
+                                            }
                                         ></EditCourseModal>
                                     </td>
                                 </tr>

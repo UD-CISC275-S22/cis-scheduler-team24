@@ -5,19 +5,25 @@ import { Semester } from "../interfaces/semester";
 export function ViewFloatingCourses({
     floatingCourses,
     takenCourses,
-    semesterCourses,
-    setFloats,
+    setFloatingCourses,
     setTakenCourses,
     setSemesterCourses,
-    semesters
+    semesters,
+    courses,
+    planID
 }: {
     floatingCourses: Course[];
     takenCourses: Course[];
-    semesterCourses: Course[];
-    setFloats: (newFloats: Course[]) => void;
-    setTakenCourses: (newCourses: Course[]) => void;
-    setSemesterCourses: (newCourses: Course[]) => void;
+    setFloatingCourses: (planID: number, floats: Course[]) => void;
+    setTakenCourses: (planID: number, takenCourses: Course[]) => void;
+    setSemesterCourses: (
+        planID: number,
+        semesterID: number,
+        semesterCourses: Course[]
+    ) => void;
     semesters: Semester[];
+    courses: Course[];
+    planID: number;
 }): JSX.Element {
     return (
         <div>
@@ -47,7 +53,8 @@ export function ViewFloatingCourses({
                                             <Dropdown.Item
                                                 key={semester.id}
                                                 onClick={() => {
-                                                    setFloats(
+                                                    setFloatingCourses(
+                                                        planID,
                                                         floatingCourses.filter(
                                                             (
                                                                 floater: Course
@@ -56,7 +63,7 @@ export function ViewFloatingCourses({
                                                                 floater.id
                                                         )
                                                     );
-                                                    setTakenCourses([
+                                                    setTakenCourses(planID, [
                                                         ...takenCourses,
                                                         {
                                                             ...course,
@@ -64,14 +71,25 @@ export function ViewFloatingCourses({
                                                                 course.prerequisites
                                                         }
                                                     ]);
-                                                    setSemesterCourses([
-                                                        ...semesterCourses,
-                                                        {
-                                                            ...course,
-                                                            prerequisites:
-                                                                course.prerequisites
-                                                        }
-                                                    ]);
+                                                    setSemesterCourses(
+                                                        planID,
+                                                        semester.id,
+                                                        [
+                                                            ...courses.filter(
+                                                                (
+                                                                    course: Course
+                                                                ): boolean =>
+                                                                    semester.courses.includes(
+                                                                        course.id
+                                                                    )
+                                                            ),
+                                                            {
+                                                                ...course,
+                                                                prerequisites:
+                                                                    course.prerequisites
+                                                            }
+                                                        ]
+                                                    );
                                                 }}
                                             >
                                                 {semester.name}

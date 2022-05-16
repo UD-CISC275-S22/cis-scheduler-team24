@@ -11,14 +11,38 @@ export function ListPlans({
     setCourses,
     addPlan,
     deletePlan,
-    setPlanName
+    setPlanName,
+    addSemester,
+    removeSemester,
+    clearSemesters,
+    setSemesterName,
+    setFloatingCourses,
+    setRequiredCourses,
+    setTakenCourses,
+    setSemesterCourses
 }: {
     courses: Course[];
     plans: Plan[];
     setCourses: (courses: Course[]) => void;
     addPlan: () => void;
-    deletePlan: (id: number) => void;
-    setPlanName: (id: number, name: string) => void;
+    deletePlan: (planID: number) => void;
+    setPlanName: (planID: number, name: string) => void;
+    addSemester: (planID: number) => void;
+    removeSemester: (planID: number, semesterID: number) => void;
+    clearSemesters: (planID: number) => void;
+    setSemesterName: (
+        planID: number,
+        semesterID: number,
+        semesterName: string
+    ) => void;
+    setFloatingCourses: (planID: number, floats: Course[]) => void;
+    setRequiredCourses: (planID: number, requirements: Course[]) => void;
+    setTakenCourses: (planID: number, takenCourses: Course[]) => void;
+    setSemesterCourses: (
+        planID: number,
+        semesterID: number,
+        semesterCourses: Course[]
+    ) => void;
 }): JSX.Element {
     return (
         <div>
@@ -51,6 +75,14 @@ export function ListPlans({
                                 plan={plan}
                                 setCourses={setCourses}
                                 setPlanName={setPlanName}
+                                addSemester={addSemester}
+                                removeSemester={removeSemester}
+                                clearSemesters={clearSemesters}
+                                setSemesterName={setSemesterName}
+                                setFloatingCourses={setFloatingCourses}
+                                setRequiredCourses={setRequiredCourses}
+                                setTakenCourses={setTakenCourses}
+                                setSemesterCourses={setSemesterCourses}
                             ></ViewPlan>
                         </Tab.Pane>
                     ))}

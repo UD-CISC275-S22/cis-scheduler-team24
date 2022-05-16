@@ -1,60 +1,59 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Semester } from "../interfaces/semester";
 
 export function DeleteSemester({
     semester,
+    planID,
     removeSemester,
-    setFloats,
-    setRequirements,
+    setFloatingCourses,
     setTakenCourses,
+    setSemesterCourses,
     courses,
     floatingCourses,
-    requiredCourses,
     takenCourses
 }: {
     semester: Semester;
-    removeSemester: (id: number) => void;
-    setFloats: (courses: Course[]) => void;
-    setRequirements: (courses: Course[]) => void;
-    setTakenCourses: (courses: Course[]) => void;
+    planID: number;
+    removeSemester: (planID: number, semesterID: number) => void;
+    setFloatingCourses: (planID: number, floats: Course[]) => void;
+    setTakenCourses: (planID: number, takenCourses: Course[]) => void;
+    setSemesterCourses: (
+        planID: number,
+        semesterID: number,
+        semesterCourses: Course[]
+    ) => void;
     courses: Course[];
     floatingCourses: Course[];
-    requiredCourses: Course[];
     takenCourses: Course[];
 }): JSX.Element {
-    const [semesterCourses, setSemesterCourses] = useState<Course[]>(
-        courses.filter((course: Course): boolean =>
-            semester.courses.includes(course.id)
-        )
-    );
-
     function deleteSemester(): void {
-        removeSemester(semester.id);
-        setFloats(
+        removeSemester(planID, semester.id);
+        setFloatingCourses(
+            planID,
             floatingCourses.concat(
-                semesterCourses.map(
-                    (course: Course): Course => ({
-                        ...course,
-                        prerequisites: course.prerequisites.map(Number)
-                    })
-                )
+                courses
+                    .filter((course: Course): boolean =>
+                        semester.courses.includes(course.id)
+                    )
+                    .map(
+                        (course: Course): Course => ({
+                            ...course,
+                            prerequisites: course.prerequisites.map(Number)
+                        })
+                    )
             )
         );
-        setRequirements(
-            requiredCourses.map(
-                (course: Course): Course => ({
-                    ...course,
-                    prerequisites: course.prerequisites.map(Number)
-                })
-            )
-        );
-        setSemesterCourses([]);
+        setSemesterCourses(planID, semester.id, []);
         setTakenCourses(
+            planID,
             takenCourses.filter(
                 (course: Course): boolean =>
-                    !semesterCourses
+                    !courses
+                        .filter((course: Course): boolean =>
+                            semester.courses.includes(course.id)
+                        )
                         .map((semCourse: Course): number => semCourse.id)
                         .includes(course.id)
             )

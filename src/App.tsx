@@ -77,28 +77,12 @@ function App(): JSX.Element {
         setPlans(
             plans.map(
                 (plan: Plan): Plan =>
-                    plan.id === id
-                        ? {
-                              ...plan,
-                              semesters: [
-                                  ...plan.semesters,
-                                  {
-                                      id: plan.semesters.length + 1,
-                                      name: "New Semester",
-                                      year: 0,
-                                      session: "Smarch",
-                                      courses: [],
-                                      totalCredits: 0,
-                                      isSkipped: false
-                                  }
-                              ]
-                          }
-                        : { ...plan }
+                    plan.id === id ? addSemester2(plan) : { ...plan }
             )
         );
     }
 
-    //Added this helper function because it was giving me that annoying "2 spaces expected" error and I'm running out of time
+    //Helper function for addSemester
     function addSemester2(plan: Plan): Plan {
         return {
             ...plan,
@@ -128,7 +112,7 @@ function App(): JSX.Element {
         );
     }
 
-    //Same deal with this helper function
+    //Helper function for removeSemester
     function removeSemester2(plan: Plan, semesterID: number): Plan {
         return {
             ...plan,
@@ -147,6 +131,7 @@ function App(): JSX.Element {
                     plan.id === id ? { ...plan, semesters: [] } : plan
             )
         );
+
         /*
         setFloats(
             courses.map(
@@ -168,7 +153,6 @@ function App(): JSX.Element {
         */
     }
 
-    /*
     function setSemesterName(
         planID: number,
         semesterID: number,
@@ -178,28 +162,133 @@ function App(): JSX.Element {
             plans.map(
                 (plan: Plan): Plan =>
                     plan.id === planID
-                        ? {
-                              ...plan,
-                              semesters: setSemesterName2()
-                          }
+                        ? setSemesterName2(plan, semesterID, semesterName)
                         : plan
             )
         );
     }
 
+    //Helper function for setSemesterName
     function setSemesterName2(
-        semesters: Semester[],
+        plan: Plan,
         semesterID: number,
         semesterName: string
-    ): Semester[] {
-        return semesters.map(
-            (semester: Semester): Semester =>
-                semester.id === semesterID
-                    ? { ...semester, name: semesterName }
-                    : semester
+    ): Plan {
+        return {
+            ...plan,
+            semesters: plan.semesters.map(
+                (semester: Semester): Semester =>
+                    semester.id === semesterID
+                        ? { ...semester, name: semesterName }
+                        : semester
+            )
+        };
+    }
+
+    function setFloatingCourses(planID: number, floats: Course[]): void {
+        setPlans(
+            plans.map(
+                (plan: Plan): Plan =>
+                    planID === plan.id
+                        ? setFloatingCourses2(plan, floats)
+                        : plan
+            )
         );
     }
-    */
+
+    function setFloatingCourses2(plan: Plan, floats: Course[]): Plan {
+        return {
+            ...plan,
+            floating_courses: [
+                ...floats.map((course: Course): number => course.id)
+            ]
+        };
+    }
+
+    function setRequiredCourses(planID: number, requirements: Course[]): void {
+        setPlans(
+            plans.map(
+                (plan: Plan): Plan =>
+                    planID === plan.id
+                        ? setRequiredCourses2(plan, requirements)
+                        : plan
+            )
+        );
+    }
+
+    function setRequiredCourses2(plan: Plan, requirements: Course[]): Plan {
+        return {
+            ...plan,
+            requirements: [
+                ...requirements.map((course: Course): number => course.id)
+            ]
+        };
+    }
+
+    function setTakenCourses(planID: number, takenCourses: Course[]): void {
+        setPlans(
+            plans.map(
+                (plan: Plan): Plan =>
+                    planID === plan.id
+                        ? setTakenCourses2(plan, takenCourses)
+                        : plan
+            )
+        );
+    }
+
+    function setTakenCourses2(plan: Plan, takenCourses: Course[]): Plan {
+        return {
+            ...plan,
+            taken_courses: [
+                ...takenCourses.map((course: Course): number => course.id)
+            ]
+        };
+    }
+
+    function setSemesterCourses(
+        planID: number,
+        semesterID: number,
+        semesterCourses: Course[]
+    ): void {
+        setPlans(
+            plans.map(
+                (plan: Plan): Plan =>
+                    planID === plan.id
+                        ? setSemesterCourses2(plan, semesterID, semesterCourses)
+                        : plan
+            )
+        );
+    }
+
+    function setSemesterCourses2(
+        plan: Plan,
+        semesterID: number,
+        semesterCourses: Course[]
+    ): Plan {
+        return {
+            ...plan,
+            semesters: [
+                ...plan.semesters.map(
+                    (semester: Semester): Semester =>
+                        semester.id === semesterID
+                            ? setSemesterCourses3(semester, semesterCourses)
+                            : semester
+                )
+            ]
+        };
+    }
+
+    function setSemesterCourses3(
+        semester: Semester,
+        semesterCourses: Course[]
+    ): Semester {
+        return {
+            ...semester,
+            courses: [
+                ...semesterCourses.map((course: Course): number => course.id)
+            ]
+        };
+    }
 
     // function saveData() {
     //     localStorage.setItem(saveDataKey, JSON.stringify(plans));
@@ -226,6 +315,14 @@ function App(): JSX.Element {
                             addPlan={addPlan}
                             deletePlan={deletePlan}
                             setPlanName={setPlanName}
+                            addSemester={addSemester}
+                            removeSemester={removeSemester}
+                            clearSemesters={clearSemesters}
+                            setSemesterName={setSemesterName}
+                            setFloatingCourses={setFloatingCourses}
+                            setRequiredCourses={setRequiredCourses}
+                            setTakenCourses={setTakenCourses}
+                            setSemesterCourses={setSemesterCourses}
                         ></ListPlans>
                     </Col>
                 </Row>

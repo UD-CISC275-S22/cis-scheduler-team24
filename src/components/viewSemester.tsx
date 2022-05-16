@@ -9,44 +9,52 @@ import { SkipSemester } from "./skipSemester";
 export function ViewSemester({
     semester,
     courses,
+    planID,
     floatingCourses,
     requiredCourses,
     takenCourses,
-    setFloats,
-    setRequirements,
+    setFloatingCourses,
+    setRequiredCourses,
     setTakenCourses,
+    setSemesterCourses,
     updateCourses
 }: {
     semester: Semester;
     courses: Course[];
+    planID: number;
     floatingCourses: Course[];
     requiredCourses: Course[];
     takenCourses: Course[];
-    setFloats: (courses: Course[]) => void;
-    setRequirements: (courses: Course[]) => void;
-    setTakenCourses: (courses: Course[]) => void;
+    setFloatingCourses: (planID: number, floats: Course[]) => void;
+    setRequiredCourses: (planID: number, requirements: Course[]) => void;
+    setTakenCourses: (planID: number, takenCourses: Course[]) => void;
+    setSemesterCourses: (
+        planID: number,
+        semesterID: number,
+        semesterCourses: Course[]
+    ) => void;
     updateCourses: (newCourse: Course) => void;
 }): JSX.Element {
-    const [semesterCourses, setSemesterCourses] = useState<Course[]>(
-        courses.filter((course: Course): boolean =>
-            semester.courses.includes(course.id)
-        )
-    );
-
     const [isSkipped, setSkipped] = useState<boolean>(semester.isSkipped);
 
     function removeSemesterCourses(): void {
-        setFloats(
+        setFloatingCourses(
+            planID,
             floatingCourses.concat(
-                semesterCourses.map(
-                    (course: Course): Course => ({
-                        ...course,
-                        prerequisites: course.prerequisites.map(Number)
-                    })
-                )
+                courses
+                    .filter((course: Course): boolean =>
+                        semester.courses.includes(course.id)
+                    )
+                    .map(
+                        (course: Course): Course => ({
+                            ...course,
+                            prerequisites: course.prerequisites.map(Number)
+                        })
+                    )
             )
         );
-        setRequirements(
+        setRequiredCourses(
+            planID,
             requiredCourses.map(
                 (course: Course): Course => ({
                     ...course,
@@ -54,11 +62,15 @@ export function ViewSemester({
                 })
             )
         );
-        setSemesterCourses([]);
+        setSemesterCourses(planID, semester.id, []);
         setTakenCourses(
+            planID,
             takenCourses.filter(
                 (course: Course): boolean =>
-                    !semesterCourses
+                    !courses
+                        .filter((course: Course): boolean =>
+                            semester.courses.includes(course.id)
+                        )
                         .map((semCourse: Course): number => semCourse.id)
                         .includes(course.id)
             )
@@ -66,7 +78,12 @@ export function ViewSemester({
     }
 
     function updateSemesterCourses(newCourse: Course): void {
-        setSemesterCourses([...semesterCourses, newCourse]);
+        setSemesterCourses(planID, semester.id, [
+            ...courses.filter((course: Course): boolean =>
+                semester.courses.includes(course.id)
+            ),
+            newCourse
+        ]);
     }
 
     return (
@@ -78,24 +95,35 @@ export function ViewSemester({
                             <th>
                                 <SkipSemester
                                     isSkipped={isSkipped}
-                                    semesterCourses={semesterCourses}
+                                    semesterCourses={courses.filter(
+                                        (course: Course): boolean =>
+                                            semester.courses.includes(course.id)
+                                    )}
                                     floatingCourses={floatingCourses}
                                     takenCourses={takenCourses}
+                                    planID={planID}
                                     setSkipped={setSkipped}
-                                    setFloats={setFloats}
+                                    setFloatingCourses={setFloatingCourses}
                                     setTakenCourses={setTakenCourses}
                                 ></SkipSemester>
                                 {isSkipped ? (
                                     <div></div>
                                 ) : (
                                     <ListCourses
-                                        allCourses={courses}
-                                        semesterCourses={semesterCourses}
+                                        courses={courses}
+                                        semesterCourses={courses.filter(
+                                            (course: Course): boolean =>
+                                                semester.courses.includes(
+                                                    course.id
+                                                )
+                                        )}
                                         floatingCourses={floatingCourses}
                                         requiredCourses={requiredCourses}
                                         takenCourses={takenCourses}
-                                        setFloats={setFloats}
-                                        setRequirements={setRequirements}
+                                        planID={planID}
+                                        semesterID={semester.id}
+                                        setFloatingCourses={setFloatingCourses}
+                                        setRequiredCourses={setRequiredCourses}
                                         setTakenCourses={setTakenCourses}
                                         setSemesterCourses={setSemesterCourses}
                                         removeSemesterCourses={
