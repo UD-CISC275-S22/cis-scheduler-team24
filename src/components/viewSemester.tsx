@@ -33,7 +33,7 @@ export function ViewSemester({
         )
     );
 
-    const [isSkipped, setSkipped] = useState<boolean>(false);
+    const [isSkipped, setSkipped] = useState<boolean>(semester.isSkipped);
 
     function removeSemesterCourses(): void {
         setFloats(
