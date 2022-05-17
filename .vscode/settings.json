@@ -1,7 +1,5 @@
 {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    "workbench.preferredDarkColorTheme": "Default Dark+",
-    "workbench.colorTheme": "Default Light+"
+    "editor.formatOnPaste": true
 }
