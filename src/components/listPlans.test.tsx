@@ -24,6 +24,7 @@ describe("ListPlans", () => {
         const examplecourse = [
             {
                 id: 0,
+                code: "",
                 name: "",
                 credits: 0,
                 description: "",

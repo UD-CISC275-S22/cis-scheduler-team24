@@ -9,7 +9,7 @@ export function Carouse() {
                     <div>UD CIS Scheduler</div>
                 </header>
             </Carousel.Item>
-            <Carousel.Item interval={2000}>
+            <Carousel.Item interval={3000}>
                 <header className="App-header">
                     <div>
                         Team 24 College Planner by Weldin, Zhiwen, and Jingqing
