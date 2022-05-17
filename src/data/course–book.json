@@ -55,7 +55,7 @@
         "name": "Introduction to Systems Programming",
         "credits": 3,
         "description": "Bash and C",
-        "prerequisites": [1],
+        "prerequisites": ["CISC108"],
         "isEditing": false,
         "breadthType": "D"
     },
@@ -65,7 +65,7 @@
         "name": "Introduction to Computer Science II",
         "credits": 3,
         "description": "Java",
-        "prerequisites": [1],
+        "prerequisites": ["CISC108"],
         "isEditing": false,
         "breadthType": "D"
     },
@@ -85,7 +85,7 @@
         "name": "Discrete Math",
         "credits": 4,
         "description": "Annoying math class",
-        "prerequisites": [4],
+        "prerequisites": ["MATH241"],
         "isEditing": false,
         "breadthType": "D"
     },
@@ -115,7 +115,7 @@
         "name": "Introduction to Global Politics",
         "credits": 3,
         "description": "A brief overview of global politics",
-        "prerequisites": [11],
+        "prerequisites": ["POSC150"],
         "isEditing": false,
         "breadthType": "C"
     },

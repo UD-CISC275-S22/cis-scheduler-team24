@@ -61,7 +61,7 @@ export function EditCourseModal({
                 name: resetname,
                 description: resetdescription,
                 credits: parseInt(resetcredits),
-                prerequisites: resetprereqs.split(", ").map(Number)
+                prerequisites: resetprereqs.split(", ").map(String)
             }
         );
         changeEditing();
@@ -80,7 +80,7 @@ export function EditCourseModal({
             name: name,
             description: description,
             credits: parseInt(credits),
-            prerequisites: prereqs.split(", ").map(Number)
+            prerequisites: prereqs.split(", ").map(String)
         });
         changeEditing();
     }
@@ -197,7 +197,7 @@ export function EditCourseModal({
                         {/* Prerequisities */}
                         <Form.Group controlId="formPrerequisites" as={Row}>
                             <Form.Label column sm={3}>
-                                Course Prerequisites (ID):
+                                Course Prerequisites (Code):
                             </Form.Label>
                             <Col>
                                 <Form.Control

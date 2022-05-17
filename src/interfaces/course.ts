@@ -6,7 +6,7 @@ export interface Course {
     name: string;
     credits: number;
     description: string;
-    prerequisites: number[];
+    prerequisites: string[];
     isEditing: boolean;
     breadthType: string;
 }

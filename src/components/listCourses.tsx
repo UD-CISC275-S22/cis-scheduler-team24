@@ -62,7 +62,7 @@ export function ListCourses({
             name: name.substring(9),
             credits: parseInt(credits),
             description: description,
-            prerequisites: prereqs.split(", ").map(Number),
+            prerequisites: prereqs.split(", ").map(String),
             isEditing: false,
             breadthType: ""
         });
@@ -99,7 +99,7 @@ export function ListCourses({
                                                     degreeCourse: Course
                                                 ): boolean =>
                                                     course.prerequisites.includes(
-                                                        degreeCourse.id
+                                                        degreeCourse.code
                                                     )
                                             )
                                             .map((degreeCourse: Course) => (
