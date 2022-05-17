@@ -1,6 +1,5 @@
 import React from "react";
-import { DropdownButton, InputGroup, Table } from "react-bootstrap";
-import DropdownItem from "react-bootstrap/esm/DropdownItem";
+import { DropdownButton, InputGroup, Table, Dropdown } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Semester } from "../interfaces/semester";
 export function ViewFloatingCourses({
@@ -27,12 +26,8 @@ export function ViewFloatingCourses({
             <Table striped bordered hover className="required">
                 <thead>
                     <tr>
-                        <th>
-                            <div>Course</div>
-                        </th>
-                        <th>
-                            <div>Move</div>
-                        </th>
+                        <th>Course</th>
+                        <th>Move</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,7 +42,7 @@ export function ViewFloatingCourses({
                                         id="input-group-dropdown-2"
                                     >
                                         {semesters.map((semester: Semester) => (
-                                            <DropdownItem
+                                            <Dropdown.Item
                                                 key={semester.id}
                                                 onClick={() => {
                                                     moveFromFloatingCourses(
@@ -60,7 +55,7 @@ export function ViewFloatingCourses({
                                                 }}
                                             >
                                                 {semester.name}
-                                            </DropdownItem>
+                                            </Dropdown.Item>
                                         ))}
                                     </DropdownButton>
                                 </InputGroup>
