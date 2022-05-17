@@ -2,7 +2,1095 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/components/EditCourseModal.test.tsx
+FAIL src/components/EditCourseModal.test.tsx
+  ● EditCourseModal tests › Clicking Delete button and Course name control
+
+    TestingLibraryElementError: Found multiple elements by: [data-testid="Edit Course name"]
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-control"[39m
+      [33mdata-testid[39m=[32m"Edit Course name"[39m
+      [33mid[39m=[32m"formCourseCode"[39m
+      [33mvalue[39m=[32m""[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-control"[39m
+      [33mdata-testid[39m=[32m"Edit Course name"[39m
+      [33mid[39m=[32m"formCourseName"[39m
+      [33mvalue[39m=[32m""[39m
+    [36m/>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body[39m
+      [33mclass[39m=[32m"modal-open"[39m
+      [33mdata-rr-ui-modal-open[39m=[32m""[39m
+      [33mstyle[39m=[32m"padding-right: 2048px;"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"display: flex;"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+                [33mid[39m=[32m"edit"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [0mEdit[0m
+                [36m</div>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div>[39m
+              [36m<div>[39m
+                [36m<div>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+                    [33mdata-testid[39m=[32m"Delete-course-X"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0m✖️[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div />[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div />[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"fade modal-backdrop show"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-modal[39m=[32m"true"[39m
+        [33mclass[39m=[32m"fade modal show"[39m
+        [33mrole[39m=[32m"dialog"[39m
+        [33mstyle[39m=[32m"display: block; padding-right: 0px;"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"modal-dialog"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"modal-content"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-header"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"modal-title h4"[39m
+              [36m>[39m
+                [0mEdit Course[0m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-body"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formCourseCode"[39m
+                [36m>[39m
+                  [0mCourse code:[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course name"[39m
+                    [33mid[39m=[32m"formCourseCode"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formCourseName"[39m
+                [36m>[39m
+                  [0mCourse name:[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course name"[39m
+                    [33mid[39m=[32m"formCourseName"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formCourseDescription"[39m
+                [36m>[39m
+                  [0mCourse description:[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course description"[39m
+                    [33mid[39m=[32m"formCourseDescription"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formCourseCredits"[39m
+                [36m>[39m
+                  [0mCourse credits:[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course credits"[39m
+                    [33mid[39m=[32m"formCourseCredits"[39m
+                    [33mvalue[39m=[32m"0"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formPrerequisites"[39m
+                [36m>[39m
+                  [0mCourse Prerequisites (Code):[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course Prerequisities"[39m
+                    [33mid[39m=[32m"formPrerequisites"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-footer"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-check"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mchecked[39m=[32m""[39m
+                  [33mclass[39m=[32m"form-check-input"[39m
+                  [33mdata-testid[39m=[32m"Required?"[39m
+                  [33mid[39m=[32m"required-check"[39m
+                  [33mtype[39m=[32m"checkbox"[39m
+                [36m/>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-check-label"[39m
+                  [33mfor[39m=[32m"required-check"[39m
+                  [33mtitle[39m=[32m""[39m
+                [36m>[39m
+                  [0mRequired?[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"me-4 btn btn-success"[39m
+                [33mdisabled[39m=[32m""[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mSave[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"me-5 btn btn-warning"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mCancel[0m
+              [36m</button>[39m
+              [36m<div>[39m
+                [36m<div>[39m
+                  [36m<div>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"me-8 btn btn-danger"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [0mDelete[0m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                  [36m<div />[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"me-4 btn btn-primary"[39m
+                  [33mdisabled[39m=[32m""[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [36m<div>[39m
+                    [0mReset[0m
+                  [36m</div>[39m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      151 |         });
+      152 |         EditCourseButton.click();
+    > 153 |         const ControlCoursename = screen.getByTestId("Edit Course name");
+          |                                          ^
+      154 |         userEvent.type(ControlCoursename, "CISC275");
+      155 |         expect(ControlCoursename).toBeEnabled();
+      156 |     });
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:25:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:29:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:66:13
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/EditCourseModal.test.tsx:153:42)
+
+  ● EditCourseModal tests › Cliking the save button and can be used
+
+    TestingLibraryElementError: Found multiple elements by: [data-testid="Edit Course name"]
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-control"[39m
+      [33mdata-testid[39m=[32m"Edit Course name"[39m
+      [33mid[39m=[32m"formCourseCode"[39m
+      [33mvalue[39m=[32m""[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-control"[39m
+      [33mdata-testid[39m=[32m"Edit Course name"[39m
+      [33mid[39m=[32m"formCourseName"[39m
+      [33mvalue[39m=[32m""[39m
+    [36m/>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body[39m
+      [33mclass[39m=[32m"modal-open"[39m
+      [33mdata-rr-ui-modal-open[39m=[32m""[39m
+      [33mstyle[39m=[32m"padding-right: 2048px;"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"display: flex;"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+                [33mid[39m=[32m"edit"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [0mEdit[0m
+                [36m</div>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div>[39m
+              [36m<div>[39m
+                [36m<div>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+                    [33mdata-testid[39m=[32m"Delete-course-X"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0m✖️[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div />[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div />[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"fade modal-backdrop show"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-modal[39m=[32m"true"[39m
+        [33mclass[39m=[32m"fade modal show"[39m
+        [33mrole[39m=[32m"dialog"[39m
+        [33mstyle[39m=[32m"display: block; padding-right: 0px;"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"modal-dialog"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"modal-content"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-header"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"modal-title h4"[39m
+              [36m>[39m
+                [0mEdit Course[0m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-body"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formCourseCode"[39m
+                [36m>[39m
+                  [0mCourse code:[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course name"[39m
+                    [33mid[39m=[32m"formCourseCode"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formCourseName"[39m
+                [36m>[39m
+                  [0mCourse name:[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course name"[39m
+                    [33mid[39m=[32m"formCourseName"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formCourseDescription"[39m
+                [36m>[39m
+                  [0mCourse description:[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course description"[39m
+                    [33mid[39m=[32m"formCourseDescription"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formCourseCredits"[39m
+                [36m>[39m
+                  [0mCourse credits:[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course credits"[39m
+                    [33mid[39m=[32m"formCourseCredits"[39m
+                    [33mvalue[39m=[32m"0"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formPrerequisites"[39m
+                [36m>[39m
+                  [0mCourse Prerequisites (Code):[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course Prerequisities"[39m
+                    [33mid[39m=[32m"formPrerequisites"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-footer"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-check"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mchecked[39m=[32m""[39m
+                  [33mclass[39m=[32m"form-check-input"[39m
+                  [33mdata-testid[39m=[32m"Required?"[39m
+                  [33mid[39m=[32m"required-check"[39m
+                  [33mtype[39m=[32m"checkbox"[39m
+                [36m/>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-check-label"[39m
+                  [33mfor[39m=[32m"required-check"[39m
+                  [33mtitle[39m=[32m""[39m
+                [36m>[39m
+                  [0mRequired?[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"me-4 btn btn-success"[39m
+                [33mdisabled[39m=[32m""[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mSave[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"me-5 btn btn-warning"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mCancel[0m
+              [36m</button>[39m
+              [36m<div>[39m
+                [36m<div>[39m
+                  [36m<div>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"me-8 btn btn-danger"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [0mDelete[0m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                  [36m<div />[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"me-4 btn btn-primary"[39m
+                  [33mdisabled[39m=[32m""[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [36m<div>[39m
+                    [0mReset[0m
+                  [36m</div>[39m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      198 |             name: /Save/i
+      199 |         });
+    > 200 |         const ControlCoursename = screen.getByTestId("Edit Course name");
+          |                                          ^
+      201 |         userEvent.type(ControlCoursename, "CISC275");
+      202 |         SaveButton[0].click();
+      203 |         expect(EditCourseButton[0]).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:25:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:29:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:66:13
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/EditCourseModal.test.tsx:200:42)
+
+  ● EditCourseModal tests › Cliking the require checkbox and can be used
+
+    TestingLibraryElementError: Found multiple elements by: [data-testid="Edit Course name"]
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-control"[39m
+      [33mdata-testid[39m=[32m"Edit Course name"[39m
+      [33mid[39m=[32m"formCourseCode"[39m
+      [33mvalue[39m=[32m""[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-control"[39m
+      [33mdata-testid[39m=[32m"Edit Course name"[39m
+      [33mid[39m=[32m"formCourseName"[39m
+      [33mvalue[39m=[32m""[39m
+    [36m/>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body[39m
+      [33mclass[39m=[32m"modal-open"[39m
+      [33mdata-rr-ui-modal-open[39m=[32m""[39m
+      [33mstyle[39m=[32m"padding-right: 2048px;"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"display: flex;"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+                [33mid[39m=[32m"edit"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [0mEdit[0m
+                [36m</div>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div>[39m
+              [36m<div>[39m
+                [36m<div>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+                    [33mdata-testid[39m=[32m"Delete-course-X"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0m✖️[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div />[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div />[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"fade modal-backdrop show"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-modal[39m=[32m"true"[39m
+        [33mclass[39m=[32m"fade modal show"[39m
+        [33mrole[39m=[32m"dialog"[39m
+        [33mstyle[39m=[32m"display: block; padding-right: 0px;"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"modal-dialog"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"modal-content"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-header"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"modal-title h4"[39m
+              [36m>[39m
+                [0mEdit Course[0m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-body"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formCourseCode"[39m
+                [36m>[39m
+                  [0mCourse code:[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course name"[39m
+                    [33mid[39m=[32m"formCourseCode"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formCourseName"[39m
+                [36m>[39m
+                  [0mCourse name:[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course name"[39m
+                    [33mid[39m=[32m"formCourseName"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formCourseDescription"[39m
+                [36m>[39m
+                  [0mCourse description:[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course description"[39m
+                    [33mid[39m=[32m"formCourseDescription"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formCourseCredits"[39m
+                [36m>[39m
+                  [0mCourse credits:[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course credits"[39m
+                    [33mid[39m=[32m"formCourseCredits"[39m
+                    [33mvalue[39m=[32m"0"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formPrerequisites"[39m
+                [36m>[39m
+                  [0mCourse Prerequisites (Code):[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course Prerequisities"[39m
+                    [33mid[39m=[32m"formPrerequisites"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-footer"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-check"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mchecked[39m=[32m""[39m
+                  [33mclass[39m=[32m"form-check-input"[39m
+                  [33mdata-testid[39m=[32m"Required?"[39m
+                  [33mid[39m=[32m"required-check"[39m
+                  [33mtype[39m=[32m"checkbox"[39m
+                [36m/>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-check-label"[39m
+                  [33mfor[39m=[32m"required-check"[39m
+                  [33mtitle[39m=[32m""[39m
+                [36m>[39m
+                  [0mRequired?[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"me-4 btn btn-success"[39m
+                [33mdisabled[39m=[32m""[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mSave[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"me-5 btn btn-warning"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mCancel[0m
+              [36m</button>[39m
+              [36m<div>[39m
+                [36m<div>[39m
+                  [36m<div>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"me-8 btn btn-danger"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [0mDelete[0m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                  [36m<div />[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"me-4 btn btn-primary"[39m
+                  [33mdisabled[39m=[32m""[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [36m<div>[39m
+                    [0mReset[0m
+                  [36m</div>[39m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      216 |         });
+      217 |         RequireCheckbox.click();
+    > 218 |         const ControlCoursename = screen.getByTestId("Edit Course name");
+          |                                          ^
+      219 |         userEvent.type(ControlCoursename, "CISC275");
+      220 |         SaveButton[0].click();
+      221 |
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:25:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:29:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:66:13
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/EditCourseModal.test.tsx:218:42)
+
+  ● EditCourseModal tests › Cliking the reset button and can be used
+
+    TestingLibraryElementError: Found multiple elements by: [data-testid="Edit Course name"]
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-control"[39m
+      [33mdata-testid[39m=[32m"Edit Course name"[39m
+      [33mid[39m=[32m"formCourseCode"[39m
+      [33mvalue[39m=[32m""[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-control"[39m
+      [33mdata-testid[39m=[32m"Edit Course name"[39m
+      [33mid[39m=[32m"formCourseName"[39m
+      [33mvalue[39m=[32m""[39m
+    [36m/>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body[39m
+      [33mclass[39m=[32m"modal-open"[39m
+      [33mdata-rr-ui-modal-open[39m=[32m""[39m
+      [33mstyle[39m=[32m"padding-right: 2048px;"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"display: flex;"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"button-style-1 btn btn-success"[39m
+                [33mid[39m=[32m"edit"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [0mEdit[0m
+                [36m</div>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div>[39m
+              [36m<div>[39m
+                [36m<div>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+                    [33mdata-testid[39m=[32m"Delete-course-X"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0m✖️[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div />[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div />[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"fade modal-backdrop show"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-modal[39m=[32m"true"[39m
+        [33mclass[39m=[32m"fade modal show"[39m
+        [33mrole[39m=[32m"dialog"[39m
+        [33mstyle[39m=[32m"display: block; padding-right: 0px;"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"modal-dialog"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"modal-content"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-header"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"modal-title h4"[39m
+              [36m>[39m
+                [0mEdit Course[0m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-body"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formCourseCode"[39m
+                [36m>[39m
+                  [0mCourse code:[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course name"[39m
+                    [33mid[39m=[32m"formCourseCode"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formCourseName"[39m
+                [36m>[39m
+                  [0mCourse name:[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course name"[39m
+                    [33mid[39m=[32m"formCourseName"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formCourseDescription"[39m
+                [36m>[39m
+                  [0mCourse description:[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course description"[39m
+                    [33mid[39m=[32m"formCourseDescription"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formCourseCredits"[39m
+                [36m>[39m
+                  [0mCourse credits:[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course credits"[39m
+                    [33mid[39m=[32m"formCourseCredits"[39m
+                    [33mvalue[39m=[32m"0"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"formPrerequisites"[39m
+                [36m>[39m
+                  [0mCourse Prerequisites (Code):[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"Edit Course Prerequisities"[39m
+                    [33mid[39m=[32m"formPrerequisites"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-footer"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-check"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mchecked[39m=[32m""[39m
+                  [33mclass[39m=[32m"form-check-input"[39m
+                  [33mdata-testid[39m=[32m"Required?"[39m
+                  [33mid[39m=[32m"required-check"[39m
+                  [33mtype[39m=[32m"checkbox"[39m
+                [36m/>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-check-label"[39m
+                  [33mfor[39m=[32m"required-check"[39m
+                  [33mtitle[39m=[32m""[39m
+                [36m>[39m
+                  [0mRequired?[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"me-4 btn btn-success"[39m
+                [33mdisabled[39m=[32m""[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mSave[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"me-5 btn btn-warning"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mCancel[0m
+              [36m</button>[39m
+              [36m<div>[39m
+                [36m<div>[39m
+                  [36m<div>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"me-8 btn btn-danger"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [0mDelete[0m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                  [36m<div />[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"me-4 btn btn-primary"[39m
+                  [33mdisabled[39m=[32m""[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [36m<div>[39m
+                    [0mReset[0m
+                  [36m</div>[39m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      239 |         });
+      240 |         RequireCheckbox.click();
+    > 241 |         const ControlCoursename = screen.getByTestId("Edit Course name");
+          |                                          ^
+      242 |         userEvent.type(ControlCoursename, "CISC275");
+      243 |         SaveButton[0].click();
+      244 |         EditCourseButton[0].click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:25:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:29:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:66:13
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/EditCourseModal.test.tsx:241:42)
+
 PASS src/components/listCourses.test.tsx
 PASS src/components/DeleteCourseModal.test.tsx
 PASS src/components/listPlans.test.tsx
@@ -18,14 +1106,33 @@ PASS src/components/DeleteSemester.test.tsx
 PASS src/components/DeletePlan.test.tsx
 PASS src/components/Carouse.test.tsx
 PASS src/components/viewRequirements.test.tsx
-PASS src/App.test.tsx
+FAIL src/App.test.tsx (5.94 s)
+  ● renders the course name somewhere
+
+    thrown: "Exceeded timeout of 5000 ms for a test.
+    Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test."
+
+      3 | import App from "./App";
+      4 |
+    > 5 | test("renders the course name somewhere", async () => {
+        | ^
+      6 |     render(<App />);
+      7 |     const name = screen.getByText(/Jingqing/i);
+      8 |     await waitFor(() => {
+
+      at Object.<anonymous> (src/App.test.tsx:5:1)
+      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
+      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
+      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
+      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
-All files                       |   71.37 |    15.51 |   52.83 |   70.61 |                   
+All files                       |   67.14 |    19.67 |      50 |   66.16 |                   
  src                            |   10.38 |        0 |    5.63 |   10.52 |                   
   App.tsx                       |   10.38 |        0 |    5.63 |   10.52 | 48-465            
- src/components                 |   94.97 |    64.28 |    90.9 |   95.16 |                   
+ src/components                 |   88.66 |    70.58 |   85.39 |   88.42 |                   
   Carouse.tsx                   |     100 |      100 |     100 |     100 |                   
   ClearSemesterModal.tsx        |     100 |      100 |     100 |     100 |                   
   DeleteCourseModal.tsx         |     100 |      100 |     100 |     100 |                   
@@ -33,7 +1140,7 @@ All files                       |   71.37 |    15.51 |   52.83 |   70.61 |
   DeleteCourseWarningModalX.tsx |     100 |      100 |     100 |     100 |                   
   DeletePlan.tsx                |     100 |      100 |     100 |     100 |                   
   DeleteSemester.tsx            |     100 |      100 |     100 |     100 |                   
-  EditCourseModal.tsx           |     100 |      100 |     100 |     100 |                   
+  EditCourseModal.tsx           |   68.29 |      100 |   64.28 |    67.5 | 53-85,147-162     
   editPlan.tsx                  |     100 |      100 |     100 |     100 |                   
   editSemester.tsx              |     100 |      100 |     100 |     100 |                   
   exportPlans.tsx               |     100 |      100 |     100 |     100 |                   
@@ -51,9 +1158,8 @@ All files                       |   71.37 |    15.51 |   52.83 |   70.61 |
   plan.ts                       |       0 |        0 |       0 |       0 |                   
   semester.ts                   |       0 |        0 |       0 |       0 |                   
 --------------------------------|---------|----------|---------|---------|-------------------
-
-Test Suites: 17 passed, 17 total
-Tests:       65 passed, 65 total
+Test Suites: 2 failed, 15 passed, 17 total
+Tests:       5 failed, 60 passed, 65 total
 Snapshots:   0 total
-Time:        16.928 s
+Time:        22.954 s
 Ran all test suites.
