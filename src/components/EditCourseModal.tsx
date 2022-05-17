@@ -27,6 +27,7 @@ export function EditCourseModal({
     removeCourse: (planID: number, semesterID: number, course: Course) => void;
 }) {
     const [name, setName] = useState<string>(course.name);
+    const [code, setCode] = useState<string>(course.code);
     const [description, setDescription] = useState<string>(course.description);
     const [credits, setCredits] = useState<string>(course.credits.toString());
     const [showAddModal, setShowAddModal] = useState(false);
@@ -75,6 +76,7 @@ export function EditCourseModal({
     function save() {
         editCourse(planID, semesterID, isRequired, {
             ...course,
+            code: code,
             name: name,
             description: description,
             credits: parseInt(credits),
@@ -85,6 +87,7 @@ export function EditCourseModal({
 
     function cancel() {
         setName(course.name);
+        setCode(course.code);
         setDescription(course.description);
         setCredits(course.credits.toString());
         setPrereqs(course.prerequisites.map(String).join(", "));
@@ -131,9 +134,24 @@ export function EditCourseModal({
                         <Modal.Title>Edit Course</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
+                        {/* Code */}
+                        <Form.Group controlId="formCourseCode" as={Row}>
+                            <Form.Label column sm={3}>
+                                Course code:
+                            </Form.Label>
+                            <Col>
+                                <Form.Control
+                                    value={code}
+                                    onChange={(
+                                        event: React.ChangeEvent<HTMLInputElement>
+                                    ) => setCode(event.target.value)}
+                                    data-testid="Edit Course name"
+                                />
+                            </Col>
+                        </Form.Group>
                         {/* Name */}
                         <Form.Group controlId="formCourseName" as={Row}>
-                            <Form.Label column sm={2}>
+                            <Form.Label column sm={3}>
                                 Course name:
                             </Form.Label>
                             <Col>
@@ -148,7 +166,7 @@ export function EditCourseModal({
                         </Form.Group>
                         {/* Description */}
                         <Form.Group controlId="formCourseDescription" as={Row}>
-                            <Form.Label column sm={2}>
+                            <Form.Label column sm={3}>
                                 Course description:
                             </Form.Label>
                             <Col>
@@ -163,7 +181,7 @@ export function EditCourseModal({
                         </Form.Group>
                         {/* Credits */}
                         <Form.Group controlId="formCourseCredits" as={Row}>
-                            <Form.Label column sm={2}>
+                            <Form.Label column sm={3}>
                                 Course credits:
                             </Form.Label>
                             <Col>
@@ -178,7 +196,7 @@ export function EditCourseModal({
                         </Form.Group>
                         {/* Prerequisities */}
                         <Form.Group controlId="formPrerequisites" as={Row}>
-                            <Form.Label column sm={2}>
+                            <Form.Label column sm={3}>
                                 Course Prerequisites (ID):
                             </Form.Label>
                             <Col>
@@ -207,7 +225,7 @@ export function EditCourseModal({
                             onClick={save}
                             variant="success"
                             className="me-4"
-                            disabled={!name}
+                            disabled={!name || !code || !credits}
                         >
                             Save
                         </Button>

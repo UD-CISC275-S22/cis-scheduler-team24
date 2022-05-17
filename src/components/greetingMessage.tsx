@@ -259,7 +259,11 @@ export function GreetingMessage(): JSX.Element {
                                                 other courses in the course
                                                 table. In order for a course to
                                                 be added, it must be given a
-                                                name and number of credits.
+                                                name and number of credits. Be
+                                                sure to format your course name
+                                                like &quot;CODE###: Title&quot;.
+                                                &#40;Ex. ACCT207: Introduction
+                                                to Accounting&#41;
                                             </Accordion.Body>
                                         </Accordion.Item>
                                     </Accordion.Body>

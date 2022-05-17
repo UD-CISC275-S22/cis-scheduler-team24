@@ -58,7 +58,8 @@ export function ListCourses({
     function saveAddChange() {
         addCourse(planID, semesterID, {
             id: courses.length + 1,
-            name: name,
+            code: name.substring(0, 7),
+            name: name.substring(9),
             credits: parseInt(credits),
             description: description,
             prerequisites: prereqs.split(", ").map(Number),
@@ -88,7 +89,7 @@ export function ListCourses({
                         <tbody>
                             {semesterCourses.map((course: Course) => (
                                 <tr key={course.id}>
-                                    <td>{course.name}</td>
+                                    <td>{course.code + ": " + course.name}</td>
                                     <td>{course.description}</td>
                                     <td>{course.credits}</td>
                                     <td>
@@ -108,6 +109,8 @@ export function ListCourses({
                                                     bg=""
                                                     className="mb-1"
                                                 >
+                                                    {degreeCourse.code}
+                                                    {": "}
                                                     {degreeCourse.name}
                                                 </Card>
                                             ))}
