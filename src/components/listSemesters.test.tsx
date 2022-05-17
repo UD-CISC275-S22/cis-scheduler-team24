@@ -22,23 +22,10 @@ describe("ListSemesters", () => {
             })
         );
 
-        const course = [
-            {
-                id: 0,
-                name: "",
-                credits: 0,
-                description: "",
-                prerequisites: [],
-                isTaken: false,
-                isEditing: false,
-                isRequired: true,
-                breadthType: ""
-            }
-        ];
         render(
             <ListSemesters
                 planSemesters={oldplan[0].semesters}
-                courses={course}
+                courses={[]}
                 floatingCourses={[]}
                 requiredCourses={[]}
                 takenCourses={[]}
