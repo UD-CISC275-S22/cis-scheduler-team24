@@ -15,6 +15,7 @@ export function ListSemesters({
     addSemester,
     removeSemester,
     removeSemesterCourses,
+    removeCourse,
     setSemesterName,
     setFloatingCourses,
     setRequiredCourses,
@@ -31,6 +32,7 @@ export function ListSemesters({
     addSemester: (planID: number) => void;
     removeSemester: (planID: number, semester: Semester) => void;
     removeSemesterCourses: (planID: number, semester: Semester) => void;
+    removeCourse: (planID: number, semesterID: number, course: Course) => void;
     setSemesterName: (
         planID: number,
         semesterID: number,
@@ -108,6 +110,7 @@ export function ListSemesters({
                                         removeSemesterCourses={
                                             removeSemesterCourses
                                         }
+                                        removeCourse={removeCourse}
                                         setSemesterCourses={setSemesterCourses}
                                         setFloatingCourses={setFloatingCourses}
                                         setRequiredCourses={setRequiredCourses}

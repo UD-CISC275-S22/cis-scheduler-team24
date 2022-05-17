@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
+import { Course } from "../interfaces/course";
 
 export function DeleteCourseWarningModalX({
-    removeCourse
+    removeCourse,
+    planID,
+    semesterID,
+    course
 }: {
-    removeCourse: () => void;
+    removeCourse: (planID: number, semesterID: number, course: Course) => void;
+    planID: number;
+    semesterID: number;
+    course: Course;
 }) {
     const [showAddModal, setShowDeleteModal] = useState(false);
 
@@ -48,7 +55,7 @@ export function DeleteCourseWarningModalX({
                     <Modal.Footer>
                         <Button
                             onClick={() => {
-                                removeCourse();
+                                removeCourse(planID, semesterID, course);
                                 cancel();
                             }}
                             variant="danger"

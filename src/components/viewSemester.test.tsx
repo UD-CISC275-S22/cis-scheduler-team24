@@ -29,6 +29,7 @@ describe("viewSemester", () => {
             requiredCourses={[]}
             takenCourses={[]}
             removeSemesterCourses={() => []}
+            removeCourse={() => []}
             setFloatingCourses={() => []}
             setRequiredCourses={() => []}
             setTakenCourses={() => []}

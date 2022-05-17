@@ -35,9 +35,10 @@ describe("EditCourseModal tests", () => {
                 handleClose={() => []}
                 course={examplecourse}
                 planID={0}
+                semesterID={0}
                 requiredCourses={exampleRequiredCourses}
                 editCourse={() => []}
-                deleteCourse={() => []}
+                removeCourse={() => []}
                 setRequiredCourses={() => []}
             />
         );

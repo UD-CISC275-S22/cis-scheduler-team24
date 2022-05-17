@@ -18,6 +18,7 @@ export function ViewPlan({
     removeSemester,
     removeSemesterCourses,
     clearSemesters,
+    removeCourse,
     setSemesterName,
     setFloatingCourses,
     setRequiredCourses,
@@ -33,6 +34,7 @@ export function ViewPlan({
     removeSemester: (planID: number, semester: Semester) => void;
     removeSemesterCourses: (planID: number, semester: Semester) => void;
     clearSemesters: (planID: number) => void;
+    removeCourse: (planID: number, semesterID: number, course: Course) => void;
     setSemesterName: (
         planID: number,
         semesterID: number,
@@ -144,6 +146,7 @@ export function ViewPlan({
                                             removeSemesterCourses={
                                                 removeSemesterCourses
                                             }
+                                            removeCourse={removeCourse}
                                             setSemesterName={setSemesterName}
                                             setFloatingCourses={
                                                 setFloatingCourses

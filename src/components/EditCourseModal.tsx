@@ -8,17 +8,19 @@ export function EditCourseModal({
     handleClose,
     course,
     planID,
+    semesterID,
     requiredCourses,
     editCourse,
-    deleteCourse,
+    removeCourse,
     setRequiredCourses
 }: {
     handleClose: () => void;
     course: Course;
     planID: number;
+    semesterID: number;
     requiredCourses: Course[];
     editCourse: (id: number, newCourse: Course) => void;
-    deleteCourse: (course: Course) => void;
+    removeCourse: (planID: number, semesterID: number, course: Course) => void;
     setRequiredCourses: (planID: number, courses: Course[]) => void;
 }) {
     const [name, setName] = useState<string>(course.name);
@@ -113,10 +115,6 @@ export function EditCourseModal({
         setRequired(!isRequired);
     }
 
-    function removeCourse() {
-        deleteCourse(course);
-    }
-
     return (
         <div>
             <div style={{ display: "flex" }}>
@@ -132,6 +130,9 @@ export function EditCourseModal({
                 <div>
                     <DeleteCourseWarningModalX
                         removeCourse={removeCourse}
+                        planID={planID}
+                        semesterID={semesterID}
+                        course={course}
                     ></DeleteCourseWarningModalX>
                 </div>
             </div>
@@ -235,6 +236,9 @@ export function EditCourseModal({
                         <div>
                             <DeleteCourseWarningModal
                                 removeCourse={removeCourse}
+                                planID={planID}
+                                semesterID={semesterID}
+                                course={course}
                             ></DeleteCourseWarningModal>
                         </div>
                         <div onClick={reset}>

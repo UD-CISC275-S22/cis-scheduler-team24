@@ -14,14 +14,11 @@ import { EditCourseModal } from "./EditCourseModal";
 export function ListCourses({
     courses,
     semesterCourses,
-    floatingCourses,
     requiredCourses,
-    takenCourses,
     planID,
     semesterID,
-    setFloatingCourses,
+    removeCourse,
     setRequiredCourses,
-    setTakenCourses,
     setSemesterCourses,
     updateCourses,
     updateSemesterCourses
@@ -33,9 +30,8 @@ export function ListCourses({
     takenCourses: Course[];
     planID: number;
     semesterID: number;
-    setFloatingCourses: (planID: number, floats: Course[]) => void;
+    removeCourse: (planID: number, semesterID: number, course: Course) => void;
     setRequiredCourses: (planID: number, requirements: Course[]) => void;
-    setTakenCourses: (planID: number, takenCourses: Course[]) => void;
     setSemesterCourses: (
         planID: number,
         semesterID: number,
@@ -71,24 +67,6 @@ export function ListCourses({
                     course.id === id ? newCourse : course
             )
         );
-    }
-
-    function deleteCourse(doomedCourse: Course) {
-        setSemesterCourses(
-            planID,
-            semesterID,
-            semesterCourses.filter(
-                (course: Course): boolean => course.id !== doomedCourse.id
-            )
-        );
-        setFloatingCourses(planID, [...floatingCourses, { ...doomedCourse }]);
-        setTakenCourses(
-            planID,
-            takenCourses.filter(
-                (course: Course): boolean => course.id !== doomedCourse.id
-            )
-        );
-        setShowAddModal(false);
     }
 
     function addCourse(newCourse: Course) {
@@ -167,9 +145,10 @@ export function ListCourses({
                                             handleClose={handleCloseAddModal}
                                             course={course}
                                             planID={planID}
+                                            semesterID={semesterID}
                                             requiredCourses={requiredCourses}
                                             editCourse={editCourse}
-                                            deleteCourse={deleteCourse}
+                                            removeCourse={removeCourse}
                                             setRequiredCourses={
                                                 setRequiredCourses
                                             }

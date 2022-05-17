@@ -12,9 +12,8 @@ describe("listCourses", () => {
             takenCourses={[]}
             planID={0}
             semesterID={0}
-            setFloatingCourses={() => []}
+            removeCourse={() => []}
             setRequiredCourses={() => []}
-            setTakenCourses={() => []}
             setSemesterCourses={() => []}
             updateCourses={() => []}
             updateSemesterCourses={() => []}
