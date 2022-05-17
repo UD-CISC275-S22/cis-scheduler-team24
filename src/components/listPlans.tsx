@@ -20,9 +20,8 @@ export function ListPlans({
     removeCourse,
     setSemesterName,
     skipSemester,
-    setFloatingCourses,
+    unskipSemester,
     setRequiredCourses,
-    setTakenCourses,
     setSemesterCourses,
     moveFromFloatingCourses
 }: {
@@ -43,9 +42,8 @@ export function ListPlans({
         semesterName: string
     ) => void;
     skipSemester: (planID: number, semester: Semester) => void;
-    setFloatingCourses: (planID: number, floats: Course[]) => void;
+    unskipSemester: (planID: number, semester: Semester) => void;
     setRequiredCourses: (planID: number, requirements: Course[]) => void;
-    setTakenCourses: (planID: number, takenCourses: Course[]) => void;
     setSemesterCourses: (
         planID: number,
         semesterID: number,
@@ -97,9 +95,8 @@ export function ListPlans({
                                 removeCourse={removeCourse}
                                 setSemesterName={setSemesterName}
                                 skipSemester={skipSemester}
-                                setFloatingCourses={setFloatingCourses}
+                                unskipSemester={unskipSemester}
                                 setRequiredCourses={setRequiredCourses}
-                                setTakenCourses={setTakenCourses}
                                 setSemesterCourses={setSemesterCourses}
                                 moveFromFloatingCourses={
                                     moveFromFloatingCourses

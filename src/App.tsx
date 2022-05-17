@@ -177,26 +177,6 @@ function App(): JSX.Element {
         };
     }
 
-    function setFloatingCourses(planID: number, floats: Course[]): void {
-        setPlans(
-            plans.map(
-                (plan: Plan): Plan =>
-                    planID === plan.id
-                        ? setFloatingCourses2(plan, floats)
-                        : plan
-            )
-        );
-    }
-
-    function setFloatingCourses2(plan: Plan, floats: Course[]): Plan {
-        return {
-            ...plan,
-            floating_courses: [
-                ...floats.map((course: Course): number => course.id)
-            ]
-        };
-    }
-
     function setRequiredCourses(
         planID: number,
         requiredCourses: Course[]
@@ -216,26 +196,6 @@ function App(): JSX.Element {
             ...plan,
             requirements: [
                 ...requiredCourses.map((course: Course): number => course.id)
-            ]
-        };
-    }
-
-    function setTakenCourses(planID: number, takenCourses: Course[]): void {
-        setPlans(
-            plans.map(
-                (plan: Plan): Plan =>
-                    planID === plan.id
-                        ? setTakenCourses2(plan, takenCourses)
-                        : plan
-            )
-        );
-    }
-
-    function setTakenCourses2(plan: Plan, takenCourses: Course[]): Plan {
-        return {
-            ...plan,
-            taken_courses: [
-                ...takenCourses.map((course: Course): number => course.id)
             ]
         };
     }
@@ -450,6 +410,25 @@ function App(): JSX.Element {
         };
     }
 
+    function unskipSemester(planID: number, semester: Semester): void {
+        setPlans(
+            plans.map(
+                (plan: Plan): Plan =>
+                    planID === plan.id ? unskipSemester2(plan, semester) : plan
+            )
+        );
+    }
+
+    function unskipSemester2(plan: Plan, semester: Semester): Plan {
+        return {
+            ...plan,
+            floating_courses: plan.floating_courses.filter(
+                (fID: number): boolean => !semester.courses.includes(fID)
+            ),
+            taken_courses: [...semester.courses, ...plan.taken_courses]
+        };
+    }
+
     // function saveData() {
     //     localStorage.setItem(saveDataKey, JSON.stringify(plans));
     // }
@@ -482,9 +461,8 @@ function App(): JSX.Element {
                             removeCourse={removeCourse}
                             setSemesterName={setSemesterName}
                             skipSemester={skipSemester}
-                            setFloatingCourses={setFloatingCourses}
+                            unskipSemester={unskipSemester}
                             setRequiredCourses={setRequiredCourses}
-                            setTakenCourses={setTakenCourses}
                             setSemesterCourses={setSemesterCourses}
                             moveFromFloatingCourses={moveFromFloatingCourses}
                         ></ListPlans>

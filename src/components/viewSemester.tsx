@@ -17,9 +17,8 @@ export function ViewSemester({
     removeSemesterCourses,
     removeCourse,
     skipSemester,
-    setFloatingCourses,
+    unskipSemester,
     setRequiredCourses,
-    setTakenCourses,
     setSemesterCourses,
     updateCourses
 }: {
@@ -32,9 +31,8 @@ export function ViewSemester({
     removeSemesterCourses: (planID: number, semester: Semester) => void;
     removeCourse: (planID: number, semesterID: number, course: Course) => void;
     skipSemester: (planID: number, semester: Semester) => void;
-    setFloatingCourses: (planID: number, floats: Course[]) => void;
+    unskipSemester: (planID: number, semester: Semester) => void;
     setRequiredCourses: (planID: number, requirements: Course[]) => void;
-    setTakenCourses: (planID: number, takenCourses: Course[]) => void;
     setSemesterCourses: (
         planID: number,
         semesterID: number,
@@ -62,18 +60,11 @@ export function ViewSemester({
                             <th>
                                 <SkipSemester
                                     isSkipped={isSkipped}
-                                    semesterCourses={courses.filter(
-                                        (course: Course): boolean =>
-                                            semester.courses.includes(course.id)
-                                    )}
-                                    floatingCourses={floatingCourses}
-                                    takenCourses={takenCourses}
                                     planID={planID}
                                     semester={semester}
                                     setSkipped={setSkipped}
                                     skipSemester={skipSemester}
-                                    setFloatingCourses={setFloatingCourses}
-                                    setTakenCourses={setTakenCourses}
+                                    unskipSemester={unskipSemester}
                                 ></SkipSemester>
                                 {isSkipped ? (
                                     <div></div>
