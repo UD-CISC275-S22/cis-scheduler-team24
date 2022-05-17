@@ -39,7 +39,6 @@ describe("EditCourseModal tests", () => {
                 requiredCourses={exampleRequiredCourses}
                 editCourse={() => []}
                 removeCourse={() => []}
-                setRequiredCourses={() => []}
             />
         );
     });

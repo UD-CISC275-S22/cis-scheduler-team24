@@ -19,11 +19,10 @@ export function ViewPlan({
     clearSemesters,
     removeCourse,
     addCourse,
+    editCourse,
     setSemesterName,
     skipSemester,
     unskipSemester,
-    setRequiredCourses,
-    setSemesterCourses,
     moveFromFloatingCourses
 }: {
     courses: Course[];
@@ -35,6 +34,12 @@ export function ViewPlan({
     clearSemesters: (planID: number) => void;
     removeCourse: (planID: number, semesterID: number, course: Course) => void;
     addCourse: (planID: number, semesterID: number, course: Course) => void;
+    editCourse: (
+        planID: number,
+        semesterID: number,
+        isRequired: boolean,
+        course: Course
+    ) => void;
     setSemesterName: (
         planID: number,
         semesterID: number,
@@ -42,12 +47,6 @@ export function ViewPlan({
     ) => void;
     skipSemester: (planID: number, semester: Semester) => void;
     unskipSemester: (planID: number, semester: Semester) => void;
-    setRequiredCourses: (planID: number, requirements: Course[]) => void;
-    setSemesterCourses: (
-        planID: number,
-        semesterID: number,
-        semesterCourses: Course[]
-    ) => void;
     moveFromFloatingCourses: (
         planID: number,
         semester: Semester,
@@ -144,15 +143,10 @@ export function ViewPlan({
                                             }
                                             removeCourse={removeCourse}
                                             addCourse={addCourse}
+                                            editCourse={editCourse}
                                             setSemesterName={setSemesterName}
                                             skipSemester={skipSemester}
                                             unskipSemester={unskipSemester}
-                                            setRequiredCourses={
-                                                setRequiredCourses
-                                            }
-                                            setSemesterCourses={
-                                                setSemesterCourses
-                                            }
                                         ></ListSemesters>
                                     </td>
                                 </tr>

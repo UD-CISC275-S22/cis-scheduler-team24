@@ -17,11 +17,10 @@ export function ListSemesters({
     removeSemesterCourses,
     removeCourse,
     addCourse,
+    editCourse,
     setSemesterName,
     skipSemester,
-    unskipSemester,
-    setRequiredCourses,
-    setSemesterCourses
+    unskipSemester
 }: {
     planSemesters: Semester[];
     courses: Course[];
@@ -34,6 +33,12 @@ export function ListSemesters({
     removeSemesterCourses: (planID: number, semester: Semester) => void;
     removeCourse: (planID: number, semesterID: number, course: Course) => void;
     addCourse: (planID: number, semesterID: number, course: Course) => void;
+    editCourse: (
+        planID: number,
+        semesterID: number,
+        isRequired: boolean,
+        course: Course
+    ) => void;
     setSemesterName: (
         planID: number,
         semesterID: number,
@@ -41,12 +46,6 @@ export function ListSemesters({
     ) => void;
     skipSemester: (planID: number, semester: Semester) => void;
     unskipSemester: (planID: number, semester: Semester) => void;
-    setRequiredCourses: (planID: number, requirements: Course[]) => void;
-    setSemesterCourses: (
-        planID: number,
-        semesterID: number,
-        semesterCourses: Course[]
-    ) => void;
 }): JSX.Element {
     const [isEditing, setEditing] = useState<boolean>(false);
 
@@ -112,10 +111,9 @@ export function ListSemesters({
                                         }
                                         removeCourse={removeCourse}
                                         addCourse={addCourse}
+                                        editCourse={editCourse}
                                         skipSemester={skipSemester}
                                         unskipSemester={unskipSemester}
-                                        setSemesterCourses={setSemesterCourses}
-                                        setRequiredCourses={setRequiredCourses}
                                     ></ViewSemester>
                                 </div>
                             </Accordion.Body>

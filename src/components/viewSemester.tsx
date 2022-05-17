@@ -17,10 +17,9 @@ export function ViewSemester({
     removeSemesterCourses,
     removeCourse,
     addCourse,
+    editCourse,
     skipSemester,
-    unskipSemester,
-    setRequiredCourses,
-    setSemesterCourses
+    unskipSemester
 }: {
     semester: Semester;
     courses: Course[];
@@ -31,14 +30,14 @@ export function ViewSemester({
     removeSemesterCourses: (planID: number, semester: Semester) => void;
     removeCourse: (planID: number, semesterID: number, course: Course) => void;
     addCourse: (planID: number, semesterID: number, course: Course) => void;
-    skipSemester: (planID: number, semester: Semester) => void;
-    unskipSemester: (planID: number, semester: Semester) => void;
-    setRequiredCourses: (planID: number, requirements: Course[]) => void;
-    setSemesterCourses: (
+    editCourse: (
         planID: number,
         semesterID: number,
-        semesterCourses: Course[]
+        isRequired: boolean,
+        course: Course
     ) => void;
+    skipSemester: (planID: number, semester: Semester) => void;
+    unskipSemester: (planID: number, semester: Semester) => void;
 }): JSX.Element {
     const [isSkipped, setSkipped] = useState<boolean>(semester.isSkipped);
 
@@ -76,12 +75,7 @@ export function ViewSemester({
                                             semesterID={semester.id}
                                             removeCourse={removeCourse}
                                             addCourse={addCourse}
-                                            setRequiredCourses={
-                                                setRequiredCourses
-                                            }
-                                            setSemesterCourses={
-                                                setSemesterCourses
-                                            }
+                                            editCourse={editCourse}
                                         ></ListCourses>
                                         <DeleteCourseModal
                                             removeSemesterCourses={

@@ -31,10 +31,9 @@ describe("viewSemester", () => {
             removeSemesterCourses={() => []}
             removeCourse={() => []}
             addCourse={() => []}
+            editCourse={() => []}
             skipSemester={() => []}
             unskipSemester={() => []}
-            setRequiredCourses={() => []}
-            setSemesterCourses={() => []}
         />
     );
     test("Whether there is a Credit showing up on screen", () => {

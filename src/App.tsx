@@ -177,74 +177,6 @@ function App(): JSX.Element {
         };
     }
 
-    function setRequiredCourses(
-        planID: number,
-        requiredCourses: Course[]
-    ): void {
-        setPlans(
-            plans.map(
-                (plan: Plan): Plan =>
-                    planID === plan.id
-                        ? setRequiredCourses2(plan, requiredCourses)
-                        : plan
-            )
-        );
-    }
-
-    function setRequiredCourses2(plan: Plan, requiredCourses: Course[]): Plan {
-        return {
-            ...plan,
-            requirements: [
-                ...requiredCourses.map((course: Course): number => course.id)
-            ]
-        };
-    }
-
-    function setSemesterCourses(
-        planID: number,
-        semesterID: number,
-        semesterCourses: Course[]
-    ): void {
-        setPlans(
-            plans.map(
-                (plan: Plan): Plan =>
-                    planID === plan.id
-                        ? setSemesterCourses2(plan, semesterID, semesterCourses)
-                        : plan
-            )
-        );
-    }
-
-    function setSemesterCourses2(
-        plan: Plan,
-        semesterID: number,
-        semesterCourses: Course[]
-    ): Plan {
-        return {
-            ...plan,
-            semesters: [
-                ...plan.semesters.map(
-                    (semester: Semester): Semester =>
-                        semester.id === semesterID
-                            ? setSemesterCourses3(semester, semesterCourses)
-                            : semester
-                )
-            ]
-        };
-    }
-
-    function setSemesterCourses3(
-        semester: Semester,
-        semesterCourses: Course[]
-    ): Semester {
-        return {
-            ...semester,
-            courses: [
-                ...semesterCourses.map((course: Course): number => course.id)
-            ]
-        };
-    }
-
     function removeSemesterCourses(planID: number, semester: Semester) {
         setPlans(
             plans.map(
@@ -365,6 +297,75 @@ function App(): JSX.Element {
             ...semester,
             courses: [...semester.courses, course.id]
         };
+    }
+
+    function editCourse(
+        planID: number,
+        semesterID: number,
+        isRequired: boolean,
+        course: Course
+    ): void {
+        setPlans(
+            plans.map(
+                (plan: Plan): Plan =>
+                    planID === plan.id
+                        ? editCourse2(plan, semesterID, isRequired, course)
+                        : plan
+            )
+        );
+        setCourses(
+            courses.map(
+                (cor: Course): Course => (course.id === cor.id ? course : cor)
+            )
+        );
+    }
+
+    function editCourse2(
+        plan: Plan,
+        semesterID: number,
+        isRequired: boolean,
+        course: Course
+    ): Plan {
+        return {
+            ...plan,
+            semesters: [
+                ...plan.semesters.map(
+                    (semester: Semester): Semester =>
+                        semester.id === semesterID
+                            ? editCourse3(semester, course)
+                            : semester
+                )
+            ],
+            taken_courses: plan.taken_courses.map((cor: number): number =>
+                course.id === cor ? course.id : cor
+            ),
+            requirements: editCourse4(plan, isRequired, course)
+        };
+    }
+
+    function editCourse3(semester: Semester, course: Course): Semester {
+        return {
+            ...semester,
+            courses: semester.courses.map((cor: number): number =>
+                course.id === cor ? course.id : cor
+            )
+        };
+    }
+
+    function editCourse4(
+        plan: Plan,
+        isRequired: boolean,
+        course: Course
+    ): number[] {
+        return isRequired
+            ? [...plan.requirements, course.id]
+            : editCourse5(plan, course);
+    }
+
+    function editCourse5(plan: Plan, course: Course): number[] {
+        return plan.requirements.filter(
+            (cor: number): boolean => cor !== course.id
+        );
     }
 
     function moveFromFloatingCourses(
@@ -497,11 +498,10 @@ function App(): JSX.Element {
                             clearSemesters={clearSemesters}
                             removeCourse={removeCourse}
                             addCourse={addCourse}
+                            editCourse={editCourse}
                             setSemesterName={setSemesterName}
                             skipSemester={skipSemester}
                             unskipSemester={unskipSemester}
-                            setRequiredCourses={setRequiredCourses}
-                            setSemesterCourses={setSemesterCourses}
                             moveFromFloatingCourses={moveFromFloatingCourses}
                         ></ListPlans>
                     </Col>

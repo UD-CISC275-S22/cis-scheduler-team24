@@ -11,17 +11,20 @@ export function EditCourseModal({
     semesterID,
     requiredCourses,
     editCourse,
-    removeCourse,
-    setRequiredCourses
+    removeCourse
 }: {
     handleClose: () => void;
     course: Course;
     planID: number;
     semesterID: number;
     requiredCourses: Course[];
-    editCourse: (id: number, newCourse: Course) => void;
+    editCourse: (
+        planID: number,
+        semesterID: number,
+        isRequired: boolean,
+        course: Course
+    ) => void;
     removeCourse: (planID: number, semesterID: number, course: Course) => void;
-    setRequiredCourses: (planID: number, courses: Course[]) => void;
 }) {
     const [name, setName] = useState<string>(course.name);
     const [description, setDescription] = useState<string>(course.description);
@@ -46,15 +49,21 @@ export function EditCourseModal({
     );
 
     function reset() {
-        editCourse(course.id, {
-            ...course,
-            name: resetname,
-            description: resetdescription,
-            credits: parseInt(resetcredits),
-            prerequisites: resetprereqs.split(", ").map(Number)
-        });
+        editCourse(
+            planID,
+            semesterID,
+            requiredCourses
+                .map((course: Course): number => course.id)
+                .includes(course.id),
+            {
+                ...course,
+                name: resetname,
+                description: resetdescription,
+                credits: parseInt(resetcredits),
+                prerequisites: resetprereqs.split(", ").map(Number)
+            }
+        );
         changeEditing();
-        makeRequired();
         setName(resetname);
         setDescription(resetdescription);
         setCredits(resetcredits.toString());
@@ -64,7 +73,7 @@ export function EditCourseModal({
     }
 
     function save() {
-        editCourse(course.id, {
+        editCourse(planID, semesterID, isRequired, {
             ...course,
             name: name,
             description: description,
@@ -72,30 +81,6 @@ export function EditCourseModal({
             prerequisites: prereqs.split(", ").map(Number)
         });
         changeEditing();
-        makeRequired();
-    }
-
-    function makeRequired() {
-        if (isRequired) {
-            setRequiredCourses(planID, [
-                ...requiredCourses,
-                {
-                    ...course,
-                    name: name,
-                    description: description,
-                    credits: parseInt(credits),
-                    prerequisites: prereqs.split(", ").map(Number)
-                }
-            ]);
-        } else {
-            setRequiredCourses(
-                planID,
-                requiredCourses.filter(
-                    (requirement: Course): boolean =>
-                        course.id !== requirement.id
-                )
-            );
-        }
     }
 
     function cancel() {

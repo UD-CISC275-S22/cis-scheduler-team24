@@ -19,8 +19,7 @@ export function ListCourses({
     semesterID,
     removeCourse,
     addCourse,
-    setRequiredCourses,
-    setSemesterCourses
+    editCourse
 }: {
     courses: Course[];
     semesterCourses: Course[];
@@ -31,11 +30,11 @@ export function ListCourses({
     semesterID: number;
     removeCourse: (planID: number, semesterID: number, course: Course) => void;
     addCourse: (planID: number, semesterID: number, course: Course) => void;
-    setRequiredCourses: (planID: number, requirements: Course[]) => void;
-    setSemesterCourses: (
+    editCourse: (
         planID: number,
         semesterID: number,
-        semesterCourses: Course[]
+        isRequired: boolean,
+        course: Course
     ) => void;
 }): JSX.Element {
     const [showAddModal, setShowAddModal] = useState(false);
@@ -55,17 +54,6 @@ export function ListCourses({
     // function SaveData() {
     //     localStorage.setItem(saveDataKey, JSON.stringify(tableCourses));
     // }
-
-    function editCourse(id: number, newCourse: Course) {
-        setSemesterCourses(
-            planID,
-            semesterID,
-            semesterCourses.map(
-                (course: Course): Course =>
-                    course.id === id ? newCourse : course
-            )
-        );
-    }
 
     function saveAddChange() {
         addCourse(planID, semesterID, {
@@ -133,9 +121,6 @@ export function ListCourses({
                                             requiredCourses={requiredCourses}
                                             editCourse={editCourse}
                                             removeCourse={removeCourse}
-                                            setRequiredCourses={
-                                                setRequiredCourses
-                                            }
                                         ></EditCourseModal>
                                     </td>
                                 </tr>
