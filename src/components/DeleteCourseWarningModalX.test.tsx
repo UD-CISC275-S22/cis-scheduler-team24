@@ -12,7 +12,6 @@ describe("DeleteCourseModalX tests", () => {
                 semesterID={0}
                 course={{
                     id: 0,
-                    code: "",
                     name: "",
                     credits: 0,
                     description: "",

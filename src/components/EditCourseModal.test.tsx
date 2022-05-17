@@ -8,7 +8,6 @@ describe("EditCourseModal tests", () => {
     beforeEach(() => {
         const examplecourse = {
             id: 0,
-            code: "",
             name: "",
             credits: 0,
             description: "",
@@ -21,7 +20,6 @@ describe("EditCourseModal tests", () => {
         const exampleRequiredCourses = [
             {
                 id: 0,
-                code: "",
                 name: "",
                 credits: 0,
                 description: "",

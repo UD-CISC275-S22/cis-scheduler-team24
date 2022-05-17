@@ -58,11 +58,10 @@ export function ListCourses({
     function saveAddChange() {
         addCourse(planID, semesterID, {
             id: courses.length + 1,
-            code: name.substring(0, 7),
-            name: name.substring(9),
+            name: name,
             credits: parseInt(credits),
             description: description,
-            prerequisites: prereqs.split(", ").map(String),
+            prerequisites: prereqs.split(", ").map(Number),
             isEditing: false,
             breadthType: ""
         });
@@ -89,7 +88,7 @@ export function ListCourses({
                         <tbody>
                             {semesterCourses.map((course: Course) => (
                                 <tr key={course.id}>
-                                    <td>{course.code + ": " + course.name}</td>
+                                    <td>{course.name}</td>
                                     <td>{course.description}</td>
                                     <td>{course.credits}</td>
                                     <td>
@@ -99,7 +98,7 @@ export function ListCourses({
                                                     degreeCourse: Course
                                                 ): boolean =>
                                                     course.prerequisites.includes(
-                                                        degreeCourse.code
+                                                        degreeCourse.id
                                                     )
                                             )
                                             .map((degreeCourse: Course) => (
@@ -109,8 +108,6 @@ export function ListCourses({
                                                     bg=""
                                                     className="mb-1"
                                                 >
-                                                    {degreeCourse.code}
-                                                    {": "}
                                                     {degreeCourse.name}
                                                 </Card>
                                             ))}

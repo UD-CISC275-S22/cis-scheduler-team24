@@ -2,11 +2,10 @@
 
 export interface Course {
     id: number;
-    code: string;
     name: string;
     credits: number;
     description: string;
-    prerequisites: string[];
+    prerequisites: number[];
     isEditing: boolean;
     breadthType: string;
 }
