@@ -5,7 +5,191 @@
 PASS src/components/EditCourseModal.test.tsx
 PASS src/components/listCourses.test.tsx
 PASS src/components/DeleteCourseModal.test.tsx
-PASS src/components/listPlans.test.tsx
+FAIL src/components/listPlans.test.tsx
+  ● ListPlans › test the Clicking of Save button
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="Add-Plan-Button"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"nav nav-tabs"[39m
+            [33mrole[39m=[32m"tablist"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"nav-item"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: flex;"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33maria-controls[39m=[32m"react-aria4304103907-1-tabpane-1"[39m
+                  [33maria-selected[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"nav-link active"[39m
+                  [33mdata-rr-ui-event-key[39m=[32m"1"[39m
+                  [33mid[39m=[32m"react-aria4304103907-1-tab-1"[39m
+                  [33mrole[39m=[32m"tab"[39m
+                [36m>[39m
+                  [0mPlan 1[0m
+                [36m</a>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-empty"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0m✖️[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"nav-item"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: flex;"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33maria-controls[39m=[32m"react-aria4304103907-1-tabpane-2"[39m
+                  [33mclass[39m=[32m"nav-link"[39m
+                  [33mdata-rr-ui-event-key[39m=[32m"2"[39m
+                  [33mid[39m=[32m"react-aria4304103907-1-tab-2"[39m
+                  [33mrole[39m=[32m"tab"[39m
+                  [33mtabindex[39m=[32m"-1"[39m
+                [36m>[39m
+                  [0mPlan 2[0m
+                [36m</a>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-empty"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0m✖️[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"nav-item"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-outline-primary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [0mAdd Plan[0m
+                [36m</div>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"nav-item"[39m
+              [33mstyle[39m=[32m"margin: 10px;"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-check form-switch"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-check-input"[39m
+                  [33mid[39m=[32m"saving"[39m
+                  [33mtype[39m=[32m"checkbox"[39m
+                [36m/>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-check-label"[39m
+                  [33mfor[39m=[32m"saving"[39m
+                  [33mtitle[39m=[32m""[39m
+                [36m>[39m
+                  [0mUnsaved[0m
+                [36m</label>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"tab-content"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33maria-labelledby[39m=[32m"react-aria4304103907-1-tab-1"[39m
+              [33mclass[39m=[32m"tab-pane active"[39m
+              [33mid[39m=[32m"react-aria4304103907-1-tabpane-1"[39m
+            [36m>[39m
+              [36m<div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"container"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"row"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"col-sm-9"[39m
+                    [36m>[39m
+                      [36m<table[39m
+                        [33mclass[39m=[32m"table table-striped table-borderless"[39m
+                      [36m>[39m
+                        [36m<thead>[39m
+                          [36m<tr>[39m
+                            [36m<th>[39m
+                              [36m<div[39m
+                                [33mclass[39m=[32m"hstack gap-3"[39m
+                              [36m>[39m
+                                [36m<div[39m
+                                  [33mclass[39m=[32m"container"[39m
+                                [36m>[39m
+                                  [36m<h3>[39m
+                                    [0mPlan 1[0m
+                                    [36m<button[39m
+                                      [33mclass[39m=[32m"me-8 btn btn-empty"[39m
+                                      [33mdata-testid[39m=[32m"Edit Plan Name Button"[39m
+                                      [33mtype[39m=[32m"button"[39m
+                                    [36m>[39m
+                                      [0m🖊[0m
+                                    [36m</button>[39m
+                                  [36m</h3>[39m
+                                [36m</div>[39m
+                              [36m</div>[39m
+                            [36m</th>[39m
+                          [36m</tr>[39m
+                        [36m</thead>[39m
+                        [36m<tbody>[39m
+                          [36m<tr>[39m
+                            [36m<td>[39m
+                              [36m<div>[39m
+                                [36m<div[39m
+                                  [33mclass[39m=[32m"accordion accordion-flush"[39m
+                                [36m>[39m
+                                  [36m<div[39m
+                                    [33mclass[39m=[32m"accordion-item"[39m
+                                  [36m>[39m
+                                    [36m<h2[39m
+                                      [33mclass[39m=[32m"accordion-header"[39m
+                                    [36m>[39m
+                                      [36m<button[39m
+                                        [33maria-expanded[39m=[32m"true"[39m
+                                        [33mclass[39m=[32m"accordion-button"[39m
+                                        [33mtype[39m=[32m"button"[39m
+                                      [36m>[39m
+                                        [36m<span>[39m
+                                          [36m<div[39m
+                                            [33mstyle[39m=[32m"display: flex;"[39m
+                                          [36m>[39m
+                                            [36m<div[39m
+                                              [33mstyle[39m=[32m"display: flex;"[39m
+                                            [36m>[39m
+                                              [0mFall, 2019[0m
+                                              [36m<div[39m
+                                                [33mclass[39m=[32m"me-8"[39m
+                                                [33mdata-testid[39m=[32m"Edit-semester-name"[39m
+                                                [33mstyle[39...
+
+      63 |
+      64 |     test("test the Clicking of Save button", () => {
+    > 65 |         const AddPlanButton = screen.getByTestId("Add-Plan-Button");
+         |                                      ^
+      66 |         AddPlanButton.click();
+      67 |         expect(AddPlanButton).toBeEnabled;
+      68 |     });
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/listPlans.test.tsx:65:38)
+
 PASS src/components/DeleteCourseWarningModalX.test.tsx
 PASS src/components/DeleteCourseWarningModal.test.tsx
 PASS src/components/exportPlans.test.tsx
@@ -23,10 +207,10 @@ PASS src/App.test.tsx
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
-All files                       |    72.5 |    21.31 |   54.37 |    71.8 |                   
- src                            |   10.38 |        0 |    5.63 |   10.52 |                   
-  App.tsx                       |   10.38 |        0 |    5.63 |   10.52 | 48-465            
- src/components                 |   96.05 |    76.47 |   93.25 |   96.31 |                   
+All files                       |   71.87 |    24.63 |    53.7 |   71.16 |                   
+ src                            |   15.11 |        6 |    5.47 |   15.29 |                   
+  App.tsx                       |   15.11 |        6 |    5.47 |   15.29 | 40,50-493,497     
+ src/components                 |   96.03 |    73.68 |   93.25 |   96.29 |                   
   Carouse.tsx                   |     100 |      100 |     100 |     100 |                   
   ClearSemesterModal.tsx        |     100 |      100 |     100 |     100 |                   
   DeleteCourseModal.tsx         |     100 |      100 |     100 |     100 |                   
@@ -40,7 +224,7 @@ All files                       |    72.5 |    21.31 |   54.37 |    71.8 |
   exportPlans.tsx               |     100 |      100 |     100 |     100 |                   
   greetingMessage.tsx           |     100 |      100 |     100 |     100 |                   
   listCourses.tsx               |   95.65 |      100 |    90.9 |     100 |                   
-  listPlans.tsx                 |     100 |      100 |     100 |     100 |                   
+  listPlans.tsx                 |     100 |       50 |     100 |     100 | 89                
   listSemesters.tsx             |     100 |      100 |     100 |     100 |                   
   skipSemester.tsx              |   16.66 |        0 |      25 |   16.66 | 21-31             
   viewFloatingCourses.tsx       |      75 |      100 |      75 |      75 | 52                
@@ -53,8 +237,8 @@ All files                       |    72.5 |    21.31 |   54.37 |    71.8 |
   semester.ts                   |       0 |        0 |       0 |       0 |                   
 --------------------------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 18 passed, 18 total
-Tests:       68 passed, 68 total
+Test Suites: 1 failed, 17 passed, 18 total
+Tests:       1 failed, 67 passed, 68 total
 Snapshots:   0 total
-Time:        17.371 s
+Time:        17.957 s
 Ran all test suites.
