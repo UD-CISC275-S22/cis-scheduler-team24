@@ -2,6 +2,7 @@ import React from "react";
 import { Nav, Tab, Button } from "react-bootstrap";
 import { ViewPlan } from "./viewPlan";
 import { Plan } from "../interfaces/plan";
+import { Semester } from "../interfaces/semester";
 import { Course } from "../interfaces/course";
 import { DeletePlan } from "./DeletePlan";
 
@@ -19,7 +20,8 @@ export function ListPlans({
     setFloatingCourses,
     setRequiredCourses,
     setTakenCourses,
-    setSemesterCourses
+    setSemesterCourses,
+    moveFromFloatingCourses
 }: {
     courses: Course[];
     plans: Plan[];
@@ -42,6 +44,13 @@ export function ListPlans({
         planID: number,
         semesterID: number,
         semesterCourses: Course[]
+    ) => void;
+    moveFromFloatingCourses: (
+        planID: number,
+        semester: Semester,
+        course: Course,
+        floatingCourses: Course[],
+        takenCourses: Course[]
     ) => void;
 }): JSX.Element {
     return (
@@ -83,6 +92,9 @@ export function ListPlans({
                                 setRequiredCourses={setRequiredCourses}
                                 setTakenCourses={setTakenCourses}
                                 setSemesterCourses={setSemesterCourses}
+                                moveFromFloatingCourses={
+                                    moveFromFloatingCourses
+                                }
                             ></ViewPlan>
                         </Tab.Pane>
                     ))}

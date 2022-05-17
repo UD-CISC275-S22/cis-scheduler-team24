@@ -1,28 +1,25 @@
 import React from "react";
-import { Dropdown, DropdownButton, InputGroup, Table } from "react-bootstrap";
+import { DropdownButton, InputGroup, Table } from "react-bootstrap";
+import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import { Course } from "../interfaces/course";
 import { Semester } from "../interfaces/semester";
 export function ViewFloatingCourses({
     floatingCourses,
     takenCourses,
-    setFloatingCourses,
-    setTakenCourses,
-    setSemesterCourses,
+    moveFromFloatingCourses,
     semesters,
-    courses,
     planID
 }: {
     floatingCourses: Course[];
     takenCourses: Course[];
-    setFloatingCourses: (planID: number, floats: Course[]) => void;
-    setTakenCourses: (planID: number, takenCourses: Course[]) => void;
-    setSemesterCourses: (
+    moveFromFloatingCourses: (
         planID: number,
-        semesterID: number,
-        semesterCourses: Course[]
+        semester: Semester,
+        course: Course,
+        floatingCourses: Course[],
+        takenCourses: Course[]
     ) => void;
     semesters: Semester[];
-    courses: Course[];
     planID: number;
 }): JSX.Element {
     return (
@@ -39,7 +36,38 @@ export function ViewFloatingCourses({
                     </tr>
                 </thead>
                 <tbody>
-                    {floatingCourses.map((course: Course) => (
+                    {floatingCourses.map((floatingCourse: Course) => (
+                        <tr key={floatingCourse.id}>
+                            <td>{floatingCourse.name}</td>
+                            <td>
+                                <InputGroup className="mb-3">
+                                    <DropdownButton
+                                        variant="outline-secondary"
+                                        title="Move"
+                                        id="input-group-dropdown-2"
+                                    >
+                                        {semesters.map((semester: Semester) => (
+                                            <DropdownItem
+                                                key={semester.id}
+                                                onClick={() => {
+                                                    moveFromFloatingCourses(
+                                                        planID,
+                                                        semester,
+                                                        floatingCourse,
+                                                        floatingCourses,
+                                                        takenCourses
+                                                    );
+                                                }}
+                                            >
+                                                {semester.name}
+                                            </DropdownItem>
+                                        ))}
+                                    </DropdownButton>
+                                </InputGroup>
+                            </td>
+                        </tr>
+                    ))}
+                    {/*floatingCourses.map((course: Course) => (
                         <tr key={course.id}>
                             <td>{course.name}</td>
                             <td>
@@ -53,42 +81,13 @@ export function ViewFloatingCourses({
                                             <Dropdown.Item
                                                 key={semester.id}
                                                 onClick={() => {
-                                                    setFloatingCourses(
-                                                        planID,
-                                                        floatingCourses.filter(
-                                                            (
-                                                                floater: Course
-                                                            ): boolean =>
-                                                                course.id !==
-                                                                floater.id
-                                                        )
+                                                    removeFloatingCourse(
+                                                        course
                                                     );
-                                                    setTakenCourses(planID, [
-                                                        ...takenCourses,
-                                                        {
-                                                            ...course,
-                                                            prerequisites:
-                                                                course.prerequisites
-                                                        }
-                                                    ]);
-                                                    setSemesterCourses(
-                                                        planID,
-                                                        semester.id,
-                                                        [
-                                                            ...courses.filter(
-                                                                (
-                                                                    course: Course
-                                                                ): boolean =>
-                                                                    semester.courses.includes(
-                                                                        course.id
-                                                                    )
-                                                            ),
-                                                            {
-                                                                ...course,
-                                                                prerequisites:
-                                                                    course.prerequisites
-                                                            }
-                                                        ]
+                                                    takeCourse(course);
+                                                    addSemesterCourse(
+                                                        course,
+                                                        semester
                                                     );
                                                 }}
                                             >
@@ -99,7 +98,7 @@ export function ViewFloatingCourses({
                                 </InputGroup>
                             </td>
                         </tr>
-                    ))}
+                                            ))*/}
                 </tbody>
             </Table>
         </div>

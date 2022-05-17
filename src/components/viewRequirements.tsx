@@ -3,10 +3,10 @@ import { Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 
 export function ViewRequirements({
-    requirements,
+    requiredCourses,
     takenCourses
 }: {
-    requirements: Course[];
+    requiredCourses: Course[];
     takenCourses: Course[];
 }): JSX.Element {
     return (
@@ -23,17 +23,17 @@ export function ViewRequirements({
                     </tr>
                 </thead>
                 <tbody>
-                    {requirements.map((requirement: Course) => (
-                        <tr key={requirement.id}>
+                    {requiredCourses.map((requiredCourse: Course) => (
+                        <tr key={requiredCourse.id}>
                             <td>
-                                <td>{requirement.name}</td>
+                                <td>{requiredCourse.name}</td>
                             </td>
                             {takenCourses
                                 .map(
                                     (takenCourse: Course): number =>
                                         takenCourse.id
                                 )
-                                .includes(requirement.id)
+                                .includes(requiredCourse.id)
                                 ? "✓"
                                 : "✗"}
                         </tr>
