@@ -3,9 +3,12 @@
 > react-scripts test "--coverage"
 
 PASS src/components/EditCourseModal.test.tsx
+PASS src/components/listCourses.test.tsx
 PASS src/components/DeleteCourseModal.test.tsx
+PASS src/components/listPlans.test.tsx
 PASS src/components/DeleteCourseWarningModalX.test.tsx
 PASS src/components/DeleteCourseWarningModal.test.tsx
+PASS src/components/exportPlans.test.tsx
 PASS src/components/ClearSemesterModal.test.tsx
 PASS src/components/editSemester.test.tsx
 PASS src/components/editPlan.test.tsx
@@ -14,44 +17,43 @@ PASS src/components/viewSemester.test.tsx
 PASS src/components/DeleteSemester.test.tsx
 PASS src/components/DeletePlan.test.tsx
 PASS src/components/Carouse.test.tsx
-PASS src/components/listCourses.test.tsx
 PASS src/components/viewRequirements.test.tsx
 PASS src/App.test.tsx
---------------------------------|---------|----------|---------|---------|----------------------
-File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s    
---------------------------------|---------|----------|---------|---------|----------------------
-All files                       |   47.46 |    10.34 |   46.54 |   48.09 |                      
- src                            |   10.38 |        0 |    5.63 |   10.52 |                      
-  App.tsx                       |   10.38 |        0 |    5.63 |   10.52 | 48-465               
- src/components                 |    61.8 |    42.85 |   79.54 |   63.44 |                      
-  Carouse.tsx                   |     100 |      100 |     100 |     100 |                      
-  ClearSemesterModal.tsx        |     100 |      100 |     100 |     100 |                      
-  DeleteCourseModal.tsx         |   71.42 |      100 |      75 |   66.66 | 52-53                
-  DeleteCourseWarningModal.tsx  |     100 |      100 |     100 |     100 |                      
-  DeleteCourseWarningModalX.tsx |     100 |      100 |     100 |     100 |                      
-  DeletePlan.tsx                |     100 |      100 |     100 |     100 |                      
-  DeleteSemester.tsx            |     100 |      100 |     100 |     100 |                      
-  EditCourseModal.tsx           |     100 |      100 |     100 |     100 |                      
-  editPlan.tsx                  |     100 |      100 |     100 |     100 |                      
-  editSemester.tsx              |     100 |      100 |     100 |     100 |                      
-  exportPlans.tsx               |    5.17 |        0 |      20 |    5.88 | 15-35,40-119,127-134 
-  greetingMessage.tsx           |     100 |      100 |     100 |     100 |                      
-  listCourses.tsx               |   56.52 |       50 |   45.45 |   59.09 | 59-71,134-164        
-  listPlans.tsx                 |     100 |      100 |     100 |     100 |                      
-  listSemesters.tsx             |      60 |       50 |      50 |      60 | 53-57                
-  skipSemester.tsx              |   16.66 |        0 |      25 |   16.66 | 21-31                
-  viewFloatingCourses.tsx       |      75 |      100 |      75 |      75 | 48                   
-  viewPlan.tsx                  |      90 |       50 |   88.88 |      90 | 61                   
-  viewRequirements.tsx          |     100 |      100 |     100 |     100 |                      
-  viewSemester.tsx              |     100 |       50 |     100 |     100 | 59                   
- src/interfaces                 |       0 |        0 |       0 |       0 |                      
-  course.ts                     |       0 |        0 |       0 |       0 |                      
-  plan.ts                       |       0 |        0 |       0 |       0 |                      
-  semester.ts                   |       0 |        0 |       0 |       0 |                      
---------------------------------|---------|----------|---------|---------|----------------------
+--------------------------------|---------|----------|---------|---------|-------------------
+File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------------------------|---------|----------|---------|---------|-------------------
+All files                       |   71.37 |    15.51 |   52.83 |   70.61 |                   
+ src                            |   10.38 |        0 |    5.63 |   10.52 |                   
+  App.tsx                       |   10.38 |        0 |    5.63 |   10.52 | 48-465            
+ src/components                 |   94.97 |    64.28 |    90.9 |   95.16 |                   
+  Carouse.tsx                   |     100 |      100 |     100 |     100 |                   
+  ClearSemesterModal.tsx        |     100 |      100 |     100 |     100 |                   
+  DeleteCourseModal.tsx         |     100 |      100 |     100 |     100 |                   
+  DeleteCourseWarningModal.tsx  |     100 |      100 |     100 |     100 |                   
+  DeleteCourseWarningModalX.tsx |     100 |      100 |     100 |     100 |                   
+  DeletePlan.tsx                |     100 |      100 |     100 |     100 |                   
+  DeleteSemester.tsx            |     100 |      100 |     100 |     100 |                   
+  EditCourseModal.tsx           |     100 |      100 |     100 |     100 |                   
+  editPlan.tsx                  |     100 |      100 |     100 |     100 |                   
+  editSemester.tsx              |     100 |      100 |     100 |     100 |                   
+  exportPlans.tsx               |     100 |      100 |     100 |     100 |                   
+  greetingMessage.tsx           |     100 |      100 |     100 |     100 |                   
+  listCourses.tsx               |   95.65 |      100 |    90.9 |     100 |                   
+  listPlans.tsx                 |     100 |      100 |     100 |     100 |                   
+  listSemesters.tsx             |      60 |       50 |      50 |      60 | 53-57             
+  skipSemester.tsx              |   16.66 |        0 |      25 |   16.66 | 21-31             
+  viewFloatingCourses.tsx       |      75 |      100 |      75 |      75 | 48                
+  viewPlan.tsx                  |      90 |       50 |   88.88 |      90 | 61                
+  viewRequirements.tsx          |     100 |      100 |     100 |     100 |                   
+  viewSemester.tsx              |     100 |       50 |     100 |     100 | 59                
+ src/interfaces                 |       0 |        0 |       0 |       0 |                   
+  course.ts                     |       0 |        0 |       0 |       0 |                   
+  plan.ts                       |       0 |        0 |       0 |       0 |                   
+  semester.ts                   |       0 |        0 |       0 |       0 |                   
+--------------------------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 15 passed, 15 total
-Tests:       52 passed, 52 total
+Test Suites: 17 passed, 17 total
+Tests:       65 passed, 65 total
 Snapshots:   0 total
-Time:        15.364 s
+Time:        15.957 s
 Ran all test suites.
