@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 
 export function ClearSemesterModal({
-    clearSemesters
+    clearSemesters,
+    planID
 }: {
-    clearSemesters: () => void;
+    clearSemesters: (planID: number) => void;
+    planID: number;
 }) {
     const [showAddModal, setShowDeleteModal] = useState(false);
 
@@ -16,7 +18,7 @@ export function ClearSemesterModal({
 
     function clearSemestersbutton() {
         setShowDeleteModal(false);
-        clearSemesters();
+        clearSemesters(planID);
     }
 
     return (

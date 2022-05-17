@@ -25,8 +25,13 @@ describe("editSemesters", () => {
         render(
             <EditSemester
                 semester={oldplan[0].semesters[0]}
-                setSemesterName={(id: number, name: string) => {
-                    oldplan[0].semesters[0].id, name;
+                planID={0}
+                setSemesterName={(
+                    planID: number,
+                    semesterID: number,
+                    name: string
+                ) => {
+                    oldplan[0].id, oldplan[0].semesters[0].id, name;
                 }}
                 openEdit={() => []}
             />

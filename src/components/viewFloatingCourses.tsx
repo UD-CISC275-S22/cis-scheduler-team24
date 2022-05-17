@@ -1,19 +1,26 @@
 import React from "react";
-import { Dropdown, DropdownButton, InputGroup, Table } from "react-bootstrap";
+import { DropdownButton, InputGroup, Table } from "react-bootstrap";
+import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import { Course } from "../interfaces/course";
 import { Semester } from "../interfaces/semester";
 export function ViewFloatingCourses({
     floatingCourses,
     takenCourses,
-    setFloats,
-    setTakenCourses,
-    semesters
+    moveFromFloatingCourses,
+    semesters,
+    planID
 }: {
     floatingCourses: Course[];
     takenCourses: Course[];
-    setFloats: (newFloats: Course[]) => void;
-    setTakenCourses: (newCourses: Course[]) => void;
+    moveFromFloatingCourses: (
+        planID: number,
+        semester: Semester,
+        course: Course,
+        floatingCourses: Course[],
+        takenCourses: Course[]
+    ) => void;
     semesters: Semester[];
+    planID: number;
 }): JSX.Element {
     return (
         <div>
@@ -29,7 +36,38 @@ export function ViewFloatingCourses({
                     </tr>
                 </thead>
                 <tbody>
-                    {floatingCourses.map((course: Course) => (
+                    {floatingCourses.map((floatingCourse: Course) => (
+                        <tr key={floatingCourse.id}>
+                            <td>{floatingCourse.name}</td>
+                            <td>
+                                <InputGroup className="mb-3">
+                                    <DropdownButton
+                                        variant="outline-secondary"
+                                        title="Move"
+                                        id="input-group-dropdown-2"
+                                    >
+                                        {semesters.map((semester: Semester) => (
+                                            <DropdownItem
+                                                key={semester.id}
+                                                onClick={() => {
+                                                    moveFromFloatingCourses(
+                                                        planID,
+                                                        semester,
+                                                        floatingCourse,
+                                                        floatingCourses,
+                                                        takenCourses
+                                                    );
+                                                }}
+                                            >
+                                                {semester.name}
+                                            </DropdownItem>
+                                        ))}
+                                    </DropdownButton>
+                                </InputGroup>
+                            </td>
+                        </tr>
+                    ))}
+                    {/*floatingCourses.map((course: Course) => (
                         <tr key={course.id}>
                             <td>{course.name}</td>
                             <td>
@@ -43,23 +81,14 @@ export function ViewFloatingCourses({
                                             <Dropdown.Item
                                                 key={semester.id}
                                                 onClick={() => {
-                                                    setFloats(
-                                                        floatingCourses.filter(
-                                                            (
-                                                                floater: Course
-                                                            ): boolean =>
-                                                                course.id !==
-                                                                floater.id
-                                                        )
+                                                    removeFloatingCourse(
+                                                        course
                                                     );
-                                                    setTakenCourses([
-                                                        ...takenCourses,
-                                                        {
-                                                            ...course,
-                                                            prerequisites:
-                                                                course.prerequisites
-                                                        }
-                                                    ]);
+                                                    takeCourse(course);
+                                                    addSemesterCourse(
+                                                        course,
+                                                        semester
+                                                    );
                                                 }}
                                             >
                                                 {semester.name}
@@ -69,7 +98,7 @@ export function ViewFloatingCourses({
                                 </InputGroup>
                             </td>
                         </tr>
-                    ))}
+                                            ))*/}
                 </tbody>
             </Table>
         </div>

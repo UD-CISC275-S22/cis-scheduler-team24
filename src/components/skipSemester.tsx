@@ -1,52 +1,34 @@
 import React from "react";
 import { Form } from "react-bootstrap";
-import { Course } from "../interfaces/course";
+import { Semester } from "../interfaces/semester";
 
 export function SkipSemester({
     isSkipped,
-    semesterCourses,
-    floatingCourses,
-    takenCourses,
+    planID,
+    semester,
     setSkipped,
-    setFloats,
-    setTakenCourses
+    skipSemester,
+    unskipSemester
 }: {
     isSkipped: boolean;
-    semesterCourses: Course[];
-    floatingCourses: Course[];
-    takenCourses: Course[];
+    planID: number;
+    semester: Semester;
     setSkipped: (skip: boolean) => void;
-    setFloats: (courses: Course[]) => void;
-    setTakenCourses: (courses: Course[]) => void;
+    skipSemester: (planID: number, semester: Semester) => void;
+    unskipSemester: (planID: number, semester: Semester) => void;
 }): JSX.Element {
     function changeSkip() {
-        isSkipped ? unskipCourse() : skipCourse();
+        isSkipped ? unskip() : skip();
     }
 
-    function skipCourse() {
+    function skip() {
+        skipSemester(planID, semester);
         setSkipped(true);
-        setFloats([...floatingCourses, ...semesterCourses]);
-        setTakenCourses(
-            takenCourses.filter(
-                (course: Course): boolean =>
-                    !semesterCourses
-                        .map((semCourse: Course): number => semCourse.id)
-                        .includes(course.id)
-            )
-        );
     }
 
-    function unskipCourse() {
+    function unskip() {
+        unskipSemester(planID, semester);
         setSkipped(false);
-        setFloats(
-            floatingCourses.filter(
-                (course: Course): boolean =>
-                    !semesterCourses
-                        .map((semCourse: Course): number => semCourse.id)
-                        .includes(course.id)
-            )
-        );
-        setTakenCourses([...takenCourses, ...semesterCourses]);
     }
 
     return (

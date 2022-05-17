@@ -2,10 +2,33 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import { DeleteCourseModal } from "./DeleteCourseModal";
 import { cleanup } from "@testing-library/react";
+import plans from "../data/plans.json";
+import { Plan } from "../interfaces/plan";
+import { Semester } from "../interfaces/semester";
 
 describe("DeleteCourseModal tests", () => {
     beforeEach(() => {
-        render(<DeleteCourseModal deleteCourse={() => []} />);
+        const oldplan = plans.map(
+            (plan): Plan => ({
+                ...plan,
+                semesters: plan.semesters.map(
+                    (semester: Semester): Semester => ({
+                        ...semester,
+                        name: semester.session + ", " + semester.year,
+                        courses: semester.courses.map(Number)
+                    })
+                ),
+                requirements: plan.requirements.map(Number),
+                taken_courses: plan.taken_courses.map(Number)
+            })
+        );
+        render(
+            <DeleteCourseModal
+                removeSemesterCourses={() => []}
+                planID={0}
+                semester={oldplan[0].semesters[0]}
+            />
+        );
     });
 
     afterEach(cleanup);

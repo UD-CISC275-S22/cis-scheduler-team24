@@ -24,13 +24,16 @@ describe("viewSemester", () => {
         <ViewSemester
             semester={oldplan[0].semesters[0]}
             courses={[]}
+            planID={0}
             floatingCourses={[]}
             requiredCourses={[]}
             takenCourses={[]}
-            setFloats={() => []}
-            setRequirements={() => []}
-            setTakenCourses={() => []}
-            updateCourses={() => []}
+            removeSemesterCourses={() => []}
+            removeCourse={() => []}
+            addCourse={() => []}
+            editCourse={() => []}
+            skipSemester={() => []}
+            unskipSemester={() => []}
         />
     );
     test("Whether there is a Credit showing up on screen", () => {

@@ -12,100 +12,53 @@ import { ViewFloatingCourses } from "./viewFloatingCourses";
 export function ViewPlan({
     courses,
     plan,
-    setCourses,
-    setPlanName
+    setPlanName,
+    addSemester,
+    removeSemester,
+    removeSemesterCourses,
+    clearSemesters,
+    removeCourse,
+    addCourse,
+    editCourse,
+    setSemesterName,
+    skipSemester,
+    unskipSemester,
+    moveFromFloatingCourses
 }: {
     courses: Course[];
     plan: Plan;
-    setCourses: (courses: Course[]) => void;
     setPlanName: (id: number, name: string) => void;
+    addSemester: (planID: number) => void;
+    removeSemester: (planID: number, semester: Semester) => void;
+    removeSemesterCourses: (planID: number, semester: Semester) => void;
+    clearSemesters: (planID: number) => void;
+    removeCourse: (planID: number, semesterID: number, course: Course) => void;
+    addCourse: (planID: number, semesterID: number, course: Course) => void;
+    editCourse: (
+        planID: number,
+        semesterID: number,
+        isRequired: boolean,
+        course: Course
+    ) => void;
+    setSemesterName: (
+        planID: number,
+        semesterID: number,
+        semesterName: string
+    ) => void;
+    skipSemester: (planID: number, semester: Semester) => void;
+    unskipSemester: (planID: number, semester: Semester) => void;
+    moveFromFloatingCourses: (
+        planID: number,
+        semester: Semester,
+        course: Course,
+        floatingCourses: Course[],
+        takenCourses: Course[]
+    ) => void;
 }): JSX.Element {
-    const [semesters, setSemesters] = useState<Semester[]>(plan.semesters);
     const [isEditing, setEditing] = useState<boolean>(false);
-
-    const [floatingCourses, setFloatingCourses] = useState<Course[]>(
-        courses.filter((course: Course): boolean =>
-            plan.floating_courses.includes(course.id)
-        )
-    );
-    const [requiredCourses, setRequiredCourses] = useState<Course[]>(
-        courses.filter((course: Course): boolean =>
-            plan.requirements.includes(course.id)
-        )
-    );
-    const [takenCourses, setTakenCourses] = useState<Course[]>(
-        courses.filter((course: Course): boolean =>
-            plan.taken_courses.includes(course.id)
-        )
-    );
 
     function openEdit(): void {
         setEditing(!isEditing);
-    }
-
-    function addSemester(): void {
-        setSemesters([
-            ...semesters,
-            {
-                id: semesters.length + 1,
-                name: "New Semester",
-                year: 0,
-                session: "Smarch",
-                courses: [],
-                totalCredits: 0,
-                isSkipped: false
-            }
-        ]);
-    }
-
-    function removeSemester(id: number): void {
-        setSemesters(
-            semesters.filter(
-                (semester: Semester): boolean => semester.id !== id
-            )
-        );
-    }
-
-    function clearSemesters(): void {
-        setSemesters([]);
-        setFloats(
-            courses.map(
-                (course: Course): Course => ({
-                    ...course,
-                    prerequisites: course.prerequisites.map(Number)
-                })
-            )
-        );
-        setRequirements(
-            requiredCourses.map(
-                (course: Course): Course => ({
-                    ...course,
-                    prerequisites: course.prerequisites.map(Number)
-                })
-            )
-        );
-        setTakenCourses([]);
-    }
-
-    function setSemesterName(id: number, name: string): void {
-        setSemesters(
-            semesters.map(
-                (semester: Semester): Semester =>
-                    semester.id === id ? { ...semester, name: name } : semester
-            )
-        );
-    }
-
-    function setRequirements(newReqs: Course[]): void {
-        setRequiredCourses(newReqs);
-    }
-
-    function setFloats(newFloats: Course[]): void {
-        setFloatingCourses(newFloats);
-    }
-
-    function updateCourses(newCourse: Course): void {
-        setCourses([...courses, newCourse]);
     }
 
     return (
@@ -162,18 +115,38 @@ export function ViewPlan({
                                 <tr>
                                     <td>
                                         <ListSemesters
-                                            planSemesters={semesters}
+                                            planSemesters={plan.semesters}
                                             courses={courses}
-                                            floatingCourses={floatingCourses}
-                                            requiredCourses={requiredCourses}
-                                            takenCourses={takenCourses}
+                                            floatingCourses={courses.filter(
+                                                (course: Course): boolean =>
+                                                    plan.floating_courses.includes(
+                                                        course.id
+                                                    )
+                                            )}
+                                            requiredCourses={courses.filter(
+                                                (course: Course): boolean =>
+                                                    plan.requirements.includes(
+                                                        course.id
+                                                    )
+                                            )}
+                                            takenCourses={courses.filter(
+                                                (course: Course): boolean =>
+                                                    plan.taken_courses.includes(
+                                                        course.id
+                                                    )
+                                            )}
+                                            planID={plan.id}
                                             addSemester={addSemester}
                                             removeSemester={removeSemester}
+                                            removeSemesterCourses={
+                                                removeSemesterCourses
+                                            }
+                                            removeCourse={removeCourse}
+                                            addCourse={addCourse}
+                                            editCourse={editCourse}
                                             setSemesterName={setSemesterName}
-                                            setFloats={setFloats}
-                                            setRequirements={setRequirements}
-                                            setTakenCourses={setTakenCourses}
-                                            updateCourses={updateCourses}
+                                            skipSemester={skipSemester}
+                                            unskipSemester={unskipSemester}
                                         ></ListSemesters>
                                     </td>
                                 </tr>
@@ -181,6 +154,7 @@ export function ViewPlan({
                         </Table>
                         <ClearSemesterModal
                             clearSemesters={clearSemesters}
+                            planID={plan.id}
                         ></ClearSemesterModal>
                     </Col>
                     <Col sm={3}>
@@ -189,18 +163,34 @@ export function ViewPlan({
                                 Floating Courses:
                             </span>
                             <ViewFloatingCourses
-                                floatingCourses={floatingCourses}
-                                takenCourses={takenCourses}
-                                setFloats={setFloats}
-                                setTakenCourses={setTakenCourses}
-                                semesters={semesters}
+                                floatingCourses={courses.filter(
+                                    (course: Course): boolean =>
+                                        plan.floating_courses.includes(
+                                            course.id
+                                        )
+                                )}
+                                takenCourses={courses.filter(
+                                    (course: Course): boolean =>
+                                        plan.taken_courses.includes(course.id)
+                                )}
+                                moveFromFloatingCourses={
+                                    moveFromFloatingCourses
+                                }
+                                semesters={plan.semesters}
+                                planID={plan.id}
                             ></ViewFloatingCourses>
                             <span data-testid="required-text">
                                 Required Courses:
                             </span>
                             <ViewRequirements
-                                requirements={requiredCourses}
-                                takenCourses={takenCourses}
+                                requiredCourses={courses.filter(
+                                    (course: Course): boolean =>
+                                        plan.requirements.includes(course.id)
+                                )}
+                                takenCourses={courses.filter(
+                                    (course: Course): boolean =>
+                                        plan.taken_courses.includes(course.id)
+                                )}
                             ></ViewRequirements>
                         </div>
                     </Col>

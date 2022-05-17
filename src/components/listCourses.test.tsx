@@ -5,18 +5,16 @@ import { ListCourses } from "./listCourses";
 describe("listCourses", () => {
     render(
         <ListCourses
-            allCourses={[]}
+            courses={[]}
             semesterCourses={[]}
             floatingCourses={[]}
             requiredCourses={[]}
             takenCourses={[]}
-            setFloats={() => []}
-            setRequirements={() => []}
-            setTakenCourses={() => []}
-            setSemesterCourses={() => []}
-            removeSemesterCourses={() => []}
-            updateCourses={() => []}
-            updateSemesterCourses={() => []}
+            planID={0}
+            semesterID={0}
+            removeCourse={() => []}
+            addCourse={() => []}
+            editCourse={() => []}
         />
     );
     test("test the button", () => {

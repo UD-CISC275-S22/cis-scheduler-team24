@@ -4,17 +4,23 @@ import { Semester } from "../interfaces/semester";
 
 export function EditSemester({
     semester,
+    planID,
     setSemesterName,
     openEdit
 }: {
     semester: Semester;
-    setSemesterName: (id: number, name: string) => void;
+    planID: number;
+    setSemesterName: (
+        planID: number,
+        semesterID: number,
+        semesterName: string
+    ) => void;
     openEdit: () => void;
 }): JSX.Element {
     const [name, setName] = useState<string>(semester.name);
 
     function save(): void {
-        setSemesterName(semester.id, name);
+        setSemesterName(planID, semester.id, name);
         openEdit();
     }
 

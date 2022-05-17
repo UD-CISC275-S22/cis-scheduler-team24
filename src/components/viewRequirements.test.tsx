@@ -4,7 +4,7 @@ import { ViewRequirements } from "./viewRequirements";
 
 describe("ViewRequirements tests", () => {
     beforeEach(() => {
-        render(<ViewRequirements requirements={[]} takenCourses={[]} />);
+        render(<ViewRequirements requiredCourses={[]} takenCourses={[]} />);
     });
 
     test("There is a Table", () => {
