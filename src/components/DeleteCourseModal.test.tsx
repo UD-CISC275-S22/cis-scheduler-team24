@@ -81,7 +81,7 @@ describe("DeleteCourseModal tests", () => {
         const DeleteAllButton = screen.getAllByRole("button", {
             name: /Delete All Courses/i
         });
-        DeleteAllButton[0].click();
+        DeleteAllButton[1].click();
         expect(DeleteAllButton[0]).toBeInTheDocument();
     });
 });
