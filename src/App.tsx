@@ -321,7 +321,11 @@ function App(): JSX.Element {
         };
     }
 
-    function removeCourse(planID: number, semesterID: number, course: Course) {
+    function removeCourse(
+        planID: number,
+        semesterID: number,
+        course: Course
+    ): void {
         setPlans(
             plans.map(
                 (plan: Plan): Plan =>
@@ -427,6 +431,25 @@ function App(): JSX.Element {
         };
     }
 
+    function skipSemester(planID: number, semester: Semester): void {
+        setPlans(
+            plans.map(
+                (plan: Plan): Plan =>
+                    planID === plan.id ? skipSemester2(plan, semester) : plan
+            )
+        );
+    }
+
+    function skipSemester2(plan: Plan, semester: Semester): Plan {
+        return {
+            ...plan,
+            floating_courses: [...semester.courses, ...plan.floating_courses],
+            taken_courses: plan.taken_courses.filter(
+                (tID: number): boolean => !semester.courses.includes(tID)
+            )
+        };
+    }
+
     // function saveData() {
     //     localStorage.setItem(saveDataKey, JSON.stringify(plans));
     // }
@@ -458,6 +481,7 @@ function App(): JSX.Element {
                             clearSemesters={clearSemesters}
                             removeCourse={removeCourse}
                             setSemesterName={setSemesterName}
+                            skipSemester={skipSemester}
                             setFloatingCourses={setFloatingCourses}
                             setRequiredCourses={setRequiredCourses}
                             setTakenCourses={setTakenCourses}

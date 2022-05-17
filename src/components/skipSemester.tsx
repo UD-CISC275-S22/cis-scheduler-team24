@@ -1,6 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 import { Course } from "../interfaces/course";
+import { Semester } from "../interfaces/semester";
 
 export function SkipSemester({
     isSkipped,
@@ -8,7 +9,9 @@ export function SkipSemester({
     floatingCourses,
     takenCourses,
     planID,
+    semester,
     setSkipped,
+    skipSemester,
     setFloatingCourses,
     setTakenCourses
 }: {
@@ -17,26 +20,15 @@ export function SkipSemester({
     floatingCourses: Course[];
     takenCourses: Course[];
     planID: number;
+    semester: Semester;
     setSkipped: (skip: boolean) => void;
+    skipSemester: (planID: number, semester: Semester) => void;
     setFloatingCourses: (planID: number, floats: Course[]) => void;
     setTakenCourses: (planID: number, takenCourses: Course[]) => void;
 }): JSX.Element {
     function changeSkip() {
-        isSkipped ? unskipCourse() : skipCourse();
-    }
-
-    function skipCourse() {
+        isSkipped ? unskipCourse() : skipSemester(planID, semester);
         setSkipped(true);
-        setFloatingCourses(planID, [...floatingCourses, ...semesterCourses]);
-        setTakenCourses(
-            planID,
-            takenCourses.filter(
-                (course: Course): boolean =>
-                    !semesterCourses
-                        .map((semCourse: Course): number => semCourse.id)
-                        .includes(course.id)
-            )
-        );
     }
 
     function unskipCourse() {

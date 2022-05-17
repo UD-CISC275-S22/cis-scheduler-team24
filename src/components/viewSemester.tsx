@@ -16,6 +16,7 @@ export function ViewSemester({
     takenCourses,
     removeSemesterCourses,
     removeCourse,
+    skipSemester,
     setFloatingCourses,
     setRequiredCourses,
     setTakenCourses,
@@ -30,6 +31,7 @@ export function ViewSemester({
     takenCourses: Course[];
     removeSemesterCourses: (planID: number, semester: Semester) => void;
     removeCourse: (planID: number, semesterID: number, course: Course) => void;
+    skipSemester: (planID: number, semester: Semester) => void;
     setFloatingCourses: (planID: number, floats: Course[]) => void;
     setRequiredCourses: (planID: number, requirements: Course[]) => void;
     setTakenCourses: (planID: number, takenCourses: Course[]) => void;
@@ -67,7 +69,9 @@ export function ViewSemester({
                                     floatingCourses={floatingCourses}
                                     takenCourses={takenCourses}
                                     planID={planID}
+                                    semester={semester}
                                     setSkipped={setSkipped}
+                                    skipSemester={skipSemester}
                                     setFloatingCourses={setFloatingCourses}
                                     setTakenCourses={setTakenCourses}
                                 ></SkipSemester>
