@@ -18,7 +18,7 @@ const COURSES = courses.map(
     })
 );
 
-const PLANS = plans.map(
+let PLANS = plans.map(
     (plan): Plan => ({
         ...plan,
         semesters: plan.semesters.map(
@@ -33,16 +33,17 @@ const PLANS = plans.map(
     })
 );
 
-// const oldplans = PLANS;
-// const saveDataKey = "MY-PAGE-DATA";
-// const previousData = localStorage.getItem(saveDataKey);
-// if (previousData !== null) {
-//     oldplans = JSON.parse(previousData);
-// }
+const saveDatakey = "CISC275";
 
+const previousData = localStorage.getItem(saveDatakey);
+
+if (previousData !== null) {
+    PLANS = JSON.parse(previousData);
+}
 function App(): JSX.Element {
     const [plans, setPlans] = useState<Plan[]>(PLANS);
     const [courses, setCourses] = useState<Course[]>(COURSES);
+    const [content, setContent] = useState<string>("No file data uploaded");
 
     function addPlan(): void {
         setPlans([
@@ -72,17 +73,29 @@ function App(): JSX.Element {
             )
         );
     }
-    // function saveData() {
-    //     localStorage.setItem(saveDataKey, JSON.stringify(plans));
-    // }
 
-    // function convertToCSV(allcourses) {
-    //     const array = [Object.keys(allcourses[0])].concat(allcourses)
-    //     return allcourses.map(it => {
-    //         return Object.values(it).toString()}).join('\n')
-    //     }
-    // }
+    function uploadFile(event: React.ChangeEvent<HTMLInputElement>) {
+        if (event.target.files && event.target.files.length) {
+            const filename = event.target.files[0];
+            const reader = new FileReader();
 
+            reader.onload = (loadEvent) => {
+                const newContent =
+                    loadEvent.target?.result || "Data was not loaded";
+
+                setContent(newContent as string);
+            };
+            reader.readAsText(filename);
+        }
+    }
+
+    function saveData() {
+        localStorage.setItem(saveDatakey, JSON.stringify(plans));
+    }
+
+    if (plans.length > 1) {
+        saveData();
+    }
     return (
         <div className="App">
             <Carouse></Carouse>
@@ -97,11 +110,17 @@ function App(): JSX.Element {
                             addPlan={addPlan}
                             deletePlan={deletePlan}
                             setPlanName={setPlanName}
+                            // setPlans={setPlans}
                         ></ListPlans>
                     </Col>
                 </Row>
             </div>
-            <ExportPlans courses={courses} plans={plans}></ExportPlans>
+            <ExportPlans
+                courses={courses}
+                plans={plans}
+                content={content}
+                uploadFile={uploadFile}
+            ></ExportPlans>
         </div>
     );
 }

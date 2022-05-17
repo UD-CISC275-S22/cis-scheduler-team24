@@ -108,6 +108,15 @@ export function ViewPlan({
         setCourses([...courses, newCourse]);
     }
 
+    // function saveChanges() {
+    //     const replaceIndex = plans.findIndex(
+    //         (current: Plan) => current.id === plan.id
+    //     );
+    //     const newplan = [...plans, plans[replaceIndex], plan];
+    //     newplan.splice(replaceIndex, 1, plan);
+    //     setPlans(newplan);
+    // }
+
     return (
         <div>
             <Container>
@@ -182,6 +191,7 @@ export function ViewPlan({
                         <ClearSemesterModal
                             clearSemesters={clearSemesters}
                         ></ClearSemesterModal>
+                        {/* <Button onClick={saveChanges}>Save Data</Button> */}
                     </Col>
                     <Col sm={3}>
                         <div>

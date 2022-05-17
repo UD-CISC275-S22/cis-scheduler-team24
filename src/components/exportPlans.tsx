@@ -1,14 +1,17 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { Plan } from "../interfaces/plan";
 import { Course } from "../interfaces/course";
 
 export function ExportPlans({
     courses,
-    plans
+    plans,
+    uploadFile
 }: {
     courses: Course[];
     plans: Plan[];
+    content: string;
+    uploadFile: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }): JSX.Element {
     const exportCSV = (coursebook: Array<Course>) => {
         let str =
@@ -135,6 +138,12 @@ export function ExportPlans({
             >
                 Download all plans
             </Button>
+            <div>
+                <Form.Group controlId="exampleForm">
+                    <Form.Label>Upload a file</Form.Label>
+                    <Form.Control type="file" onChange={uploadFile} />
+                </Form.Group>
+            </div>
         </div>
     );
 }
