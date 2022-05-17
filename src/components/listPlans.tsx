@@ -2,23 +2,59 @@ import React from "react";
 import { Nav, Tab, Button } from "react-bootstrap";
 import { ViewPlan } from "./viewPlan";
 import { Plan } from "../interfaces/plan";
+import { Semester } from "../interfaces/semester";
 import { Course } from "../interfaces/course";
 import { DeletePlan } from "./DeletePlan";
 
 export function ListPlans({
     courses,
     plans,
-    setCourses,
     addPlan,
     deletePlan,
-    setPlanName
+    setPlanName,
+    addSemester,
+    removeSemester,
+    removeSemesterCourses,
+    clearSemesters,
+    removeCourse,
+    addCourse,
+    editCourse,
+    setSemesterName,
+    skipSemester,
+    unskipSemester,
+    moveFromFloatingCourses
 }: {
     courses: Course[];
     plans: Plan[];
-    setCourses: (courses: Course[]) => void;
     addPlan: () => void;
-    deletePlan: (id: number) => void;
-    setPlanName: (id: number, name: string) => void;
+    deletePlan: (planID: number) => void;
+    setPlanName: (planID: number, name: string) => void;
+    addSemester: (planID: number) => void;
+    removeSemester: (planID: number, semester: Semester) => void;
+    removeSemesterCourses: (planID: number, semester: Semester) => void;
+    clearSemesters: (planID: number) => void;
+    removeCourse: (planID: number, semesterID: number, course: Course) => void;
+    addCourse: (planID: number, semesterID: number, course: Course) => void;
+    editCourse: (
+        planID: number,
+        semesterID: number,
+        isRequired: boolean,
+        course: Course
+    ) => void;
+    setSemesterName: (
+        planID: number,
+        semesterID: number,
+        semesterName: string
+    ) => void;
+    skipSemester: (planID: number, semester: Semester) => void;
+    unskipSemester: (planID: number, semester: Semester) => void;
+    moveFromFloatingCourses: (
+        planID: number,
+        semester: Semester,
+        course: Course,
+        floatingCourses: Course[],
+        takenCourses: Course[]
+    ) => void;
 }): JSX.Element {
     return (
         <div>
@@ -49,8 +85,20 @@ export function ListPlans({
                             <ViewPlan
                                 courses={courses}
                                 plan={plan}
-                                setCourses={setCourses}
                                 setPlanName={setPlanName}
+                                addSemester={addSemester}
+                                removeSemester={removeSemester}
+                                removeSemesterCourses={removeSemesterCourses}
+                                clearSemesters={clearSemesters}
+                                removeCourse={removeCourse}
+                                addCourse={addCourse}
+                                editCourse={editCourse}
+                                setSemesterName={setSemesterName}
+                                skipSemester={skipSemester}
+                                unskipSemester={unskipSemester}
+                                moveFromFloatingCourses={
+                                    moveFromFloatingCourses
+                                }
                             ></ViewPlan>
                         </Tab.Pane>
                     ))}

@@ -5,69 +5,41 @@ import { Semester } from "../interfaces/semester";
 import { Course } from "../interfaces/course";
 import { ListCourses } from "./listCourses";
 import { SkipSemester } from "./skipSemester";
+import { DeleteCourseModal } from "./DeleteCourseModal";
 
 export function ViewSemester({
     semester,
     courses,
+    planID,
     floatingCourses,
     requiredCourses,
     takenCourses,
-    setFloats,
-    setRequirements,
-    setTakenCourses,
-    updateCourses
+    removeSemesterCourses,
+    removeCourse,
+    addCourse,
+    editCourse,
+    skipSemester,
+    unskipSemester
 }: {
     semester: Semester;
     courses: Course[];
+    planID: number;
     floatingCourses: Course[];
     requiredCourses: Course[];
     takenCourses: Course[];
-    setFloats: (courses: Course[]) => void;
-    setRequirements: (courses: Course[]) => void;
-    setTakenCourses: (courses: Course[]) => void;
-    updateCourses: (newCourse: Course) => void;
+    removeSemesterCourses: (planID: number, semester: Semester) => void;
+    removeCourse: (planID: number, semesterID: number, course: Course) => void;
+    addCourse: (planID: number, semesterID: number, course: Course) => void;
+    editCourse: (
+        planID: number,
+        semesterID: number,
+        isRequired: boolean,
+        course: Course
+    ) => void;
+    skipSemester: (planID: number, semester: Semester) => void;
+    unskipSemester: (planID: number, semester: Semester) => void;
 }): JSX.Element {
-    const [semesterCourses, setSemesterCourses] = useState<Course[]>(
-        courses.filter((course: Course): boolean =>
-            semester.courses.includes(course.id)
-        )
-    );
-
-    const [isSkipped, setSkipped] = useState<boolean>(false);
-
-    function removeSemesterCourses(): void {
-        setFloats(
-            floatingCourses.concat(
-                semesterCourses.map(
-                    (course: Course): Course => ({
-                        ...course,
-                        prerequisites: course.prerequisites.map(Number)
-                    })
-                )
-            )
-        );
-        setRequirements(
-            requiredCourses.map(
-                (course: Course): Course => ({
-                    ...course,
-                    prerequisites: course.prerequisites.map(Number)
-                })
-            )
-        );
-        setSemesterCourses([]);
-        setTakenCourses(
-            takenCourses.filter(
-                (course: Course): boolean =>
-                    !semesterCourses
-                        .map((semCourse: Course): number => semCourse.id)
-                        .includes(course.id)
-            )
-        );
-    }
-
-    function updateSemesterCourses(newCourse: Course): void {
-        setSemesterCourses([...semesterCourses, newCourse]);
-    }
+    const [isSkipped, setSkipped] = useState<boolean>(semester.isSkipped);
 
     return (
         <div>
@@ -78,34 +50,41 @@ export function ViewSemester({
                             <th>
                                 <SkipSemester
                                     isSkipped={isSkipped}
-                                    semesterCourses={semesterCourses}
-                                    floatingCourses={floatingCourses}
-                                    takenCourses={takenCourses}
+                                    planID={planID}
+                                    semester={semester}
                                     setSkipped={setSkipped}
-                                    setFloats={setFloats}
-                                    setTakenCourses={setTakenCourses}
+                                    skipSemester={skipSemester}
+                                    unskipSemester={unskipSemester}
                                 ></SkipSemester>
                                 {isSkipped ? (
                                     <div></div>
                                 ) : (
-                                    <ListCourses
-                                        allCourses={courses}
-                                        semesterCourses={semesterCourses}
-                                        floatingCourses={floatingCourses}
-                                        requiredCourses={requiredCourses}
-                                        takenCourses={takenCourses}
-                                        setFloats={setFloats}
-                                        setRequirements={setRequirements}
-                                        setTakenCourses={setTakenCourses}
-                                        setSemesterCourses={setSemesterCourses}
-                                        removeSemesterCourses={
-                                            removeSemesterCourses
-                                        }
-                                        updateCourses={updateCourses}
-                                        updateSemesterCourses={
-                                            updateSemesterCourses
-                                        }
-                                    ></ListCourses>
+                                    <div>
+                                        <ListCourses
+                                            courses={courses}
+                                            semesterCourses={courses.filter(
+                                                (course: Course): boolean =>
+                                                    semester.courses.includes(
+                                                        course.id
+                                                    )
+                                            )}
+                                            floatingCourses={floatingCourses}
+                                            requiredCourses={requiredCourses}
+                                            takenCourses={takenCourses}
+                                            planID={planID}
+                                            semesterID={semester.id}
+                                            removeCourse={removeCourse}
+                                            addCourse={addCourse}
+                                            editCourse={editCourse}
+                                        ></ListCourses>
+                                        <DeleteCourseModal
+                                            removeSemesterCourses={
+                                                removeSemesterCourses
+                                            }
+                                            planID={planID}
+                                            semester={semester}
+                                        ></DeleteCourseModal>
+                                    </div>
                                 )}
                             </th>
                         </tr>

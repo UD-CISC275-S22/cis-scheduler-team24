@@ -5,7 +5,22 @@ import { cleanup } from "@testing-library/react";
 
 describe("DeleteCourseModal tests", () => {
     beforeEach(() => {
-        render(<DeleteCourseWarningModal removeCourse={() => []} />);
+        render(
+            <DeleteCourseWarningModal
+                removeCourse={() => []}
+                planID={0}
+                semesterID={0}
+                course={{
+                    id: 0,
+                    name: "",
+                    credits: 0,
+                    description: "",
+                    prerequisites: [],
+                    isEditing: false,
+                    breadthType: ""
+                }}
+            />
+        );
     });
 
     afterEach(cleanup);

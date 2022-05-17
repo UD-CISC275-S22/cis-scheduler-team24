@@ -9,35 +9,33 @@ import {
     Row
 } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-import { DeleteCourseModal } from "./DeleteCourseModal";
 import { EditCourseModal } from "./EditCourseModal";
 
 export function ListCourses({
-    allCourses,
+    courses,
     semesterCourses,
-    floatingCourses,
     requiredCourses,
-    takenCourses,
-    setFloats,
-    setRequirements,
-    setTakenCourses,
-    setSemesterCourses,
-    removeSemesterCourses,
-    updateCourses,
-    updateSemesterCourses
+    planID,
+    semesterID,
+    removeCourse,
+    addCourse,
+    editCourse
 }: {
-    allCourses: Course[];
+    courses: Course[];
     semesterCourses: Course[];
     floatingCourses: Course[];
     requiredCourses: Course[];
     takenCourses: Course[];
-    setFloats: (courses: Course[]) => void;
-    setRequirements: (courses: Course[]) => void;
-    setTakenCourses: (courses: Course[]) => void;
-    setSemesterCourses: (courses: Course[]) => void;
-    removeSemesterCourses: () => void;
-    updateCourses: (newCourse: Course) => void;
-    updateSemesterCourses: (newCourse: Course) => void;
+    planID: number;
+    semesterID: number;
+    removeCourse: (planID: number, semesterID: number, course: Course) => void;
+    addCourse: (planID: number, semesterID: number, course: Course) => void;
+    editCourse: (
+        planID: number,
+        semesterID: number,
+        isRequired: boolean,
+        course: Course
+    ) => void;
 }): JSX.Element {
     const [showAddModal, setShowAddModal] = useState(false);
     showAddModal;
@@ -57,44 +55,9 @@ export function ListCourses({
     //     localStorage.setItem(saveDataKey, JSON.stringify(tableCourses));
     // }
 
-    function editCourse(id: number, newCourse: Course) {
-        setSemesterCourses(
-            semesterCourses.map(
-                (course: Course): Course =>
-                    course.id === id ? newCourse : course
-            )
-        );
-    }
-
-    function deleteCourse(doomedCourse: Course) {
-        setSemesterCourses(
-            semesterCourses.filter(
-                (course: Course): boolean => course.id !== doomedCourse.id
-            )
-        );
-        setFloats([...floatingCourses, { ...doomedCourse }]);
-        setTakenCourses(
-            takenCourses.filter(
-                (course: Course): boolean => course.id !== doomedCourse.id
-            )
-        );
-        setShowAddModal(false);
-    }
-
-    function addCourse(newCourse: Course) {
-        const existing = allCourses.find(
-            (course: Course): boolean => course.id === newCourse.id
-        );
-        if (existing === undefined) {
-            setSemesterCourses([...semesterCourses, newCourse]);
-            updateSemesterCourses(newCourse);
-            updateCourses(newCourse);
-        }
-    }
-
     function saveAddChange() {
-        addCourse({
-            id: allCourses.length + 1,
+        addCourse(planID, semesterID, {
+            id: courses.length + 1,
             name: name,
             credits: parseInt(credits),
             description: description,
@@ -106,12 +69,6 @@ export function ListCourses({
         setDescription("");
         setCredits("");
         setPrereqs("");
-        console.log(allCourses[allCourses.length].id + 1);
-    }
-
-    function deleteAllCourse() {
-        setSemesterCourses([]);
-        removeSemesterCourses();
     }
 
     return (
@@ -135,7 +92,7 @@ export function ListCourses({
                                     <td>{course.description}</td>
                                     <td>{course.credits}</td>
                                     <td>
-                                        {allCourses
+                                        {courses
                                             .filter(
                                                 (
                                                     degreeCourse: Course
@@ -159,10 +116,11 @@ export function ListCourses({
                                         <EditCourseModal
                                             handleClose={handleCloseAddModal}
                                             course={course}
+                                            planID={planID}
+                                            semesterID={semesterID}
                                             requiredCourses={requiredCourses}
                                             editCourse={editCourse}
-                                            deleteCourse={deleteCourse}
-                                            setRequirements={setRequirements}
+                                            removeCourse={removeCourse}
                                         ></EditCourseModal>
                                     </td>
                                 </tr>
@@ -224,13 +182,6 @@ export function ListCourses({
                     <Container>
                         <div>Total Credits: {Credits}</div>
                         {/* <Button onClick={SaveData}>Save</Button> */}
-                    </Container>
-                    <Container>
-                        <DeleteCourseModal
-                            deleteCourse={() => {
-                                deleteAllCourse();
-                            }}
-                        ></DeleteCourseModal>
                     </Container>
                 </Col>
             </Row>

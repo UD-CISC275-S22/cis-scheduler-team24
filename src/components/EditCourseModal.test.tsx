@@ -34,10 +34,11 @@ describe("EditCourseModal tests", () => {
             <EditCourseModal
                 handleClose={() => []}
                 course={examplecourse}
+                planID={0}
+                semesterID={0}
                 requiredCourses={exampleRequiredCourses}
                 editCourse={() => []}
-                deleteCourse={() => []}
-                setRequirements={() => []}
+                removeCourse={() => []}
             />
         );
     });

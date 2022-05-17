@@ -7,17 +7,24 @@ import { Course } from "../interfaces/course";
 export function EditCourseModal({
     handleClose,
     course,
+    planID,
+    semesterID,
     requiredCourses,
     editCourse,
-    deleteCourse,
-    setRequirements
+    removeCourse
 }: {
     handleClose: () => void;
     course: Course;
+    planID: number;
+    semesterID: number;
     requiredCourses: Course[];
-    editCourse: (id: number, newCourse: Course) => void;
-    deleteCourse: (course: Course) => void;
-    setRequirements: (courses: Course[]) => void;
+    editCourse: (
+        planID: number,
+        semesterID: number,
+        isRequired: boolean,
+        course: Course
+    ) => void;
+    removeCourse: (planID: number, semesterID: number, course: Course) => void;
 }) {
     const [name, setName] = useState<string>(course.name);
     const [description, setDescription] = useState<string>(course.description);
@@ -42,15 +49,21 @@ export function EditCourseModal({
     );
 
     function reset() {
-        editCourse(course.id, {
-            ...course,
-            name: resetname,
-            description: resetdescription,
-            credits: parseInt(resetcredits),
-            prerequisites: resetprereqs.split(", ").map(Number)
-        });
+        editCourse(
+            planID,
+            semesterID,
+            requiredCourses
+                .map((course: Course): number => course.id)
+                .includes(course.id),
+            {
+                ...course,
+                name: resetname,
+                description: resetdescription,
+                credits: parseInt(resetcredits),
+                prerequisites: resetprereqs.split(", ").map(Number)
+            }
+        );
         changeEditing();
-        makeRequired();
         setName(resetname);
         setDescription(resetdescription);
         setCredits(resetcredits.toString());
@@ -60,7 +73,7 @@ export function EditCourseModal({
     }
 
     function save() {
-        editCourse(course.id, {
+        editCourse(planID, semesterID, isRequired, {
             ...course,
             name: name,
             description: description,
@@ -68,29 +81,6 @@ export function EditCourseModal({
             prerequisites: prereqs.split(", ").map(Number)
         });
         changeEditing();
-        makeRequired();
-    }
-
-    function makeRequired() {
-        if (isRequired) {
-            setRequirements([
-                ...requiredCourses,
-                {
-                    ...course,
-                    name: name,
-                    description: description,
-                    credits: parseInt(credits),
-                    prerequisites: prereqs.split(", ").map(Number)
-                }
-            ]);
-        } else {
-            setRequirements(
-                requiredCourses.filter(
-                    (requirement: Course): boolean =>
-                        course.id !== requirement.id
-                )
-            );
-        }
     }
 
     function cancel() {
@@ -110,10 +100,6 @@ export function EditCourseModal({
         setRequired(!isRequired);
     }
 
-    function removeCourse() {
-        deleteCourse(course);
-    }
-
     return (
         <div>
             <div style={{ display: "flex" }}>
@@ -129,6 +115,9 @@ export function EditCourseModal({
                 <div>
                     <DeleteCourseWarningModalX
                         removeCourse={removeCourse}
+                        planID={planID}
+                        semesterID={semesterID}
+                        course={course}
                     ></DeleteCourseWarningModalX>
                 </div>
             </div>
@@ -232,6 +221,9 @@ export function EditCourseModal({
                         <div>
                             <DeleteCourseWarningModal
                                 removeCourse={removeCourse}
+                                planID={planID}
+                                semesterID={semesterID}
+                                course={course}
                             ></DeleteCourseWarningModal>
                         </div>
                         <div onClick={reset}>
