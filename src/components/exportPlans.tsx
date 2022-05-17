@@ -12,10 +12,11 @@ export function ExportPlans({
 }): JSX.Element {
     const exportCSV = (coursebook: Array<Course>) => {
         let str =
-            "id, name, credits, description, prerequisites, isEditing, isRequired, breadthType";
+            "id, code, name, credits, description, prerequisites, isEditing, isRequired, breadthType";
         for (let i = 0; i < coursebook.length; i++) {
             const data = coursebook[i];
             str += i + 1 + ",";
+            str += data.code.replace(",", "-") + ",";
             str += data.name.replace(",", "-") + ",";
             str += data.credits + ",";
             str += data.description + ",";
