@@ -172,6 +172,7 @@ export function ListCourses({
                                         onClick={saveAddChange}
                                         className="button-style-2"
                                         disabled={!name || !credits}
+                                        data-testid="Add-Course-button"
                                     >
                                         Add Course
                                     </Button>
