@@ -198,7 +198,9 @@ describe("EditCourseModal tests", () => {
             name: /Save/i
         });
         const ControlCoursename = screen.getByTestId("Edit Course name");
+        const ControlCoursecode = screen.getByTestId("Edit Course Code");
         userEvent.type(ControlCoursename, "CISC275");
+        userEvent.type(ControlCoursecode, "CISC275");
         SaveButton[0].click();
         expect(EditCourseButton[0]).toBeInTheDocument();
     });

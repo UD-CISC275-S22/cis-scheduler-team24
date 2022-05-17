@@ -145,7 +145,7 @@ export function EditCourseModal({
                                     onChange={(
                                         event: React.ChangeEvent<HTMLInputElement>
                                     ) => setCode(event.target.value)}
-                                    data-testid="Edit Course name"
+                                    data-testid="Edit Course Code"
                                 />
                             </Col>
                         </Form.Group>
