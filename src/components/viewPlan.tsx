@@ -143,6 +143,7 @@ export function ViewPlan({
                             clearSemesters={clearSemesters}
                             planID={plan.id}
                         ></ClearSemesterModal>
+                        {/* <Button onClick={saveChanges}>Save Data</Button> */}
                     </Col>
                     <Col sm={3}>
                         <div>

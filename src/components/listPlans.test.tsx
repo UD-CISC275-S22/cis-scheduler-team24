@@ -53,6 +53,8 @@ describe("ListPlans", () => {
                 skipSemester={() => []}
                 unskipSemester={() => []}
                 moveFromFloatingCourses={() => []}
+                IsSave={false}
+                updateSwitch={() => []}
             />
         );
     });

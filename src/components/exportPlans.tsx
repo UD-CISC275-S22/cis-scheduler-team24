@@ -6,9 +6,12 @@ import { Course } from "../interfaces/course";
 export function ExportPlans({
     courses,
     plans
-}: {
+}: // uploadFile
+{
     courses: Course[];
     plans: Plan[];
+    // content: string;
+    // uploadFile: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }): JSX.Element {
     const exportCSV = (coursebook: Array<Course>) => {
         let str =
@@ -38,7 +41,8 @@ export function ExportPlans({
 
     const exportPlanCSV = (plans: Array<Plan>) => {
         let str =
-            "id, name, , , , semesters, ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , , , , , requirements, taken_courses, floating_courses";
+            "id, name, semesters, requirements, taken_courses, floating_courses";
+        let sum = "id, name, year, session, courses, totalCredits, isSkipped";
 
         for (let i = 0; i < plans.length; i++) {
             const data = plans[i];
@@ -46,13 +50,11 @@ export function ExportPlans({
             str += data.id + ",";
             str += data.name.replace(",", "-") + ",";
             for (let j = 0; j < data.semesters.length; j++) {
+                for (let k = 0; k < data.semesters[j].courses.length; k++) {
+                    sum += data.semesters[j].courses + ",";
+                }
                 if (j < 1) {
                     str +=
-                        "," +
-                        "," +
-                        "," +
-                        "," +
-                        "," +
                         data.semesters[j].id +
                         "," +
                         data.semesters[j].name +
@@ -63,6 +65,8 @@ export function ExportPlans({
                         "," +
                         data.semesters[j].courses +
                         "," +
+                        sum +
+                        "," +
                         data.semesters[j].totalCredits +
                         "," +
                         data.semesters[j].isSkipped +
@@ -70,13 +74,6 @@ export function ExportPlans({
                         "\n";
                 } else {
                     str +=
-                        "," +
-                        "," +
-                        "," +
-                        "," +
-                        "," +
-                        "," +
-                        "," +
                         data.semesters[j].id +
                         "," +
                         data.semesters[j].name +
@@ -94,19 +91,14 @@ export function ExportPlans({
                         "\n";
                 }
             }
-            for (let l = 0; l < 21; l++) {
-                str += ",";
-            }
             for (let k = 0; k < data.requirements.length; k++) {
                 str += data.requirements[k] + "-";
             }
-            str += ",";
             for (let f = 0; f < data.taken_courses.length; f++) {
                 str += data.taken_courses[f] + "-";
             }
-            str += ",";
             for (let u = 0; u < data.floating_courses.length; u++) {
-                str += data.floating_courses[u] + "-";
+                str += "," + data.floating_courses[u] + "-";
             }
             str += "\n";
         }
@@ -138,6 +130,12 @@ export function ExportPlans({
             >
                 Download all plans
             </Button>
+            {/* <div>
+                <Form.Group controlId="exampleForm">
+                    <Form.Label>Upload a file</Form.Label>
+                    <Form.Control type="file" onChange={uploadFile} />
+                </Form.Group>
+            </div> */}
         </div>
     );
 }

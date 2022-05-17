@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Tab, Button } from "react-bootstrap";
+import { Nav, Tab, Button, Form } from "react-bootstrap";
 import { ViewPlan } from "./viewPlan";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
@@ -22,7 +22,9 @@ export function ListPlans({
     setSemesterName,
     skipSemester,
     unskipSemester,
-    moveFromFloatingCourses
+    moveFromFloatingCourses,
+    IsSave,
+    updateSwitch
 }: {
     courses: Course[];
     plans: Plan[];
@@ -55,6 +57,8 @@ export function ListPlans({
         floatingCourses: Course[],
         takenCourses: Course[]
     ) => void;
+    IsSave: boolean;
+    updateSwitch: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }): JSX.Element {
     return (
         <div>
@@ -74,13 +78,18 @@ export function ListPlans({
                         </Nav.Item>
                     ))}
                     <Nav.Item>
-                        <Button
-                            variant="outline-primary"
-                            onClick={addPlan}
-                            data-testid="Add-Plan-Button"
-                        >
+                        <Button variant="outline-primary" onClick={addPlan}>
                             <div>Add Plan</div>
                         </Button>
+                    </Nav.Item>
+                    <Nav.Item style={{ margin: "10px" }}>
+                        <Form.Check
+                            type="switch"
+                            id="saving"
+                            label={IsSave ? "Saving" : "Unsaved"}
+                            checked={IsSave}
+                            onChange={updateSwitch}
+                        />
                     </Nav.Item>
                 </Nav>
                 <Tab.Content>
