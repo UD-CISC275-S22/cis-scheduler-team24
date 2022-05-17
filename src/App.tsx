@@ -487,7 +487,6 @@ function App(): JSX.Element {
 
     function saveData() {
         localStorage.setItem(saveDatakey, JSON.stringify(plans));
-        // localStorage.setItem(saveDatakey, JSON.stringify(IsSave));
     }
 
     function updateSwitch(event: React.ChangeEvent<HTMLInputElement>) {

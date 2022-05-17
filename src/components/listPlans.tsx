@@ -78,11 +78,7 @@ export function ListPlans({
                         </Nav.Item>
                     ))}
                     <Nav.Item>
-                        <Button
-                            variant="outline-primary"
-                            onClick={addPlan}
-                            data-testid="Add-Plan-Button"
-                        >
+                        <Button variant="outline-primary" onClick={addPlan}>
                             <div>Add Plan</div>
                         </Button>
                     </Nav.Item>
