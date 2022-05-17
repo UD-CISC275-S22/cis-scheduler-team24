@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 import { Semester } from "../interfaces/semester";
 
 export function DeleteSemester({
@@ -16,8 +15,14 @@ export function DeleteSemester({
     }
 
     return (
-        <Button onClick={deleteSemester} variant="empty" className="me-8">
+        <div
+            onClick={deleteSemester}
+            className="me-8"
+            style={{
+                display: "flex"
+            }}
+        >
             ✖️
-        </Button>
+        </div>
     );
 }

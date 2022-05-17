@@ -74,26 +74,14 @@ describe("DeleteCourseModal tests", () => {
     });
 
     test("Clicking Clear Semesters button show a button labeled Delete All Courses", () => {
-        const DeleteButton = screen.getByRole("button", {
-            name: /Delete All Course/i
-        });
-        DeleteButton.click();
-        const DeleteAllButton = screen.getByRole("button", {
+        const DeleteButton = screen.getAllByRole("button", {
             name: /Delete All Courses/i
         });
-        DeleteAllButton.click();
-        expect(DeleteAllButton).toBeInTheDocument();
-    });
-
-    test("Clicking Clear Semesters button and Clicking a button labeled Delete All Courses", () => {
-        const DeleteButton = screen.getByRole("button", {
-            name: /Delete All Course/i
-        });
-        DeleteButton.click();
-        const DeleteAllButton = screen.getByRole("button", {
+        DeleteButton[0].click();
+        const DeleteAllButton = screen.getAllByRole("button", {
             name: /Delete All Courses/i
         });
-        DeleteAllButton.click();
-        expect(DeleteAllButton).toBeEnabled();
+        DeleteAllButton[1].click();
+        expect(DeleteAllButton[0]).toBeInTheDocument();
     });
 });

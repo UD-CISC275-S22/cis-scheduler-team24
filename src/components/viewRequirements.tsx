@@ -14,28 +14,24 @@ export function ViewRequirements({
             <Table striped bordered hover className="required">
                 <thead>
                     <tr>
-                        <th>
-                            <div>Course</div>
-                        </th>
-                        <th>
-                            <div>Taken?</div>
-                        </th>
+                        <th>Course</th>
+                        <th>Taken?</th>
                     </tr>
                 </thead>
                 <tbody>
                     {requiredCourses.map((requiredCourse: Course) => (
                         <tr key={requiredCourse.id}>
+                            <td>{requiredCourse.name}</td>
                             <td>
-                                <td>{requiredCourse.name}</td>
+                                {takenCourses
+                                    .map(
+                                        (takenCourse: Course): number =>
+                                            takenCourse.id
+                                    )
+                                    .includes(requiredCourse.id)
+                                    ? "✓"
+                                    : "✗"}
                             </td>
-                            {takenCourses
-                                .map(
-                                    (takenCourse: Course): number =>
-                                        takenCourse.id
-                                )
-                                .includes(requiredCourse.id)
-                                ? "✓"
-                                : "✗"}
                         </tr>
                     ))}
                 </tbody>

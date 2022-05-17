@@ -117,6 +117,7 @@ export function ExportPlans({
                 variant="secondary"
                 style={{ margin: "5px" }}
                 onClick={() => exportCSV(courses)}
+                data-testid="DownloadCourses"
             >
                 Download all courses
             </Button>
@@ -124,6 +125,7 @@ export function ExportPlans({
                 variant="secondary"
                 style={{ margin: "5px" }}
                 onClick={() => exportPlanCSV(plans)}
+                data-testid="DownloadPlans"
             >
                 Download all plans
             </Button>

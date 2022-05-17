@@ -70,44 +70,31 @@ export function ViewPlan({
                             <thead>
                                 <tr>
                                     <th>
-                                        <span>
-                                            <Stack
-                                                direction="horizontal"
-                                                gap={3}
-                                            >
-                                                <Container>
-                                                    <div>
-                                                        {isEditing ? (
-                                                            <EditPlan
-                                                                plan={plan}
-                                                                setPlanName={
-                                                                    setPlanName
-                                                                }
-                                                                openEdit={
-                                                                    openEdit
-                                                                }
-                                                            ></EditPlan>
-                                                        ) : (
-                                                            <div>
-                                                                <h3>
-                                                                    {plan.name}
-                                                                    <Button
-                                                                        onClick={
-                                                                            openEdit
-                                                                        }
-                                                                        variant="empty"
-                                                                        className="me-8"
-                                                                        data-testid="Edit Plan Name Button"
-                                                                    >
-                                                                        🖊
-                                                                    </Button>
-                                                                </h3>
-                                                            </div>
-                                                        )}
-                                                    </div>
-                                                </Container>
-                                            </Stack>
-                                        </span>
+                                        <Stack direction="horizontal" gap={3}>
+                                            <Container>
+                                                {isEditing ? (
+                                                    <EditPlan
+                                                        plan={plan}
+                                                        setPlanName={
+                                                            setPlanName
+                                                        }
+                                                        openEdit={openEdit}
+                                                    ></EditPlan>
+                                                ) : (
+                                                    <h3>
+                                                        {plan.name}
+                                                        <Button
+                                                            onClick={openEdit}
+                                                            variant="empty"
+                                                            className="me-8"
+                                                            data-testid="Edit Plan Name Button"
+                                                        >
+                                                            🖊
+                                                        </Button>
+                                                    </h3>
+                                                )}
+                                            </Container>
+                                        </Stack>
                                     </th>
                                 </tr>
                             </thead>
