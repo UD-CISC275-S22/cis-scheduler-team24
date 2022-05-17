@@ -21,7 +21,11 @@ export function ViewRequirements({
                 <tbody>
                     {requiredCourses.map((requiredCourse: Course) => (
                         <tr key={requiredCourse.id}>
-                            <td>{requiredCourse.name}</td>
+                            <td>
+                                {requiredCourse.code}
+                                {": "}
+                                {requiredCourse.name}
+                            </td>
                             <td>
                                 {takenCourses
                                     .map(

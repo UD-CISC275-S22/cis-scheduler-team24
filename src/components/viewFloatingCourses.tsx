@@ -33,7 +33,11 @@ export function ViewFloatingCourses({
                 <tbody>
                     {floatingCourses.map((floatingCourse: Course) => (
                         <tr key={floatingCourse.id}>
-                            <td>{floatingCourse.name}</td>
+                            <td>
+                                {floatingCourse.code}
+                                {": "}
+                                {floatingCourse.name}
+                            </td>
                             <td>
                                 <InputGroup className="mb-3">
                                     <DropdownButton
