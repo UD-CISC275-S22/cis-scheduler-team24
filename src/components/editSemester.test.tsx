@@ -46,7 +46,7 @@ describe("editSemesters", () => {
 
     test("test the save button", () => {
         const htmlinput = screen.getByTestId("editSemester");
-        const savebutton = screen.getByRole("button", { name: /Save/i });
+        const savebutton = screen.getByText(/💾/i);
         savebutton.click();
         expect(htmlinput).toBeEnabled;
     });
