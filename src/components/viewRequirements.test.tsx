@@ -11,10 +11,9 @@ describe("ViewRequirements tests", () => {
         const table = screen.getByRole("table");
         expect(table).toBeInTheDocument();
     });
+
     test("There is a course in the table", () => {
-        const course = screen.getByText(
-            "CISC108: Introduction to Computer Science I"
-        );
+        const course = screen.getByText("Course");
         expect(course).toBeInTheDocument();
     });
 });
