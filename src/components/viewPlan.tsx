@@ -108,15 +108,6 @@ export function ViewPlan({
         setCourses([...courses, newCourse]);
     }
 
-    // function saveChanges() {
-    //     const replaceIndex = plans.findIndex(
-    //         (current: Plan) => current.id === plan.id
-    //     );
-    //     const newplan = [...plans, plans[replaceIndex], plan];
-    //     newplan.splice(replaceIndex, 1, plan);
-    //     setPlans(newplan);
-    // }
-
     return (
         <div>
             <Container>

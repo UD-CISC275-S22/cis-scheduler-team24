@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import "./App.css";
 import { Plan } from "./interfaces/plan";
 import { Course } from "./interfaces/course";
@@ -93,8 +93,10 @@ function App(): JSX.Element {
         localStorage.setItem(saveDatakey, JSON.stringify(plans));
     }
 
-    if (plans.length > 1) {
-        saveData();
+    function clicksave() {
+        if (plans.length > 1) {
+            saveData();
+        }
     }
     return (
         <div className="App">
@@ -121,6 +123,7 @@ function App(): JSX.Element {
                 content={content}
                 uploadFile={uploadFile}
             ></ExportPlans>
+            <Button onClick={clicksave}>Save</Button>
         </div>
     );
 }
