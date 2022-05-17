@@ -28,7 +28,7 @@ export function ListSemesters({
     takenCourses: Course[];
     planID: number;
     addSemester: (planID: number) => void;
-    removeSemester: (planID: number, semesterID: number) => void;
+    removeSemester: (planID: number, semester: Semester) => void;
     setSemesterName: (
         planID: number,
         semesterID: number,
@@ -90,16 +90,6 @@ export function ListSemesters({
                                             semester={semester}
                                             planID={planID}
                                             removeSemester={removeSemester}
-                                            setFloatingCourses={
-                                                setFloatingCourses
-                                            }
-                                            setTakenCourses={setTakenCourses}
-                                            setSemesterCourses={
-                                                setSemesterCourses
-                                            }
-                                            courses={courses}
-                                            floatingCourses={floatingCourses}
-                                            takenCourses={takenCourses}
                                         ></DeleteSemester>
                                     </div>
                                 </span>

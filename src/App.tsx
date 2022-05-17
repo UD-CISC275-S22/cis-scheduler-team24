@@ -101,23 +101,25 @@ function App(): JSX.Element {
         };
     }
 
-    function removeSemester(planID: number, semesterID: number): void {
+    function removeSemester(planID: number, semester: Semester): void {
         setPlans(
             plans.map(
                 (plan: Plan): Plan =>
-                    plan.id === planID
-                        ? removeSemester2(plan, semesterID)
-                        : plan
+                    plan.id === planID ? removeSemester2(plan, semester) : plan
             )
         );
     }
 
     //Helper function for removeSemester
-    function removeSemester2(plan: Plan, semesterID: number): Plan {
+    function removeSemester2(plan: Plan, semester: Semester): Plan {
         return {
             ...plan,
             semesters: plan.semesters.filter(
-                (semester: Semester): boolean => semester.id !== semesterID
+                (sem: Semester): boolean => sem.id !== semester.id
+            ),
+            floating_courses: [...semester.courses, ...plan.floating_courses],
+            taken_courses: plan.taken_courses.filter(
+                (tID: number): boolean => !semester.courses.includes(tID)
             )
         };
     }
@@ -189,7 +191,9 @@ function App(): JSX.Element {
     function setFloatingCourses2(plan: Plan, floats: Course[]): Plan {
         return {
             ...plan,
-            floating_courses: floats.map((course: Course): number => course.id)
+            floating_courses: [
+                ...floats.map((course: Course): number => course.id)
+            ]
         };
     }
 
@@ -210,9 +214,9 @@ function App(): JSX.Element {
     function setRequiredCourses2(plan: Plan, requiredCourses: Course[]): Plan {
         return {
             ...plan,
-            requirements: requiredCourses.map(
-                (course: Course): number => course.id
-            )
+            requirements: [
+                ...requiredCourses.map((course: Course): number => course.id)
+            ]
         };
     }
 
@@ -230,9 +234,9 @@ function App(): JSX.Element {
     function setTakenCourses2(plan: Plan, takenCourses: Course[]): Plan {
         return {
             ...plan,
-            taken_courses: takenCourses.map(
-                (course: Course): number => course.id
-            )
+            taken_courses: [
+                ...takenCourses.map((course: Course): number => course.id)
+            ]
         };
     }
 
@@ -275,7 +279,9 @@ function App(): JSX.Element {
     ): Semester {
         return {
             ...semester,
-            courses: semesterCourses.map((course: Course): number => course.id)
+            courses: [
+                ...semesterCourses.map((course: Course): number => course.id)
+            ]
         };
     }
 
@@ -283,55 +289,62 @@ function App(): JSX.Element {
         planID: number,
         semester: Semester,
         course: Course,
-        floatingCourses: Course[],
-        takenCourses: Course[]
+        fcs: Course[],
+        tcs: Course[]
     ): void {
+        setPlans(
+            plans.map(
+                (plan: Plan): Plan =>
+                    plan.id === planID
+                        ? mFFC2(plan, semester, course, fcs, tcs)
+                        : plan
+            )
+        );
+
+        /*
         removeFloatingCourse(planID, course, floatingCourses);
         takeCourse(planID, course, takenCourses);
         addSemesterCourse(planID, course, semester);
+        */
     }
 
-    function removeFloatingCourse(
-        planID: number,
+    function mFFC2(
+        plan: Plan,
+        semester: Semester,
         course: Course,
-        floatingCourses: Course[]
-    ): void {
-        setFloatingCourses(planID, [
-            ...floatingCourses.filter(
-                (floatingCourse: Course): boolean =>
-                    floatingCourse.id !== course.id
-            )
-        ]);
-    }
-
-    function addSemesterCourse(
-        planID: number,
-        course: Course,
-        semester: Semester
-    ): void {
-        setSemesterCourses(planID, semester.id, [
-            ...courses.filter((course: Course): boolean =>
-                semester.courses.includes(course.id)
-            ),
-            {
-                ...course,
-                prerequisites: course.prerequisites
-            }
-        ]);
-    }
-
-    function takeCourse(
-        planID: number,
-        course: Course,
+        floatingCourses: Course[],
         takenCourses: Course[]
-    ): void {
-        setTakenCourses(planID, [
-            ...takenCourses,
-            {
-                ...course,
-                prerequisites: course.prerequisites
-            }
-        ]);
+    ): Plan {
+        return {
+            ...plan,
+            taken_courses: [
+                ...takenCourses.map(
+                    (takenCourse: Course): number => takenCourse.id
+                ),
+                course.id
+            ],
+            floating_courses: [
+                ...floatingCourses
+                    .filter(
+                        (floatingCourse: Course): boolean =>
+                            floatingCourse.id !== course.id
+                    )
+                    .map((floatingCourse: Course): number => floatingCourse.id)
+            ],
+            semesters: [
+                ...plan.semesters.map(
+                    (sem: Semester): Semester =>
+                        semester.id === sem.id ? mFFC3(semester, course) : sem
+                )
+            ]
+        };
+    }
+
+    function mFFC3(semester: Semester, course: Course): Semester {
+        return {
+            ...semester,
+            courses: [...semester.courses.map(Number), course.id]
+        };
     }
 
     // function saveData() {

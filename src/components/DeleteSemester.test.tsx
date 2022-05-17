@@ -27,12 +27,6 @@ describe("DeleteSemester tests", () => {
                 semester={PLANS[0].semesters[0]}
                 planID={0}
                 removeSemester={() => []}
-                setFloatingCourses={() => []}
-                setTakenCourses={() => []}
-                setSemesterCourses={() => []}
-                courses={[]}
-                floatingCourses={[]}
-                takenCourses={[]}
             />
         );
     });

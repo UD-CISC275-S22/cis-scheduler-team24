@@ -30,7 +30,7 @@ export function ListPlans({
     deletePlan: (planID: number) => void;
     setPlanName: (planID: number, name: string) => void;
     addSemester: (planID: number) => void;
-    removeSemester: (planID: number, semesterID: number) => void;
+    removeSemester: (planID: number, semester: Semester) => void;
     clearSemesters: (planID: number) => void;
     setSemesterName: (
         planID: number,

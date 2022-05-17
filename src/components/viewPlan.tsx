@@ -29,7 +29,7 @@ export function ViewPlan({
     setCourses: (courses: Course[]) => void;
     setPlanName: (id: number, name: string) => void;
     addSemester: (planID: number) => void;
-    removeSemester: (planID: number, semesterID: number) => void;
+    removeSemester: (planID: number, semester: Semester) => void;
     clearSemesters: (planID: number) => void;
     setSemesterName: (
         planID: number,
