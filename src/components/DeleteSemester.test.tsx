@@ -32,9 +32,7 @@ describe("DeleteSemester tests", () => {
     });
 
     test("There is a delete button", () => {
-        const deleteButton = screen.getByRole("button", {
-            name: /✖️/i
-        });
+        const deleteButton = screen.getByText(/✖️/i);
         deleteButton.click();
         expect(deleteButton).toBeEnabled();
     });
