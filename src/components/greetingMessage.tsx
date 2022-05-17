@@ -227,22 +227,6 @@ export function GreetingMessage(): JSX.Element {
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="c5">
                                             <Accordion.Header>
-                                                How can I edit a course&apos;s
-                                                prerequisites?
-                                            </Accordion.Header>
-                                            <Accordion.Body>
-                                                To edit a course&apos;s
-                                                prerequisites, you can use the
-                                                &quot;Edit&quot; button in the
-                                                courses table and add or remove
-                                                course prerequisites. The editor
-                                                will only recognize course
-                                                codes, such as CISC108 or
-                                                ACCT207.
-                                            </Accordion.Body>
-                                        </Accordion.Item>
-                                        <Accordion.Item eventKey="c6">
-                                            <Accordion.Header>
                                                 How can I delete a course?
                                             </Accordion.Header>
                                             <Accordion.Body>
@@ -253,7 +237,7 @@ export function GreetingMessage(): JSX.Element {
                                                 course through its edit modal.
                                             </Accordion.Body>
                                         </Accordion.Item>
-                                        <Accordion.Item eventKey="c7">
+                                        <Accordion.Item eventKey="c6">
                                             <Accordion.Header>
                                                 How can I delete all courses?
                                             </Accordion.Header>
@@ -263,7 +247,7 @@ export function GreetingMessage(): JSX.Element {
                                                 button below the course table.
                                             </Accordion.Body>
                                         </Accordion.Item>
-                                        <Accordion.Item eventKey="c8">
+                                        <Accordion.Item eventKey="c7">
                                             <Accordion.Header>
                                                 How can I add a new course?
                                             </Accordion.Header>
@@ -275,11 +259,7 @@ export function GreetingMessage(): JSX.Element {
                                                 other courses in the course
                                                 table. In order for a course to
                                                 be added, it must be given a
-                                                name and number of credits. Be
-                                                sure to format your course name
-                                                like &quot;CODE###: Title&quot;.
-                                                &#40;Ex. ACCT207: Introduction
-                                                to Accounting&#41;
+                                                name and number of credits.
                                             </Accordion.Body>
                                         </Accordion.Item>
                                     </Accordion.Body>
