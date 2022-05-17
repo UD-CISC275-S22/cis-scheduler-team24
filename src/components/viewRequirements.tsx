@@ -23,6 +23,11 @@ export function ViewRequirements({
                         <tr key={requiredCourse.id}>
                             <td>{requiredCourse.name}</td>
                             <td>
+                                <td>
+                                    {requiredCourse.code}
+                                    {": "}
+                                    {requiredCourse.name}
+                                </td>
                                 {takenCourses
                                     .map(
                                         (takenCourse: Course): number =>

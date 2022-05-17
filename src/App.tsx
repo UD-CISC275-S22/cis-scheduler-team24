@@ -14,7 +14,7 @@ import plans from "./data/plans.json";
 const COURSES = courses.map(
     (course): Course => ({
         ...course,
-        prerequisites: course.prerequisites.map(Number)
+        prerequisites: course.prerequisites.map(String)
     })
 );
 
