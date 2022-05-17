@@ -13,10 +13,9 @@ describe("listCourses", () => {
             planID={0}
             semesterID={0}
             removeCourse={() => []}
+            addCourse={() => []}
             setRequiredCourses={() => []}
             setSemesterCourses={() => []}
-            updateCourses={() => []}
-            updateSemesterCourses={() => []}
         />
     );
     test("test the button", () => {

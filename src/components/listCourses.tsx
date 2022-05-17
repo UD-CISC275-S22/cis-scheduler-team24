@@ -18,10 +18,9 @@ export function ListCourses({
     planID,
     semesterID,
     removeCourse,
+    addCourse,
     setRequiredCourses,
-    setSemesterCourses,
-    updateCourses,
-    updateSemesterCourses
+    setSemesterCourses
 }: {
     courses: Course[];
     semesterCourses: Course[];
@@ -31,14 +30,13 @@ export function ListCourses({
     planID: number;
     semesterID: number;
     removeCourse: (planID: number, semesterID: number, course: Course) => void;
+    addCourse: (planID: number, semesterID: number, course: Course) => void;
     setRequiredCourses: (planID: number, requirements: Course[]) => void;
     setSemesterCourses: (
         planID: number,
         semesterID: number,
         semesterCourses: Course[]
     ) => void;
-    updateCourses: (newCourse: Course) => void;
-    updateSemesterCourses: (newCourse: Course) => void;
 }): JSX.Element {
     const [showAddModal, setShowAddModal] = useState(false);
     showAddModal;
@@ -69,22 +67,8 @@ export function ListCourses({
         );
     }
 
-    function addCourse(newCourse: Course) {
-        const existing = courses.find(
-            (course: Course): boolean => course.id === newCourse.id
-        );
-        if (existing === undefined) {
-            setSemesterCourses(planID, semesterID, [
-                ...semesterCourses,
-                newCourse
-            ]);
-            updateSemesterCourses(newCourse);
-            updateCourses(newCourse);
-        }
-    }
-
     function saveAddChange() {
-        addCourse({
+        addCourse(planID, semesterID, {
             id: courses.length + 1,
             name: name,
             credits: parseInt(credits),

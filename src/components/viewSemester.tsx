@@ -16,11 +16,11 @@ export function ViewSemester({
     takenCourses,
     removeSemesterCourses,
     removeCourse,
+    addCourse,
     skipSemester,
     unskipSemester,
     setRequiredCourses,
-    setSemesterCourses,
-    updateCourses
+    setSemesterCourses
 }: {
     semester: Semester;
     courses: Course[];
@@ -30,6 +30,7 @@ export function ViewSemester({
     takenCourses: Course[];
     removeSemesterCourses: (planID: number, semester: Semester) => void;
     removeCourse: (planID: number, semesterID: number, course: Course) => void;
+    addCourse: (planID: number, semesterID: number, course: Course) => void;
     skipSemester: (planID: number, semester: Semester) => void;
     unskipSemester: (planID: number, semester: Semester) => void;
     setRequiredCourses: (planID: number, requirements: Course[]) => void;
@@ -38,18 +39,8 @@ export function ViewSemester({
         semesterID: number,
         semesterCourses: Course[]
     ) => void;
-    updateCourses: (newCourse: Course) => void;
 }): JSX.Element {
     const [isSkipped, setSkipped] = useState<boolean>(semester.isSkipped);
-
-    function updateSemesterCourses(newCourse: Course): void {
-        setSemesterCourses(planID, semester.id, [
-            ...courses.filter((course: Course): boolean =>
-                semester.courses.includes(course.id)
-            ),
-            newCourse
-        ]);
-    }
 
     return (
         <div>
@@ -84,15 +75,12 @@ export function ViewSemester({
                                             planID={planID}
                                             semesterID={semester.id}
                                             removeCourse={removeCourse}
+                                            addCourse={addCourse}
                                             setRequiredCourses={
                                                 setRequiredCourses
                                             }
                                             setSemesterCourses={
                                                 setSemesterCourses
-                                            }
-                                            updateCourses={updateCourses}
-                                            updateSemesterCourses={
-                                                updateSemesterCourses
                                             }
                                         ></ListCourses>
                                         <DeleteCourseModal

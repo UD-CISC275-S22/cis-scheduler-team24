@@ -9,7 +9,6 @@ import { DeletePlan } from "./DeletePlan";
 export function ListPlans({
     courses,
     plans,
-    setCourses,
     addPlan,
     deletePlan,
     setPlanName,
@@ -18,6 +17,7 @@ export function ListPlans({
     removeSemesterCourses,
     clearSemesters,
     removeCourse,
+    addCourse,
     setSemesterName,
     skipSemester,
     unskipSemester,
@@ -27,7 +27,6 @@ export function ListPlans({
 }: {
     courses: Course[];
     plans: Plan[];
-    setCourses: (courses: Course[]) => void;
     addPlan: () => void;
     deletePlan: (planID: number) => void;
     setPlanName: (planID: number, name: string) => void;
@@ -36,6 +35,7 @@ export function ListPlans({
     removeSemesterCourses: (planID: number, semester: Semester) => void;
     clearSemesters: (planID: number) => void;
     removeCourse: (planID: number, semesterID: number, course: Course) => void;
+    addCourse: (planID: number, semesterID: number, course: Course) => void;
     setSemesterName: (
         planID: number,
         semesterID: number,
@@ -86,13 +86,13 @@ export function ListPlans({
                             <ViewPlan
                                 courses={courses}
                                 plan={plan}
-                                setCourses={setCourses}
                                 setPlanName={setPlanName}
                                 addSemester={addSemester}
                                 removeSemester={removeSemester}
                                 removeSemesterCourses={removeSemesterCourses}
                                 clearSemesters={clearSemesters}
                                 removeCourse={removeCourse}
+                                addCourse={addCourse}
                                 setSemesterName={setSemesterName}
                                 skipSemester={skipSemester}
                                 unskipSemester={unskipSemester}

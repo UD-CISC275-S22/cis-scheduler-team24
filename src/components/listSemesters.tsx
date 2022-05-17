@@ -16,12 +16,12 @@ export function ListSemesters({
     removeSemester,
     removeSemesterCourses,
     removeCourse,
+    addCourse,
     setSemesterName,
     skipSemester,
     unskipSemester,
     setRequiredCourses,
-    setSemesterCourses,
-    updateCourses
+    setSemesterCourses
 }: {
     planSemesters: Semester[];
     courses: Course[];
@@ -33,6 +33,7 @@ export function ListSemesters({
     removeSemester: (planID: number, semester: Semester) => void;
     removeSemesterCourses: (planID: number, semester: Semester) => void;
     removeCourse: (planID: number, semesterID: number, course: Course) => void;
+    addCourse: (planID: number, semesterID: number, course: Course) => void;
     setSemesterName: (
         planID: number,
         semesterID: number,
@@ -46,7 +47,6 @@ export function ListSemesters({
         semesterID: number,
         semesterCourses: Course[]
     ) => void;
-    updateCourses: (newCourse: Course) => void;
 }): JSX.Element {
     const [isEditing, setEditing] = useState<boolean>(false);
 
@@ -111,11 +111,11 @@ export function ListSemesters({
                                             removeSemesterCourses
                                         }
                                         removeCourse={removeCourse}
+                                        addCourse={addCourse}
                                         skipSemester={skipSemester}
                                         unskipSemester={unskipSemester}
                                         setSemesterCourses={setSemesterCourses}
                                         setRequiredCourses={setRequiredCourses}
-                                        updateCourses={updateCourses}
                                     ></ViewSemester>
                                 </div>
                             </Accordion.Body>

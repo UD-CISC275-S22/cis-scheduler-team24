@@ -329,6 +329,44 @@ function App(): JSX.Element {
         };
     }
 
+    function addCourse(
+        planID: number,
+        semesterID: number,
+        course: Course
+    ): void {
+        setPlans(
+            plans.map(
+                (plan: Plan): Plan =>
+                    planID === plan.id
+                        ? addCourse2(plan, semesterID, course)
+                        : plan
+            )
+        );
+        setCourses([...courses, course]);
+    }
+
+    function addCourse2(plan: Plan, semesterID: number, course: Course): Plan {
+        return {
+            ...plan,
+            semesters: [
+                ...plan.semesters.map(
+                    (semester: Semester): Semester =>
+                        semester.id === semesterID
+                            ? addCourse3(semester, course)
+                            : semester
+                )
+            ],
+            taken_courses: [...plan.taken_courses, course.id]
+        };
+    }
+
+    function addCourse3(semester: Semester, course: Course): Semester {
+        return {
+            ...semester,
+            courses: [...semester.courses, course.id]
+        };
+    }
+
     function moveFromFloatingCourses(
         planID: number,
         semester: Semester,
@@ -450,7 +488,6 @@ function App(): JSX.Element {
                         <ListPlans
                             courses={courses}
                             plans={plans}
-                            setCourses={setCourses}
                             addPlan={addPlan}
                             deletePlan={deletePlan}
                             setPlanName={setPlanName}
@@ -459,6 +496,7 @@ function App(): JSX.Element {
                             removeSemesterCourses={removeSemesterCourses}
                             clearSemesters={clearSemesters}
                             removeCourse={removeCourse}
+                            addCourse={addCourse}
                             setSemesterName={setSemesterName}
                             skipSemester={skipSemester}
                             unskipSemester={unskipSemester}

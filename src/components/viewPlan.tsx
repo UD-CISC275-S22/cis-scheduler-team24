@@ -12,13 +12,13 @@ import { ViewFloatingCourses } from "./viewFloatingCourses";
 export function ViewPlan({
     courses,
     plan,
-    setCourses,
     setPlanName,
     addSemester,
     removeSemester,
     removeSemesterCourses,
     clearSemesters,
     removeCourse,
+    addCourse,
     setSemesterName,
     skipSemester,
     unskipSemester,
@@ -28,13 +28,13 @@ export function ViewPlan({
 }: {
     courses: Course[];
     plan: Plan;
-    setCourses: (courses: Course[]) => void;
     setPlanName: (id: number, name: string) => void;
     addSemester: (planID: number) => void;
     removeSemester: (planID: number, semester: Semester) => void;
     removeSemesterCourses: (planID: number, semester: Semester) => void;
     clearSemesters: (planID: number) => void;
     removeCourse: (planID: number, semesterID: number, course: Course) => void;
+    addCourse: (planID: number, semesterID: number, course: Course) => void;
     setSemesterName: (
         planID: number,
         semesterID: number,
@@ -60,10 +60,6 @@ export function ViewPlan({
 
     function openEdit(): void {
         setEditing(!isEditing);
-    }
-
-    function updateCourses(newCourse: Course): void {
-        setCourses([...courses, newCourse]);
     }
 
     return (
@@ -147,6 +143,7 @@ export function ViewPlan({
                                                 removeSemesterCourses
                                             }
                                             removeCourse={removeCourse}
+                                            addCourse={addCourse}
                                             setSemesterName={setSemesterName}
                                             skipSemester={skipSemester}
                                             unskipSemester={unskipSemester}
@@ -156,7 +153,6 @@ export function ViewPlan({
                                             setSemesterCourses={
                                                 setSemesterCourses
                                             }
-                                            updateCourses={updateCourses}
                                         ></ListSemesters>
                                     </td>
                                 </tr>
