@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button, InputGroup } from "react-bootstrap";
+import { Form, InputGroup } from "react-bootstrap";
 import { Semester } from "../interfaces/semester";
 
 export function EditSemester({
@@ -35,13 +35,17 @@ export function EditSemester({
                     data-testid="editSemester"
                     className="form-control-style-1"
                 />
-                <Button
-                    variant="secondary"
+                <div
                     onClick={save}
                     data-testid="editSemester-save"
+                    style={{
+                        display: "flex",
+                        marginLeft: "20px",
+                        marginRight: "20px"
+                    }}
                 >
-                    Save
-                </Button>
+                    💾
+                </div>
             </InputGroup>
         </div>
     );

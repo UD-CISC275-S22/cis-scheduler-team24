@@ -114,3 +114,11 @@
 .export-button {
     padding: 15px;
 }
+.Save-button-size {
+    font-size: 30px;
+}
+
+.form-control-style-1 {
+    height: 20px;
+    width: 120px;
+}

@@ -19,7 +19,9 @@ export function DeleteSemester({
             onClick={deleteSemester}
             className="me-8"
             style={{
-                display: "flex"
+                display: "flex",
+                marginLeft: "20px",
+                marginRight: "20px"
             }}
         >
             ✖️
