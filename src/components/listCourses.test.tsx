@@ -16,7 +16,6 @@ describe("listCourses", () => {
             setRequiredCourses={() => []}
             setTakenCourses={() => []}
             setSemesterCourses={() => []}
-            removeSemesterCourses={() => []}
             updateCourses={() => []}
             updateSemesterCourses={() => []}
         />

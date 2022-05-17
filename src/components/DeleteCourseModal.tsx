@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
+import { Semester } from "../interfaces/semester";
 
 export function DeleteCourseModal({
-    deleteCourse
+    removeSemesterCourses,
+    planID,
+    semester
 }: {
-    deleteCourse: () => void;
+    removeSemesterCourses: (planID: number, semester: Semester) => void;
+    planID: number;
+    semester: Semester;
 }) {
     const [showAddModal, setShowDeleteModal] = useState(false);
 
@@ -44,7 +49,7 @@ export function DeleteCourseModal({
                     <Modal.Footer>
                         <Button
                             onClick={() => {
-                                deleteCourse();
+                                removeSemesterCourses(planID, semester);
                                 cancel();
                             }}
                             variant="danger"

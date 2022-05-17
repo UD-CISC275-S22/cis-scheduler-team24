@@ -9,7 +9,6 @@ import {
     Row
 } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-import { DeleteCourseModal } from "./DeleteCourseModal";
 import { EditCourseModal } from "./EditCourseModal";
 
 export function ListCourses({
@@ -24,7 +23,6 @@ export function ListCourses({
     setRequiredCourses,
     setTakenCourses,
     setSemesterCourses,
-    removeSemesterCourses,
     updateCourses,
     updateSemesterCourses
 }: {
@@ -43,7 +41,6 @@ export function ListCourses({
         semesterID: number,
         semesterCourses: Course[]
     ) => void;
-    removeSemesterCourses: () => void;
     updateCourses: (newCourse: Course) => void;
     updateSemesterCourses: (newCourse: Course) => void;
 }): JSX.Element {
@@ -122,11 +119,6 @@ export function ListCourses({
         setDescription("");
         setCredits("");
         setPrereqs("");
-    }
-
-    function deleteAllCourse() {
-        setSemesterCourses(planID, semesterID, []);
-        removeSemesterCourses();
     }
 
     return (
@@ -242,13 +234,6 @@ export function ListCourses({
                     <Container>
                         <div>Total Credits: {Credits}</div>
                         {/* <Button onClick={SaveData}>Save</Button> */}
-                    </Container>
-                    <Container>
-                        <DeleteCourseModal
-                            deleteCourse={() => {
-                                deleteAllCourse();
-                            }}
-                        ></DeleteCourseModal>
                     </Container>
                 </Col>
             </Row>

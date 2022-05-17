@@ -285,6 +285,42 @@ function App(): JSX.Element {
         };
     }
 
+    function removeSemesterCourses(planID: number, semester: Semester) {
+        setPlans(
+            plans.map(
+                (plan: Plan): Plan =>
+                    planID === plan.id
+                        ? removeSemesterCourses2(plan, semester)
+                        : plan
+            )
+        );
+    }
+
+    function removeSemesterCourses2(plan: Plan, semester: Semester) {
+        return {
+            ...plan,
+            semesters: [
+                ...plan.semesters.map(
+                    (sem: Semester): Semester =>
+                        semester.id === sem.id
+                            ? removeSemesterCourses3(semester)
+                            : semester
+                )
+            ],
+            floating_courses: [...semester.courses, ...plan.floating_courses],
+            taken_courses: plan.taken_courses.filter(
+                (tID: number): boolean => !semester.courses.includes(tID)
+            )
+        };
+    }
+
+    function removeSemesterCourses3(semester: Semester): Semester {
+        return {
+            ...semester,
+            courses: []
+        };
+    }
+
     function moveFromFloatingCourses(
         planID: number,
         semester: Semester,
@@ -374,6 +410,7 @@ function App(): JSX.Element {
                             setPlanName={setPlanName}
                             addSemester={addSemester}
                             removeSemester={removeSemester}
+                            removeSemesterCourses={removeSemesterCourses}
                             clearSemesters={clearSemesters}
                             setSemesterName={setSemesterName}
                             setFloatingCourses={setFloatingCourses}
