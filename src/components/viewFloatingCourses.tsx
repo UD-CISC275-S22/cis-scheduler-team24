@@ -66,38 +66,6 @@ export function ViewFloatingCourses({
                             </td>
                         </tr>
                     ))}
-                    {/*floatingCourses.map((course: Course) => (
-                        <tr key={course.id}>
-                            <td>{course.name}</td>
-                            <td>
-                                <InputGroup className="mb-3">
-                                    <DropdownButton
-                                        variant="outline-secondary"
-                                        title="Move"
-                                        id="input-group-dropdown-2"
-                                    >
-                                        {semesters.map((semester: Semester) => (
-                                            <Dropdown.Item
-                                                key={semester.id}
-                                                onClick={() => {
-                                                    removeFloatingCourse(
-                                                        course
-                                                    );
-                                                    takeCourse(course);
-                                                    addSemesterCourse(
-                                                        course,
-                                                        semester
-                                                    );
-                                                }}
-                                            >
-                                                {semester.name}
-                                            </Dropdown.Item>
-                                        ))}
-                                    </DropdownButton>
-                                </InputGroup>
-                            </td>
-                        </tr>
-                                            ))*/}
                 </tbody>
             </Table>
         </div>
