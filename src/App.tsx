@@ -32,19 +32,26 @@ let PLANS = plans.map(
         taken_courses: plan.taken_courses.map(Number)
     })
 );
+
+let isSaving = false;
 const saveDatakey = "CISC275";
+const Key = "SAVE";
 
 const previousData = localStorage.getItem(saveDatakey);
+const Saved = localStorage.getItem(Key);
 
 if (previousData !== null) {
     PLANS = JSON.parse(previousData);
 }
 
+if (Saved !== null) {
+    isSaving = JSON.parse(Saved);
+}
 function App(): JSX.Element {
     const [plans, setPlans] = useState<Plan[]>(PLANS);
     const [courses, setCourses] = useState<Course[]>(COURSES);
     // const [content, setContent] = useState<string>("No file data uploaded");
-    const [IsSave, setIsSave] = useState<boolean>(false);
+    const [IsSave, setIsSave] = useState<boolean>(isSaving);
 
     function addPlan(): void {
         setPlans([
@@ -487,9 +494,11 @@ function App(): JSX.Element {
 
     function saveData() {
         localStorage.setItem(saveDatakey, JSON.stringify(plans));
+        localStorage.setItem(Key, JSON.stringify(IsSave));
     }
 
     function updateSwitch(event: React.ChangeEvent<HTMLInputElement>) {
+        localStorage.removeItem(Key);
         setIsSave(event.target.checked);
     }
 
