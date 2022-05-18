@@ -89,6 +89,7 @@ export function ListPlans({
                             label={IsSave ? "Saving" : "Unsaved"}
                             checked={IsSave}
                             onChange={updateSwitch}
+                            data-testid="Saving"
                         />
                     </Nav.Item>
                 </Nav>

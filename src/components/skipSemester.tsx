@@ -39,6 +39,7 @@ export function SkipSemester({
                 label="Skip"
                 checked={isSkipped}
                 onChange={changeSkip}
+                data-testid="Skip"
             ></Form.Check>
         </div>
     );
