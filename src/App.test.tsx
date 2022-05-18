@@ -3,15 +3,6 @@ import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
 
-test("renders the course name somewhere", async () => {
-    render(<App />);
-    const name = screen.getByText(/Jingqing/i);
-    await waitFor(() => {
-        expect(name).toBeInTheDocument();
-    });
-    cleanup;
-});
-
 test("Saving for the website", async () => {
     render(<App />);
     const Saving = screen.getByTestId("Saving");
@@ -116,25 +107,19 @@ test("test the set Semester Name button", async () => {
     cleanup;
 });
 
-test("Delete All Courses button", async () => {
+test("test the skip button", async () => {
     render(<App />);
-    const DeleteAllCoursesButton = screen.getAllByTestId("Delete-course-modal");
-    DeleteAllCoursesButton[0].click();
-    //const DeleteAllCourses = screen.getAllByTestId("Delete-All-Courses");
-    //DeleteAllCourses[0].click();
-    await waitFor(() => {
-        expect(DeleteAllCoursesButton).toBeEnabled;
+    const SkipButton = screen.getAllByRole("checkbox", {
+        name: /Skip/i
     });
-    cleanup;
-});
+    SkipButton[0].click();
+    await waitFor(() => {
+        expect(SkipButton).toBeEnabled;
+    });
 
-test("Move Courses button", async () => {
-    render(<App />);
-    const MoveButton = screen.getAllByRole("button", {
-        name: /Move/i
-    });
+    SkipButton[0].click();
     await waitFor(() => {
-        expect(MoveButton).toBeEnabled;
+        expect(SkipButton).toBeEnabled;
     });
     cleanup;
 });
