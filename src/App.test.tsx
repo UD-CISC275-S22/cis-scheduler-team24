@@ -3,6 +3,10 @@ import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
 
+beforeEach(async () => {
+    jest.setTimeout(10000);
+});
+
 test("Saving for the website", async () => {
     render(<App />);
     const Saving = screen.getByTestId("Saving");
