@@ -4,7 +4,6 @@ import userEvent from "@testing-library/user-event";
 import App from "./App";
 
 test("Saving for the website", async () => {
-    jest.setTimeout(10000);
     render(<App />);
     const Saving = screen.getByTestId("Saving");
     Saving.click();
@@ -18,10 +17,9 @@ test("Saving for the website", async () => {
         expect(UnsavedLable).toBeInTheDocument();
     });
     cleanup;
-});
+}, 10000);
 
 test("test the Add Plan button", async () => {
-    jest.setTimeout(10000);
     render(<App />);
     const AddplanButton = screen.getAllByRole("button", {
         name: /Add Plan/i
@@ -31,10 +29,9 @@ test("test the Add Plan button", async () => {
         expect(AddplanButton).toBeEnabled;
     });
     cleanup;
-});
+}, 10000);
 
 test("test the ✖️ plan button", async () => {
-    jest.setTimeout(10000);
     render(<App />);
     const DeleteplanButton = screen.getAllByRole("button", {
         name: /✖️/i
@@ -44,10 +41,9 @@ test("test the ✖️ plan button", async () => {
         expect(DeleteplanButton).toBeEnabled;
     });
     cleanup;
-});
+}, 10000);
 
 test("test the edit plan name button", async () => {
-    jest.setTimeout(10000);
     render(<App />);
     const EditplanNameButton = screen.getAllByTestId("Edit Plan Name Button");
     EditplanNameButton[0].click();
@@ -59,10 +55,9 @@ test("test the edit plan name button", async () => {
         expect(EditplanNameButton).toBeEnabled;
     });
     cleanup;
-});
+}, 10000);
 
 test("test the Add Semester button", async () => {
-    jest.setTimeout(10000);
     render(<App />);
     const AddSemesterButton = screen.getAllByRole("button", {
         name: /Add Semester/i
@@ -72,10 +67,9 @@ test("test the Add Semester button", async () => {
         expect(AddSemesterButton).toBeEnabled;
     });
     cleanup;
-});
+}, 10000);
 
 test("test the Delete Semester button", async () => {
-    jest.setTimeout(10000);
     render(<App />);
     const DeleteSemester = screen.getAllByTestId("Delete-Semester");
     DeleteSemester[0].click();
@@ -83,10 +77,9 @@ test("test the Delete Semester button", async () => {
         expect(DeleteSemester).toBeEnabled;
     });
     cleanup;
-});
+}, 10000);
 
 test("test the Clear Semester button", async () => {
-    jest.setTimeout(10000);
     render(<App />);
     const ClearSemesterButton = screen.getAllByRole("button", {
         name: /Clear Semester/i
@@ -98,10 +91,9 @@ test("test the Clear Semester button", async () => {
         expect(ClearSemesterButton).toBeEnabled;
     });
     cleanup;
-});
+}, 10000);
 
 test("test the set Semester Name button", async () => {
-    jest.setTimeout(10000);
     render(<App />);
     const EditSemester = screen.getAllByTestId("Edit-semester-name");
     EditSemester[0].click();
@@ -113,10 +105,9 @@ test("test the set Semester Name button", async () => {
         expect(EditSemester).toBeEnabled;
     });
     cleanup;
-});
+}, 10000);
 
 test("test the skip button", async () => {
-    jest.setTimeout(10000);
     render(<App />);
     const SkipButton = screen.getAllByRole("checkbox", {
         name: /Skip/i
@@ -131,4 +122,4 @@ test("test the skip button", async () => {
         expect(SkipButton).toBeEnabled;
     });
     cleanup;
-});
+}, 10000);
