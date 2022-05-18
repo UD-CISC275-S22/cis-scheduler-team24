@@ -22,7 +22,11 @@ export function DeleteCourseModal({
     return (
         <div>
             <div>
-                <Button onClick={handleShowDeleteModal} variant="danger">
+                <Button
+                    onClick={handleShowDeleteModal}
+                    variant="danger"
+                    data-testid="Delete-course-modal"
+                >
                     Delete All Courses
                 </Button>
             </div>
@@ -36,9 +40,7 @@ export function DeleteCourseModal({
                     backdrop={true}
                 >
                     <Modal.Header>
-                        <Modal.Title id="contained-modal-title-vcenter">
-                            ⚠️
-                        </Modal.Title>
+                        <Modal.Title>⚠️</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <p>
@@ -53,6 +55,7 @@ export function DeleteCourseModal({
                                 cancel();
                             }}
                             variant="danger"
+                            data-testid="Delete-All-Courses"
                         >
                             Delete All Courses
                         </Button>
