@@ -25,11 +25,11 @@ FAIL src/components/listPlans.test.tsx
                 [33mstyle[39m=[32m"display: flex;"[39m
               [36m>[39m
                 [36m<a[39m
-                  [33maria-controls[39m=[32m"react-aria4304103907-1-tabpane-1"[39m
+                  [33maria-controls[39m=[32m"react-aria37239406-1-tabpane-1"[39m
                   [33maria-selected[39m=[32m"true"[39m
                   [33mclass[39m=[32m"nav-link active"[39m
                   [33mdata-rr-ui-event-key[39m=[32m"1"[39m
-                  [33mid[39m=[32m"react-aria4304103907-1-tab-1"[39m
+                  [33mid[39m=[32m"react-aria37239406-1-tab-1"[39m
                   [33mrole[39m=[32m"tab"[39m
                 [36m>[39m
                   [0mPlan 1[0m
@@ -49,10 +49,10 @@ FAIL src/components/listPlans.test.tsx
                 [33mstyle[39m=[32m"display: flex;"[39m
               [36m>[39m
                 [36m<a[39m
-                  [33maria-controls[39m=[32m"react-aria4304103907-1-tabpane-2"[39m
+                  [33maria-controls[39m=[32m"react-aria37239406-1-tabpane-2"[39m
                   [33mclass[39m=[32m"nav-link"[39m
                   [33mdata-rr-ui-event-key[39m=[32m"2"[39m
-                  [33mid[39m=[32m"react-aria4304103907-1-tab-2"[39m
+                  [33mid[39m=[32m"react-aria37239406-1-tab-2"[39m
                   [33mrole[39m=[32m"tab"[39m
                   [33mtabindex[39m=[32m"-1"[39m
                 [36m>[39m
@@ -104,9 +104,9 @@ FAIL src/components/listPlans.test.tsx
             [33mclass[39m=[32m"tab-content"[39m
           [36m>[39m
             [36m<div[39m
-              [33maria-labelledby[39m=[32m"react-aria4304103907-1-tab-1"[39m
+              [33maria-labelledby[39m=[32m"react-aria37239406-1-tab-1"[39m
               [33mclass[39m=[32m"tab-pane active"[39m
-              [33mid[39m=[32m"react-aria4304103907-1-tabpane-1"[39m
+              [33mid[39m=[32m"react-aria37239406-1-tabpane-1"[39m
             [36m>[39m
               [36m<div>[39m
                 [36m<div[39m
@@ -174,7 +174,7 @@ FAIL src/components/listPlans.test.tsx
                                               [36m<div[39m
                                                 [33mclass[39m=[32m"me-8"[39m
                                                 [33mdata-testid[39m=[32m"Edit-semester-name"[39m
-                                                [33mstyle[39...
+                                                [33mstyle[39m=[32m"disp...
 
       63 |
       64 |     test("test the Clicking of Save button", () => {
@@ -203,13 +203,13 @@ PASS src/components/DeleteSemester.test.tsx
 PASS src/components/DeletePlan.test.tsx
 PASS src/components/Carouse.test.tsx
 PASS src/components/viewRequirements.test.tsx
-PASS src/App.test.tsx
+PASS src/App.test.tsx (5.079 s)
 --------------------------------|---------|----------|---------|---------|-------------------
 File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------|---------|----------|---------|---------|-------------------
-All files                       |   71.87 |    24.63 |    53.7 |   71.16 |                   
- src                            |   15.11 |        6 |    5.47 |   15.29 |                   
-  App.tsx                       |   15.11 |        6 |    5.47 |   15.29 | 40,50-493,497     
+All files                       |   71.52 |    25.35 |    53.7 |   70.81 |                   
+ src                            |   18.27 |     7.69 |    5.47 |   18.47 |                   
+  App.tsx                       |   18.27 |     7.69 |    5.47 |   18.47 | 44,48,57-502,506  
  src/components                 |   96.03 |    73.68 |   93.25 |   96.29 |                   
   Carouse.tsx                   |     100 |      100 |     100 |     100 |                   
   ClearSemesterModal.tsx        |     100 |      100 |     100 |     100 |                   
@@ -240,5 +240,5 @@ All files                       |   71.87 |    24.63 |    53.7 |   71.16 |
 Test Suites: 1 failed, 17 passed, 18 total
 Tests:       1 failed, 67 passed, 68 total
 Snapshots:   0 total
-Time:        17.957 s
+Time:        20.724 s
 Ran all test suites.
