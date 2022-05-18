@@ -26,7 +26,7 @@ export function EditPlan({
                     onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                         setName(event.target.value)
                     }
-                    className="form-control-style-1"
+                    className="form-control-style-2"
                     data-testid="editplan"
                 />
                 <Button
