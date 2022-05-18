@@ -28,23 +28,6 @@ test("Saving for the website", async () => {
     cleanup;
 });
 
-test("test the skip button", async () => {
-    render(<App />);
-    const SkipButton = screen.getAllByRole("checkbox", {
-        name: /Skip/i
-    });
-    SkipButton[0].click();
-    await waitFor(() => {
-        expect(SkipButton).toBeEnabled;
-    });
-
-    SkipButton[0].click();
-    await waitFor(() => {
-        expect(SkipButton).toBeEnabled;
-    });
-    cleanup;
-});
-
 test("test the Add Plan button", async () => {
     render(<App />);
     const AddplanButton = screen.getAllByRole("button", {
