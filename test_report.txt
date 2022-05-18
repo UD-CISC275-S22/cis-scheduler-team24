@@ -3,21 +3,21 @@
 > react-scripts test "--coverage"
 
 PASS src/components/EditCourseModal.test.tsx
-FAIL src/App.test.tsx (60.291 s)
-  ● test the skip button
+FAIL src/App.test.tsx (50.312 s)
+  ● test the Add Plan button
 
     thrown: "Exceeded timeout of 5000 ms for a test.
     Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test."
 
-      29 | });
-      30 |
-    > 31 | test("test the skip button", async () => {
+      46 | });
+      47 |
+    > 48 | test("test the Add Plan button", async () => {
          | ^
-      32 |     render(<App />);
-      33 |     const SkipButton = screen.getAllByRole("checkbox", {
-      34 |         name: /Skip/i
+      49 |     render(<App />);
+      50 |     const AddplanButton = screen.getAllByRole("button", {
+      51 |         name: /Add Plan/i
 
-      at Object.<anonymous> (src/App.test.tsx:31:1)
+      at Object.<anonymous> (src/App.test.tsx:48:1)
 
 PASS src/components/listCourses.test.tsx
 PASS src/components/DeleteCourseModal.test.tsx
@@ -38,59 +38,59 @@ PASS src/components/DeletePlan.test.tsx
 PASS src/components/Carouse.test.tsx
 PASS src/components/viewFloatingCourses.test.tsx
 PASS src/components/viewRequirements.test.tsx
---------------------------------|---------|----------|---------|---------|-----------------------
-File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s     
---------------------------------|---------|----------|---------|---------|-----------------------
-All files                       |   83.38 |    53.52 |   72.83 |   82.91 |                       
- src                            |   51.61 |    38.46 |   43.83 |   51.08 |                       
-  App.tsx                       |   51.61 |    38.46 |   43.83 |   51.08 | 44,48,190-436,462-474 
- src/components                 |   98.01 |    94.73 |   96.62 |   98.41 |                       
-  Carouse.tsx                   |     100 |      100 |     100 |     100 |                       
-  ClearSemesterModal.tsx        |     100 |      100 |     100 |     100 |                       
-  DeleteCourseModal.tsx         |     100 |      100 |     100 |     100 |                       
-  DeleteCourseWarningModal.tsx  |     100 |      100 |     100 |     100 |                       
-  DeleteCourseWarningModalX.tsx |     100 |      100 |     100 |     100 |                       
-  DeletePlan.tsx                |     100 |      100 |     100 |     100 |                       
-  DeleteSemester.tsx            |     100 |      100 |     100 |     100 |                       
-  EditCourseModal.tsx           |     100 |      100 |     100 |     100 |                       
-  editPlan.tsx                  |     100 |      100 |     100 |     100 |                       
-  editSemester.tsx              |     100 |      100 |     100 |     100 |                       
-  exportPlans.tsx               |     100 |      100 |     100 |     100 |                       
-  greetingMessage.tsx           |     100 |      100 |     100 |     100 |                       
-  listCourses.tsx               |   95.65 |      100 |    90.9 |     100 |                       
-  listPlans.tsx                 |     100 |      100 |     100 |     100 |                       
-  listSemesters.tsx             |     100 |      100 |     100 |     100 |                       
-  skipSemester.tsx              |   66.66 |       50 |      75 |   66.66 | 30-31                 
-  viewFloatingCourses.tsx       |      75 |      100 |      75 |      75 | 52                    
-  viewPlan.tsx                  |     100 |      100 |     100 |     100 |                       
-  viewRequirements.tsx          |     100 |      100 |     100 |     100 |                       
-  viewSemester.tsx              |     100 |      100 |     100 |     100 |                       
- src/interfaces                 |       0 |        0 |       0 |       0 |                       
-  course.ts                     |       0 |        0 |       0 |       0 |                       
-  plan.ts                       |       0 |        0 |       0 |       0 |                       
-  semester.ts                   |       0 |        0 |       0 |       0 |                       
---------------------------------|---------|----------|---------|---------|-----------------------
+--------------------------------|---------|----------|---------|---------|-------------------
+File                            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------------------------|---------|----------|---------|---------|-------------------
+All files                       |   85.42 |    57.74 |   75.92 |   85.05 |                   
+ src                            |   55.91 |     42.3 |   49.31 |   55.43 |                   
+  App.tsx                       |   55.91 |     42.3 |   49.31 |   55.43 | 44,48,190-436     
+ src/components                 |      99 |      100 |   97.75 |   99.47 |                   
+  Carouse.tsx                   |     100 |      100 |     100 |     100 |                   
+  ClearSemesterModal.tsx        |     100 |      100 |     100 |     100 |                   
+  DeleteCourseModal.tsx         |     100 |      100 |     100 |     100 |                   
+  DeleteCourseWarningModal.tsx  |     100 |      100 |     100 |     100 |                   
+  DeleteCourseWarningModalX.tsx |     100 |      100 |     100 |     100 |                   
+  DeletePlan.tsx                |     100 |      100 |     100 |     100 |                   
+  DeleteSemester.tsx            |     100 |      100 |     100 |     100 |                   
+  EditCourseModal.tsx           |     100 |      100 |     100 |     100 |                   
+  editPlan.tsx                  |     100 |      100 |     100 |     100 |                   
+  editSemester.tsx              |     100 |      100 |     100 |     100 |                   
+  exportPlans.tsx               |     100 |      100 |     100 |     100 |                   
+  greetingMessage.tsx           |     100 |      100 |     100 |     100 |                   
+  listCourses.tsx               |   95.65 |      100 |    90.9 |     100 |                   
+  listPlans.tsx                 |     100 |      100 |     100 |     100 |                   
+  listSemesters.tsx             |     100 |      100 |     100 |     100 |                   
+  skipSemester.tsx              |     100 |      100 |     100 |     100 |                   
+  viewFloatingCourses.tsx       |      75 |      100 |      75 |      75 | 52                
+  viewPlan.tsx                  |     100 |      100 |     100 |     100 |                   
+  viewRequirements.tsx          |     100 |      100 |     100 |     100 |                   
+  viewSemester.tsx              |     100 |      100 |     100 |     100 |                   
+ src/interfaces                 |       0 |        0 |       0 |       0 |                   
+  course.ts                     |       0 |        0 |       0 |       0 |                   
+  plan.ts                       |       0 |        0 |       0 |       0 |                   
+  semester.ts                   |       0 |        0 |       0 |       0 |                   
+--------------------------------|---------|----------|---------|---------|-------------------
 
 Summary of all failing tests
-FAIL src/App.test.tsx (60.291 s)
-  ● test the skip button
+FAIL src/App.test.tsx (50.312 s)
+  ● test the Add Plan button
 
     thrown: "Exceeded timeout of 5000 ms for a test.
     Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test."
 
-      29 | });
-      30 |
-    > 31 | test("test the skip button", async () => {
+      46 | });
+      47 |
+    > 48 | test("test the Add Plan button", async () => {
          | ^
-      32 |     render(<App />);
-      33 |     const SkipButton = screen.getAllByRole("checkbox", {
-      34 |         name: /Skip/i
+      49 |     render(<App />);
+      50 |     const AddplanButton = screen.getAllByRole("button", {
+      51 |         name: /Add Plan/i
 
-      at Object.<anonymous> (src/App.test.tsx:31:1)
+      at Object.<anonymous> (src/App.test.tsx:48:1)
 
 
 Test Suites: 1 failed, 20 passed, 21 total
 Tests:       1 failed, 81 passed, 82 total
 Snapshots:   0 total
-Time:        76.157 s
+Time:        63.781 s
 Ran all test suites.
