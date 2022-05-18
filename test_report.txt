@@ -3,22 +3,7 @@
 > react-scripts test "--coverage"
 
 PASS src/components/EditCourseModal.test.tsx
-FAIL src/App.test.tsx (62.114 s)
-  ● Saving for the website
-
-    thrown: "Exceeded timeout of 5000 ms for a test.
-    Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test."
-
-      4 | import App from "./App";
-      5 |
-    > 6 | test("Saving for the website", async () => {
-        | ^
-      7 |     jest.setTimeout(10000);
-      8 |     render(<App />);
-      9 |     const Saving = screen.getByTestId("Saving");
-
-      at Object.<anonymous> (src/App.test.tsx:6:1)
-
+PASS src/App.test.tsx (50.961 s)
 PASS src/components/listCourses.test.tsx
 PASS src/components/DeleteCourseModal.test.tsx
 PASS src/components/listPlans.test.tsx
@@ -71,26 +56,8 @@ All files                       |   85.42 |    57.74 |   75.92 |   85.05 |
   semester.ts                   |       0 |        0 |       0 |       0 |                   
 --------------------------------|---------|----------|---------|---------|-------------------
 
-Summary of all failing tests
-FAIL src/App.test.tsx (62.114 s)
-  ● Saving for the website
-
-    thrown: "Exceeded timeout of 5000 ms for a test.
-    Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test."
-
-      4 | import App from "./App";
-      5 |
-    > 6 | test("Saving for the website", async () => {
-        | ^
-      7 |     jest.setTimeout(10000);
-      8 |     render(<App />);
-      9 |     const Saving = screen.getByTestId("Saving");
-
-      at Object.<anonymous> (src/App.test.tsx:6:1)
-
-
-Test Suites: 1 failed, 20 passed, 21 total
-Tests:       1 failed, 78 passed, 79 total
+Test Suites: 21 passed, 21 total
+Tests:       79 passed, 79 total
 Snapshots:   0 total
-Time:        79.456 s
+Time:        66.875 s
 Ran all test suites.
