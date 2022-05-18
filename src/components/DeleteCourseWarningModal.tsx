@@ -30,6 +30,7 @@ export function DeleteCourseWarningModal({
                     }}
                     variant="danger"
                     className="me-8"
+                    data-testid="modal-Delete-course-button"
                 >
                     Delete
                 </Button>
@@ -60,7 +61,7 @@ export function DeleteCourseWarningModal({
                             variant="danger"
                             data-testid="modal-Delete-button"
                         >
-                            Delete
+                            Delete!
                         </Button>
                         <Button onClick={cancel} variant="warning">
                             Cancel
