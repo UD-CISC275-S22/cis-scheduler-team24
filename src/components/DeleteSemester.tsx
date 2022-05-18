@@ -23,6 +23,7 @@ export function DeleteSemester({
                 marginLeft: "20px",
                 marginRight: "20px"
             }}
+            data-testid="Delete-Semester"
         >
             ✖️
         </div>
