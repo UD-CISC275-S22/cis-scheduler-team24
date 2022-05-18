@@ -61,12 +61,6 @@ describe("ListPlans", () => {
 
     afterEach(cleanup);
 
-    test("test the Clicking of Save button", () => {
-        const AddPlanButton = screen.getByTestId("Add-Plan-Button");
-        AddPlanButton.click();
-        expect(AddPlanButton).toBeEnabled;
-    });
-
     test("Plan can be view", () => {
         const PlanName = screen.getAllByText(/Plan 1/i);
         expect(PlanName[0]).toBeInTheDocument;
@@ -77,5 +71,13 @@ describe("ListPlans", () => {
         const PlanName2 = screen.getAllByText(/Plan 2/i);
         expect(PlanName1[0]).toBeInTheDocument;
         expect(PlanName2[0]).toBeInTheDocument;
+    });
+
+    test("Saving for the website", () => {
+        const Saving = screen.getByTestId("Saving");
+        Saving.click();
+        expect(/Saving/i).toBeInTheDocument;
+        Saving.click();
+        expect(/Unsaved/i).toBeInTheDocument;
     });
 });
